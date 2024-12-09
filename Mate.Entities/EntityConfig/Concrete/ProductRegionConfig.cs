@@ -12,6 +12,11 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(p => p.Name).HasMaxLength(50).IsRequired();
             builder.HasIndex(p => p.Name).IsUnique();
 
+
+
+            builder.HasData(new ProductRegion() { Name = " ", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Name = "Akdeniz", CreatedAt = DateTime.Now });
+
         }
     }
 }

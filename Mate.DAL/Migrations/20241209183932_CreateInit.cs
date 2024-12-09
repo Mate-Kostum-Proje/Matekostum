@@ -297,10 +297,28 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Situation" },
                 values: new object[,]
                 {
-                    { "28191478-81d7-43e4-96e8-f5bb47170fdb", new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6486), "Siparişiniz Hazırlanıyor" },
-                    { "43629480-1b4d-46ca-8710-b4c7e99187a0", new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6491), "Siparişiniz Kargoya verildi" },
-                    { "979d875d-2afb-47eb-95d0-16bcadbcc71a", new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6495), "Siparişiniz Tamamlandı" },
-                    { "f372f262-2e9d-45c6-8c62-d260eaddeba8", new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6446), "Siparişiniz Alındı" }
+                    { "0b7184df-72e9-4a34-aafa-5ec5a75f5dfa", new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3699), "Siparişiniz Tamamlandı" },
+                    { "ba143887-2d99-4b83-9251-5e2d14cf6e03", new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3689), "Siparişiniz Hazırlanıyor" },
+                    { "c760f684-cefa-4ebd-a7e9-220be36aab18", new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3641), "Siparişiniz Alındı" },
+                    { "f1af4201-a341-4353-853f-0aa9217ccc17", new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3694), "Siparişiniz Kargoya verildi" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductCategories",
+                columns: new[] { "Id", "CreatedAt", "Name" },
+                values: new object[,]
+                {
+                    { "6f3620d8-33d5-4cab-a8eb-f901bfbf587f", new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2880), "Zeybek" },
+                    { "fd14fcfe-c308-43f1-b527-8c21300646b9", new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2810), " " }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductRegions",
+                columns: new[] { "Id", "CreatedAt", "Name" },
+                values: new object[,]
+                {
+                    { "176a27e2-e5af-4835-85de-43424e1dda4e", new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3170), " " },
+                    { "40d3186e-97a7-4cbd-b1b8-92bff7ab7854", new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3206), "Akdeniz" }
                 });
 
             migrationBuilder.InsertData(
@@ -308,14 +326,14 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "RoleName" },
                 values: new object[,]
                 {
-                    { "06168679-593e-49ee-928b-271c1ede74c3", new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(6552), "User" },
-                    { "462362ec-7789-42b7-8cbb-7fe1f9bb5f6e", new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(6527), "Admin" }
+                    { "97b591ac-026f-4746-afc6-49dc4eb9d4c6", new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7296), "Admin" },
+                    { "9e62df2a-ec1c-4cab-90fd-71fe4c0b9ca7", new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7332), "User" }
                 });
 
             migrationBuilder.InsertData(
                 table: "SiteCommInfos",
                 columns: new[] { "Id", "CreatedAt", "Email", "GSM", "Phone", "SocialMedias", "WorkingHours" },
-                values: new object[] { "2d3323d6-45be-4ed1-bf0a-2fa4ec4291ff", new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(9481), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "Hafta içi: 09:00 – 17:30\r\n\r\nCumartesi: 09:00 – 13:00" });
+                values: new object[] { "5b8c4c62-b05b-42c3-aaf8-5e992e282493", new DateTime(2024, 12, 9, 21, 39, 31, 517, DateTimeKind.Local).AddTicks(4687), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "Hafta içi: 09:00 – 17:30\r\n\r\nCumartesi: 09:00 – 13:00" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_BasketDetails_BasketId",

@@ -20,7 +20,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasOne(p => p.ProductCategories).WithMany(p => p.Products).HasForeignKey(p => p.ProductCategoryId).IsRequired();
             builder.HasOne(p => p.ProductRegions).WithMany(p => p.Products).HasForeignKey(p => p.ProductRegionId).IsRequired();
 
-
+            //builder.HasData(new Product() { ProductName = "Aşuk Maşuk", IsAdult = true, Size = 14, UnitPriceForSale = 1500, ProductCategoryId = "", ProductRegionId = "", CreatedAt = DateTime.Now });
 
 
 

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mate.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20241209160317_CreateInit")]
+    [Migration("20241209183932_CreateInit")]
     partial class CreateInit
     {
         /// <inheritdoc />
@@ -226,26 +226,26 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f372f262-2e9d-45c6-8c62-d260eaddeba8",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6446),
+                            Id = "c760f684-cefa-4ebd-a7e9-220be36aab18",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3641),
                             Situation = "Siparişiniz Alındı"
                         },
                         new
                         {
-                            Id = "28191478-81d7-43e4-96e8-f5bb47170fdb",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6486),
+                            Id = "ba143887-2d99-4b83-9251-5e2d14cf6e03",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3689),
                             Situation = "Siparişiniz Hazırlanıyor"
                         },
                         new
                         {
-                            Id = "43629480-1b4d-46ca-8710-b4c7e99187a0",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6491),
+                            Id = "f1af4201-a341-4353-853f-0aa9217ccc17",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3694),
                             Situation = "Siparişiniz Kargoya verildi"
                         },
                         new
                         {
-                            Id = "979d875d-2afb-47eb-95d0-16bcadbcc71a",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 882, DateTimeKind.Local).AddTicks(6495),
+                            Id = "0b7184df-72e9-4a34-aafa-5ec5a75f5dfa",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3699),
                             Situation = "Siparişiniz Tamamlandı"
                         });
                 });
@@ -322,6 +322,20 @@ namespace Mate.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("ProductCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "fd14fcfe-c308-43f1-b527-8c21300646b9",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2810),
+                            Name = " "
+                        },
+                        new
+                        {
+                            Id = "6f3620d8-33d5-4cab-a8eb-f901bfbf587f",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2880),
+                            Name = "Zeybek"
+                        });
                 });
 
             modelBuilder.Entity("Mate.Entities.Concrete.ProductRegion", b =>
@@ -344,6 +358,20 @@ namespace Mate.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("ProductRegions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "176a27e2-e5af-4835-85de-43424e1dda4e",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3170),
+                            Name = " "
+                        },
+                        new
+                        {
+                            Id = "40d3186e-97a7-4cbd-b1b8-92bff7ab7854",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3206),
+                            Name = "Akdeniz"
+                        });
                 });
 
             modelBuilder.Entity("Mate.Entities.Concrete.Role", b =>
@@ -370,14 +398,14 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "462362ec-7789-42b7-8cbb-7fe1f9bb5f6e",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(6527),
+                            Id = "97b591ac-026f-4746-afc6-49dc4eb9d4c6",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7296),
                             RoleName = "Admin"
                         },
                         new
                         {
-                            Id = "06168679-593e-49ee-928b-271c1ede74c3",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(6552),
+                            Id = "9e62df2a-ec1c-4cab-90fd-71fe4c0b9ca7",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7332),
                             RoleName = "User"
                         });
                 });
@@ -432,8 +460,8 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2d3323d6-45be-4ed1-bf0a-2fa4ec4291ff",
-                            CreatedAt = new DateTime(2024, 12, 9, 19, 3, 16, 883, DateTimeKind.Local).AddTicks(9481),
+                            Id = "5b8c4c62-b05b-42c3-aaf8-5e992e282493",
+                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 517, DateTimeKind.Local).AddTicks(4687),
                             Email = "matekostum@gmail.com",
                             GSM = "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun",
                             Phone = "0212 549 77 34",
