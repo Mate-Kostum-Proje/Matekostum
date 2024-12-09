@@ -8,10 +8,9 @@ namespace Mate.Entities.Concrete
         public int ProductSize { get; set; }
         public int Amount { get; set; }
         public bool IsSale { get; set; }
+        public UserInfo UserInfo { get; set; }
+        public OrderSituation OrderSituation { get; set; }
         public List<Product> Product { get; set; }
-        public List<UserInfo> UserInfo { get; set; }
-        public List<OrderSituation> OrderSituation { get; set; }
-
 
     }
 }

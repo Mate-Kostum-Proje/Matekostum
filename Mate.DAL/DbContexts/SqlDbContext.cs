@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using Mate.Entities.Concrete;
+﻿using Mate.Entities.Concrete;
+using Mate.Entities.EntityConfig.Abstract;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mate.DAL.DbContexts
@@ -35,7 +35,7 @@ namespace Mate.DAL.DbContexts
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(BaseConfig<>).Assembly);
         }
     }
 }
