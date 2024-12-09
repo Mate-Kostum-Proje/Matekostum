@@ -2,7 +2,7 @@
 
 namespace Mate.Entities.Concrete
 {
-    public class FotoGalery : BaseEntity
+    public class FotoGalery : BaseEntity //TODO
     {
 
     }

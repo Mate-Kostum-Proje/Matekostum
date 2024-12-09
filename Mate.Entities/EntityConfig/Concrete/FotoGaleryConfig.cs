@@ -9,6 +9,7 @@ namespace Mate.Entities.EntityConfig.Concrete
         public override void Configure(EntityTypeBuilder<FotoGalery> builder)
         {
             base.Configure(builder);
+            //TODO
         }
     }
 }

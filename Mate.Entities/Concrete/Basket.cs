@@ -2,7 +2,7 @@
 
 namespace Mate.Entities.Concrete
 {
-    public class Basket : BaseEntity //TODO??
+    public class Basket : BaseEntity
     {
 
 

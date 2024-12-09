@@ -2,7 +2,7 @@
 
 namespace Mate.Entities.Concrete
 {
-    public class Product : BaseEntity
+    public class Product : BaseEntity //TODO
     {
         public string ProductName { get; set; }
         public string? Description { get; set; }
