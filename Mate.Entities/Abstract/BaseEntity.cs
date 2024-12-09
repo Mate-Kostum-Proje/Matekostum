@@ -1,13 +1,13 @@
 ﻿namespace Mate.Entities.Abstract
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
-        public string GuidId { get; set; }
+        public string Id { get; set; }
         public DateTime CreatedAt { get; set; }
 
         protected BaseEntity()
         {
-            GuidId = Guid.NewGuid().ToString();
+            Id = Guid.NewGuid().ToString();
         }
     }
 }

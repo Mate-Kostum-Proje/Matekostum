@@ -1,0 +1,20 @@
+﻿using Mate.Entities.Concrete;
+using Mate.Entities.EntityConfig.Abstract;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace Mate.Entities.EntityConfig.Concrete
+{
+    public class RoleConfig : BaseConfig<Role>
+    {
+        public override void Configure(EntityTypeBuilder<Role> builder)
+        {
+            base.Configure(builder);
+            builder.Property(p => p.RoleName).HasMaxLength(50);
+            builder.HasIndex(p => p.RoleName).IsUnique();
+
+            builder.HasData(new Role() { RoleName = "Admin", CreatedAt = DateTime.Now });
+            builder.HasData(new Role() { RoleName = "User", CreatedAt = DateTime.Now });
+        }
+    }
+
+}

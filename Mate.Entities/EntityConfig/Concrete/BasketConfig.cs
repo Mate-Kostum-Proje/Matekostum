@@ -9,6 +9,7 @@ namespace Mate.Entities.EntityConfig.Concrete
         public override void Configure(EntityTypeBuilder<Basket> builder)
         {
             base.Configure(builder);
+            builder.HasOne(p => p.UserInfos).WithMany(p => p.BasketList).HasForeignKey(p => p.UserId).IsRequired();
 
         }
     }

@@ -8,7 +8,7 @@ namespace Mate.Entities.EntityConfig.Abstract
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
-            builder.HasKey(x => x.GuidId);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.CreatedAt).ValueGeneratedOnAdd();
         }
     }

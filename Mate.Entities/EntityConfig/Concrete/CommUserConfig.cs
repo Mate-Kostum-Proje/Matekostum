@@ -9,6 +9,9 @@ namespace Mate.Entities.EntityConfig.Concrete
         public override void Configure(EntityTypeBuilder<CommUser> builder)
         {
             base.Configure(builder);
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Property(p => p.Email).IsRequired().HasMaxLength(50);
+            builder.Property(p => p.Message).IsRequired().HasMaxLength(500);
         }
     }
 }

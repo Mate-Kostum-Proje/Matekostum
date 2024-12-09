@@ -7,15 +7,21 @@ namespace Mate.DAL.DbContexts
     public class SqlDbContext : DbContext
     {
         public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketDetail> BasketDetails { get; set; }
+
         public DbSet<CommUser> CommUsers { get; set; }
         public DbSet<FotoGalery> FotoGaleries { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderSituation> OrderSituation { get; set; }
+        public DbSet<OrderDetail> OrdersDetail { get; set; }
+
+        public DbSet<OrderSituation> OrdersSituation { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductRegion> ProductRegions { get; set; }
         public DbSet<SiteCommInfo> SiteCommInfos { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
 
 
 
