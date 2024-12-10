@@ -1,6 +1,10 @@
-﻿namespace Mate.BL.Concrete
+﻿using Mate.BL.Abstract;
+using Mate.DAL.GenericRepository.Concrete;
+using Mate.Entities.Abstract;
+
+namespace Mate.BL.Concrete
 {
-    internal class Manager
+    public class Manager<T> : Repository<T>, IManager<T> where T : BaseEntity
     {
     }
 }
