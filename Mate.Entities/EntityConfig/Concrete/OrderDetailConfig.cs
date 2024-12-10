@@ -16,7 +16,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(x => x.UnitPiceForRent).HasMaxLength(100000);
             builder.Property(x => x.ProductSize).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Amount).IsRequired().HasMaxLength(500);
-            builder.Property(x => x.IsSale).IsRequired();
+
 
         }
     }

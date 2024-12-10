@@ -18,6 +18,7 @@ namespace Mate.DAL.DbContexts
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductRegion> ProductRegions { get; set; }
+        public DbSet<ProductSubRegion> ProductSubRegions { get; set; }
         public DbSet<SiteCommInfo> SiteCommInfos { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<Role> Roles { get; set; }
@@ -37,7 +38,7 @@ namespace Mate.DAL.DbContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("server=.\\MSSQLSERVER01;Database=MateKostum;Trusted_Connection=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("server=IDILERDOGAN\\MSSQLSERVER01;Database=MateKostum;Trusted_Connection=true;TrustServerCertificate=true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

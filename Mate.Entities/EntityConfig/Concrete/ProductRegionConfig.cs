@@ -14,15 +14,15 @@ namespace Mate.Entities.EntityConfig.Concrete
 
 
             //BÖLGELER(SATILIK KISIMDA)
-            builder.HasData(new ProductRegion() { Name = "AKDENİZ", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "EGE", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "DOGU ANADOLU", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "GÜNEYDOGU ANADOLU", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "İÇ ANADOLU", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "KAFKAS", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "KARADENİZ", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "MARMARA", CreatedAt = DateTime.Now });
-            builder.HasData(new ProductRegion() { Name = "TRAKYA", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "AKDENİZ", Name = "AKDENİZ", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "EGE", Name = "EGE", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "DOGU ANADOLU", Name = "DOGU ANADOLU", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "GÜNEYDOGU ANADOLU", Name = "GÜNEYDOGU ANADOLU", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "İÇ ANADOLU", Name = "İÇ ANADOLU", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "KAFKAS", Name = "KAFKAS", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "KARADENİZ", Name = "KARADENİZ", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "MARMARA", Name = "MARMARA", CreatedAt = DateTime.Now });
+            builder.HasData(new ProductRegion() { Id = "TRAKYA", Name = "TRAKYA", CreatedAt = DateTime.Now });
 
 
         }

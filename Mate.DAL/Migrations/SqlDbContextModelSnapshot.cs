@@ -169,9 +169,6 @@ namespace Mate.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsSale")
-                        .HasColumnType("bit");
-
                     b.Property<string>("OrderId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -223,26 +220,26 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c760f684-cefa-4ebd-a7e9-220be36aab18",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3641),
+                            Id = "fbe70ba4-0c73-426d-b03c-c23f050c7cbd",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(1160),
                             Situation = "Siparişiniz Alındı"
                         },
                         new
                         {
-                            Id = "ba143887-2d99-4b83-9251-5e2d14cf6e03",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3689),
+                            Id = "eeafd935-1cd3-414f-b306-db90ba94e870",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(1194),
                             Situation = "Siparişiniz Hazırlanıyor"
                         },
                         new
                         {
-                            Id = "f1af4201-a341-4353-853f-0aa9217ccc17",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3694),
+                            Id = "fe60fa37-5fdf-4cbb-9e4a-9d083f589943",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(1199),
                             Situation = "Siparişiniz Kargoya verildi"
                         },
                         new
                         {
-                            Id = "0b7184df-72e9-4a34-aafa-5ec5a75f5dfa",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 513, DateTimeKind.Local).AddTicks(3699),
+                            Id = "3c7a0086-f763-47b6-801e-ae0f029a5b63",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(1203),
                             Situation = "Siparişiniz Tamamlandı"
                         });
                 });
@@ -260,8 +257,15 @@ namespace Mate.DAL.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<bool?>("Gender")
+                        .HasMaxLength(20)
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("IsAdult")
                         .IsRequired()
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSale")
                         .HasColumnType("bit");
 
                     b.Property<string>("ProductCategoryId")
@@ -274,6 +278,10 @@ namespace Mate.DAL.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ProductRegionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductSubRegionId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -295,6 +303,8 @@ namespace Mate.DAL.Migrations
                     b.HasIndex("ProductCategoryId");
 
                     b.HasIndex("ProductRegionId");
+
+                    b.HasIndex("ProductSubRegionId");
 
                     b.ToTable("Products");
                 });
@@ -323,15 +333,33 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fd14fcfe-c308-43f1-b527-8c21300646b9",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2810),
+                            Id = "1boş",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(3159),
                             Name = " "
                         },
                         new
                         {
-                            Id = "6f3620d8-33d5-4cab-a8eb-f901bfbf587f",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 514, DateTimeKind.Local).AddTicks(2880),
-                            Name = "Zeybek"
+                            Id = "2halkoyun",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(3223),
+                            Name = "HALK OYUNLARI KIYAFETLERİ"
+                        },
+                        new
+                        {
+                            Id = "3kına",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(3229),
+                            Name = "BİNDALLI VE KINA"
+                        },
+                        new
+                        {
+                            Id = "4dans",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(3234),
+                            Name = "STİLİZE DANS"
+                        },
+                        new
+                        {
+                            Id = "5rond",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 142, DateTimeKind.Local).AddTicks(3238),
+                            Name = "ROND TÖREN"
                         });
                 });
 
@@ -359,15 +387,195 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "176a27e2-e5af-4835-85de-43424e1dda4e",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3170),
-                            Name = " "
+                            Id = "AKDENİZ",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(681),
+                            Name = "AKDENİZ"
                         },
                         new
                         {
-                            Id = "40d3186e-97a7-4cbd-b1b8-92bff7ab7854",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(3206),
-                            Name = "Akdeniz"
+                            Id = "EGE",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(700),
+                            Name = "EGE"
+                        },
+                        new
+                        {
+                            Id = "DOGU ANADOLU",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(706),
+                            Name = "DOGU ANADOLU"
+                        },
+                        new
+                        {
+                            Id = "GÜNEYDOGU ANADOLU",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(715),
+                            Name = "GÜNEYDOGU ANADOLU"
+                        },
+                        new
+                        {
+                            Id = "İÇ ANADOLU",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(720),
+                            Name = "İÇ ANADOLU"
+                        },
+                        new
+                        {
+                            Id = "KAFKAS",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(726),
+                            Name = "KAFKAS"
+                        },
+                        new
+                        {
+                            Id = "KARADENİZ",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(731),
+                            Name = "KARADENİZ"
+                        },
+                        new
+                        {
+                            Id = "MARMARA",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(735),
+                            Name = "MARMARA"
+                        },
+                        new
+                        {
+                            Id = "TRAKYA",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(739),
+                            Name = "TRAKYA"
+                        });
+                });
+
+            modelBuilder.Entity("Mate.Entities.Concrete.ProductSubRegion", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("ProductSubRegions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ADIYAMAN",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2708),
+                            Name = "ADIYAMAN"
+                        },
+                        new
+                        {
+                            Id = "ANKARA",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2727),
+                            Name = "ANKARA"
+                        },
+                        new
+                        {
+                            Id = "ARTVİN",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2738),
+                            Name = "ARTVİN"
+                        },
+                        new
+                        {
+                            Id = "BİLECİK",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2741),
+                            Name = "BİLECİK"
+                        },
+                        new
+                        {
+                            Id = "BİTLİS",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2745),
+                            Name = "BİTLİS"
+                        },
+                        new
+                        {
+                            Id = "BOLU",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2751),
+                            Name = "BOLU"
+                        },
+                        new
+                        {
+                            Id = "BURDUR",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2756),
+                            Name = "BURDUR"
+                        },
+                        new
+                        {
+                            Id = "DİYARBAKIR",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2760),
+                            Name = "DİYARBAKIR"
+                        },
+                        new
+                        {
+                            Id = "ELAZIĞ",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2763),
+                            Name = "ELAZIĞ"
+                        },
+                        new
+                        {
+                            Id = "GAZİANTEP",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2769),
+                            Name = "GAZİANTEP"
+                        },
+                        new
+                        {
+                            Id = "GİRESUN",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2775),
+                            Name = "GİRESUN"
+                        },
+                        new
+                        {
+                            Id = "HAKKARİ",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2779),
+                            Name = "HAKKARİ"
+                        },
+                        new
+                        {
+                            Id = "ROMAN",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2783),
+                            Name = "ROMAN"
+                        },
+                        new
+                        {
+                            Id = "SİLİFKE",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2787),
+                            Name = "SİLİFKE"
+                        },
+                        new
+                        {
+                            Id = "TEKE",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2791),
+                            Name = "TEKE"
+                        },
+                        new
+                        {
+                            Id = "TRABZON",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2795),
+                            Name = "TRABZON"
+                        },
+                        new
+                        {
+                            Id = "ÜSKÜP",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2799),
+                            Name = "ÜSKÜP"
+                        },
+                        new
+                        {
+                            Id = "VAN",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2810),
+                            Name = "VAN"
+                        },
+                        new
+                        {
+                            Id = "ZEYBEK",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(2820),
+                            Name = "ZEYBEK"
                         });
                 });
 
@@ -395,14 +603,14 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "97b591ac-026f-4746-afc6-49dc4eb9d4c6",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7296),
+                            Id = "10ed3ccf-f7e8-4d88-b297-827d702be4cc",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(4825),
                             RoleName = "Admin"
                         },
                         new
                         {
-                            Id = "9e62df2a-ec1c-4cab-90fd-71fe4c0b9ca7",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 516, DateTimeKind.Local).AddTicks(7332),
+                            Id = "e2c1cc6e-b0df-4c4f-b09b-acf993e31ba4",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(4843),
                             RoleName = "User"
                         });
                 });
@@ -457,8 +665,8 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5b8c4c62-b05b-42c3-aaf8-5e992e282493",
-                            CreatedAt = new DateTime(2024, 12, 9, 21, 39, 31, 517, DateTimeKind.Local).AddTicks(4687),
+                            Id = "71c13f19-8558-4faa-80f5-e509e0dedc4d",
+                            CreatedAt = new DateTime(2024, 12, 10, 12, 46, 38, 143, DateTimeKind.Local).AddTicks(7867),
                             Email = "matekostum@gmail.com",
                             GSM = "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun",
                             Phone = "0212 549 77 34",
@@ -630,9 +838,17 @@ namespace Mate.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Mate.Entities.Concrete.ProductSubRegion", "ProductSubRegions")
+                        .WithMany("Products")
+                        .HasForeignKey("ProductSubRegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ProductCategories");
 
                     b.Navigation("ProductRegions");
+
+                    b.Navigation("ProductSubRegions");
                 });
 
             modelBuilder.Entity("RoleUserInfo", b =>
@@ -678,6 +894,11 @@ namespace Mate.DAL.Migrations
                 });
 
             modelBuilder.Entity("Mate.Entities.Concrete.ProductRegion", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Mate.Entities.Concrete.ProductSubRegion", b =>
                 {
                     b.Navigation("Products");
                 });

@@ -10,6 +10,8 @@ namespace Mate.Entities.Concrete
         public int Size { get; set; }
         public int? UnitPriceForSale { get; set; }
         public int UnitPiceForRent { get; set; }
+        public bool IsSale { get; set; }
+        public bool? Gender { get; set; }
 
         //resim işi TODO
         public List<BasketDetail>? BasketDetails { get; set; }
@@ -19,6 +21,8 @@ namespace Mate.Entities.Concrete
         public string ProductCategoryId { get; set; }
         public ProductRegion ProductRegions { get; set; }
         public string ProductRegionId { get; set; }
+        public ProductSubRegion ProductSubRegions { get; set; }
+        public string ProductSubRegionId { get; set; }
 
     }
 }
