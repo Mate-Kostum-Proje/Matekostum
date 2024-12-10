@@ -12,8 +12,8 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(p => p.RoleName).HasMaxLength(50);
             builder.HasIndex(p => p.RoleName).IsUnique();
 
-            builder.HasData(new Role() { RoleName = "Admin", CreatedAt = DateTime.Now });
-            builder.HasData(new Role() { RoleName = "User", CreatedAt = DateTime.Now });
+            builder.HasData(new Role() {Id="ad" ,RoleName = "Admin", CreatedAt = DateTime.Now });
+            builder.HasData(new Role() {Id="us" ,RoleName = "User", CreatedAt = DateTime.Now });
         }
     }
 
