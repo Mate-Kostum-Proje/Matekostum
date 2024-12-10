@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mate.Entities.Concrete;
 using Mate.Entities.EntityConfig.Abstract;
-using Mate.Entities.Concrete;
 
 namespace Mate.Entities.EntityConfig.Concrete
 {
-    public class MainMenuConfig:BaseConfig<MainMenu>
+    public class MainMenuConfig : BaseConfig<MainMenu>
     {
         public override void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<MainMenu> builder)
         {
@@ -95,5 +90,5 @@ namespace Mate.Entities.EntityConfig.Concrete
              }
              );
         }
-    }  
+    }
 }

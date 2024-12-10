@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mate.Entities.Abstract;
+﻿using Mate.Entities.Abstract;
 
 namespace Mate.Entities.Concrete
 {
-    public class MainMenu:BaseEntity
+    public class MainMenu : BaseEntity
     {
         public string MenuName { get; set; }
         public string? ActionName { get; set; }

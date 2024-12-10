@@ -34,7 +34,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             //builder.HasData(new ProductSubRegion() { Id = "GREASE", Name = "GREASE", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "HAKKARİ", Name = "HAKKARİ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "HALAY", Name = "HALAY", CreatedAt = DateTime.Now });
-            //KAFKAS EKLEDİM
+            //KAFKAS EKLEDİM-Ekleme region da zaten var
             //builder.HasData(new ProductSubRegion() { Id = "KAFKAS", Name = "KAFKAS", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "ROMAN", Name = "ROMAN", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "SİLİFKE", Name = "SİLİFKE", CreatedAt = DateTime.Now });
@@ -43,7 +43,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new ProductSubRegion() { Id = "ÜSKÜP", Name = "ÜSKÜP", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "VAN", Name = "VAN", CreatedAt = DateTime.Now });
             builder.HasData(new ProductSubRegion() { Id = "ZEYBEK", Name = "ZEYBEK", CreatedAt = DateTime.Now });
-            
+
         }
     }
 }
