@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mate Kostüm</title>
+    <title>@ViewData["Title"] Mate Kostüm</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Mate.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <partial name="_Navbar" />
     </header>
-    
+
 
 	
     <div class="container">
@@ -20,12 +21,9 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer id="main-footer">
-        <div id="footer-bottom">
-            <div class="container clearfix">
+    <footer id="footer" class="footer dark-background">  
+            <div class="container">
                 <ul class="et-social-icons">
-
                     <li class="et-social-icon et-social-facebook">
                         <a href="https://www.facebook.com/mate.kostum/?locale=tr_TR" target="_blank" class="icon">
                             <span>Facebook</span>
@@ -36,11 +34,11 @@
                             <span>Instagram</span>
                         </a>
                     </li>
-
-                </ul><p id="footer-info">Copyright © 2024 <a href="https://www.matekostum.com.tr/" rel="home">Mate Kostüm</a>&nbsp;|&nbsp;<em><a>İdil Erdoğan & Tuba Bakan Tursun</a></em></p>
-
+                </ul>
+                <div class="credits text-center">
+                    <p id="footer-info">Copyright © 2024 <a href="https://www.matekostum.com.tr/" rel="home">Mate Kostüm</a>&nbsp;|&nbsp;<em><a>İdil Erdoğan & Tuba Bakan Tursun</a></em></p>
+                </div>
             </div>
-        </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
