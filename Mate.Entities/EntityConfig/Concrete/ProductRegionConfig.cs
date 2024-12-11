@@ -13,6 +13,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasIndex(p => p.Name).IsUnique();
 
 
+
             //BÖLGELER(SATILIK KISIMDA)
             builder.HasData(new ProductRegion() { Id = "AKDENİZ", Name = "AKDENİZ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductRegion() { Id = "EGE", Name = "EGE", CreatedAt = DateTime.Now });

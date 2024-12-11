@@ -12,6 +12,8 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(p => p.Name).HasMaxLength(50).IsRequired();
             builder.HasIndex(p => p.Name).IsUnique();
 
+
+
             builder.HasData(new ProductCategory() { Id = "1boş", Name = " ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductCategory() { Id = "2halkoyun", Name = "HALK OYUNLARI KIYAFETLERİ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductCategory() { Id = "3kına", Name = "BİNDALLI VE KINA", CreatedAt = DateTime.Now });

@@ -9,6 +9,7 @@ namespace Mate.Entities.EntityConfig.Abstract
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.HasIndex(p => p.Id).IsUnique();
             builder.Property(x => x.CreatedAt).ValueGeneratedOnAdd();
         }
     }

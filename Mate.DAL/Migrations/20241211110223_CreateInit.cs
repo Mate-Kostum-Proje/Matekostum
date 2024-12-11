@@ -144,18 +144,18 @@ namespace Mate.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Product",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    IsAdult = table.Column<bool>(type: "bit", nullable: false),
-                    Size = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    UnitPriceForSale = table.Column<int>(type: "int", maxLength: 100000, nullable: true),
-                    UnitPriceForRent = table.Column<int>(type: "int", maxLength: 100000, nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsAdult = table.Column<bool>(type: "bit", nullable: true),
+                    Size = table.Column<int>(type: "int", nullable: false),
+                    UnitPriceForSale = table.Column<int>(type: "int", nullable: true),
+                    UnitPriceForRent = table.Column<int>(type: "int", nullable: false),
                     IsSale = table.Column<bool>(type: "bit", nullable: false),
-                    Gender = table.Column<bool>(type: "bit", maxLength: 20, nullable: true),
+                    Gender = table.Column<bool>(type: "bit", nullable: true),
                     PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductCategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProductRegionId = table.Column<string>(type: "nvarchar(450)", nullable: true),
@@ -164,20 +164,20 @@ namespace Mate.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_ProductCategories_ProductCategoryId",
+                        name: "FK_Product_ProductCategories_ProductCategoryId",
                         column: x => x.ProductCategoryId,
                         principalTable: "ProductCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Products_ProductRegions_ProductRegionId",
+                        name: "FK_Product_ProductRegions_ProductRegionId",
                         column: x => x.ProductRegionId,
                         principalTable: "ProductRegions",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Products_ProductSubRegions_ProductSubRegionId",
+                        name: "FK_Product_ProductSubRegions_ProductSubRegionId",
                         column: x => x.ProductSubRegionId,
                         principalTable: "ProductSubRegions",
                         principalColumn: "Id");
@@ -309,9 +309,9 @@ namespace Mate.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BasketDetails_Products_ProductId",
+                        name: "FK_BasketDetails_Product_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -339,9 +339,9 @@ namespace Mate.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrdersDetail_Products_ProductId",
+                        name: "FK_OrdersDetail_Product_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -351,12 +351,12 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "ActionName", "AreaName", "ClassName", "ControllerName", "CreatedAt", "CssName", "IconName", "MenuName", "OrderNo", "ParentMenuId", "ParentMenuId1", "RoleId", "RolesId" },
                 values: new object[,]
                 {
-                    { "About", "", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2751), "", null, "About", null, null, null, 1, null },
-                    { "Comm", "Comm", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2761), "", null, "Comm", null, null, null, 1, null },
-                    { "Galery", "Galery", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2759), "", null, "Galery", null, null, null, 1, null },
-                    { "Home", "Index", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2738), "", null, "Home", null, null, null, 1, null },
-                    { "ProductRent", "ProductRent", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2754), "", null, "ProductRent", null, null, null, 1, null },
-                    { "ProductSale", "ProductSale", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 10, 17, 50, 12, 495, DateTimeKind.Local).AddTicks(2756), "", null, "ProductSale", null, null, null, 1, null }
+                    { "About", "", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4838), "", null, "About", null, null, null, 1, null },
+                    { "Comm", "Comm", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4848), "", null, "Comm", null, null, null, 1, null },
+                    { "Galery", "Galery", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4846), "", null, "Galery", null, null, null, 1, null },
+                    { "Home", "Index", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4824), "", null, "Home", null, null, null, 1, null },
+                    { "ProductRent", "ProductRent", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4841), "", null, "ProductRent", null, null, null, 1, null },
+                    { "ProductSale", "ProductSale", null, "far fa-circle nav-icon", "Home", new DateTime(2024, 12, 11, 14, 2, 23, 448, DateTimeKind.Local).AddTicks(4843), "", null, "ProductSale", null, null, null, 1, null }
                 });
 
             migrationBuilder.InsertData(
@@ -364,10 +364,10 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Situation" },
                 values: new object[,]
                 {
-                    { "6105e8f2-a089-4a35-9e62-469ce459590d", new DateTime(2024, 12, 10, 17, 50, 12, 496, DateTimeKind.Local).AddTicks(8513), "Siparişiniz Alındı" },
-                    { "83612a90-58ba-49e5-8c88-1fa034473877", new DateTime(2024, 12, 10, 17, 50, 12, 496, DateTimeKind.Local).AddTicks(8529), "Siparişiniz Hazırlanıyor" },
-                    { "94de2dba-0199-464e-bdc0-40b4c2cd7804", new DateTime(2024, 12, 10, 17, 50, 12, 496, DateTimeKind.Local).AddTicks(8539), "Siparişiniz Kargoya verildi" },
-                    { "e3a9b8d8-1479-45fe-8ba0-ed01cae6c0e5", new DateTime(2024, 12, 10, 17, 50, 12, 496, DateTimeKind.Local).AddTicks(8543), "Siparişiniz Tamamlandı" }
+                    { "808b204e-5175-43d4-bc40-2b84d28a6d6e", new DateTime(2024, 12, 11, 14, 2, 23, 450, DateTimeKind.Local).AddTicks(7887), "Siparişiniz Alındı" },
+                    { "ae01048d-c951-43f8-8524-cb9a4a2bad52", new DateTime(2024, 12, 11, 14, 2, 23, 450, DateTimeKind.Local).AddTicks(7914), "Siparişiniz Tamamlandı" },
+                    { "b0d93886-08d4-4aa4-9728-facf9d7e393d", new DateTime(2024, 12, 11, 14, 2, 23, 450, DateTimeKind.Local).AddTicks(7910), "Siparişiniz Kargoya verildi" },
+                    { "b90decc9-e929-4dc4-b8c0-b1c0737f0eab", new DateTime(2024, 12, 11, 14, 2, 23, 450, DateTimeKind.Local).AddTicks(7905), "Siparişiniz Hazırlanıyor" }
                 });
 
             migrationBuilder.InsertData(
@@ -375,11 +375,11 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { "1boş", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(493), " " },
-                    { "2halkoyun", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(512), "HALK OYUNLARI KIYAFETLERİ" },
-                    { "3kına", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(518), "BİNDALLI VE KINA" },
-                    { "4dans", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(522), "STİLİZE DANS" },
-                    { "5rond", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(527), "ROND TÖREN" }
+                    { "1boş", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(341), " " },
+                    { "2halkoyun", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(360), "HALK OYUNLARI KIYAFETLERİ" },
+                    { "3kına", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(365), "BİNDALLI VE KINA" },
+                    { "4dans", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(368), "STİLİZE DANS" },
+                    { "5rond", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(377), "ROND TÖREN" }
                 });
 
             migrationBuilder.InsertData(
@@ -387,15 +387,15 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { "AKDENİZ", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8367), "AKDENİZ" },
-                    { "DOGU ANADOLU", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8396), "DOGU ANADOLU" },
-                    { "EGE", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8391), "EGE" },
-                    { "GÜNEYDOGU ANADOLU", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8400), "GÜNEYDOGU ANADOLU" },
-                    { "İÇ ANADOLU", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8404), "İÇ ANADOLU" },
-                    { "KAFKAS", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8411), "KAFKAS" },
-                    { "KARADENİZ", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8415), "KARADENİZ" },
-                    { "MARMARA", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8419), "MARMARA" },
-                    { "TRAKYA", new DateTime(2024, 12, 10, 17, 50, 12, 497, DateTimeKind.Local).AddTicks(8424), "TRAKYA" }
+                    { "AKDENİZ", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2549), "AKDENİZ" },
+                    { "DOGU ANADOLU", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2571), "DOGU ANADOLU" },
+                    { "EGE", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2567), "EGE" },
+                    { "GÜNEYDOGU ANADOLU", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2575), "GÜNEYDOGU ANADOLU" },
+                    { "İÇ ANADOLU", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2579), "İÇ ANADOLU" },
+                    { "KAFKAS", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2585), "KAFKAS" },
+                    { "KARADENİZ", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2589), "KARADENİZ" },
+                    { "MARMARA", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2597), "MARMARA" },
+                    { "TRAKYA", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(2600), "TRAKYA" }
                 });
 
             migrationBuilder.InsertData(
@@ -403,27 +403,27 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { "ADIYAMAN", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(861), "ADIYAMAN" },
-                    { "ANKARA", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(880), "ANKARA" },
-                    { "ARTVİN", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(885), "ARTVİN" },
-                    { "BİLECİK", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(889), "BİLECİK" },
-                    { "BİTLİS", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(893), "BİTLİS" },
-                    { "BOLU", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(899), "BOLU" },
-                    { "BURDUR", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(907), "BURDUR" },
-                    { "ÇİFTETELLİ", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(903), "ÇİFTETELLİ" },
-                    { "DİYARBAKIR", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(913), "DİYARBAKIR" },
-                    { "ELAZIĞ", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(917), "ELAZIĞ" },
-                    { "GAZİANTEP", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(922), "GAZİANTEP" },
-                    { "GİRESUN", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(927), "GİRESUN" },
-                    { "HAKKARİ", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(931), "HAKKARİ" },
-                    { "HALAY", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(935), "HALAY" },
-                    { "ROMAN", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(939), "ROMAN" },
-                    { "SİLİFKE", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(943), "SİLİFKE" },
-                    { "TEKE", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(949), "TEKE" },
-                    { "TRABZON", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(954), "TRABZON" },
-                    { "ÜSKÜP", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(958), "ÜSKÜP" },
-                    { "VAN", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(962), "VAN" },
-                    { "ZEYBEK", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(966), "ZEYBEK" }
+                    { "ADIYAMAN", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4753), "ADIYAMAN" },
+                    { "ANKARA", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4770), "ANKARA" },
+                    { "ARTVİN", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4774), "ARTVİN" },
+                    { "BİLECİK", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4778), "BİLECİK" },
+                    { "BİTLİS", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4782), "BİTLİS" },
+                    { "BOLU", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4787), "BOLU" },
+                    { "BURDUR", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4807), "BURDUR" },
+                    { "ÇİFTETELLİ", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4803), "ÇİFTETELLİ" },
+                    { "DİYARBAKIR", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4811), "DİYARBAKIR" },
+                    { "ELAZIĞ", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4815), "ELAZIĞ" },
+                    { "GAZİANTEP", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4819), "GAZİANTEP" },
+                    { "GİRESUN", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4823), "GİRESUN" },
+                    { "HAKKARİ", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4827), "HAKKARİ" },
+                    { "HALAY", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4831), "HALAY" },
+                    { "ROMAN", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4837), "ROMAN" },
+                    { "SİLİFKE", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4840), "SİLİFKE" },
+                    { "TEKE", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4844), "TEKE" },
+                    { "TRABZON", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4849), "TRABZON" },
+                    { "ÜSKÜP", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4852), "ÜSKÜP" },
+                    { "VAN", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4856), "VAN" },
+                    { "ZEYBEK", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(4859), "ZEYBEK" }
                 });
 
             migrationBuilder.InsertData(
@@ -431,14 +431,14 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "RoleName" },
                 values: new object[,]
                 {
-                    { "ad", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(2981), "Admin" },
-                    { "us", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(2999), "User" }
+                    { "ad", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(6980), "Admin" },
+                    { "us", new DateTime(2024, 12, 11, 14, 2, 23, 451, DateTimeKind.Local).AddTicks(7001), "User" }
                 });
 
             migrationBuilder.InsertData(
                 table: "SiteCommInfos",
                 columns: new[] { "Id", "CreatedAt", "Email", "GSM", "Phone", "SocialMedias", "WorkingHours" },
-                values: new object[] { "2f532805-1d26-43de-be95-dc063ea45923", new DateTime(2024, 12, 10, 17, 50, 12, 498, DateTimeKind.Local).AddTicks(6182), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "Hafta içi: 09:00 – 17:30\r\n\r\nCumartesi: 09:00 – 13:00" });
+                values: new object[] { "2c272b5e-1d37-4c9f-b5ff-cc3bde70c145", new DateTime(2024, 12, 11, 14, 2, 23, 455, DateTimeKind.Local).AddTicks(766), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı\r\n\r\n0530 909 11 34 – Erdem\r\n\r\nİmalat\r\n\r\n0532 321 64 97 – İsmail\r\n0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "Hafta içi: 09:00 – 17:30\r\n\r\nCumartesi: 09:00 – 13:00" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_BasketDetails_BasketId",
@@ -446,14 +446,44 @@ namespace Mate.DAL.Migrations
                 column: "BasketId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BasketDetails_Id",
+                table: "BasketDetails",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BasketDetails_ProductId",
                 table: "BasketDetails",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Baskets_Id",
+                table: "Baskets",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Baskets_UserId",
                 table: "Baskets",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CommUsers_Id",
+                table: "CommUsers",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FotoGaleries_Id",
+                table: "FotoGaleries",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MainMenu_Id",
+                table: "MainMenu",
+                column: "Id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_MainMenu_ParentMenuId1",
@@ -466,6 +496,12 @@ namespace Mate.DAL.Migrations
                 column: "RolesId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Orders_Id",
+                table: "Orders",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_SituationName",
                 table: "Orders",
                 column: "SituationName");
@@ -474,6 +510,12 @@ namespace Mate.DAL.Migrations
                 name: "IX_Orders_UserId",
                 table: "Orders",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrdersDetail_Id",
+                table: "OrdersDetail",
+                column: "Id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrdersDetail_OrderId",
@@ -486,9 +528,42 @@ namespace Mate.DAL.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_OrdersSituation_Id",
+                table: "OrdersSituation",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_ProductCategoryId",
+                table: "Product",
+                column: "ProductCategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_ProductRegionId",
+                table: "Product",
+                column: "ProductRegionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_ProductSubRegionId",
+                table: "Product",
+                column: "ProductSubRegionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_Id",
+                table: "ProductCategories",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProductCategories_Name",
                 table: "ProductCategories",
                 column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductRegions_Id",
+                table: "ProductRegions",
+                column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -498,24 +573,21 @@ namespace Mate.DAL.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ProductCategoryId",
-                table: "Products",
-                column: "ProductCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_ProductRegionId",
-                table: "Products",
-                column: "ProductRegionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_ProductSubRegionId",
-                table: "Products",
-                column: "ProductSubRegionId");
+                name: "IX_ProductSubRegions_Id",
+                table: "ProductSubRegions",
+                column: "Id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductSubRegions_Name",
                 table: "ProductSubRegions",
                 column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Roles_Id",
+                table: "Roles",
+                column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -542,6 +614,12 @@ namespace Mate.DAL.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_SiteCommInfos_Id",
+                table: "SiteCommInfos",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SiteCommInfos_Phone",
                 table: "SiteCommInfos",
                 column: "Phone",
@@ -557,6 +635,12 @@ namespace Mate.DAL.Migrations
                 name: "IX_UserInfos_GSM",
                 table: "UserInfos",
                 column: "GSM",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserInfos_Id",
+                table: "UserInfos",
+                column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -597,7 +681,7 @@ namespace Mate.DAL.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "Roles");

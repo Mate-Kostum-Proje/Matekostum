@@ -1,49 +1,48 @@
-﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container-fluid">
+﻿<link rel="stylesheet" href="~/css/Mate.css" />
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">AnaSayfa</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Hakkımızda">Hakkımızda</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Kostüm Kiralama</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Kostüm Satış</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Galeri</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">İletişim</a>
-                </li>
-            </ul>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <a class="navbar-brand text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Çıkış</a>
-            }
-            else
-            {
-                <a class="navbar-brand text-dark" asp-area="" asp-controller="Account" asp-action="Login">Giriş</a>
-            }
-        </div>
-    </div>
-</nav>
+<header id="main-header" data-height-onload="66">
+	<div class="container clearfix et_menu_container">
+		<div class="logo_container">
+			<span class="logo_helper"></span>
+			<a asp-area="" asp-controller="Home" asp-action="Index">
+				<img src="https://www.matekostum.com.tr/wp-content/uploads/2019/02/mate_yeni_logo.png" width="200" height="38" alt="Mate Kostüm" id="logo" data-height-percentage="54" />
+			</a>
+		</div>
+		<div id="et-top-navigation" data-height="66" data-fixed-height="40">
+			<nav id="top-menu-nav">
+				<ul id="top-menu" class="nav">
+					<li id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-331"><a asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+					<li id="menu-item-330" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-157 current_page_item menu-item-330"><a asp-area="" asp-controller="Home" asp-action="Hakkımızda" aria-current="page">Hakkımızda</a></li>
+					<li id="menu-item-630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-630">
+						<a asp-area="" asp-controller="Home" asp-action="Index">Kostüm Kiralama</a>
+						<ul class="sub-menu">
+							<li id="menu-item-333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-333"><a href="https://www.matekostum.com.tr/kiralik-halk-oyunlari/">Halk Oyunları</a></li>
+							<li id="menu-item-1472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1472"><a href="https://www.matekostum.com.tr/kiralik-kina-kiyafetleri/">Bindallı ve Kına</a></li>
+							<li id="menu-item-669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-669"><a href="https://www.matekostum.com.tr/kiralik-stilize-dans/">Stilize Dans</a></li>
+							<li id="menu-item-727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727"><a href="https://www.matekostum.com.tr/kiralik-rond-toren-gosteri/">Rond Tören</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-882" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-882">
+						<a href="https://www.matekostum.com.tr/yoresel-kiyafetler/">Kostüm Satış</a>
+						<ul class="sub-menu">
+							<li id="menu-item-883" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-883"><a href="https://www.matekostum.com.tr/yoresel-kiyafetler/">Halk Oyunları</a></li>
+							<li id="menu-item-901" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-901"><a href="https://www.matekostum.com.tr/stilize-modern-dans-kostum-satis-tasarim/">Tasarım</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-932"><a href="https://www.matekostum.com.tr/galeri/">Galeri</a></li>
+					<li id="menu-item-329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a asp-area="" asp-controller="Home" asp-action="İletişim">İletişim</a></li>
+				</ul>
+			</nav>
+
+
+
+
+			<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Bir Sayfa Seçin</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>
+		</div> <!-- #et-top-navigation -->
+	</div> <!-- .container -->
+</header> <!-- #main-header -->

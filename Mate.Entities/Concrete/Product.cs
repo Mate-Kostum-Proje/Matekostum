@@ -20,9 +20,9 @@ namespace Mate.Entities.Concrete
 
         public ProductCategory ProductCategories { get; set; }
         public string ProductCategoryId { get; set; }
-        public ProductRegion ProductRegions { get; set; }
+        public ProductRegion? ProductRegions { get; set; }
         public string? ProductRegionId { get; set; }
-        public ProductSubRegion ProductSubRegions { get; set; }
+        public ProductSubRegion? ProductSubRegions { get; set; }
         public string? ProductSubRegionId { get; set; }
 
     }

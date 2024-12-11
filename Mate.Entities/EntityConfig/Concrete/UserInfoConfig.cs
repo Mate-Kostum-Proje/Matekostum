@@ -24,6 +24,8 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(x => x.District).IsRequired().HasMaxLength(20);
 
 
+
+            // builder.HasData(new UserInfo() { Name = "İdil", SurName = "Erdoğan", TcNo = "12260515552" });
         }
     }
 }
