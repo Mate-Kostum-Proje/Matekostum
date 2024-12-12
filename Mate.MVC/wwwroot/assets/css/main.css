@@ -819,8 +819,26 @@ section,
   object-fit: cover;
   z-index: 1;
 }
+.logoboi {
+    max-width: 40px; /* Geniþlik en fazla 100px olsun */
+    height: 47px; /* Oranlarýný koruyarak boyunu ayarla */
+    display: flex; /* Satýr içi yerine blok yapar */
+    margin: 0 auto; /* Ortalar */
+    filter: hue-rotate(90deg);
+}
+.logoboi-red {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(100%) saturate(300%) hue-rotate(360deg); /* Sarý ton verir */
+}
+.image-container-hero {
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    height: 47px; /* Konteynerin yüksekliðini belirleyin */
+    width: 100%; /* Konteynerin geniþliðini belirleyin */
+    background-color: ; /* Konteynerin arka planý */
+}
 
-.hero:before {
+
+  .hero:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
