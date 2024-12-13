@@ -1,0 +1,66 @@
+﻿@model List<SiteCommInfo>
+
+@foreach (var item in Model.OrderByDescending(p => p.Id))
+{
+
+    <div class="info-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+        <i class="bi bi-geo-alt flex-shrink-0"></i>
+        <div>
+            <h3>Adresimiz</h3>
+            <p>@item.Address</p>
+            <br/>
+            <h3>Metro Ulaşım</h3>
+            <p>@item.Transportation</p>
+        </div>
+    </div><!-- End Info Item -->
+
+    <div class="info-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+        <i class="bi bi-telephone flex-shrink-0"></i>
+        <div>
+            <h3>Telefon Numaralarımız</h3>
+            <p>@item.Phone</p>
+        </div>
+    </div>
+
+    <!-- End Info Item -->
+    <div class="info-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+        <i class="bi bi-telephone flex-shrink-0"></i>
+        <div>
+            <h3>GSM</h3>
+            <div class="col-8">
+                <p1>@item.GSM1</p1>
+            </div>
+            <div>
+                <p1>@item.GSM2</p1>
+            </div>
+            <div>
+                <p1>@item.GSM3</p1>
+            </div>
+        </div>
+    </div><!-- End Info Item -->
+
+    <div class="info-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
+        <i class="bi bi-envelope flex-shrink-0"></i>
+        <div>
+            <h3>Email Adresimiz</h3>
+            <p>@item.Email</p>
+        </div>
+    </div>
+    <div class="info-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
+        <i class="bi bi-envelope flex-shrink-0"></i>
+        <div>
+            <h3>Çalışma Saatlerimiz</h3>
+            <p>@item.WorkingHours</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+}

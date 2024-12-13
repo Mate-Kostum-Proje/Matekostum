@@ -2,9 +2,8 @@
 
 @foreach (var item in Model.OrderByDescending(p => p.Id))
 {
-    if (item.ProductCategoryId=="2halkoyun" && item.IsSale==false)
+    if (item.ProductCategoryId == "2halkoyun" && item.IsSale == true && item.IsAdult == false)
     {
-
         if (item.IsAdult == false)
         {
             // Çocuk View kısmı gelecek
@@ -26,6 +25,7 @@
 
 
         }
+
     }
 
 }

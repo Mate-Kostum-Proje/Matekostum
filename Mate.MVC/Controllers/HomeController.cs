@@ -31,11 +31,6 @@ namespace Mate.MVC.Controllers
         {
             return View();
         }
-        public IActionResult Ýletiþim()
-        {
-            return View();
-        }
-
 
     }
 }

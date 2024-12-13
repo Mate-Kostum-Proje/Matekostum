@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Models.Components
 {
-    public class ProductKiralıkRondViewController : ViewComponent
+    public class ProductKiralıkRondViewComponent : ViewComponent
     {
         private readonly IManager<Product> product;
 
-        public ProductKiralıkRondViewController(IManager<Product> product)
+        public ProductKiralıkRondViewComponent(IManager<Product> product)
         {
             this.product = product;
         }

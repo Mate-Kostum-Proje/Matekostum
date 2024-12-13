@@ -10,6 +10,7 @@ namespace Mate.Entities.EntityConfig.Concrete
         {
             base.Configure(builder);
             builder.Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Property(p => p.Subject).IsRequired().HasMaxLength(100);
             builder.Property(p => p.Email).IsRequired().HasMaxLength(50);
             builder.Property(p => p.Message).IsRequired().HasMaxLength(500);
         }

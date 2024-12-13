@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Models.Components
 {
-    public class ProductKiralıkHalkoyunViewController : ViewComponent
+    public class GaleriViewComponent : ViewComponent
     {
-        private readonly IManager<Product> product;
+        private readonly IManager<FotoGalery> fotoGalery;
 
-        public ProductKiralıkHalkoyunViewController(IManager<Product> product)
+        public GaleriViewComponent(IManager<FotoGalery> fotoGalery)
         {
-            this.product = product;
+            this.fotoGalery = fotoGalery;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             // Bu bolum Daha sonra degistirilecek. Gelen Kullanicinin Role'une gore veriler cekilecek
-            var products = product.GetAll();
-            return View(products);
+            var fotoGaleries = fotoGalery.GetAll();
+            return View(fotoGaleries);
         }
     }
 }
