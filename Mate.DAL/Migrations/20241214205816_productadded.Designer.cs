@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mate.DAL.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20241214201107_productadded")]
+    [Migration("20241214205816_productadded")]
     partial class productadded
     {
         /// <inheritdoc />
@@ -221,7 +221,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Index",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7036),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5006),
                             CssName = "",
                             MenuName = "Home",
                             RoleId = 1
@@ -232,7 +232,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7072),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5023),
                             CssName = "",
                             MenuName = "About",
                             RoleId = 1
@@ -243,7 +243,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "ProductRent",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7076),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5027),
                             CssName = "",
                             MenuName = "ProductRent",
                             RoleId = 1
@@ -254,7 +254,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "ProductSale",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7079),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5031),
                             CssName = "",
                             MenuName = "ProductSale",
                             RoleId = 1
@@ -265,7 +265,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Galery",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7081),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5034),
                             CssName = "",
                             MenuName = "Galery",
                             RoleId = 1
@@ -276,7 +276,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Comm",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 346, DateTimeKind.Local).AddTicks(7084),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 614, DateTimeKind.Local).AddTicks(5037),
                             CssName = "",
                             MenuName = "Comm",
                             RoleId = 1
@@ -381,26 +381,26 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1bc7e5cd-26d5-4c93-a6ae-d4df879b90ba",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(3748),
+                            Id = "316fe61a-df9a-4f9a-a1cf-d38bddc7d1e0",
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(1445),
                             Situation = "Siparişiniz Alındı"
                         },
                         new
                         {
-                            Id = "863fb516-f859-446d-a88c-f0581dc7d79d",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(3766),
+                            Id = "adc9819e-2652-4a24-9571-48cdc482cb0e",
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(1463),
                             Situation = "Siparişiniz Hazırlanıyor"
                         },
                         new
                         {
-                            Id = "d5b5cf74-3230-4ee2-a380-ffdc25d709b2",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(3771),
+                            Id = "5561f7d6-dc4f-4285-becb-51eeb11fde36",
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(1468),
                             Situation = "Siparişiniz Kargoya verildi"
                         },
                         new
                         {
-                            Id = "af293261-9b20-439d-b19d-057da64c4639",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(3780),
+                            Id = "32cde440-d0ca-4f43-8b49-866a466b74b6",
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(1472),
                             Situation = "Siparişiniz Tamamlandı"
                         });
                 });
@@ -478,9 +478,9 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "84095e86-1265-42cd-8ea9-b314d8fb28cd",
+                            Id = "cbc91ef5-9188-42bf-8186-366568541ffb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2630),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(381),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNADIYAMANÇOCUKKİRALIK.jpg",
@@ -493,9 +493,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "2100a61f-ff55-4cd2-9d51-1d4c9ec042e0",
+                            Id = "a1cf300a-3019-4d68-a4fe-4bbcad18764e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2651),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(410),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNANKARAÇOCUKKİRALIK.jpg",
@@ -508,9 +508,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "308b01ba-a3c0-4f5c-b057-6303f1b0196e",
+                            Id = "4f213486-0bd1-42ae-aedc-03b8ee298b8b",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2662),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(417),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNARTVİNÇOCUKKİRALIK.jpg",
@@ -523,9 +523,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "302ff986-c581-49cb-8e3d-aa25052dc98f",
+                            Id = "ae295f6f-0a5e-47fb-82db-6784ab564848",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2669),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(422),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNARTVİN-İŞLİÇOCUKKİRALIK.jpg",
@@ -538,9 +538,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "e778e29c-2542-4764-8348-a07e26fad73b",
+                            Id = "0f8b324d-c6d5-49fb-b005-a69166df6491",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2674),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(428),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBİLECİKÇOCUKKİRALIK.jpg",
@@ -553,9 +553,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "fd9ec548-edc0-4d04-adbf-56234c2716d4",
+                            Id = "a64fdae0-b70c-4b7b-810a-ec99c649f680",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2681),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(435),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -569,9 +569,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "60d88e97-c65d-41b3-8d23-3d363bc951a2",
+                            Id = "af9a33bd-bca8-4048-935b-da2b94f41fed",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2687),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(441),
                             Gender = true,
                             IsAdult = false,
                             IsSale = false,
@@ -585,9 +585,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "1f743518-04cc-4ecc-b110-f3e679a44408",
+                            Id = "c176b7c1-3f7d-49d0-a0c5-9ed3f8ff82bb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2774),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(451),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBOLU-İŞLİÇOCUKKİRALIK.jpg",
@@ -600,9 +600,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "a49e8a05-230d-4acc-9339-3c6343270a83",
+                            Id = "a8508f78-c901-4f1a-b960-f5e81b70c2dd",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2779),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(456),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBOLU-SADEÇOCUKKİRALIK.jpg",
@@ -615,9 +615,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "31d2a508-bba0-445c-a155-ffee37269cb9",
+                            Id = "014cf3e3-93ac-41d6-aa40-c12f64eec162",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2786),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(508),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNDİYARBAKIRÇOCUKKİRALIK.jpg",
@@ -630,9 +630,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "1d586bc4-f1d1-4d92-9001-8f5431cc0f3a",
+                            Id = "94abe53c-8f96-48c1-a8f1-24a126d0299a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2794),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(514),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNELAZIĞÇOCUKKİRALIK.jpg",
@@ -645,9 +645,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "c87cb4a0-2aa4-4f21-94a9-ec2cd5728b13",
+                            Id = "a964986c-3b3e-46b0-a715-da99556c106d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2799),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(519),
                             Gender = true,
                             IsAdult = false,
                             IsSale = false,
@@ -661,9 +661,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "0126b076-7c63-4d17-8c34-f526d128f4e4",
+                            Id = "ffcf7de3-e281-4003-bb40-e8f50cb69e3c",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2812),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(524),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -677,9 +677,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "e4692bbf-7c97-4bcd-9fa5-630e441125d2",
+                            Id = "7df65846-34ec-4143-ab2d-e84a0e223c9f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2816),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(529),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNHALAY-KIRMIZIÇOCUKKİRALIK.jpg",
@@ -691,9 +691,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "a57a9fa5-37f1-4f33-b7a7-f30b1cf1f98e",
+                            Id = "a95709ea-68db-411f-9e27-b26441776e7f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2821),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(536),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNHALAY-SİYAHÇOCUKKİRALIK.jpg",
@@ -705,9 +705,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "8b47b45e-3093-4540-8869-f2c777a84683",
+                            Id = "aeef3e31-4aa8-4b4f-bdd0-fc86e3f666dc",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2826),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(543),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKARADENİZÇOCUKKİRALIK.jpg",
@@ -719,9 +719,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "61ba1654-0b9c-42d0-9392-cb6f9563b622",
+                            Id = "a2827556-7da4-4c6e-80e2-5cf0655ff717",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2830),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(548),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKAFKAS-KIRMIZIÇOCUKKİRALIK.jpg",
@@ -733,9 +733,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "6fb1bb2c-357b-4877-b75e-4790ac6428c4",
+                            Id = "3d832da9-ee02-4dd4-a630-cc5f7ce7cb0e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2836),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(553),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKAFKAS-MORÇOCUKKİRALIK.jpg",
@@ -747,9 +747,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "6ac6f20a-a68f-49f3-b374-76baefc8d463",
+                            Id = "77ff1cb8-926c-46a0-8ef9-02fc297321fb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2843),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(558),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNSİLİFKEÇOCUKKİRALIK.jpg",
@@ -762,9 +762,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "467e1918-7f06-428a-9f74-e4f23adf3d91",
+                            Id = "fc89e941-131c-454d-976f-e6ce635e78f6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2848),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(565),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -778,9 +778,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "d73d28e4-e038-479f-8501-5cee8f4499c0",
+                            Id = "38499c62-1bf7-45d1-8453-e816a22cd45d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2853),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(570),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTEKE-YEŞİLÇOCUKKİRALIK.jpg",
@@ -793,9 +793,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "9146fada-301d-429c-879b-d4b0e6e7066f",
+                            Id = "03e6fcbf-b143-4a3b-956d-28927f114941",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2858),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(575),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTEKE-PEMBEÇOCUKKİRALIK.jpg",
@@ -808,9 +808,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "c374267e-bdbb-41b6-819a-9635bd8bcf37",
+                            Id = "d4769ddf-836f-4929-9d17-98e7e756f5f6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2863),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(585),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYAÇOCUKKİRALIK.jpg",
@@ -822,9 +822,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "141ec255-9b4a-4c06-8ce0-3008fcd0c399",
+                            Id = "4b32ae03-66c8-4a17-84e4-0e6ea0c40809",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2868),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(594),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNÜSKÜPÇOCUKKİRALIK.jpg",
@@ -837,9 +837,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "26d63e4d-6ea7-4439-b9ad-edd7e784f50a",
+                            Id = "86c4c189-cb16-4e36-87f3-505b43e72840",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2872),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(599),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYA-PEMBEÇOCUKKİRALIK.jpg",
@@ -851,9 +851,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "38fcc66e-0076-4a9e-b17b-439f716c397c",
+                            Id = "59553183-1666-4e7b-bf35-422225fb53d7",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2877),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(604),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYA-BEYAZÇOCUKKİRALIK.jpg",
@@ -865,9 +865,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "75402948-27fa-4d13-ac8b-b4130310dd21",
+                            Id = "3512cb86-830d-432e-b012-7ee311a4a9fb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2884),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(608),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNVANÇOCUKKİRALIK.jpg",
@@ -880,9 +880,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "f1228a75-250d-4ba9-a906-6add87cef18c",
+                            Id = "d92b4bfe-425d-4976-a77c-37e97f2e7eeb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2888),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(614),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-BORDOÇOCUKKİRALIK.jpg",
@@ -895,9 +895,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "5439eaff-7bb1-44ea-acc9-2ed04e50945d",
+                            Id = "63f704c9-42eb-43ee-92bf-439ea803f148",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2893),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(619),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -911,9 +911,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "721c4062-43d9-4d39-85f7-6f0119e1558f",
+                            Id = "1d945b74-879b-4b08-b743-131e095afe21",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2898),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(624),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-İŞLİÇOCUKKİRALIK.jpg",
@@ -926,9 +926,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "fd21e70a-db7f-4bf4-8d89-968e47b7e207",
+                            Id = "5dd0bc8f-b2e7-4b85-8a5f-e03e5db426cb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2903),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(629),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-MORÇOCUKKİRALIK.jpg",
@@ -941,9 +941,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "71db168a-2c5b-4bda-85c7-d62f960f1e0c",
+                            Id = "9f850632-b8f1-4a31-aa41-b2030f29b836",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2908),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(636),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -953,9 +953,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "b092d75c-8739-42b6-bc71-61802c03d6e8",
+                            Id = "b15dd258-5047-4733-9a96-08611b7d0a01",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2912),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(641),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -965,9 +965,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "c5480631-56d2-4645-a062-331814ca436b",
+                            Id = "c9a2deb1-21b9-4101-b6ae-c9241b374fee",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2923),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(646),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -977,9 +977,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "788489cf-6df7-40fa-b876-ef539538dade",
+                            Id = "7cc5d7ff-44c9-4a36-8f3a-82734f9db93d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2929),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(651),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -989,9 +989,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "6ab4c655-77dc-4b3d-82d3-67d96fb6e40a",
+                            Id = "143e20b8-c942-4367-961e-b970befb3ba0",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2933),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(655),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1001,9 +1001,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "b1d34a68-59d7-467e-9829-4ce22aa98c07",
+                            Id = "cbd82e72-0d51-481c-8b04-cb3cc0cfa78a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2938),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(659),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1013,9 +1013,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "ac4d428b-b873-4f72-9cac-c3cecf94bcaa",
+                            Id = "ae2437a0-82fe-48dd-8e82-a479818cc7d1",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2942),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(664),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1026,9 +1026,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "b8053909-bcab-471d-a4ab-48efc03cc62f",
+                            Id = "ab769758-876e-44f1-83e6-6c492d2a7f0f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2947),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(668),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1039,9 +1039,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "955ac722-3362-416c-9e83-9e3ddb080080",
+                            Id = "01b3099f-bc4c-4f37-a3d0-7f7c5968794b",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2952),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(675),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1052,9 +1052,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "d6124c5f-06d1-40f6-8e1f-09325b4de549",
+                            Id = "05e9caf5-4d7d-4587-b8c2-f0f6ffe51a3e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2957),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(681),
                             IsAdult = false,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1065,9 +1065,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "fe0ab5ef-89fd-410b-beec-f8008a99e582",
+                            Id = "fd02b09f-f8ab-4bbc-89cd-f3ea12de26c3",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2961),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(686),
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "1boş",
@@ -1077,9 +1077,10 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "96aaab6c-9913-45e8-a779-be7fc0e9f7cd",
+                            Id = "a8eb5703-0262-4a4a-9c3c-00dcc314384f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2967),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(692),
+                            Gender = false,
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1089,9 +1090,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "d9659c1b-1953-4316-9d2d-647e4a3c7e11",
+                            Id = "36a1e643-0a12-4d4d-9ae2-9f3243f47186",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2973),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(701),
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1101,9 +1102,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "71776438-d1ae-442e-a4b8-ca475b980657",
+                            Id = "8bc64e90-debb-4663-b171-4e7b59adb35f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2978),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(705),
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1113,9 +1114,9 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "29dccf20-080b-4e8a-943e-9a008a95544d",
+                            Id = "931b724b-0a31-4fa0-806f-c0288f3049d7",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2982),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(709),
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "4dans",
@@ -1125,44 +1126,15 @@ namespace Mate.DAL.Migrations
                         },
                         new
                         {
-                            Id = "e81542f3-2584-4e73-90a3-e3f32606fdc5",
+                            Id = "d3b94882-13bf-4f41-8c40-489bd2b77309",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2986),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(714),
                             IsAdult = true,
                             IsSale = false,
                             ProductCategoryId = "4dans",
-                            ProductName = "SALSA",
+                            ProductName = "STİLİZE SARI",
                             Size = 8,
-                            UnitPriceForRent = 0,
-                            UnitPriceForSale = 1500
-                        },
-                        new
-                        {
-                            Id = "ec0f1112-6ee2-47b2-aaac-adef43fd43f3",
-                            Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2990),
-                            Gender = false,
-                            IsAdult = true,
-                            IsSale = false,
-                            ProductCategoryId = "4dans",
-                            ProductName = "SALSA E",
-                            Size = 8,
-                            UnitPriceForRent = 0,
-                            UnitPriceForSale = 1500
-                        },
-                        new
-                        {
-                            Id = "a6cf0ca7-4384-40f3-9b0e-4ce86a4847d5",
-                            Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(2995),
-                            IsAdult = true,
-                            IsSale = false,
-                            ProductCategoryId = "2halkoyun",
-                            ProductName = "AŞUK MAŞUK",
-                            ProductRegionId = "AKDENİZ",
-                            Size = 14,
-                            UnitPriceForRent = 0,
-                            UnitPriceForSale = 1500
+                            UnitPriceForRent = 1500
                         });
                 });
 
@@ -1194,31 +1166,31 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "1boş",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(6080),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(3813),
                             Name = " "
                         },
                         new
                         {
                             Id = "2halkoyun",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(6099),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(3833),
                             Name = "HALK OYUNLARI KIYAFETLERİ"
                         },
                         new
                         {
                             Id = "3kına",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(6104),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(3838),
                             Name = "BİNDALLI VE KINA"
                         },
                         new
                         {
                             Id = "4dans",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(6108),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(3843),
                             Name = "STİLİZE DANS"
                         },
                         new
                         {
                             Id = "5rond",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 348, DateTimeKind.Local).AddTicks(6111),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 616, DateTimeKind.Local).AddTicks(3852),
                             Name = "ROND TÖREN"
                         });
                 });
@@ -1251,55 +1223,55 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "AKDENİZ",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5311),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3027),
                             Name = "AKDENİZ"
                         },
                         new
                         {
                             Id = "EGE",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5335),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3048),
                             Name = "EGE"
                         },
                         new
                         {
                             Id = "DOGU ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5340),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3053),
                             Name = "DOGU ANADOLU"
                         },
                         new
                         {
                             Id = "GÜNEYDOGU ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5344),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3057),
                             Name = "GÜNEYDOGU ANADOLU"
                         },
                         new
                         {
                             Id = "İÇ ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5355),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3062),
                             Name = "İÇ ANADOLU"
                         },
                         new
                         {
                             Id = "KAFKAS",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5361),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3068),
                             Name = "KAFKAS"
                         },
                         new
                         {
                             Id = "KARADENİZ",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5365),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3072),
                             Name = "KARADENİZ"
                         },
                         new
                         {
                             Id = "MARMARA",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5370),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3076),
                             Name = "MARMARA"
                         },
                         new
                         {
                             Id = "TRAKYA",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(5374),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(3081),
                             Name = "TRAKYA"
                         });
                 });
@@ -1332,127 +1304,127 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "ADIYAMAN",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7850),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5378),
                             Name = "ADIYAMAN"
                         },
                         new
                         {
                             Id = "ANKARA",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7870),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5397),
                             Name = "ANKARA"
                         },
                         new
                         {
                             Id = "ARTVİN",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7875),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5402),
                             Name = "ARTVİN"
                         },
                         new
                         {
                             Id = "BİLECİK",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7879),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5406),
                             Name = "BİLECİK"
                         },
                         new
                         {
                             Id = "BİTLİS",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7885),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5410),
                             Name = "BİTLİS"
                         },
                         new
                         {
                             Id = "BOLU",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7890),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5416),
                             Name = "BOLU"
                         },
                         new
                         {
                             Id = "ÇİFTETELLİ",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7894),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5420),
                             Name = "ÇİFTETELLİ"
                         },
                         new
                         {
                             Id = "BURDUR",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7898),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5429),
                             Name = "BURDUR"
                         },
                         new
                         {
                             Id = "DİYARBAKIR",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7904),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5441),
                             Name = "DİYARBAKIR"
                         },
                         new
                         {
                             Id = "ELAZIĞ",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7909),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5446),
                             Name = "ELAZIĞ"
                         },
                         new
                         {
                             Id = "GAZİANTEP",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7913),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5451),
                             Name = "GAZİANTEP"
                         },
                         new
                         {
                             Id = "GİRESUN",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7917),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5455),
                             Name = "GİRESUN"
                         },
                         new
                         {
                             Id = "HAKKARİ",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7920),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5459),
                             Name = "HAKKARİ"
                         },
                         new
                         {
                             Id = "HALAY",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7924),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5463),
                             Name = "HALAY"
                         },
                         new
                         {
                             Id = "ROMAN",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7928),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5467),
                             Name = "ROMAN"
                         },
                         new
                         {
                             Id = "SİLİFKE",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7932),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5472),
                             Name = "SİLİFKE"
                         },
                         new
                         {
                             Id = "TEKE",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7937),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5476),
                             Name = "TEKE"
                         },
                         new
                         {
                             Id = "TRABZON",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7949),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5481),
                             Name = "TRABZON"
                         },
                         new
                         {
                             Id = "ÜSKÜP",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7954),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5485),
                             Name = "ÜSKÜP"
                         },
                         new
                         {
                             Id = "VAN",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7958),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5489),
                             Name = "VAN"
                         },
                         new
                         {
                             Id = "ZEYBEK",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 349, DateTimeKind.Local).AddTicks(7961),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(5493),
                             Name = "ZEYBEK"
                         });
                 });
@@ -1485,13 +1457,13 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "ad",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 350, DateTimeKind.Local).AddTicks(273),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(8168),
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = "us",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 350, DateTimeKind.Local).AddTicks(293),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 617, DateTimeKind.Local).AddTicks(8188),
                             RoleName = "User"
                         });
                 });
@@ -1575,9 +1547,9 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "850f6f2d-8cce-4ea6-b119-bc64f01f7749",
+                            Id = "12dcb913-4e77-4ac7-badd-a263e760e759",
                             Address = "İkitelli Organize Sanayi Bölgesi Giyim Sanatkarları İş ve Ticaret Merkezi (Deposite A.V.M.arkası) 4. Ada C Blok Kat:1 No:114\r\nBaşakşehir – İSTANBUL",
-                            CreatedAt = new DateTime(2024, 12, 14, 23, 11, 7, 350, DateTimeKind.Local).AddTicks(4889),
+                            CreatedAt = new DateTime(2024, 12, 14, 23, 58, 15, 618, DateTimeKind.Local).AddTicks(3778),
                             Email = "matekostum@gmail.com",
                             GSM1 = "Kiralama WhatsApp İletişim Hattı \r\n\r\n 0530 909 11 34 – Erdem",
                             GSM2 = "İmalat \r\n\r\n 0532 321 64 97 – İsmail",
@@ -1662,7 +1634,7 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5f2bfee4-6132-40b8-bbc2-7cc3271211c9",
+                            Id = "3ca4936f-74f4-44ed-9620-4daaeb4d8048",
                             Address = " uxi sokak. Lola Apt. Paksim Caddesi, No:11",
                             City = "İstanbul",
                             District = "Maltepe",

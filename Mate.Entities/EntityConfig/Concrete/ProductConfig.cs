@@ -77,18 +77,14 @@ namespace Mate.Entities.EntityConfig.Concrete
 			builder.HasData(new Product() { ProductName = "ROMAN KIR(1)", Amount = 10, IsAdult = false, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", ProductSubRegionId = "ROMAN", CreatedAt = DateTime.Now });
 			builder.HasData(new Product() { ProductName = "ROMAN MOR", Amount = 10, IsAdult = false, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", ProductSubRegionId = "ROMAN", CreatedAt = DateTime.Now });
 			builder.HasData(new Product() { ProductName = "SALSA", Amount = 10, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "1boş", CreatedAt = DateTime.Now });
-			builder.HasData(new Product() { ProductName = "SALSA E", Amount = 10, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
+			builder.HasData(new Product() { ProductName = "SALSA E", Amount = 10, Gender = false, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
 			builder.HasData(new Product() { ProductName = "STİLİZE KIRMIZI", Amount = 10, IsAdult = true, IsSale = false, Size = 8, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
 			builder.HasData(new Product() { ProductName = "STİLİZE MOR", Amount = 10, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
 			builder.HasData(new Product() { ProductName = "STİLİZE PEMBE", Amount = 10, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
+			builder.HasData(new Product() { ProductName = "STİLİZE SARI", Amount = 10, IsAdult = true, Size = 8, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
 
 
-			//builder.HasData(new Product() { ProductName = "    ", IsAdult = true, Size = 8, UnitPriceForSale = 1500, ProductCategoryId = "", ProductRegionId = "", CreatedAt = DateTime.Now });//BOŞLUK ?
-			builder.HasData(new Product() { ProductName = "SALSA", Amount = 10, IsAdult = true, Size = 8, UnitPriceForSale = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
-			builder.HasData(new Product() { ProductName = "SALSA E", Amount = 10, Gender = false, IsAdult = true, Size = 8, UnitPriceForSale = 1500, ProductCategoryId = "4dans", CreatedAt = DateTime.Now });
 
-
-			builder.HasData(new Product() { ProductName = "AŞUK MAŞUK", Amount = 10, IsAdult = true, Size = 14, UnitPriceForSale = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "AKDENİZ", CreatedAt = DateTime.Now });
 
 		}
 	}
