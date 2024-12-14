@@ -7,19 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\minishop-master\**" />
+    <Content Remove="wwwroot\minishop-master\**" />
+    <EmbeddedResource Remove="wwwroot\minishop-master\**" />
+    <None Remove="wwwroot\minishop-master\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\assets\.DS_Store" />
-    <None Include="wwwroot\minishop-master\.DS_Store" />
-    <None Include="wwwroot\minishop-master\css\.DS_Store" />
-    <None Include="wwwroot\minishop-master\css\bootstrap\.DS_Store" />
-    <None Include="wwwroot\minishop-master\css\css\.DS_Store" />
-    <None Include="wwwroot\minishop-master\css\css\mixins\.DS_Store" />
-    <None Include="wwwroot\minishop-master\fonts\.DS_Store" />
-    <None Include="wwwroot\minishop-master\fonts\flaticon\.DS_Store" />
-    <None Include="wwwroot\minishop-master\fonts\ionicons\fonts\.DS_Store" />
-    <None Include="wwwroot\minishop-master\images\.DS_Store" />
-    <None Include="wwwroot\minishop-master\js\.DS_Store" />
-    <None Include="wwwroot\minishop-master\scss\.DS_Store" />
-    <None Include="wwwroot\minishop-master\scss\bootstrap\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +44,7 @@
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\HalkOyunlarıS\Yetişkin\" />
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\HalkOyunlarıS\Çocuk\" />
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\Tasarım\" />
+    <Folder Include="wwwroot\databaseimg\" />
   </ItemGroup>
 
 </Project>

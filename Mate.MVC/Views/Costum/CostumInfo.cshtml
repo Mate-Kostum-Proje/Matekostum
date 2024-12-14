@@ -10,7 +10,7 @@
 
 <div class="product-detail-container-single-product">
 	<div class="product-image-single-product">
-		<img src="~/assets/img/abdullah_dogan_ekmekcioglu.jpg" alt="">
+		<img src="@Url.Content(Model.PhotoPath)" alt="">
 	</div>
 	<div class="product-info-single-product">
 		<h1 class="product-title-single-product">@Model.ProductName</h1>
@@ -111,3 +111,9 @@
 	});
 </script>
 
+@* <img id="dynamicPhoto" data-url="@Url.Content(Model.PhotoPath)" />
+
+<script>
+	const photoUrl = document.getElementById('dynamicPhoto').getAttribute('data-url');
+	console.log(photoUrl); // Fotoğraf yolunu alır ve JavaScript'te kullanır
+</script> *@

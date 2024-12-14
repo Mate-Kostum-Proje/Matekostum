@@ -20,16 +20,16 @@
 					<a asp-area="" asp-controller="Home" asp-action="Index"><span>Kostüm Kiralama</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
 						<li><a asp-area="" asp-controller="Costum" asp-action="ProductKiralıkHalkoyun">Halk Oyunları</a></li>
-						<li><a asp-area="" asp-controller="Costum" asp-action="ProductKiralıkHalkoyunTekilAdult">Bindallı ve Kına</a></li>
-						<li><a asp-area="" asp-controller="Costum" asp-action="Index">Stilize Dans</a></li>
-						<li><a asp-area="" asp-controller="Costum" asp-action="Index">Rond Tören</a></li>
+						<li><a asp-area="" asp-controller="Costum" asp-action="ProductKiralıkBindal">Bindallı ve Kına</a></li>
+						<li><a asp-area="" asp-controller="Costum" asp-action="ProductKiralıkDans">Stilize Dans</a></li>
+						<li><a asp-area="" asp-controller="Costum" asp-action="ProductKiralıkRond">Rond Tören</a></li>
 
 					</ul>
 				</li>
 				<li class="dropdown">
 					<a asp-area="" asp-controller="Home" asp-action="Index"><span>Kostüm Satış</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 					<ul>
-						<li><a asp-area="" asp-controller="Home" asp-action="Index">Halk Oyunları</a></li>
+						<li><a asp-area="" asp-controller="Costum" asp-action="ProductSatılıkHalkoyun">Halk Oyunları</a></li>
 						<li><a asp-area="" asp-controller="Costum" asp-action="Tasarım">Tasarım</a></li>
 					</ul>
 				</li>
@@ -38,6 +38,14 @@
 			</ul>
 			<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 		</nav>
-		<a class="btn-getstarted"  asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+		 @if (User.Identity.IsAuthenticated)
+         {
+			<a class="btn-getstarted" asp-area="" asp-controller="Account" asp-action="Logout">Çıkış Yap</a>
+			
+		 }
+		 else
+         {
+			<a class="btn-getstarted" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+		 }
 	</div>
 </header>

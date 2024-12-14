@@ -49,46 +49,5 @@ namespace Mate.MVC.Controllers
 		{
 			return View();
 		}
-		public IActionResult ProductKiralıkHalkoyunTekilAdult()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkHalkoyunTekilC()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkDansTekilC()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkDansTekilAdult()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkRondTekilC()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkRondTekilAdult()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkBindalTekilAdult()
-		{
-			return View();
-		}
-		public IActionResult ProductKiralıkBindalTekilC()
-		{
-			return View();
-		}
-		public IActionResult ProductSatılıkHalkoyunTekilC()
-		{
-			return View();
-		}
-		public IActionResult ProductSatılıkHalkoyunTekilAdult()
-		{
-			return View();
-		}
-
 	}
 }

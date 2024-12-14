@@ -53,10 +53,7 @@ namespace Mate.MVC.Controllers
 			var claims = new List<Claim>
 			{
 				new Claim(ClaimTypes.NameIdentifier, loginVM.Email),
-				new Claim(ClaimTypes.Name,user.Name + " " + user.Name),
-				new Claim(ClaimTypes.MobilePhone,user.GSM),
-				new Claim(ClaimTypes.Email,user.Email + " " + user.Email),
-				new Claim(ClaimTypes.Role,roles),
+				new Claim(ClaimTypes.Role,roles)
                 //new Claim(ClaimTypes.UserData,user.PhotoPath)
 
             };
@@ -68,8 +65,8 @@ namespace Mate.MVC.Controllers
 			var userClaimPrinciple = new ClaimsPrincipal(claimIdentity);
 
 
-			//var signIn = HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity),
-			//    _userService.AuthenticationOptions(model.RememberMe));
+			//var signIn = HttpContext.SignInAsync(new ClaimsPrincipal(claimIdentity),
+			//	userManager.AuthenticationOptions(model.RememberMe));
 
 			await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
 				userClaimPrinciple, authenticationProperty);

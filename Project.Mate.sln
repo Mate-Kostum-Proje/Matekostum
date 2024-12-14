@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mate.BL", "Mate.BL\Mate.BL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mate.DAL", "Mate.DAL\Mate.DAL.csproj", "{797D1192-9BA6-41C7-8522-DF7E6C4EDBA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mate.Api", "Mate.Api\Mate.Api.csproj", "{F1454DE5-D622-4A71-9039-8A1ED536B7B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mate.Api", "Mate.Api\Mate.Api.csproj", "{F1454DE5-D622-4A71-9039-8A1ED536B7B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mate.MVC", "Mate.MVC\Mate.MVC.csproj", "{8ACC6596-297E-47B1-AE1B-4ECD3FF8FA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mate.MVC", "Mate.MVC\Mate.MVC.csproj", "{8ACC6596-297E-47B1-AE1B-4ECD3FF8FA27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mate.Console", "Mate.Console\Mate.Console.csproj", "{C03A19AB-F072-46B0-8D3C-F8A3411B69CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8ACC6596-297E-47B1-AE1B-4ECD3FF8FA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ACC6596-297E-47B1-AE1B-4ECD3FF8FA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ACC6596-297E-47B1-AE1B-4ECD3FF8FA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03A19AB-F072-46B0-8D3C-F8A3411B69CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03A19AB-F072-46B0-8D3C-F8A3411B69CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03A19AB-F072-46B0-8D3C-F8A3411B69CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03A19AB-F072-46B0-8D3C-F8A3411B69CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

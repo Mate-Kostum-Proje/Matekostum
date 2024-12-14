@@ -1740,13 +1740,6 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* Genel Stil */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
 
 /* Ürün Kartlarý Konteyneri */
 .product-container {
@@ -1778,10 +1771,19 @@ body {
 
 
 /* Görsel Alaný */
-.image-wrapper {
+.product-image-wrapper {
     width: 200px;
     height: 258px;
     margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-image-wrapper img {
+    width: 200px;
+    height: 285px;
+    margin: 0 auto;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1793,7 +1795,7 @@ body {
 .button-group {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-top: 50px;
 }
 
 .add-to-cart,
@@ -1848,17 +1850,7 @@ body {
     margin-top: 10px;
 }
 
-    .product-price .old-price {
-        text-decoration: line-through;
-        color: #999;
-        font-size: 14px;
-        margin-right: 5px;
-    }
 
-    .product-price .new-price {
-        color: #e63946;
-        font-weight: bold;
-    }
 
 /*Single Product Css'i*/
 

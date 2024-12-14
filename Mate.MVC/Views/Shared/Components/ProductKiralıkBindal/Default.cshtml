@@ -5,27 +5,31 @@
     if (item.ProductCategoryId == "3kına" && item.IsSale == false)
     {
 
-        if (item.IsAdult == false)
-        {
-            // Çocuk View kısmı gelecek
+		<a href="@Url.Action("CostumInfo", "Costum", new { id = item.Id })" class="img-prod">
+			<div class="product-card">
+				<div class="product-image-wrapper">
+					<img src="@Url.Content(item.PhotoPath)" alt="">
+				</div>
+				<div class="button-group">
+					<button class="add-to-cart">Sepete Ekle</button>
+					<button class="buy-now">Satın Al</button>
+				</div>
+				@if (item.IsAdult == false)
+				{
+					<div class="product-category">Çocuk</div>
+				}
+				else
+				{
+					<div class="product-category">Yetişkin</div>
+				}
 
 
-
-
-
-
-        }
-        else if (item.IsAdult == false)
-        {
-            // Yetişkin View kısmı gelecek
-
-
-
-
-
-
-
-        }
+				<div class="product-title">@item.ProductName</div>
+				<div class="product-price">
+					<span>@item.UnitPriceForRent TL</span>
+				</div>
+			</div>
+		</a>
     }
 
 }
