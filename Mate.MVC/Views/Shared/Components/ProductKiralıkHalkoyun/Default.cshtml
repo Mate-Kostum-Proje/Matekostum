@@ -5,27 +5,31 @@
     if (item.ProductCategoryId=="2halkoyun" && item.IsSale==false)
     {
 
-        if (item.IsAdult == false)
-        {
-            // Çocuk View kısmı gelecek
-
-
-
-
-
-
-        }
-        else if (item.IsAdult == false)
-        {
-            // Yetişkin View kısmı gelecek
-
-
-
-
-
-
-
-        }
-    }
+		<a href="@Url.Action("CostumInfo", "Costum", new { id = item.Id })" class="img-prod">
+			<div class="product-card">
+				<div class="image-wrapper">
+					<img src="blue-boot.png" alt="Blue Boot">
+				</div>
+				<div class="button-group">
+					<button class="add-to-cart">Sepete Ekle</button>
+					<button class="buy-now">Satın Al</button>
+				</div>
+				@if (item.IsAdult==false)
+				{
+					<div class="product-category">Çocuk</div>
+				}
+				else
+				{
+					<div class="product-category">Yetişkin</div>
+				}
+				
+				<div class="product-title">@item.ProductName</div>
+				<div class="product-price">
+					<span>@item.UnitPriceForRent TL</span>
+				</div>
+			</div>
+		</a>
+	}
 
 }
+

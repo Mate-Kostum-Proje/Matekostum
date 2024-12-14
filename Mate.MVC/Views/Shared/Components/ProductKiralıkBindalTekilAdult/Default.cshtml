@@ -1,0 +1,13 @@
+﻿@model List<Product>
+
+@foreach (var item in Model.OrderByDescending(p => p.Id))
+{
+    if (item.ProductCategoryId == "3kına" && item.IsSale == false && item.IsAdult == true)
+    {
+        <h4>@item.ProductName</h4>
+        <h1>Bu Ürünü Kiralama Bedeli</h1>
+        <p class="price"><span>@item.UnitPriceForRent TL</span></p>
+        
+    }
+
+}

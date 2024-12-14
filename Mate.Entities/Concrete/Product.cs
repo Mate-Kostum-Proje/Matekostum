@@ -11,6 +11,8 @@ namespace Mate.Entities.Concrete
         public int? UnitPriceForSale { get; set; }
         public int UnitPriceForRent { get; set; }
         public bool IsSale { get; set; }
+        public int Amount { get; set; }
+
         public bool? Gender { get; set; }// kadın= true, erkek= false
         public string? PhotoPath { get; set; }
 
