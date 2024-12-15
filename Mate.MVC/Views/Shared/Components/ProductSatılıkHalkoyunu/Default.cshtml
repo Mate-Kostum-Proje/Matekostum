@@ -1,6 +1,6 @@
 ﻿@model List<Product>
 
-@foreach (var item in Model.OrderByDescending(p => p.Id))
+@foreach (var item in Model.OrderByDescending(p => p.IsAdult == false))
 {
     if (item.ProductCategoryId == "2halkoyun" && item.IsSale == true && item.IsAdult == false)
     {
