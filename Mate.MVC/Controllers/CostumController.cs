@@ -29,6 +29,14 @@ namespace Mate.MVC.Controllers
 
 			return View(product); // Ürün detaylarını göstermek için bir View döndürün
 		}
+		public IActionResult ProductKiralık()
+		{
+			return View();
+		}
+		public IActionResult ProductSatılık()
+		{
+			return View();
+		}
 		public IActionResult ProductKiralıkHalkoyun()
 		{
 			return View();
