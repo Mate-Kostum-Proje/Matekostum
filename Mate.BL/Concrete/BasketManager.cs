@@ -3,27 +3,21 @@ using Mate.Entities.Concrete;
 
 namespace Mate.BL.Concrete
 {
-	public class BasketManager : Manager<Basket>, IBasketManager
-	{
-		private readonly IManager<Basket> _basketRepository;
-		private readonly IManager<BasketDetail> _basketDetailRepository;
-		private readonly IManager<Product> _productRepository;
-
-		public BasketManager(
-
-			IManager<Basket> basketRepository,
+	public class BasketManager(IManager<Basket> basketRepository,
 			IManager<BasketDetail> basketDetailRepository,
-			IManager<Product> productRepository)
-		{
-			_basketRepository = basketRepository;
-			_basketDetailRepository = basketDetailRepository;
-			_productRepository = productRepository;
-		}
+			IManager<Product> productRepository) : Manager<Basket>, IBasketManager
+	{
+		private readonly IManager<Basket> _basketRepository = basketRepository;
+		private readonly IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
+		private readonly IManager<Product> _productRepository = productRepository;
+
+
+
 
 		public void AddToBasket(string userId, BasketDetail basketDetail)
 		{
 			// Kullanıcının mevcut sepetini bul
-			var basket = _basketRepository.GetAll().FirstOrDefault(b => b.UserId == userId);
+			var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
 
 			if (basket == null)
 			{
@@ -34,7 +28,7 @@ namespace Mate.BL.Concrete
 
 			// Sepetteki mevcut ürünü kontrol et
 			var existingBasketDetail = _basketDetailRepository.GetAll()
-				.FirstOrDefault(bd => bd.BasketId == basket.Id && bd.ProductId == basketDetail.ProductId);
+				.FirstOrDefault(p => p.BasketId == basket.Id && p.ProductId == basketDetail.ProductId);
 
 			// Ürün stok kontrolü
 			var product = _productRepository.GetById(basketDetail.ProductId);
@@ -79,12 +73,12 @@ namespace Mate.BL.Concrete
 		// Kullanıcının tüm sepetini temizleme
 		public void ClearBasket(string userId)
 		{
-			var basket = _basketRepository.GetAll().FirstOrDefault(b => b.UserId == userId);
+			var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
 
 			if (basket == null)
 				return;
 
-			var basketDetails = _basketDetailRepository.GetAll().Where(bd => bd.BasketId == basket.Id).ToList();
+			var basketDetails = _basketDetailRepository.GetAll().Where(p => p.BasketId == basket.Id).ToList();
 
 			foreach (var detail in basketDetails)
 			{
@@ -95,12 +89,12 @@ namespace Mate.BL.Concrete
 		}
 		public List<BasketDetail> GetBasketDetails(string userId)
 		{
-			var basket = _basketRepository.GetAll().FirstOrDefault(b => b.UserId == userId);
+			var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
 
 			if (basket == null)
 				return new List<BasketDetail>();
 
-			return _basketDetailRepository.GetAll().Where(bd => bd.BasketId == basket.Id).ToList();
+			return _basketDetailRepository.GetAll().Where(p => p.BasketId == basket.Id).ToList();
 		}
 	}
 }

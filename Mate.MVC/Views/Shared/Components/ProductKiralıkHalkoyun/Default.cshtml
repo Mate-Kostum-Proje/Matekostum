@@ -11,8 +11,8 @@
 					<img src="@Url.Content(item.PhotoPath)" alt="">
 				</div>
 				<div class="button-group">
-					<button class="add-to-cart">Sepete Ekle</button>
-					<button class="buy-now">Satın Al</button>
+					<button asp-controller="Basket" , asp-action="AddToBasket" class="add-to-cart">Sepete Ekle</button>
+					<button asp-controller="" asp-action="" class="buy-now">Kirala</button>
 				</div>
 				@if (item.IsAdult==false)
 				{

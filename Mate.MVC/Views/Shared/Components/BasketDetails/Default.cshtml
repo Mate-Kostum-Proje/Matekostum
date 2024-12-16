@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using static Mate.MVC.Controllers.BasketController
+@model List<BasketDetailPipeLine>
+
+<h2>Sepetiniz</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Birim Fiyat</th>
+            <th>Toplam</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Amount</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@item.TotalPrice.ToString("C")</td>
+                <td>
+                    <a href="@Url.Action("RemoveFromBasket", "Basket", new { basketDetailId = item.BasketDetailId })" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

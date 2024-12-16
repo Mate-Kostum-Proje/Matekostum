@@ -27,34 +27,43 @@
 			}
 		</div>
 		<p>
-		@if (@Model.IsAdult == true)
-		{
+			@if (@Model.IsAdult == true)
+			{
 			<p>Kategori: Yetişkin</p>
-		}
-		else
-		{
+			}
+			else
+			{
 			<p>Kategori: Çocuk</p>
-		}
+			}
 		</p>
-		<div class="size-selection-single-product">
-			<label for="size-single-product">Size:</label>
-			<select id="size-single-product">
-				<option value="small">Small</option>
-				<option value="medium">Medium</option>
-				<option value="large">Large</option>
-			</select>
-		</div>
-		<div class="quantity-single-product">
-			<button class="quantity-btn-single-product">-</button>
-			<input type="number" value="1" min="1">
-			<button class="quantity-btn-single-product">+</button>
-		</div>
-		<div class="actions-single-product">
-			<button class="add-to-cart-single-product">Sepete Ekle</button>
-			<button class="buy-now-single-product">Satın Al</button>
-		</div>
+		<form asp-action="AddToBasket" asp-controller="Basket" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="size-selection-single-product">
+                <label asp-for="Sizes">Size:</label>
+                <select asp-for="Sizes" id="size-single-product" class="form-control">
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </select>
+            </div>
+            
+            <div class="quantity-single-product">
+                <button type="button" onclick="decreaseValue()">-</button>
+                <input asp-for="Amount" id="amountInput" type="number" min="1" max="20" value="1" readonly>
+                <button type="button" onclick="increaseValue()">+</button>
+            </div>
+
+            <div class="actions-single-product">
+                <button type="submit" class="add-to-cart-single-product">Sepete Ekle</button>
+                <button type="submit" class="buy-now-single-product">Satın Al</button>
+
+			</div>
+		</form>
 	</div>
 </div>
+
 <br />
 <br />
 <br />
@@ -72,44 +81,66 @@
 
 
 <!-- loader -->
-
-
 <script>
+		function increaseValue() 
+		{
+		const input = document.getElementById('amountInput');
+		 let currentValue = parseInt(input.value);
+		const max = parseInt(input.max);
+
+		 if (currentValue < max) 
+		 {
+			input.value = currentValue + 1;
+		}};
+
+		function decreaseValue() 
+		{
+		 const input = document.getElementById('amountInput');
+		 let currentValue = parseInt(input.value);
+		 const min = parseInt(input.min);
+
+		 if (currentValue > min) 
+		 {
+			input.value = currentValue - 1;
+		 }};
+</script>
+
+@* <script>
 	$(document).ready(function () {
 
-		var quantitiy = 0;
-		$('.quantity-right-plus').click(function (e) {
+			var quantitiy = 0;
+			$('.quantity-right-plus').click(function (e) {
 
-			// Stop acting like a button
-			e.preventDefault();
-			// Get the field name
-			var quantity = parseInt($('#quantity').val());
+				// Stop acting like a button
+				e.preventDefault();
+				// Get the field name
+				var quantity = parseInt($('#quantity').val());
 
-			// If is not undefined
+				// If is not undefined
 
-			$('#quantity').val(quantity + 1);
+				$('#quantity').val(quantity + 1);
 
 
-			// Increment
+				// Increment
+
+			});
+
+			$('.quantity-left-minus').click(function (e) {
+				// Stop acting like a button
+				e.preventDefault();
+				// Get the field name
+				var quantity = parseInt($('#quantity').val());
+
+				// If is not undefined
+
+				// Increment
+				if (quantity > 0) {
+					$('#quantity').val(quantity - 1);
+				}
+			});
 
 		});
-
-		$('.quantity-left-minus').click(function (e) {
-			// Stop acting like a button
-			e.preventDefault();
-			// Get the field name
-			var quantity = parseInt($('#quantity').val());
-
-			// If is not undefined
-
-			// Increment
-			if (quantity > 0) {
-				$('#quantity').val(quantity - 1);
-			}
-		});
-
-	});
-</script>
+</script> *@
 
 @* <img id="dynamicPhoto" data-url="@Url.Content(Model.PhotoPath)" />
 

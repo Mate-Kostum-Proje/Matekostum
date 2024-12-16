@@ -131,6 +131,118 @@ namespace Mate.DAL.Migrations
                     b.ToTable("CommUsers");
                 });
 
+            modelBuilder.Entity("Mate.Entities.Concrete.FotoDesign", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PhotoPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.ToTable("FotoDesign");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "408869fb-51fc-4aea-b401-7e9e1550e7c6",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9720),
+                            Name = "STİLİZE E2",
+                            PhotoPath = "/databaseimg/tasarım/tasarımSTİLİZE-E2.jpg"
+                        },
+                        new
+                        {
+                            Id = "7e8ef4b0-4860-41f9-8275-ea55d7018c8a",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9770),
+                            Name = "ÇİFTETELLİ MAVİ",
+                            PhotoPath = "/databaseimg/tasarım/tasarımÇİFTETELLİ-MAVİ.jpg"
+                        },
+                        new
+                        {
+                            Id = "98b90d48-9f8c-4ea6-9799-f0591fd30a11",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9776),
+                            Name = "ROMAN T",
+                            PhotoPath = "/databaseimg/tasarım/tasarımROMAN-T.jpg"
+                        },
+                        new
+                        {
+                            Id = "942b1222-5fbb-4d82-8776-ea48cde51e70",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9781),
+                            Name = "İSPANYOL K",
+                            PhotoPath = "/databaseimg/tasarım/tasarımİSPANYOL-K.jpg"
+                        },
+                        new
+                        {
+                            Id = "c535eda9-81a2-4160-8698-38ba772b9ce7",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9785),
+                            Name = "YENİÇERİ",
+                            PhotoPath = "/databaseimg/tasarım/tasarımYENİÇERİ-2.jpg"
+                        },
+                        new
+                        {
+                            Id = "57058d86-b43e-41e7-92de-8d3d4f76e8e9",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9792),
+                            Name = "MAŞUK",
+                            PhotoPath = "/databaseimg/tasarım/tasarımMAŞUK.jpg"
+                        },
+                        new
+                        {
+                            Id = "351dea60-575d-42f4-b005-4daf0b94dff4",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9796),
+                            Name = "SALSA K",
+                            PhotoPath = "/databaseimg/tasarım/tasarımSALSA-K.jpg"
+                        },
+                        new
+                        {
+                            Id = "2b2461ac-f9b8-4ad9-acfd-7d9f92e80a1c",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9822),
+                            Name = "ŞAMAN",
+                            PhotoPath = "/databaseimg/tasarım/tasarımŞAMAN.jpg"
+                        },
+                        new
+                        {
+                            Id = "0f3f793e-408b-4b38-ba61-710898d65fb9",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9827),
+                            Name = "OSMANLI",
+                            PhotoPath = "/databaseimg/tasarım/tasarımOSMANLI.jpg"
+                        },
+                        new
+                        {
+                            Id = "ecdd14ab-7f1c-487d-af7c-a8d664a2d48d",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9834),
+                            Name = "STİLİZE E",
+                            PhotoPath = "/databaseimg/tasarım/tasarımSTİLİZE-E.jpg"
+                        },
+                        new
+                        {
+                            Id = "56a48d34-c73a-401e-b742-4383cc8d1edd",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9838),
+                            Name = "AŞUK",
+                            PhotoPath = "/databaseimg/tasarım/tasarımAŞUK.jpg"
+                        },
+                        new
+                        {
+                            Id = "46e4ffdf-6c18-4a18-86ec-2ad28da279a4",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9843),
+                            Name = "FLAMENKO",
+                            PhotoPath = "/databaseimg/tasarım/tasarımFLAMENKO.jpg"
+                        });
+                });
+
             modelBuilder.Entity("Mate.Entities.Concrete.FotoGalery", b =>
                 {
                     b.Property<string>("Id")
@@ -140,12 +252,162 @@ namespace Mate.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("PhotoPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Id")
                         .IsUnique();
 
                     b.ToTable("FotoGaleries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "9501b478-5321-4528-a928-33df1459cc88",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1932),
+                            PhotoPath = "/databaseimg/galeri/galeriburdur-kostumu.jpg"
+                        },
+                        new
+                        {
+                            Id = "aee24086-9487-472f-8709-4a7361d7d399",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1949),
+                            PhotoPath = "/databaseimg/galeri/galeriGaziantep-Kostum.jpg"
+                        },
+                        new
+                        {
+                            Id = "129e985f-9081-433d-a85a-3c07a1144842",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1953),
+                            PhotoPath = "/databaseimg/galeri/galeriyoresel-kostum.jpg"
+                        },
+                        new
+                        {
+                            Id = "80e2452d-d14d-48ff-a424-6b348635f4e7",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1962),
+                            PhotoPath = "/databaseimg/galeri/galerikaradeniz-kostumu.jpg"
+                        },
+                        new
+                        {
+                            Id = "5d5118d2-e82f-496e-b029-efee79e225e9",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1967),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_2356.jpg"
+                        },
+                        new
+                        {
+                            Id = "bd896127-aadb-4fd5-a204-ce834a5f3eaa",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1972),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1958.jpg"
+                        },
+                        new
+                        {
+                            Id = "f459104f-7738-47a2-9abe-7e66e58ae883",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1976),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_4063.jpg"
+                        },
+                        new
+                        {
+                            Id = "cbc94b42-37fb-46e4-9f61-1f008b56f3c4",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1980),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1964.jpg"
+                        },
+                        new
+                        {
+                            Id = "b8259045-e6e2-4507-9f32-c7d02a784824",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1985),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1962.jpg"
+                        },
+                        new
+                        {
+                            Id = "defe0065-3c97-44b8-b0bb-6d48b68a7935",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1989),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1961.jpg"
+                        },
+                        new
+                        {
+                            Id = "407d5920-e96b-497b-a92d-585880962e03",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1993),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1140.jpg"
+                        },
+                        new
+                        {
+                            Id = "715a475b-6f43-4111-bf59-4328b2146707",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1999),
+                            PhotoPath = "/databaseimg/galeri/galerigümüşhane-kız.jpg"
+                        },
+                        new
+                        {
+                            Id = "8a9adb73-4197-458b-b96f-7af5a698a025",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2004),
+                            PhotoPath = "/databaseimg/galeri/galerigümüşhane-erk-bar.jpg"
+                        },
+                        new
+                        {
+                            Id = "7c3ab568-68cb-43d1-8052-b57888156644",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2008),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_0610.jpg"
+                        },
+                        new
+                        {
+                            Id = "81732743-bdc1-4e12-a207-2e91d5fb3246",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2012),
+                            PhotoPath = "/databaseimg/galeri/galerigümüşhne-erk-horon.jpg"
+                        },
+                        new
+                        {
+                            Id = "f5dc7a98-019a-46df-877d-4f049e725398",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2016),
+                            PhotoPath = "/databaseimg/galeri/galeriDMID3671.jpg"
+                        },
+                        new
+                        {
+                            Id = "53242edf-2f92-4c73-8266-953e5895cc36",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2020),
+                            PhotoPath = "/databaseimg/galeri/galerizeyb.jpg"
+                        },
+                        new
+                        {
+                            Id = "99746d95-d058-440d-8c31-0724cae3b206",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2025),
+                            PhotoPath = "/databaseimg/galeri/galerigiresun-2.jpg"
+                        },
+                        new
+                        {
+                            Id = "945c1466-beb7-45a9-883f-40f512846cf4",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2029),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_1012.jpg"
+                        },
+                        new
+                        {
+                            Id = "363916ff-9dc6-4f61-a9cb-081877374ca7",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2035),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG-8454.jpg"
+                        },
+                        new
+                        {
+                            Id = "6bffb097-6383-41a8-a59f-d1d1191bc981",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2040),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_8456.jpg"
+                        },
+                        new
+                        {
+                            Id = "b8bc0afa-9a42-41bf-872c-a4fcabbcd011",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2044),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_8455.jpg"
+                        },
+                        new
+                        {
+                            Id = "89a1aec2-3e39-402b-91ed-26b2208f671f",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2048),
+                            PhotoPath = "/databaseimg/galeri/galeriwimg_0201.jpeg"
+                        },
+                        new
+                        {
+                            Id = "e3f8b262-dac8-4a3f-b808-d33ad41d4a5c",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2052),
+                            PhotoPath = "/databaseimg/galeri/galeriIMG_2688.jpg"
+                        });
                 });
 
             modelBuilder.Entity("Mate.Entities.Concrete.MainMenu", b =>
@@ -218,7 +480,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Index",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(361),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2522),
                             CssName = "",
                             MenuName = "Home",
                             RoleId = 1
@@ -229,7 +491,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(382),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2535),
                             CssName = "",
                             MenuName = "About",
                             RoleId = 1
@@ -240,7 +502,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "ProductRent",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(385),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2539),
                             CssName = "",
                             MenuName = "ProductRent",
                             RoleId = 1
@@ -251,7 +513,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "ProductSale",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(388),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2548),
                             CssName = "",
                             MenuName = "ProductSale",
                             RoleId = 1
@@ -262,7 +524,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Galery",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(390),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2551),
                             CssName = "",
                             MenuName = "Galery",
                             RoleId = 1
@@ -273,7 +535,7 @@ namespace Mate.DAL.Migrations
                             ActionName = "Comm",
                             ClassName = "far fa-circle nav-icon",
                             ControllerName = "Home",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 544, DateTimeKind.Local).AddTicks(393),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2554),
                             CssName = "",
                             MenuName = "Comm",
                             RoleId = 1
@@ -378,26 +640,26 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a39c7c36-da3b-4103-9280-289b0edff67f",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(128),
+                            Id = "e49ae816-e3c4-47fe-a18c-2342346c63cd",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8836),
                             Situation = "Siparişiniz Alındı"
                         },
                         new
                         {
-                            Id = "bba9d853-99cd-497a-81c1-ad6912bb9744",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(188),
+                            Id = "932293c0-41a0-4201-9e0c-bbc8d6afe530",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8855),
                             Situation = "Siparişiniz Hazırlanıyor"
                         },
                         new
                         {
-                            Id = "59dd9983-4b66-487f-be8b-9871f668ebf2",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(194),
+                            Id = "b66b5d07-c3ee-4651-afd0-c635dc75d9f2",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8860),
                             Situation = "Siparişiniz Kargoya verildi"
                         },
                         new
                         {
-                            Id = "e60b2973-81bd-49e5-bb08-065dbe6a3117",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(199),
+                            Id = "22f223d4-5bbb-4946-9bee-5cd2fd00dbeb",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8864),
                             Situation = "Siparişiniz Tamamlandı"
                         });
                 });
@@ -447,9 +709,10 @@ namespace Mate.DAL.Migrations
                     b.Property<string>("ProductSubRegionId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Size")
-                        .HasMaxLength(50)
-                        .HasColumnType("int");
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<int>("UnitPriceForRent")
                         .HasMaxLength(100000)
@@ -475,9 +738,9 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1336f01b-3817-43ae-baa5-083713cd960a",
+                            Id = "a4f0c053-2f4f-4120-92a0-6fb62b56f1be",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9467),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7636),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNADIYAMANÇOCUKKİRALIK.jpg",
@@ -485,14 +748,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ADIYAMAN",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "ADIYAMAN",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "0ce49c85-ccd3-4e3d-9a78-214bb9281499",
+                            Id = "7191b227-ab2c-462e-b1df-4302c87ac938",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9503),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7657),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNANKARAÇOCUKKİRALIK.jpg",
@@ -500,14 +762,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ANKARA",
                             ProductRegionId = "İÇ ANADOLU",
                             ProductSubRegionId = "ANKARA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "2465a6cd-43d3-455a-926b-1973d043e035",
+                            Id = "14d91eb7-6764-47ba-b851-174bfb484367",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9509),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7662),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNARTVİNÇOCUKKİRALIK.jpg",
@@ -515,14 +776,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ARTVİN",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "ARTVİN",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "65c28d1c-d903-4282-94fc-3b17fe477363",
+                            Id = "738dd802-101b-429c-baab-1b24a67a1cae",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9518),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7667),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNARTVİN-İŞLİÇOCUKKİRALIK.jpg",
@@ -530,14 +790,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ARTVİN İŞLİ",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "ARTVİN",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "0b43c78b-f9ca-4bcc-bb96-b8895cff9506",
+                            Id = "019629a9-11e2-4404-b9fd-19e7d358383f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9524),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7677),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBİLECİKÇOCUKKİRALIK.jpg",
@@ -545,14 +804,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİLECİK",
                             ProductRegionId = "MARMARA",
                             ProductSubRegionId = "BİLECİK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "bd0caf38-d2e1-45ba-8638-35a9f9c71e10",
+                            Id = "5c7528fb-4666-4b31-8abe-1c800723a3b5",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9531),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7683),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -561,14 +819,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİTLİS E",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "BİTLİS",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "6325741c-23fb-4f6d-87e2-f904305167e9",
+                            Id = "edbf2c08-9ec0-479d-a808-af6ce235ee0d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9537),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7688),
                             Gender = true,
                             IsAdult = false,
                             IsSale = false,
@@ -577,14 +834,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİTLİS K",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "BİTLİS",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "d947a56c-6dfc-4949-9171-8351b4a8c932",
+                            Id = "254e625e-75c7-4861-8754-dd2de4833d62",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9542),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7693),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBOLU-İŞLİÇOCUKKİRALIK.jpg",
@@ -592,14 +848,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BOLU İŞLİ",
                             ProductRegionId = "MARMARA",
                             ProductSubRegionId = "BOLU",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "72c3cd25-5321-41c8-ace8-79ef6e4a4ddd",
+                            Id = "51f0b076-581d-41ec-9033-35ffbea7e81e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9549),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7698),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNBOLU-SADEÇOCUKKİRALIK.jpg",
@@ -607,14 +862,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BOLU SADE",
                             ProductRegionId = "MARMARA",
                             ProductSubRegionId = "BOLU",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "b983c4c0-5cbe-48c3-a9d3-6d997d7c9992",
+                            Id = "4166f194-9b1d-481d-8c88-eff469330fce",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9556),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7704),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNDİYARBAKIRÇOCUKKİRALIK.jpg",
@@ -622,14 +876,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "DİYARBAKIR",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "DİYARBAKIR",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "fe82074a-4867-4e01-9f61-f79646779ed0",
+                            Id = "6d7f522a-a3b7-45bb-b6e5-6ca02de748d5",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9562),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7709),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNELAZIĞÇOCUKKİRALIK.jpg",
@@ -637,14 +890,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ELAZIĞ",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "ELAZIĞ",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "0876435a-1955-4d80-86b4-f909290e0d73",
+                            Id = "c4656dde-7da9-41af-8ee4-754a0e5027c0",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9567),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7714),
                             Gender = true,
                             IsAdult = false,
                             IsSale = false,
@@ -653,14 +905,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "GAZİANTEP K",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "GAZİANTEP",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "936f49cd-22fd-432c-9dcf-d9c1d9fd4125",
+                            Id = "03ea8738-2779-4b0c-844b-44e14be7ccf8",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9572),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7720),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -669,84 +920,78 @@ namespace Mate.DAL.Migrations
                             ProductName = "GAZİANTEP E",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "GAZİANTEP",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "b503836c-5568-4cbf-a97f-2e545f130713",
+                            Id = "ca28cf67-679e-4137-9006-07b9d06ff380",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9577),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7725),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNHALAY-KIRMIZIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "HALAY KIRMIZI",
                             ProductSubRegionId = "HALAY",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "af82ca6a-5e4b-4c2e-9000-8a5dd913618e",
+                            Id = "08aca359-c739-4ccf-bf37-8d31108512fe",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9582),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7730),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNHALAY-SİYAHÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "HALAY SİYAH",
                             ProductSubRegionId = "HALAY",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "1eaa8d38-532a-411a-af49-b46b1e7baeec",
+                            Id = "f7aeeed0-5412-4220-9cca-24030d6701f0",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9587),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7740),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKARADENİZÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "KARADENİZ",
                             ProductRegionId = "KARADENİZ",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "dbb1e684-9b1b-4d44-96e8-057af98a7561",
+                            Id = "e47b324a-6e22-434c-8f9e-4ed9aa2e94fe",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9595),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7744),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKAFKAS-KIRMIZIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "KAFKAS KIRMIZI",
                             ProductRegionId = "KAFKAS",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "696948f3-d481-435b-9c52-8a2ed1598a88",
+                            Id = "685c90e8-e736-4e13-b628-d78091ddb38f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9601),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7749),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNKAFKAS-MORÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "KAFKAS MOR",
                             ProductRegionId = "KAFKAS",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e4e126ed-9b1f-443e-80b5-0544413c4734",
+                            Id = "60675bc1-c5e0-4451-9036-fdbd055271a6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9606),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7754),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNSİLİFKEÇOCUKKİRALIK.jpg",
@@ -754,14 +999,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "SİLİFKE",
                             ProductRegionId = "MARMARA",
                             ProductSubRegionId = "SİLİFKE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ad3d7edb-f55d-40e7-9a8d-51806eb19a4d",
+                            Id = "d6ace530-be1d-46f6-bd8e-e591a0df5429",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9611),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7759),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -770,14 +1014,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TEKE E",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "TEKE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "32c86af0-b2d2-4ec7-bbf9-5e3619ae24da",
+                            Id = "598ab973-15c3-4c02-af95-2a65ae19b36e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9616),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7765),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTEKE-YEŞİLÇOCUKKİRALIK.jpg",
@@ -785,14 +1028,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TEKE YEŞİL",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "TEKE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ae25684f-24e8-4a74-96d8-3df55e2368c0",
+                            Id = "6d6bfa67-3e4d-4eae-9731-1b282596bf6d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9621),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7770),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTEKE-PEMBEÇOCUKKİRALIK.jpg",
@@ -800,28 +1042,26 @@ namespace Mate.DAL.Migrations
                             ProductName = "TEKE PEMBE",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "TEKE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "13afc6ea-b129-4df9-82c9-d5a23186417f",
+                            Id = "88f1cd90-23b3-4301-b1b2-abb2f2dc1186",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9633),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7774),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA",
                             ProductRegionId = "TRAKYA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "45a1dea7-ea1a-465c-b3fa-7a9ec8f99126",
+                            Id = "3663d5c1-c5d4-4a40-968d-e5ffe3988290",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9639),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7779),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNÜSKÜPÇOCUKKİRALIK.jpg",
@@ -829,42 +1069,39 @@ namespace Mate.DAL.Migrations
                             ProductName = "ÜSKÜP",
                             ProductRegionId = "TRAKYA",
                             ProductSubRegionId = "ÜSKÜP",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9213066d-6561-4e1e-b2a1-4050022d375a",
+                            Id = "a6c41b39-f165-4961-9d27-afd7152ed274",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9646),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7783),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYA-PEMBEÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA PEMBE",
                             ProductRegionId = "TRAKYA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "95c1517e-88ec-411f-be4f-7356284330d5",
+                            Id = "bed7d6f3-27c6-4820-b0fe-cc3b824e44a5",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9651),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7788),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNTRAKYA-BEYAZÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA BEYAZ",
                             ProductRegionId = "TRAKYA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "5069d177-7f97-484b-8ca1-5b5b97a5d1df",
+                            Id = "c11c5ec6-dbd4-4c97-a470-1098e06007da",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9656),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7792),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNVANÇOCUKKİRALIK.jpg",
@@ -872,14 +1109,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "VAN",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "VAN",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "57bc3135-8336-4978-a6dc-b90bf2cc463e",
+                            Id = "de45b24d-6c7c-42c2-9d33-ad2491b766ba",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9661),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7797),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-BORDOÇOCUKKİRALIK.jpg",
@@ -887,14 +1123,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK BORDO",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3e64f508-a183-4395-9f40-41f1c8238fd2",
+                            Id = "4cec8196-2c9a-4c3c-a05e-9ba74cb1dcbe",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9666),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7804),
                             Gender = false,
                             IsAdult = false,
                             IsSale = false,
@@ -903,14 +1138,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK E",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3d6cee80-9641-4a0f-b323-647d6c71ad11",
+                            Id = "9c11ad84-16e8-4f10-8c0c-a51cb07e3e0d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9671),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7809),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-İŞLİÇOCUKKİRALIK.jpg",
@@ -918,14 +1152,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK İŞLİ",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "6ac94c54-00a7-4358-9683-ef432070d140",
+                            Id = "9928273f-3b12-4cd6-81e1-427471d8128c",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9676),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7814),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUNZEYBEK-MORÇOCUKKİRALIK.jpg",
@@ -933,548 +1166,507 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK MOR",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "52217f6b-d847-4c0d-9eb0-db79dcae2b12",
+                            Id = "9ea6b5de-d100-4628-b68f-000455336339",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9681),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7818),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ÇAÇA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "2794ec18-1c45-4f0e-bcee-009acccf5c3b",
+                            Id = "5493261a-c620-4c56-854a-c4454aace7ec",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9689),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7822),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEFRAKÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "FRAK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "aa962db1-437d-4067-9177-0a2af10e7144",
+                            Id = "9a2d76f4-a849-4a44-a321-8f857418eac1",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9695),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7828),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEGREASEÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "GREASE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "d293ddc7-5452-4198-928d-f606ee085c85",
+                            Id = "3ff5027d-79a0-49b0-9911-3ce157e1fa31",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9701),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7832),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEHİNTÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "HİNT",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e695549b-062e-476a-855d-ea4638cac20b",
+                            Id = "a2c4b911-8810-4036-bfdd-04591364fb5e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9706),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7839),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "İSPANYOL",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3a7be806-b6ac-4058-bb30-a7e093dfa81c",
+                            Id = "dfc08350-9c1d-4817-8efa-c927ec5ef888",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9711),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7846),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEROMANFUŞYAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN FUŞYA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "5e0cfa64-0909-47ad-bbae-d862806287a1",
+                            Id = "911dd2e3-e609-4fd0-a140-f397b501ecea",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9717),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7850),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEROMANKIRMIZIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN KIRMIZI",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "b74eb107-e283-4a7a-9a9c-4d564ac33723",
+                            Id = "3b67b406-c04a-46fe-bc77-76d89b35d30e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9723),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7855),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEROMANKIR1ÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN KIR (1)",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "15eafa13-a7b9-4fbf-9747-da6358146c91",
+                            Id = "81c5ae5a-ff08-4652-a0c0-5c13d38f2cfd",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9728),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7859),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEROMANMORÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN MOR",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9d8287ec-5372-4aac-90fc-dcee426e831f",
+                            Id = "99e31708-681e-4f95-aa0d-1e6f46e31f08",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9734),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7864),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESALSAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "SALSA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3d1c1493-0225-4d66-8dff-05e5abdd2d2f",
+                            Id = "098e4558-d30d-4ee1-8480-374b8229df8d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9739),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7868),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESALSAEÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "SALSA E",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ffdc6d8d-be1c-4080-9aa3-a9f438a02dad",
+                            Id = "e86601c5-56d7-4505-ba03-9f1029962279",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9744),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7873),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE KIRMIZI",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "983b4ebf-d84c-4ac1-bf15-e8440e7b7638",
+                            Id = "baa1a0c3-b3b1-4f81-b8e7-e6ba37917a92",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9756),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7878),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZEMORÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE MOR",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "07592630-54b5-47ed-ae5e-167506bbb249",
+                            Id = "ce19b7ac-1e0e-4808-8b06-37db569fb40e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9761),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7884),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZEPEMBEÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE PEMBE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "4349427d-961e-48d7-81da-78a70528a657",
+                            Id = "50caa4e8-48e7-4ebf-a7e2-b9f788a2ca04",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9766),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7889),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE SARI",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "c2a83380-c880-4c08-9c4f-0b177d22cc1e",
+                            Id = "bfce6bb2-f437-491a-b8b4-4fe4d06d0c83",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9772),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7893),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEÇİFTETELLİPEMBEÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ÇİFTETELLİ PEMBE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "39bc48b4-2b87-43f8-a6eb-57f84f04dc99",
+                            Id = "59c9121e-dc98-4e2b-bf6e-160695c74397",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9777),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7897),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDARIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ARI",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "07135997-03a8-4905-a302-ffce7aa52124",
+                            Id = "31e4174f-24e8-46c2-8ba3-ad92ea0b877b",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9783),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7902),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDASKERÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ASKER",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "a4855ca5-9364-467f-9473-4dadc54862a6",
+                            Id = "2d4a33f0-2a6b-4d51-85ff-c823f1f08e3c",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9788),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7906),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ÇAÇA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "204f3590-d183-4f22-847c-b46a65c543a7",
+                            Id = "39723e98-c48f-4039-9345-9729d6090286",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9793),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7910),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDÇİÇEKÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ÇİÇEK",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "a9b6f357-b4b1-4570-9021-8bd5e472e9ce",
+                            Id = "9375f9f4-3a84-4aaa-86ce-600c32ee89f3",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9797),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7915),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDFAREÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "FARE",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "34a8a2d5-76b8-44c9-8cda-1770b0d07806",
+                            Id = "0f30161a-b6b2-46b9-93b9-b78604e2b6e7",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9802),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7920),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDHACİVATKARAGÖZÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "HACİVAT KARAGÖZ",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "978ed23d-6a3f-4fea-9c86-c46442150db1",
+                            Id = "3064139d-7ed9-4eb0-bb81-cf48e05f426a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9806),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7925),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "İSPANYOL",
                             ProductSubRegionId = "ROMAN",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e6b3d021-eab7-40a1-86b3-9bdfbf759f54",
+                            Id = "fc19c689-fac5-475e-b647-68d7b70b9a30",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9811),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7929),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDKATİBİMÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "KATİBİM",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "bca7c527-82c6-460f-89ad-52a7255bddf1",
+                            Id = "91a7d285-ac62-4d9e-a109-2c0ea9c621e3",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9816),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7933),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDKIRMIZIBAŞLIKLIKIZÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "KIRMIZI BAŞLIKLI KIZ",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e5422e4b-f34f-4020-b538-4062a9b0855f",
+                            Id = "4c989a31-e7cc-4b6e-8910-ea3e7231522c",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9822),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7942),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDMEHTERÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "MEHTER",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "39237546-8e60-486b-ad56-2c1ab9e86e45",
+                            Id = "e1e8aae2-61d9-4120-a04b-9442da9e7f13",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9827),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7946),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDMEZUNİYETÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "MEZUNİYET",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "7a098bda-11e4-44f2-99ff-ce709f3b3be8",
+                            Id = "51f244e9-ca61-4026-abb2-f9a046a67ba6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9832),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7950),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDNASREDDİNHOCAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "NASREDDİN HOCA",
-                            Size = 8,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "b26cb6de-4832-49a4-95ca-c7d9c76799c1",
+                            Id = "6764d265-4b68-458a-85ec-689b56856efb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9837),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7954),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDNOELBABAÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "NOEL BABA",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "19704673-94df-4d22-88d6-7a7cf990ad73",
+                            Id = "8428f772-0e67-4f75-a326-059286a021db",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9842),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7961),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDÖRDEKÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ÖRDEK",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "3982f475-3643-41b9-ac5d-b9f24fe79443",
+                            Id = "6c54fb89-f037-4157-a3fb-1b4a218e522d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9848),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7965),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDPADİŞAHÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "PADİŞAH",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "8db6ff56-9c61-4bf7-97bf-fd0f16708e53",
+                            Id = "3fcf7b87-7f17-456c-b837-c903a5ece045",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9853),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7969),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDPALYAÇOÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "PALYAÇO",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "ad7a502b-0baf-41d4-8a4c-07846fdab171",
+                            Id = "2864e6f1-8ab9-4766-8823-840f2c80002e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9858),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7973),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDPAMUKPRENSESÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "PAMUK PRENSES",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "9500f9a3-8fe8-4e01-82bc-0c9cb5a8a5ba",
+                            Id = "75785616-c577-42da-b9d9-1fb0a7313612",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9865),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7977),
                             Gender = true,
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDSALSAKÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "SALSA K",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "9f5aae70-3667-4f4f-a309-2c611c295150",
+                            Id = "b3f5b091-4d55-4970-811b-f6255634e3ed",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9878),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7983),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDSEMAZENÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "SEMAZEN",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "39528fce-427b-4722-a0fa-f4d71931a114",
+                            Id = "27b844ba-981a-4ea1-8cac-eb776cd3388f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9883),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7988),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDŞİRİNLERÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "ŞİRİNLER",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "0b578341-a466-451a-a270-af2767f840e6",
+                            Id = "7a6d8dc9-d210-426f-9661-a6a2ed268a68",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9889),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7992),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDTAVŞANÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "TAVŞAN",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "4efc05d6-9c95-4cdd-ad1a-30e0f59382d8",
+                            Id = "b66b8405-6ad3-4642-a657-392791e86ef1",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9893),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7998),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "STİLİZE KIRMIZI",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "7c5c3476-9c9e-4bc0-8de4-6de21e50737f",
+                            Id = "4e78bc08-260a-4350-b934-e59d1e178ee6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9899),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8003),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "STİLİZE SARI",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "33d09a1d-31d6-4757-87a5-a7e8c7067bfa",
+                            Id = "8e84a34a-9e2e-4be2-adcb-3f5765c3becb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9904),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8007),
                             IsAdult = false,
                             IsSale = false,
                             PhotoPath = "/databaseimg/RONDYENİÇERİÇOCUKKİRALIK.jpg",
                             ProductCategoryId = "5rond",
                             ProductName = "YENİÇERİ",
-                            Size = 8,
                             UnitPriceForRent = 0,
                             UnitPriceForSale = 1500
                         },
                         new
                         {
-                            Id = "4170408b-269d-49a7-a749-dd91554e7fa8",
+                            Id = "7928e19e-21cd-405a-b4d5-b479750e0170",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9913),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8012),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1483,14 +1675,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ADIYAMAN E",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "ADIYAMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "941a9f93-5394-403c-b646-34dc2c6ef753",
+                            Id = "b823f150-2ad9-45f4-900e-c7e84ddb1dc5",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9920),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8017),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1499,14 +1690,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ADIYAMAN K",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "ADIYAMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "cfbe984e-7ea7-4b0c-b7a1-b3f3116b0e52",
+                            Id = "f02e8a4c-340f-435a-bb07-5eca923ca3ab",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9925),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8023),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1515,14 +1705,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ANKARA E",
                             ProductRegionId = "İÇ ANADOLU",
                             ProductSubRegionId = "ANKARA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "bcc47c0e-b9d7-42b0-90b5-6853a1ff0a26",
+                            Id = "34ee0bc4-0b7e-4123-9821-c8ad6a8d2ea1",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9930),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8027),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1531,14 +1720,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ARTVİN E2",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "ARTVİN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "97b8fd5f-c829-42b0-bb01-c509297ca7a4",
+                            Id = "cb05fab5-372d-41ac-8e39-acd5c9e25ccc",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9935),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8035),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1547,14 +1735,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ARTVİN K",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "ARTVİN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "271586d5-e120-499d-a0b8-94bbfb85933c",
+                            Id = "ff8f5651-747a-4a63-aab4-77bc019ec0a3",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9942),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8042),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1563,14 +1750,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİLECİK K",
                             ProductRegionId = "MARMARA",
                             ProductSubRegionId = "BİLECİK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "a124deda-eb95-4c6f-91bf-c20f3a646f44",
+                            Id = "1e8f21c3-5904-4d0f-8dba-106182d83042",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9947),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8046),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-BİTLİSBEYAZ-E-YETİŞKİNKİRALIK.jpg",
@@ -1578,14 +1764,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİTLİS BEYAZ E",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "BİTLİS",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "f41fe6ca-277e-477d-8242-133a039d703f",
+                            Id = "2a63a1f2-b22d-4b10-97c5-58a7e2083fd0",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9952),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8051),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1594,14 +1779,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİTLİS K",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "BİTLİS",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e86760a2-6b04-4486-8b4b-74f7ab7b2087",
+                            Id = "f8c602bb-3a6f-450f-a2e8-978e11c118fe",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9957),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8055),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-BİTLİSMAVİ-YETİŞKİNKİRALIK.jpg",
@@ -1609,14 +1793,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BİTLİS MAVİ",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "BİTLİS",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "77520686-3daa-439e-b9a7-e93e143d6ec0",
+                            Id = "ad207d6c-e47e-4924-9c7c-41c4f27ea067",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9965),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8060),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1625,14 +1808,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BOLU K",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "BOLU",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "2ffcfcf9-ccfa-4b8f-aa99-794786b4f5ef",
+                            Id = "47103496-0772-4a25-8a10-2b4493cda279",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9970),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8065),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1641,14 +1823,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BURDUR E2",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "BURDUR",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9a2b196f-880d-4e21-a597-3c7f954cb2c6",
+                            Id = "2844aa02-e975-405f-8af7-8cd243329268",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9975),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8069),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1657,14 +1838,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "BURDUR K",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "BURDUR",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "cb4a6268-cb4f-43d1-bf73-e57aa75ecfc0",
+                            Id = "4fc977c9-425c-4e7f-aee9-9740d3d78741",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9980),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8073),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1673,14 +1853,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "DİYARBAKIR E",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "DİYARBAKIR",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9acb50fc-9a8a-4723-aa25-c0654450e33d",
+                            Id = "19fd95fd-92df-49fc-8cd9-30208fb20db0",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9985),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8080),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1689,14 +1868,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "DİYARBAKIR K",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "DİYARBAKIR",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "f9ca3b5f-4f1c-409b-9481-1f4a7753da75",
+                            Id = "a8184970-b0a3-4068-9fb2-5432aaa2ce85",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(9998),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8085),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1705,14 +1883,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "GAZİANTEP E",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "GAZİANTEP",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "7dacac9c-1a4d-4195-86e9-510e17d83965",
+                            Id = "dbd404ea-3ab9-42b9-91e9-83baba8639eb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(3),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8089),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1721,14 +1898,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "GAZİANTEP K",
                             ProductRegionId = "GÜNEYDOGU ANADOLU",
                             ProductSubRegionId = "GAZİANTEP",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "1e58e940-54d2-4ece-bb37-51f5d50732b6",
+                            Id = "f5887a14-fb75-406b-b1e1-ddba12644407",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(9),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8094),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1737,14 +1913,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "GİRESUN E",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "GİRESUN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "48162462-3537-4a76-984c-3aad213ae02b",
+                            Id = "059cbbfe-2cb3-4db5-ac2c-da6314146b61",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(15),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8099),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1753,14 +1928,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "GİRESUN K",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "GİRESUN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "dfbd7352-eea8-496a-9b81-b4bf30c0f16e",
+                            Id = "c69b9e24-50eb-4f10-8649-97baf489a43d",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(21),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8103),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1769,14 +1943,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "HAKKARİ K",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "HAKKARİ",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "c3deed6f-7536-44ca-a82a-88bc36d85d51",
+                            Id = "1584ca09-5e8e-4301-87ec-f6198ff7f86a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(26),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8108),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1784,14 +1957,13 @@ namespace Mate.DAL.Migrations
                             ProductCategoryId = "2halkoyun",
                             ProductName = "KAFKAS E",
                             ProductRegionId = "KAFKAS",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "142a124f-2c29-4c53-b85e-f818857d32c2",
+                            Id = "98f6a59a-c669-4c26-b848-b15b5f461a12",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(31),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8112),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1799,14 +1971,13 @@ namespace Mate.DAL.Migrations
                             ProductCategoryId = "2halkoyun",
                             ProductName = "KAFKAS K",
                             ProductRegionId = "KAFKAS",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "1b60a9c5-70fd-42f0-85b3-477e6f441d06",
+                            Id = "9093a00c-6d6a-425d-b726-928a169d59e1",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(36),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8118),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1815,14 +1986,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "SİLİFKE E",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "SİLİFKE",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "fb225afb-4344-4ab6-85ff-17d7cc89782f",
+                            Id = "bdd11288-4599-427f-9f6a-febd2db5d210",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(41),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8123),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1831,70 +2001,65 @@ namespace Mate.DAL.Migrations
                             ProductName = "SİLİFKE K",
                             ProductRegionId = "AKDENİZ",
                             ProductSubRegionId = "SİLİFKE",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "fbd21d5e-891d-4f97-8981-5ae55c4b402a",
+                            Id = "4da4de7c-32e0-4e1f-b00f-ec8d8c8c3410",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(47),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8127),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRAKYAKIRMIZIKADİFE-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA KIRMIZI KADİFE",
                             ProductRegionId = "TRAKYA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "584f98d3-2c6b-429d-a276-5d2ed83bbf18",
+                            Id = "66d4a483-1e54-4482-8ef2-f4ba5ae41e4c",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(51),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8131),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRAKYAKREM-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA KREM",
                             ProductRegionId = "TRAKYA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "f17e886c-af62-455e-a6f5-38172bb2a278",
+                            Id = "89d9e342-fb35-41c4-879e-93e7b939ce16",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(58),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8136),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRAKYAMAVİ-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA MAVİ",
                             ProductRegionId = "TRAKYA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "4e71d38d-c977-41ec-9863-8e8db397f82c",
+                            Id = "ca39c71a-d754-4a14-8f92-0ef593490d51",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(63),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8143),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRAKYAMORMONORAY-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA MOR MONORAY",
                             ProductRegionId = "TRAKYA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "e365b2fb-5c67-459c-882f-e3c6484ece27",
+                            Id = "d87e7e49-c208-4e69-968a-a2055e704937",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(69),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8148),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1902,14 +2067,13 @@ namespace Mate.DAL.Migrations
                             ProductCategoryId = "2halkoyun",
                             ProductName = "TRAKYA PEMBE K",
                             ProductRegionId = "TRAKYA",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "dba82da7-3bcb-4cc7-ae7f-a3dd9e1a5720",
+                            Id = "ca01c69b-0d97-4278-8c85-986a22112c9f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(74),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8153),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1918,14 +2082,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TRABZON E",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "TRABZON",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "1039a8d6-e92c-449a-b68e-18fa386a99f8",
+                            Id = "499fcecc-c75f-4224-87bf-3c25280126e7",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(79),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8160),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -1934,14 +2097,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TRABZON K İŞLİK",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "TRABZON",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "55153ae6-060a-4fd1-92d1-7745c9021df2",
+                            Id = "47bf52f9-0056-488a-bba9-38c895a6996f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(85),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8164),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRABZONMORİŞLİK-YETİŞKİNKİRALIK.jpg",
@@ -1949,14 +2111,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TRABZON MOR İŞLİK",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "TRABZON",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3b1daa12-101b-4eed-9429-e6622d1f513e",
+                            Id = "dc04663a-864f-43c4-b01e-9694bd03caee",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(90),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8169),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRABZONMORYELEK-YETİŞKİNKİRALIK.jpg",
@@ -1964,14 +2125,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TRABZON MOR YELEK",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "TRABZON",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "6f606cec-8dd7-48f6-93a6-ca6caa84d5fb",
+                            Id = "62e63b7f-ea1d-4652-91da-38c585ddd14f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(95),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8173),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-TRABZONPEMBEYELEK-YETİŞKİNKİRALIK.jpg",
@@ -1979,14 +2139,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "TRABZON PEMBE YELEK",
                             ProductRegionId = "KARADENİZ",
                             ProductSubRegionId = "TRABZON",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "a951a76b-0158-4471-a907-dbda1a17fa40",
+                            Id = "48a5bc29-cfc8-46cf-ad46-560da2ca27d4",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(102),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8178),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -1995,14 +2154,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ÜSKÜP E",
                             ProductRegionId = "TRAKYA",
                             ProductSubRegionId = "ÜSKÜP",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "53215d59-28b5-41a8-95b6-37489cd5ce8f",
+                            Id = "b7ef1275-dfe3-4acf-87f4-ec7aef02b12e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(107),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8183),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -2011,14 +2169,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ÜSKÜP K BORDO",
                             ProductRegionId = "TRAKYA",
                             ProductSubRegionId = "ÜSKÜP",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "fa6d5e8a-f401-4d45-a2ba-ee2487f15e88",
+                            Id = "7b2e0513-7e0b-4f35-876d-0cb45781add5",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(113),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8188),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-VANBEYAZ-YETİŞKİNKİRALIK.jpg",
@@ -2026,14 +2183,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "VAN BEYAZ",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "VAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "47348bc3-2cd6-4cb9-8c6b-88e9553321fb",
+                            Id = "d6a66c5d-ba4f-42e9-a93d-ef4eb8f0948f",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(124),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8193),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
@@ -2042,14 +2198,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "VAN K",
                             ProductRegionId = "DOGU ANADOLU",
                             ProductSubRegionId = "VAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "4ce34f16-2c2d-41fa-97b1-9b0b58925f9d",
+                            Id = "60b9ee0e-2a58-4095-8313-c4e9bc5b1d76",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(129),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8199),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-ZEYBEKAÇIK-E-YETİŞKİNKİRALIK.jpg",
@@ -2057,14 +2212,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK AÇIK E",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "5780f3a0-b74e-4f5a-925d-3d6e9a2d8050",
+                            Id = "a3cb1e3d-38c5-4587-a111-83040c4d72a4",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(134),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8204),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -2073,14 +2227,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK AĞIR E",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ba438402-8347-41be-983f-61b172ab98ed",
+                            Id = "27a45823-2b9a-43a0-8c0e-78473520ec16",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(138),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8208),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-ZEYBEKBORDO-YETİŞKİNKİRALIK.jpg",
@@ -2088,14 +2241,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK BORDO",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "88c73a5f-9fe3-42ba-8e8c-4a90bfdd66bb",
+                            Id = "1146e798-d98f-4b98-b6de-7d380c734a65",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(143),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8212),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -2104,14 +2256,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK EŞKİYA E",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "75101573-af84-4676-b872-dc60c5bd4e84",
+                            Id = "5ad60e55-f2a6-4eec-b727-0955ed0812cb",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(150),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8217),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
@@ -2120,14 +2271,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK KOYU E",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "2db72a3f-5f61-4050-b0e6-e4962707c21d",
+                            Id = "92035258-f199-4ef1-a75e-7a04cf6ad49a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(155),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8222),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-ZEYBEKMOR-YETİŞKİNKİRALIK.jpg",
@@ -2135,14 +2285,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK MOR",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "7cc68ace-4962-49f6-b42a-e1c37680b59e",
+                            Id = "380e47e1-adfa-4b7a-b7b9-43c7a5f8dad6",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(160),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8227),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-ZEYBEKPEMBE-YETİŞKİNKİRALIK.jpg",
@@ -2150,14 +2299,13 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK PEMBE",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "7f32f771-7236-445b-a97a-0fcc60e67c0a",
+                            Id = "135d3977-8c12-4506-a068-42f3cd64d1d7",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(165),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8231),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/HALKOYUN-ZEYBEKMUĞLA-YETİŞKİNKİRALIK.jpg",
@@ -2165,434 +2313,401 @@ namespace Mate.DAL.Migrations
                             ProductName = "ZEYBEK MUĞLA",
                             ProductRegionId = "EGE",
                             ProductSubRegionId = "ZEYBEK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3aa93045-457d-4160-af77-fa3c1977f169",
+                            Id = "fc3116b4-75f4-4766-abf4-06c7b59151dc",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(170),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8237),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANBORDO-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN BORDO",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ed5dd623-1e55-4e27-8790-46a271a19dcf",
+                            Id = "4ca7704f-a679-416e-8173-7be4f31e1fc1",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(174),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8241),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN KIRMIZI",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "0fd73eed-c2e8-4577-a4df-04921b855569",
+                            Id = "0655e9b9-a3e0-498f-a8cf-45eacf1e31ab",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(179),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8246),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N2-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN KIRMIZI-N2",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "43c2bc93-57fa-4024-87bb-52ab9a61e0eb",
+                            Id = "ebada7e6-7a82-4f07-9ea6-51dc3d560ebb",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(183),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8253),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N3-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN KIRMIZI-N3",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "852748b6-7fc7-400c-a111-54b7d8a67755",
+                            Id = "a02ded9e-fe90-4c60-80e0-37eeb855204b",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(189),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8257),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMOR-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN MOR",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "edbfeb81-54ef-4936-849f-641519ce5dd7",
+                            Id = "85acfe6e-9833-4abe-8592-07324724e480",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(194),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8261),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMÜRDÜM-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN MÜRDÜM",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "b684874b-fc19-4263-af87-d30bbba50fd0",
+                            Id = "f584ba6f-57a5-4ed4-b327-8d33f0607331",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(199),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8266),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANPEMBE-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN PEMBE",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "08b1c42e-1426-449b-9c99-cb8356ca659e",
+                            Id = "3e950375-0882-48ba-ae38-166984706b37",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(204),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8271),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANYEŞİL-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "GELENEKSEL KAFTAN YEŞİL",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ae7805f6-221a-4f5b-bcd9-8f5d3ca1b086",
+                            Id = "9dfafd48-46f9-482a-b2f1-6aef9187cd9c",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(208),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8276),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİBORDO-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ BORDO",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "16a2624d-6c70-41b5-8d88-9590cd66f933",
+                            Id = "dd5d6285-c1a9-450f-a4e1-a9ee0c43c796",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(213),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8280),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİGRİSİYAH-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ GRİ-SİYAH",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "dc014481-2b18-4aa7-8228-fa2c9d7bbf96",
+                            Id = "7aa570bd-ba53-44cc-b6f5-03028eb2d22f",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(217),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8285),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ KIRMIZI",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "ddf49cd0-7783-49e5-920f-53fc806b1559",
+                            Id = "4aa6fdb1-a0dd-49c5-8325-1a15b54f4e0c",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(221),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8288),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-N2-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ KIRMIZI-N2",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "6c73e01e-e3d7-4759-a3fc-e30be661e2b9",
+                            Id = "51d7860d-735f-4515-b2a7-8a716023846e",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(227),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8293),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ LACİVERT",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "d24317ee-a030-4919-ba31-3a4dd167e96b",
+                            Id = "8f0f98e3-67db-4b53-9e06-48a452cf0b89",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(240),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8299),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N2-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ LACİVERT-N2",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "39980ae6-0ff2-4c9b-8cf7-8a7237e7ca16",
+                            Id = "02c262ce-f3e9-4394-98bd-6963bb4e7777",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(244),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8303),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N3-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ LACİVERT-N3",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "aed05443-b78b-4da3-b58d-4df5fec6643b",
+                            Id = "9f5485f5-36f9-4df7-b0a2-3681d3f8a91f",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(249),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8307),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ PEMBE",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3ed9baea-7d43-4447-818b-7817e67e5632",
+                            Id = "fa45bf8a-3a56-43bd-ba6b-6d30418b3fa9",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(253),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8313),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-N2-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ PEMBE-N2",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "5b4673c0-a79d-4725-8c16-5d1498aebc69",
+                            Id = "b7d11ff7-3824-4ae4-b6e2-c5570aa8be82",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(258),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8318),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİÜSKÜP-N2-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ ÜSKÜP-N2",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "593f9a16-69d6-46e4-a548-d79ee1aa92cd",
+                            Id = "b0af6908-6e08-48ed-aeba-9843674c1124",
                             Amount = 0,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(262),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8322),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/KINABİNDALLI-KINAKIYAFETİYEŞİL-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "3kına",
                             ProductName = "KINA KIYAFETİ YEŞİL",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "605e7192-7542-4a51-930e-6db23b9680e2",
+                            Id = "de8865a5-76f9-4c31-8cf4-9ece2bebe986",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(268),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8329),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-AŞUKMAŞUK-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "AŞUK MAŞUK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9f241aae-5b1f-4876-96d7-e05770cdc083",
+                            Id = "4c7f89d3-ad14-4928-85e7-a9bfe080d460",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(275),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8334),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ÇİFTETELLİBEYAZ-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ÇİFTETELLİ BEYAZ",
                             ProductSubRegionId = "ÇİFTETELLİ",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "5cc12295-4a1d-4b58-b6d7-39e89ea92b00",
+                            Id = "89d8a5de-16f2-4d66-9bb8-ff8af359127e",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(280),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8338),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-LİRİK-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "LİRİK",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "f8c9144d-3977-454e-93b6-b74dd042f3ac",
+                            Id = "afbc718e-4206-49e0-b7dd-4f27e6a6a126",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(284),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8342),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANFUŞYA-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN FUŞYA",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "8adf6cbd-b973-4791-bb5d-125463d08911",
+                            Id = "64ec3b5d-4c5d-49d8-8c76-3736d2fde4c2",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(289),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8346),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANKIRMIZI-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN KIRMIZI",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "9a7c00b5-4e95-4b4a-83af-d46996e5acf7",
+                            Id = "a1742aa3-d2ef-4507-8232-2d5eac6b7b87",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(295),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8353),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANPEMBE-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN PEMBE",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "7cc880b1-4b60-4489-bf56-ccf61bfa75b5",
+                            Id = "998b43c5-33a3-42c1-9267-c59d525d9672",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(300),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8358),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANRENKLİETEK-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN RENKLİ ETEK",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "4106e5f5-6dae-4d12-9df2-5bc741576a3e",
+                            Id = "9f15efc7-e132-483c-9981-fb6f6cd83749",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(305),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8362),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANTURUNCU-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN TURUNCU",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "2e275bfe-d5de-498a-a8fe-c945145e6382",
+                            Id = "ca2b25bd-fba6-4efc-b9cd-f7c935a47296",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(309),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8367),
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-ROMANYEŞİL-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "ROMAN YEŞİL",
                             ProductSubRegionId = "ROMAN",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "35d7e85f-5a07-430a-9634-14f1c0a519da",
+                            Id = "cc5d21fa-7cca-4269-9c0e-e18a4811880a",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(316),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8371),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-STİLİZEKIRMIZI-E-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE KIRMIZI E",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "71bf7c25-e210-404e-a8f8-8f5371d3b4f5",
+                            Id = "76a68a28-3065-4fb8-a0b1-0f1c2e956474",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(321),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8376),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-STİLİZEKIRMIZI-K-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE KIRMIZI K",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "8fccd351-417a-407b-848a-decb8a3b6a5e",
+                            Id = "d8417820-c8c0-4d5c-bc1d-649ee3efc448",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(331),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8380),
                             Gender = false,
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-STİLİZEMAVİ-E-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE MAVİ E",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         },
                         new
                         {
-                            Id = "3097b64a-945f-4aae-ad2d-bf9d694f2f85",
+                            Id = "ab92b7af-a3b9-4119-a27c-6c3617be133b",
                             Amount = 10,
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(337),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8384),
                             Gender = true,
                             IsAdult = true,
                             IsSale = false,
                             PhotoPath = "/databaseimg/STİLİZE-STİLİZEMAVİ-K-YETİŞKİNKİRALIK.jpg",
                             ProductCategoryId = "4dans",
                             ProductName = "STİLİZE MAVİ K",
-                            Size = 14,
                             UnitPriceForRent = 1500
                         });
                 });
@@ -2625,31 +2740,31 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "1boş",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(2723),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1271),
                             Name = " "
                         },
                         new
                         {
                             Id = "2halkoyun",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(2748),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1295),
                             Name = "HALK OYUNLARI KIYAFETLERİ"
                         },
                         new
                         {
                             Id = "3kına",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(2753),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1300),
                             Name = "BİNDALLI VE KINA"
                         },
                         new
                         {
                             Id = "4dans",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(2757),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1305),
                             Name = "STİLİZE DANS"
                         },
                         new
                         {
                             Id = "5rond",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 546, DateTimeKind.Local).AddTicks(2762),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1309),
                             Name = "ROND TÖREN"
                         });
                 });
@@ -2682,55 +2797,55 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "AKDENİZ",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2860),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(736),
                             Name = "AKDENİZ"
                         },
                         new
                         {
                             Id = "EGE",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2878),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(755),
                             Name = "EGE"
                         },
                         new
                         {
                             Id = "DOGU ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2884),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(759),
                             Name = "DOGU ANADOLU"
                         },
                         new
                         {
                             Id = "GÜNEYDOGU ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2888),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(763),
                             Name = "GÜNEYDOGU ANADOLU"
                         },
                         new
                         {
                             Id = "İÇ ANADOLU",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2897),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(767),
                             Name = "İÇ ANADOLU"
                         },
                         new
                         {
                             Id = "KAFKAS",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2903),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(773),
                             Name = "KAFKAS"
                         },
                         new
                         {
                             Id = "KARADENİZ",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2908),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(777),
                             Name = "KARADENİZ"
                         },
                         new
                         {
                             Id = "MARMARA",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2912),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(781),
                             Name = "MARMARA"
                         },
                         new
                         {
                             Id = "TRAKYA",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(2916),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(791),
                             Name = "TRAKYA"
                         });
                 });
@@ -2763,127 +2878,127 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "ADIYAMAN",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5379),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3083),
                             Name = "ADIYAMAN"
                         },
                         new
                         {
                             Id = "ANKARA",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5398),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3101),
                             Name = "ANKARA"
                         },
                         new
                         {
                             Id = "ARTVİN",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5403),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3105),
                             Name = "ARTVİN"
                         },
                         new
                         {
                             Id = "BİLECİK",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5412),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3110),
                             Name = "BİLECİK"
                         },
                         new
                         {
                             Id = "BİTLİS",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5417),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3113),
                             Name = "BİTLİS"
                         },
                         new
                         {
                             Id = "BOLU",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5423),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3119),
                             Name = "BOLU"
                         },
                         new
                         {
                             Id = "ÇİFTETELLİ",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5428),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3123),
                             Name = "ÇİFTETELLİ"
                         },
                         new
                         {
                             Id = "BURDUR",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5432),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3131),
                             Name = "BURDUR"
                         },
                         new
                         {
                             Id = "DİYARBAKIR",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5437),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3135),
                             Name = "DİYARBAKIR"
                         },
                         new
                         {
                             Id = "ELAZIĞ",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5442),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3139),
                             Name = "ELAZIĞ"
                         },
                         new
                         {
                             Id = "GAZİANTEP",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5454),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3144),
                             Name = "GAZİANTEP"
                         },
                         new
                         {
                             Id = "GİRESUN",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5461),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3148),
                             Name = "GİRESUN"
                         },
                         new
                         {
                             Id = "HAKKARİ",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5466),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3153),
                             Name = "HAKKARİ"
                         },
                         new
                         {
                             Id = "HALAY",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5470),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3157),
                             Name = "HALAY"
                         },
                         new
                         {
                             Id = "ROMAN",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5474),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3160),
                             Name = "ROMAN"
                         },
                         new
                         {
                             Id = "SİLİFKE",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5478),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3166),
                             Name = "SİLİFKE"
                         },
                         new
                         {
                             Id = "TEKE",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5483),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3170),
                             Name = "TEKE"
                         },
                         new
                         {
                             Id = "TRABZON",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5488),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3175),
                             Name = "TRABZON"
                         },
                         new
                         {
                             Id = "ÜSKÜP",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5493),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3178),
                             Name = "ÜSKÜP"
                         },
                         new
                         {
                             Id = "VAN",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5499),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3183),
                             Name = "VAN"
                         },
                         new
                         {
                             Id = "ZEYBEK",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(5503),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3187),
                             Name = "ZEYBEK"
                         });
                 });
@@ -2916,13 +3031,13 @@ namespace Mate.DAL.Migrations
                         new
                         {
                             Id = "ad",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(7871),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(5439),
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = "us",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 547, DateTimeKind.Local).AddTicks(7894),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(5457),
                             RoleName = "User"
                         });
                 });
@@ -3006,9 +3121,9 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "efd9ccf6-ff5b-4400-b890-eb31b20c2098",
+                            Id = "fffcf24e-86e4-4dfc-b146-5c3741b357f4",
                             Address = "İkitelli Organize Sanayi Bölgesi Giyim Sanatkarları İş ve Ticaret Merkezi (Deposite A.V.M.arkası) 4. Ada C Blok Kat:1 No:114\r\nBaşakşehir – İSTANBUL",
-                            CreatedAt = new DateTime(2024, 12, 15, 21, 5, 39, 548, DateTimeKind.Local).AddTicks(2527),
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2),
                             Email = "matekostum@gmail.com",
                             GSM1 = "Kiralama WhatsApp İletişim Hattı \r\n\r\n 0530 909 11 34 – Erdem",
                             GSM2 = "İmalat \r\n\r\n 0532 321 64 97 – İsmail",
@@ -3017,6 +3132,53 @@ namespace Mate.DAL.Migrations
                             SocialMedias = "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum",
                             Transportation = "(Kirazlı-Metrokent hattı) İkitelli Sanayi Durağı",
                             WorkingHours = "Hafta içi: 09:00 – 17:30\r\n\r\n  Cumartesi: 09:00 – 13:00"
+                        });
+                });
+
+            modelBuilder.Entity("Mate.Entities.Concrete.Size", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SizeNumber")
+                        .HasMaxLength(14)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.ToTable("Size");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ec0e5213-606b-4af2-8af6-62c25d2321a7",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2023),
+                            SizeNumber = 8
+                        },
+                        new
+                        {
+                            Id = "171bbe28-b170-4b73-901e-81c43747e9be",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2040),
+                            SizeNumber = 10
+                        },
+                        new
+                        {
+                            Id = "278fd668-ce29-4178-bec5-4d746567fdc7",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2045),
+                            SizeNumber = 12
+                        },
+                        new
+                        {
+                            Id = "128ba4a5-9538-4038-81ba-fa90a013d89c",
+                            CreatedAt = new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2049),
+                            SizeNumber = 14
                         });
                 });
 
@@ -3093,7 +3255,7 @@ namespace Mate.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5d2b875d-e3b7-4e80-af6c-427768902207",
+                            Id = "e89dcd9e-aee6-4a28-a7e4-36072c0b6553",
                             Address = " uxi sokak. Lola Apt. Paksim Caddesi, No:11",
                             City = "İstanbul",
                             District = "Maltepe",
@@ -3104,6 +3266,21 @@ namespace Mate.DAL.Migrations
                             SurName = "Erdoğan",
                             TcNo = "12212212211"
                         });
+                });
+
+            modelBuilder.Entity("ProductSize", b =>
+                {
+                    b.Property<string>("ProductsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("SizesId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ProductsId", "SizesId");
+
+                    b.HasIndex("SizesId");
+
+                    b.ToTable("ProductSize");
                 });
 
             modelBuilder.Entity("RoleUserInfo", b =>
@@ -3223,6 +3400,21 @@ namespace Mate.DAL.Migrations
                     b.Navigation("ProductRegions");
 
                     b.Navigation("ProductSubRegions");
+                });
+
+            modelBuilder.Entity("ProductSize", b =>
+                {
+                    b.HasOne("Mate.Entities.Concrete.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Mate.Entities.Concrete.Size", null)
+                        .WithMany()
+                        .HasForeignKey("SizesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RoleUserInfo", b =>

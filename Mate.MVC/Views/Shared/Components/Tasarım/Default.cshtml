@@ -1,0 +1,18 @@
+﻿@model List<FotoDesign>
+
+@foreach (var item in Model.OrderByDescending(p => p.Id))
+{
+
+
+	<a href="@Url.Content(item.PhotoPath)" class="img-prod">
+		<div class="product-design-page-card">
+				<div class="product-design-page-image-wrapper">
+						<img src="@Url.Content(item.PhotoPath)" alt="">
+				</div>
+				<div class="product-design-page-title">@item.Name</div>
+
+			</div>
+		</a>
+
+
+}

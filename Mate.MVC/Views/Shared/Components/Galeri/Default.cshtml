@@ -1,5 +1,16 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<FotoGalery>
+
+@foreach (var item in Model.OrderByDescending(p => p.Id))
+{
+
+
+	<a href="@Url.Content(item.PhotoPath)" class="img-prod">
+		<div class="product-galery-page-card">
+			<div class="product-galery-page-image-wrapper">
+				<img src="@Url.Content(item.PhotoPath)" alt="">
+			</div>
+		</div>
+	</a>
+
+
 }

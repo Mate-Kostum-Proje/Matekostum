@@ -1,0 +1,68 @@
+﻿@using static Mate.MVC.Controllers.BasketController
+
+@model List<BasketDetailPipeLine>
+<link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+<br />
+<br />
+<br />
+
+
+<section id="designcostum" class="designcostum section">
+
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <div class="col-lg-12 order-1 order-lg-1 text-center">
+                <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-12 order-2 order-lg-1 content text-center">
+                <h3>Kiralık Halk Oyunları Kıyafetleri – Yöresel Kıyafetler</h3>
+
+            </div>
+        </div>
+    </div>
+
+    @*Sepet Info*@
+
+    <h2>Sepetiniz</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Boyut</th>
+                <th>Fiyat</th>
+                <th>Miktar</th>
+                <th>Toplam Fiyat</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Size</td>
+                    <td>@item.Price TL)</td>
+                    <td>@item.Amount</td>
+                    <td>@item.TotalPrice TL</td>
+
+                    <td>
+                        <a asp-action="RemoveFromBasket" asp-controller="Basket" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</section>

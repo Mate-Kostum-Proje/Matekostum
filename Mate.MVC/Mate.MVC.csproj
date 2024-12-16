@@ -44,6 +44,7 @@
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\HalkOyunlarıS\Yetişkin\" />
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\HalkOyunlarıS\Çocuk\" />
     <Folder Include="wwwroot\assets\img\DataBase\Satılık\Tasarım\" />
+    <Folder Include="wwwroot\databaseimg\galeri\" />
   </ItemGroup>
 
 </Project>
