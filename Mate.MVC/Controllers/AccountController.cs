@@ -130,7 +130,7 @@ namespace Mate.MVC.Controllers
 			userManager.Create(myUser);
 
 			#region Kullaniciya Default olarak user rolü eklenir
-			var role = roleManager.Get(p => p.RoleName == "user"); // user role db'den cekilir
+			var role = roleManager.Get(p => p.RoleName == "User"); // user role db'den cekilir
 			myUser.Roles = new List<Role>();
 			myUser.Roles.Add(role);
 			userManager.Update(myUser);
