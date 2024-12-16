@@ -24,15 +24,10 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(x => x.District).IsRequired().HasMaxLength(20);
 
 
-            Role role = new Role()
+
+            builder.HasData(new UserInfo()
             {
-                CreatedAt = DateTime.Now,
-                Id = Guid.NewGuid().ToString(),
-                RoleName = "Admin"
-            };
-            var user = new UserInfo()
-            {
-                Id = Guid.NewGuid().ToString(),
+
                 Name = "İdil",
                 SurName = "Erdoğan",
                 TcNo = "12212212211",
@@ -42,9 +37,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                 City = "İstanbul",
                 District = "Maltepe",
                 Password = "qweasd"
-            };
-
-            builder.HasData(user);
+            });
 
         }
     }
