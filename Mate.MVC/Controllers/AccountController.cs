@@ -2,16 +2,18 @@
 using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using Mate.BL.Abstract;
+using Mate.DAL.DbContexts;
 using Mate.Entities.Concrete;
 using Mate.MVC.Models.VMs;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace Mate.MVC.Controllers
 {
 	[Authorize]
-	public class AccountController(IManager<Role> roleManager, INotyfService notyfService, IManager<UserInfo> userManager, IMapper mapper) : Controller
+	public class AccountController(IManager<Role> roleManager, INotyfService notyfService, IManager<UserInfo> userManager, IMapper mapper, SqlDbContext sqlDbContext) : Controller
 	{
 		public IActionResult Index()
 		{
@@ -103,6 +105,7 @@ namespace Mate.MVC.Controllers
 		public IActionResult UserInsert(UserInsertVM insertVM)
 		{
 
+
 			if (!ModelState.IsValid)
 			{
 
@@ -125,17 +128,45 @@ namespace Mate.MVC.Controllers
 			//myUser.CreateDate=DateTime.Now;
 			//myUser.Password=insertVM.Password;
 			#endregion
-
 			var myUser = mapper.Map<UserInfo>(insertVM);
 			userManager.Create(myUser);
 
-			#region Kullaniciya Default olarak user rolü eklenir
-			var role = roleManager.Get(p => p.RoleName == "User"); // user role db'den cekilir
-			myUser.Roles = new List<Role>();
-			myUser.Roles.Add(role);
-			userManager.Update(myUser);
+			#region Kullanıcıya Default olarak User rolü eklenir
+			// Rolü Veritabanından Çekme
+
+			var role = roleManager.Get(p => p.RoleName == "User");
+
+			if (role == null)
+			{
+				notyfService.Error("User rolü bulunamadı.");
+
+			}
+
+			// Kullanıcının rollerini başlat
+			if (myUser.Roles == null)
+				myUser.Roles = new List<Role>();
+
+			// Entity Framework'e rolün mevcut olduğunu bildir
+			sqlDbContext.Entry(role).State = EntityState.Unchanged;
+
+			// Eğer kullanıcıda rol zaten eklenmediyse ekle
+			if (!myUser.Roles.Any(r => r.RoleName == "User"))
+			{
+				myUser.Roles.Add(role);
+				sqlDbContext.Update(myUser);
+				sqlDbContext.SaveChanges();
+				notyfService.Success("İşlem başarılı.");
+			}
+			else
+			{
+				notyfService.Error("Kullanıcı zaten 'User' rolüne sahip.");
+			}
 			#endregion
-			notyfService.Success("Islem Basarili");
+
+
+
+
+
 
 
 

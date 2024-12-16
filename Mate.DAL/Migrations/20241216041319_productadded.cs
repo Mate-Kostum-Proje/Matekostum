@@ -359,18 +359,18 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name", "PhotoPath" },
                 values: new object[,]
                 {
-                    { "0f3f793e-408b-4b38-ba61-710898d65fb9", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9827), "OSMANLI", "/databaseimg/tasarım/tasarımOSMANLI.jpg" },
-                    { "2b2461ac-f9b8-4ad9-acfd-7d9f92e80a1c", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9822), "ŞAMAN", "/databaseimg/tasarım/tasarımŞAMAN.jpg" },
-                    { "351dea60-575d-42f4-b005-4daf0b94dff4", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9796), "SALSA K", "/databaseimg/tasarım/tasarımSALSA-K.jpg" },
-                    { "408869fb-51fc-4aea-b401-7e9e1550e7c6", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9720), "STİLİZE E2", "/databaseimg/tasarım/tasarımSTİLİZE-E2.jpg" },
-                    { "46e4ffdf-6c18-4a18-86ec-2ad28da279a4", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9843), "FLAMENKO", "/databaseimg/tasarım/tasarımFLAMENKO.jpg" },
-                    { "56a48d34-c73a-401e-b742-4383cc8d1edd", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9838), "AŞUK", "/databaseimg/tasarım/tasarımAŞUK.jpg" },
-                    { "57058d86-b43e-41e7-92de-8d3d4f76e8e9", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9792), "MAŞUK", "/databaseimg/tasarım/tasarımMAŞUK.jpg" },
-                    { "7e8ef4b0-4860-41f9-8275-ea55d7018c8a", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9770), "ÇİFTETELLİ MAVİ", "/databaseimg/tasarım/tasarımÇİFTETELLİ-MAVİ.jpg" },
-                    { "942b1222-5fbb-4d82-8776-ea48cde51e70", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9781), "İSPANYOL K", "/databaseimg/tasarım/tasarımİSPANYOL-K.jpg" },
-                    { "98b90d48-9f8c-4ea6-9799-f0591fd30a11", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9776), "ROMAN T", "/databaseimg/tasarım/tasarımROMAN-T.jpg" },
-                    { "c535eda9-81a2-4160-8698-38ba772b9ce7", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9785), "YENİÇERİ", "/databaseimg/tasarım/tasarımYENİÇERİ-2.jpg" },
-                    { "ecdd14ab-7f1c-487d-af7c-a8d664a2d48d", new DateTime(2024, 12, 16, 5, 27, 49, 307, DateTimeKind.Local).AddTicks(9834), "STİLİZE E", "/databaseimg/tasarım/tasarımSTİLİZE-E.jpg" }
+                    { "3389f96d-00b3-4f49-9998-887e702948c4", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8466), "ŞAMAN", "/databaseimg/tasarım/tasarımŞAMAN.jpg" },
+                    { "33cb77d0-68d4-4dd1-83f6-d2b036abc745", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8437), "ÇİFTETELLİ MAVİ", "/databaseimg/tasarım/tasarımÇİFTETELLİ-MAVİ.jpg" },
+                    { "501df84a-7e92-434f-b125-eb3d9b3c5ccf", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8452), "YENİÇERİ", "/databaseimg/tasarım/tasarımYENİÇERİ-2.jpg" },
+                    { "720ebddb-8e24-4ad5-b2cf-1386a41dca16", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8447), "İSPANYOL K", "/databaseimg/tasarım/tasarımİSPANYOL-K.jpg" },
+                    { "830711e7-5a2b-4f1d-b546-4198b5fb2744", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8473), "OSMANLI", "/databaseimg/tasarım/tasarımOSMANLI.jpg" },
+                    { "98f455c2-49ed-4261-a222-f40c4adcd3f5", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8462), "SALSA K", "/databaseimg/tasarım/tasarımSALSA-K.jpg" },
+                    { "9a3a26f6-8350-4375-bd96-76db5c118898", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8478), "STİLİZE E", "/databaseimg/tasarım/tasarımSTİLİZE-E.jpg" },
+                    { "9ecdb538-ff91-4661-908e-1b64ac6ba986", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8392), "STİLİZE E2", "/databaseimg/tasarım/tasarımSTİLİZE-E2.jpg" },
+                    { "c71f9c54-270e-43f8-8679-c1700c7e1da8", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8458), "MAŞUK", "/databaseimg/tasarım/tasarımMAŞUK.jpg" },
+                    { "d0d3e19b-4844-493b-aa8d-feb321fe041a", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8482), "AŞUK", "/databaseimg/tasarım/tasarımAŞUK.jpg" },
+                    { "dc81ec18-ba32-44c9-81b1-253efa6782a8", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8443), "ROMAN T", "/databaseimg/tasarım/tasarımROMAN-T.jpg" },
+                    { "ea7b38cc-5a54-4a3f-8e26-af389378274f", new DateTime(2024, 12, 16, 7, 13, 19, 285, DateTimeKind.Local).AddTicks(8486), "FLAMENKO", "/databaseimg/tasarım/tasarımFLAMENKO.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -378,30 +378,30 @@ namespace Mate.DAL.Migrations
                 columns: new[] { "Id", "CreatedAt", "PhotoPath" },
                 values: new object[,]
                 {
-                    { "129e985f-9081-433d-a85a-3c07a1144842", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1953), "/databaseimg/galeri/galeriyoresel-kostum.jpg" },
-                    { "363916ff-9dc6-4f61-a9cb-081877374ca7", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2035), "/databaseimg/galeri/galeriIMG-8454.jpg" },
-                    { "407d5920-e96b-497b-a92d-585880962e03", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1993), "/databaseimg/galeri/galeriIMG_1140.jpg" },
-                    { "53242edf-2f92-4c73-8266-953e5895cc36", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2020), "/databaseimg/galeri/galerizeyb.jpg" },
-                    { "5d5118d2-e82f-496e-b029-efee79e225e9", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1967), "/databaseimg/galeri/galeriIMG_2356.jpg" },
-                    { "6bffb097-6383-41a8-a59f-d1d1191bc981", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2040), "/databaseimg/galeri/galeriIMG_8456.jpg" },
-                    { "715a475b-6f43-4111-bf59-4328b2146707", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1999), "/databaseimg/galeri/galerigümüşhane-kız.jpg" },
-                    { "7c3ab568-68cb-43d1-8052-b57888156644", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2008), "/databaseimg/galeri/galeriIMG_0610.jpg" },
-                    { "80e2452d-d14d-48ff-a424-6b348635f4e7", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1962), "/databaseimg/galeri/galerikaradeniz-kostumu.jpg" },
-                    { "81732743-bdc1-4e12-a207-2e91d5fb3246", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2012), "/databaseimg/galeri/galerigümüşhne-erk-horon.jpg" },
-                    { "89a1aec2-3e39-402b-91ed-26b2208f671f", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2048), "/databaseimg/galeri/galeriwimg_0201.jpeg" },
-                    { "8a9adb73-4197-458b-b96f-7af5a698a025", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2004), "/databaseimg/galeri/galerigümüşhane-erk-bar.jpg" },
-                    { "945c1466-beb7-45a9-883f-40f512846cf4", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2029), "/databaseimg/galeri/galeriIMG_1012.jpg" },
-                    { "9501b478-5321-4528-a928-33df1459cc88", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1932), "/databaseimg/galeri/galeriburdur-kostumu.jpg" },
-                    { "99746d95-d058-440d-8c31-0724cae3b206", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2025), "/databaseimg/galeri/galerigiresun-2.jpg" },
-                    { "aee24086-9487-472f-8709-4a7361d7d399", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1949), "/databaseimg/galeri/galeriGaziantep-Kostum.jpg" },
-                    { "b8259045-e6e2-4507-9f32-c7d02a784824", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1985), "/databaseimg/galeri/galeriIMG_1962.jpg" },
-                    { "b8bc0afa-9a42-41bf-872c-a4fcabbcd011", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2044), "/databaseimg/galeri/galeriIMG_8455.jpg" },
-                    { "bd896127-aadb-4fd5-a204-ce834a5f3eaa", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1972), "/databaseimg/galeri/galeriIMG_1958.jpg" },
-                    { "cbc94b42-37fb-46e4-9f61-1f008b56f3c4", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1980), "/databaseimg/galeri/galeriIMG_1964.jpg" },
-                    { "defe0065-3c97-44b8-b0bb-6d48b68a7935", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1989), "/databaseimg/galeri/galeriIMG_1961.jpg" },
-                    { "e3f8b262-dac8-4a3f-b808-d33ad41d4a5c", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2052), "/databaseimg/galeri/galeriIMG_2688.jpg" },
-                    { "f459104f-7738-47a2-9abe-7e66e58ae883", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(1976), "/databaseimg/galeri/galeriIMG_4063.jpg" },
-                    { "f5dc7a98-019a-46df-877d-4f049e725398", new DateTime(2024, 12, 16, 5, 27, 49, 308, DateTimeKind.Local).AddTicks(2016), "/databaseimg/galeri/galeriDMID3671.jpg" }
+                    { "03b2eb19-627e-4053-87e1-5cfa4ba21760", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(328), "/databaseimg/galeri/galeriburdur-kostumu.jpg" },
+                    { "1a17b882-dc61-46e1-a36f-180bf3d9c525", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(442), "/databaseimg/galeri/galeriIMG_8456.jpg" },
+                    { "263560f6-e9a2-4eb2-8b75-cb0102ba3130", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(348), "/databaseimg/galeri/galeriyoresel-kostum.jpg" },
+                    { "28100e4f-ba98-43cc-b7bf-46e2d1bbc4bf", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(368), "/databaseimg/galeri/galeriIMG_4063.jpg" },
+                    { "28816814-8c49-4566-9de0-af156abc67c7", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(449), "/databaseimg/galeri/galeriwimg_0201.jpeg" },
+                    { "2d7dcb31-19e9-4dfc-8af7-623122304598", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(404), "/databaseimg/galeri/galeriDMID3671.jpg" },
+                    { "3087c3de-b5d1-4b8a-b234-e25493fcf029", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(376), "/databaseimg/galeri/galeriIMG_1962.jpg" },
+                    { "43d49876-bf10-413b-b507-83a391cf4fea", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(453), "/databaseimg/galeri/galeriIMG_2688.jpg" },
+                    { "444c8681-1d2f-406d-9954-6e5a1ee52419", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(413), "/databaseimg/galeri/galerigiresun-2.jpg" },
+                    { "4a26a61a-8bc6-4a46-8c60-79f0adb4204a", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(436), "/databaseimg/galeri/galeriIMG-8454.jpg" },
+                    { "58f06a1f-28b4-42f6-8041-b88b5eeeb6a7", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(384), "/databaseimg/galeri/galeriIMG_1140.jpg" },
+                    { "64654e6a-c43d-43d1-82f3-6a586d837c11", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(359), "/databaseimg/galeri/galeriIMG_2356.jpg" },
+                    { "778ede5d-3393-4953-9f8f-74b66585c463", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(446), "/databaseimg/galeri/galeriIMG_8455.jpg" },
+                    { "8386c546-1fae-4b52-868f-0e39233f05ce", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(394), "/databaseimg/galeri/galerigümüşhane-erk-bar.jpg" },
+                    { "8c5a916a-73f8-4c10-ad73-a68953e96dce", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(408), "/databaseimg/galeri/galerizeyb.jpg" },
+                    { "be5c0453-f43c-4717-91c6-e75d42834c0e", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(417), "/databaseimg/galeri/galeriIMG_1012.jpg" },
+                    { "c33ed70c-0abc-489b-acdf-ff8b5d21c860", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(398), "/databaseimg/galeri/galeriIMG_0610.jpg" },
+                    { "c471f9ee-1b2e-4490-8685-0fc1e55cd051", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(401), "/databaseimg/galeri/galerigümüşhne-erk-horon.jpg" },
+                    { "d4130f52-f778-4dfe-963a-7849ada223fe", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(389), "/databaseimg/galeri/galerigümüşhane-kız.jpg" },
+                    { "ec6bfd04-7aef-450f-a1d4-6839afc39dbf", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(380), "/databaseimg/galeri/galeriIMG_1961.jpg" },
+                    { "ec7610f9-6910-4563-be8d-6e286180bc6c", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(364), "/databaseimg/galeri/galeriIMG_1958.jpg" },
+                    { "f4dd8f84-f3e9-4fdf-9f3f-5f8fb440772e", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(343), "/databaseimg/galeri/galeriGaziantep-Kostum.jpg" },
+                    { "f5aaba68-f634-4cec-960b-157a8cfb3df8", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(352), "/databaseimg/galeri/galerikaradeniz-kostumu.jpg" },
+                    { "f68d6952-3edb-4e59-83cb-e2ec8851dfcc", new DateTime(2024, 12, 16, 7, 13, 19, 286, DateTimeKind.Local).AddTicks(372), "/databaseimg/galeri/galeriIMG_1964.jpg" }
                 });
 
             migrationBuilder.UpdateData(
@@ -409,52 +409,52 @@ namespace Mate.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: "About",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2535));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5895));
 
             migrationBuilder.UpdateData(
                 table: "MainMenu",
                 keyColumn: "Id",
                 keyValue: "Comm",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2554));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5912));
 
             migrationBuilder.UpdateData(
                 table: "MainMenu",
                 keyColumn: "Id",
                 keyValue: "Galery",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2551));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5909));
 
             migrationBuilder.UpdateData(
                 table: "MainMenu",
                 keyColumn: "Id",
                 keyValue: "Home",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2522));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5887));
 
             migrationBuilder.UpdateData(
                 table: "MainMenu",
                 keyColumn: "Id",
                 keyValue: "ProductRent",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2539));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5898));
 
             migrationBuilder.UpdateData(
                 table: "MainMenu",
                 keyColumn: "Id",
                 keyValue: "ProductSale",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 317, DateTimeKind.Local).AddTicks(2548));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 294, DateTimeKind.Local).AddTicks(5901));
 
             migrationBuilder.InsertData(
                 table: "OrdersSituation",
                 columns: new[] { "Id", "CreatedAt", "Situation" },
                 values: new object[,]
                 {
-                    { "22f223d4-5bbb-4946-9bee-5cd2fd00dbeb", new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8864), "Siparişiniz Tamamlandı" },
-                    { "932293c0-41a0-4201-9e0c-bbc8d6afe530", new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8855), "Siparişiniz Hazırlanıyor" },
-                    { "b66b5d07-c3ee-4651-afd0-c635dc75d9f2", new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8860), "Siparişiniz Kargoya verildi" },
-                    { "e49ae816-e3c4-47fe-a18c-2342346c63cd", new DateTime(2024, 12, 16, 5, 27, 49, 318, DateTimeKind.Local).AddTicks(8836), "Siparişiniz Alındı" }
+                    { "08e1644b-2c6e-42c2-8841-9f5c5fbc22eb", new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(1020), "Siparişiniz Hazırlanıyor" },
+                    { "27f27997-30ed-4eed-840d-723b79b9e6ed", new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(1025), "Siparişiniz Kargoya verildi" },
+                    { "55ce8a69-cf9b-4361-a7a6-d36f29dd786d", new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(1029), "Siparişiniz Tamamlandı" },
+                    { "6c9933f0-b7ad-4c71-b093-8cdb0975d592", new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(1003), "Siparişiniz Alındı" }
                 });
 
             migrationBuilder.UpdateData(
@@ -462,399 +462,399 @@ namespace Mate.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: "1boş",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1271));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(3246));
 
             migrationBuilder.UpdateData(
                 table: "ProductCategories",
                 keyColumn: "Id",
                 keyValue: "2halkoyun",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1295));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(3265));
 
             migrationBuilder.UpdateData(
                 table: "ProductCategories",
                 keyColumn: "Id",
                 keyValue: "3kına",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1300));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(3274));
 
             migrationBuilder.UpdateData(
                 table: "ProductCategories",
                 keyColumn: "Id",
                 keyValue: "4dans",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1305));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(3278));
 
             migrationBuilder.UpdateData(
                 table: "ProductCategories",
                 keyColumn: "Id",
                 keyValue: "5rond",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(1309));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(3282));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "AKDENİZ",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(736));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2168));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "DOGU ANADOLU",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(759));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2199));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "EGE",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(755));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2189));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "GÜNEYDOGU ANADOLU",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(763));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2203));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "İÇ ANADOLU",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(767));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2206));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "KAFKAS",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(773));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2212));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "KARADENİZ",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(777));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2216));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "MARMARA",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(781));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2220));
 
             migrationBuilder.UpdateData(
                 table: "ProductRegions",
                 keyColumn: "Id",
                 keyValue: "TRAKYA",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(791));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(2224));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ADIYAMAN",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3083));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4339));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ANKARA",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3101));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4357));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ARTVİN",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3105));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4361));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "BİLECİK",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3110));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4365));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "BİTLİS",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3113));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4369));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "BOLU",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3119));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4375));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "BURDUR",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3131));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4383));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ÇİFTETELLİ",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3123));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4379));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "DİYARBAKIR",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3135));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4389));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ELAZIĞ",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3139));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4394));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "GAZİANTEP",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3144));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4398));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "GİRESUN",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3148));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4401));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "HAKKARİ",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3153));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4405));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "HALAY",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3157));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4408));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ROMAN",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3160));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4412));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "SİLİFKE",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3166));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4416));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "TEKE",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3170));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4421));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "TRABZON",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3175));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4431));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ÜSKÜP",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3178));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4435));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "VAN",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3183));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4439));
 
             migrationBuilder.UpdateData(
                 table: "ProductSubRegions",
                 keyColumn: "Id",
                 keyValue: "ZEYBEK",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(3187));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4443));
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Amount", "CreatedAt", "Description", "Gender", "IsAdult", "IsSale", "PhotoPath", "ProductCategoryId", "ProductName", "ProductRegionId", "ProductSubRegionId", "UnitPriceForRent", "UnitPriceForSale" },
                 values: new object[,]
                 {
-                    { "019629a9-11e2-4404-b9fd-19e7d358383f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7677), null, null, false, false, "/databaseimg/HALKOYUNBİLECİKÇOCUKKİRALIK.jpg", "2halkoyun", "BİLECİK", "MARMARA", "BİLECİK", 1500, null },
-                    { "02c262ce-f3e9-4394-98bd-6963bb4e7777", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8303), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N3-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT-N3", null, null, 1500, null },
-                    { "03ea8738-2779-4b0c-844b-44e14be7ccf8", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7720), null, false, false, false, "/databaseimg/HALKOYUNGAZİANTEP-EÇOCUKKİRALIK.jpg", "2halkoyun", "GAZİANTEP E", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
-                    { "059cbbfe-2cb3-4db5-ac2c-da6314146b61", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8099), null, true, true, false, "/databaseimg/HALKOYUN-GİRESUN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GİRESUN K", "KARADENİZ", "GİRESUN", 1500, null },
-                    { "0655e9b9-a3e0-498f-a8cf-45eacf1e31ab", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8246), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N2-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI-N2", null, null, 1500, null },
-                    { "08aca359-c739-4ccf-bf37-8d31108512fe", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7730), null, null, false, false, "/databaseimg/HALKOYUNHALAY-SİYAHÇOCUKKİRALIK.jpg", "2halkoyun", "HALAY SİYAH", null, "HALAY", 1500, null },
-                    { "098e4558-d30d-4ee1-8480-374b8229df8d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7868), null, null, false, false, "/databaseimg/STİLİZESALSAEÇOCUKKİRALIK.jpg", "4dans", "SALSA E", null, null, 1500, null },
-                    { "0f30161a-b6b2-46b9-93b9-b78604e2b6e7", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7920), null, null, false, false, "/databaseimg/RONDHACİVATKARAGÖZÇOCUKKİRALIK.jpg", "5rond", "HACİVAT KARAGÖZ", null, null, 1500, null },
-                    { "1146e798-d98f-4b98-b6de-7d380c734a65", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8212), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKEŞKİYA-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK EŞKİYA E", "EGE", "ZEYBEK", 1500, null },
-                    { "135d3977-8c12-4506-a068-42f3cd64d1d7", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8231), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKMUĞLA-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK MUĞLA", "EGE", "ZEYBEK", 1500, null },
-                    { "14d91eb7-6764-47ba-b851-174bfb484367", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7662), null, null, false, false, "/databaseimg/HALKOYUNARTVİNÇOCUKKİRALIK.jpg", "2halkoyun", "ARTVİN", "KARADENİZ", "ARTVİN", 1500, null },
-                    { "1584ca09-5e8e-4301-87ec-f6198ff7f86a", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8108), null, false, true, false, "/databaseimg/HALKOYUN-KAFKAS-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "KAFKAS E", "KAFKAS", null, 1500, null },
-                    { "19fd95fd-92df-49fc-8cd9-30208fb20db0", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8080), null, true, true, false, "/databaseimg/HALKOYUN-DİYARBAKIR-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "DİYARBAKIR K", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
-                    { "1e8f21c3-5904-4d0f-8dba-106182d83042", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8046), null, null, true, false, "/databaseimg/HALKOYUN-BİTLİSBEYAZ-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS BEYAZ E", "DOGU ANADOLU", "BİTLİS", 1500, null },
-                    { "254e625e-75c7-4861-8754-dd2de4833d62", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7693), null, null, false, false, "/databaseimg/HALKOYUNBOLU-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "BOLU İŞLİ", "MARMARA", "BOLU", 1500, null },
-                    { "27a45823-2b9a-43a0-8c0e-78473520ec16", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8208), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKBORDO-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK BORDO", "EGE", "ZEYBEK", 1500, null },
-                    { "27b844ba-981a-4ea1-8cac-eb776cd3388f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7988), null, null, false, false, "/databaseimg/RONDŞİRİNLERÇOCUKKİRALIK.jpg", "5rond", "ŞİRİNLER", null, null, 0, 1500 },
-                    { "2844aa02-e975-405f-8af7-8cd243329268", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8069), null, true, true, false, "/databaseimg/HALKOYUN-BURDUR-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BURDUR K", "AKDENİZ", "BURDUR", 1500, null },
-                    { "2864e6f1-8ab9-4766-8823-840f2c80002e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7973), null, null, false, false, "/databaseimg/RONDPAMUKPRENSESÇOCUKKİRALIK.jpg", "5rond", "PAMUK PRENSES", null, null, 0, 1500 },
-                    { "2a63a1f2-b22d-4b10-97c5-58a7e2083fd0", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8051), null, true, true, false, "/databaseimg/HALKOYUN-BİTLİS-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS K", "DOGU ANADOLU", "BİTLİS", 1500, null },
-                    { "2d4a33f0-2a6b-4d51-85ff-c823f1f08e3c", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7906), null, null, false, false, "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg", "5rond", "ÇAÇA", null, null, 1500, null },
-                    { "3064139d-7ed9-4eb0-bb81-cf48e05f426a", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7925), null, null, false, false, "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg", "5rond", "İSPANYOL", null, "ROMAN", 1500, null },
-                    { "31e4174f-24e8-46c2-8ba3-ad92ea0b877b", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7902), null, null, false, false, "/databaseimg/RONDASKERÇOCUKKİRALIK.jpg", "5rond", "ASKER", null, null, 1500, null },
-                    { "34ee0bc4-0b7e-4123-9821-c8ad6a8d2ea1", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8027), null, false, true, false, "/databaseimg/HALKOYUN-ARTVİN-E2-YETİŞKİNKİRALIK.jpG", "2halkoyun", "ARTVİN E2", "KARADENİZ", "ARTVİN", 1500, null },
-                    { "3663d5c1-c5d4-4a40-968d-e5ffe3988290", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7779), null, null, false, false, "/databaseimg/HALKOYUNÜSKÜPÇOCUKKİRALIK.jpg", "2halkoyun", "ÜSKÜP", "TRAKYA", "ÜSKÜP", 1500, null },
-                    { "380e47e1-adfa-4b7a-b7b9-43c7a5f8dad6", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8227), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKPEMBE-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK PEMBE", "EGE", "ZEYBEK", 1500, null },
-                    { "39723e98-c48f-4039-9345-9729d6090286", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7910), null, null, false, false, "/databaseimg/RONDÇİÇEKÇOCUKKİRALIK.jpg", "5rond", "ÇİÇEK", null, null, 1500, null },
-                    { "3b67b406-c04a-46fe-bc77-76d89b35d30e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7855), null, null, false, false, "/databaseimg/STİLİZEROMANKIR1ÇOCUKKİRALIK.jpg", "4dans", "ROMAN KIR (1)", null, null, 1500, null },
-                    { "3e950375-0882-48ba-ae38-166984706b37", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8271), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANYEŞİL-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN YEŞİL", null, null, 1500, null },
-                    { "3fcf7b87-7f17-456c-b837-c903a5ece045", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7969), null, null, false, false, "/databaseimg/RONDPALYAÇOÇOCUKKİRALIK.jpg", "5rond", "PALYAÇO", null, null, 0, 1500 },
-                    { "3ff5027d-79a0-49b0-9911-3ce157e1fa31", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7832), null, null, false, false, "/databaseimg/STİLİZEHİNTÇOCUKKİRALIK.jpg", "4dans", "HİNT", null, null, 1500, null },
-                    { "4166f194-9b1d-481d-8c88-eff469330fce", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7704), null, null, false, false, "/databaseimg/HALKOYUNDİYARBAKIRÇOCUKKİRALIK.jpg", "2halkoyun", "DİYARBAKIR", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
-                    { "47103496-0772-4a25-8a10-2b4493cda279", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8065), null, false, true, false, "/databaseimg/HALKOYUN-BURDUR-E2-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BURDUR E2", "AKDENİZ", "BURDUR", 1500, null },
-                    { "47bf52f9-0056-488a-bba9-38c895a6996f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8164), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONMORİŞLİK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON MOR İŞLİK", "KARADENİZ", "TRABZON", 1500, null },
-                    { "48a5bc29-cfc8-46cf-ad46-560da2ca27d4", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8178), null, false, true, false, "/databaseimg/HALKOYUN-ÜSKÜP-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ÜSKÜP E", "TRAKYA", "ÜSKÜP", 1500, null },
-                    { "499fcecc-c75f-4224-87bf-3c25280126e7", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8160), null, true, true, false, "/databaseimg/HALKOYUN-TRABZONİŞLİK-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON K İŞLİK", "KARADENİZ", "TRABZON", 1500, null },
-                    { "4aa6fdb1-a0dd-49c5-8325-1a15b54f4e0c", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8288), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ KIRMIZI-N2", null, null, 1500, null },
-                    { "4c7f89d3-ad14-4928-85e7-a9bfe080d460", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8334), null, null, true, false, "/databaseimg/STİLİZE-ÇİFTETELLİBEYAZ-YETİŞKİNKİRALIK.jpg", "4dans", "ÇİFTETELLİ BEYAZ", null, "ÇİFTETELLİ", 1500, null },
-                    { "4c989a31-e7cc-4b6e-8910-ea3e7231522c", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7942), null, null, false, false, "/databaseimg/RONDMEHTERÇOCUKKİRALIK.jpg", "5rond", "MEHTER", null, null, 1500, null },
-                    { "4ca7704f-a679-416e-8173-7be4f31e1fc1", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8241), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI", null, null, 1500, null },
-                    { "4cec8196-2c9a-4c3c-a05e-9ba74cb1dcbe", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7804), null, false, false, false, "/databaseimg/HALKOYUNZEYBEK-EÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK E", "EGE", "ZEYBEK", 1500, null },
-                    { "4da4de7c-32e0-4e1f-b00f-ec8d8c8c3410", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8127), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAKIRMIZIKADİFE-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA KIRMIZI KADİFE", "TRAKYA", null, 1500, null },
-                    { "4e78bc08-260a-4350-b934-e59d1e178ee6", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8003), null, null, false, false, "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg", "5rond", "STİLİZE SARI", null, null, 0, 1500 },
-                    { "4fc977c9-425c-4e7f-aee9-9740d3d78741", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8073), null, false, true, false, "/databaseimg/HALKOYUN-DİYARBAKIR-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "DİYARBAKIR E", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
-                    { "50caa4e8-48e7-4ebf-a7e2-b9f788a2ca04", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7889), null, null, false, false, "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg", "4dans", "STİLİZE SARI", null, null, 1500, null },
-                    { "51d7860d-735f-4515-b2a7-8a716023846e", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8293), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT", null, null, 1500, null },
-                    { "51f0b076-581d-41ec-9033-35ffbea7e81e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7698), null, null, false, false, "/databaseimg/HALKOYUNBOLU-SADEÇOCUKKİRALIK.jpg", "2halkoyun", "BOLU SADE", "MARMARA", "BOLU", 1500, null },
-                    { "51f244e9-ca61-4026-abb2-f9a046a67ba6", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7950), null, null, false, false, "/databaseimg/RONDNASREDDİNHOCAÇOCUKKİRALIK.jpg", "5rond", "NASREDDİN HOCA", null, null, 1500, null },
-                    { "5493261a-c620-4c56-854a-c4454aace7ec", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7822), null, null, false, false, "/databaseimg/STİLİZEFRAKÇOCUKKİRALIK.jpg", "4dans", "FRAK", null, null, 1500, null },
-                    { "598ab973-15c3-4c02-af95-2a65ae19b36e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7765), null, null, false, false, "/databaseimg/HALKOYUNTEKE-YEŞİLÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE YEŞİL", "AKDENİZ", "TEKE", 1500, null },
-                    { "59c9121e-dc98-4e2b-bf6e-160695c74397", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7897), null, null, false, false, "/databaseimg/RONDARIÇOCUKKİRALIK.jpg", "5rond", "ARI", null, null, 1500, null },
-                    { "5ad60e55-f2a6-4eec-b727-0955ed0812cb", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8217), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKKOYU-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK KOYU E", "EGE", "ZEYBEK", 1500, null },
-                    { "5c7528fb-4666-4b31-8abe-1c800723a3b5", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7683), null, false, false, false, "/databaseimg/HALKOYUNBİTLİS-EÇOCUKKİRALIK.jpg", "2halkoyun", "BİTLİS E", "DOGU ANADOLU", "BİTLİS", 1500, null },
-                    { "60675bc1-c5e0-4451-9036-fdbd055271a6", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7754), null, null, false, false, "/databaseimg/HALKOYUNSİLİFKEÇOCUKKİRALIK.jpg", "2halkoyun", "SİLİFKE", "MARMARA", "SİLİFKE", 1500, null },
-                    { "60b9ee0e-2a58-4095-8313-c4e9bc5b1d76", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8199), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKAÇIK-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK AÇIK E", "EGE", "ZEYBEK", 1500, null },
-                    { "62e63b7f-ea1d-4652-91da-38c585ddd14f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8173), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONPEMBEYELEK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON PEMBE YELEK", "KARADENİZ", "TRABZON", 1500, null },
-                    { "64ec3b5d-4c5d-49d8-8c76-3736d2fde4c2", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8346), null, null, true, false, "/databaseimg/STİLİZE-ROMANKIRMIZI-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN KIRMIZI", null, "ROMAN", 1500, null },
-                    { "66d4a483-1e54-4482-8ef2-f4ba5ae41e4c", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8131), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAKREM-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA KREM", "TRAKYA", null, 1500, null },
-                    { "6764d265-4b68-458a-85ec-689b56856efb", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7954), null, null, false, false, "/databaseimg/RONDNOELBABAÇOCUKKİRALIK.jpg", "5rond", "NOEL BABA", null, null, 0, 1500 },
-                    { "685c90e8-e736-4e13-b628-d78091ddb38f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7749), null, null, false, false, "/databaseimg/HALKOYUNKAFKAS-MORÇOCUKKİRALIK.jpg", "2halkoyun", "KAFKAS MOR", "KAFKAS", null, 1500, null },
-                    { "6c54fb89-f037-4157-a3fb-1b4a218e522d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7965), null, null, false, false, "/databaseimg/RONDPADİŞAHÇOCUKKİRALIK.jpg", "5rond", "PADİŞAH", null, null, 0, 1500 },
-                    { "6d6bfa67-3e4d-4eae-9731-1b282596bf6d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7770), null, null, false, false, "/databaseimg/HALKOYUNTEKE-PEMBEÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE PEMBE", "AKDENİZ", "TEKE", 1500, null },
-                    { "6d7f522a-a3b7-45bb-b6e5-6ca02de748d5", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7709), null, null, false, false, "/databaseimg/HALKOYUNELAZIĞÇOCUKKİRALIK.jpg", "2halkoyun", "ELAZIĞ", "DOGU ANADOLU", "ELAZIĞ", 1500, null },
-                    { "7191b227-ab2c-462e-b1df-4302c87ac938", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7657), null, null, false, false, "/databaseimg/HALKOYUNANKARAÇOCUKKİRALIK.jpg", "2halkoyun", "ANKARA", "İÇ ANADOLU", "ANKARA", 1500, null },
-                    { "738dd802-101b-429c-baab-1b24a67a1cae", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7667), null, null, false, false, "/databaseimg/HALKOYUNARTVİN-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "ARTVİN İŞLİ", "KARADENİZ", "ARTVİN", 1500, null },
-                    { "75785616-c577-42da-b9d9-1fb0a7313612", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7977), null, true, false, false, "/databaseimg/RONDSALSAKÇOCUKKİRALIK.jpg", "5rond", "SALSA K", null, null, 0, 1500 },
-                    { "76a68a28-3065-4fb8-a0b1-0f1c2e956474", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8376), null, true, true, false, "/databaseimg/STİLİZE-STİLİZEKIRMIZI-K-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI K", null, null, 1500, null },
-                    { "7928e19e-21cd-405a-b4d5-b479750e0170", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8012), null, false, true, false, "/databaseimg/HALKOYUN-ADIYAMAN-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ADIYAMAN E", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
-                    { "7a6d8dc9-d210-426f-9661-a6a2ed268a68", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7992), null, null, false, false, "/databaseimg/RONDTAVŞANÇOCUKKİRALIK.jpg", "5rond", "TAVŞAN", null, null, 0, 1500 },
-                    { "7aa570bd-ba53-44cc-b6f5-03028eb2d22f", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8285), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ KIRMIZI", null, null, 1500, null },
-                    { "7b2e0513-7e0b-4f35-876d-0cb45781add5", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8188), null, null, true, false, "/databaseimg/HALKOYUN-VANBEYAZ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "VAN BEYAZ", "DOGU ANADOLU", "VAN", 1500, null },
-                    { "81c5ae5a-ff08-4652-a0c0-5c13d38f2cfd", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7859), null, null, false, false, "/databaseimg/STİLİZEROMANMORÇOCUKKİRALIK.jpg", "4dans", "ROMAN MOR", null, null, 1500, null },
-                    { "8428f772-0e67-4f75-a326-059286a021db", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7961), null, null, false, false, "/databaseimg/RONDÖRDEKÇOCUKKİRALIK.jpg", "5rond", "ÖRDEK", null, null, 0, 1500 },
-                    { "85acfe6e-9833-4abe-8592-07324724e480", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8261), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMÜRDÜM-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN MÜRDÜM", null, null, 1500, null },
-                    { "88f1cd90-23b3-4301-b1b2-abb2f2dc1186", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7774), null, null, false, false, "/databaseimg/HALKOYUNTRAKYAÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA", "TRAKYA", null, 1500, null },
-                    { "89d8a5de-16f2-4d66-9bb8-ff8af359127e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8338), null, null, true, false, "/databaseimg/STİLİZE-LİRİK-YETİŞKİNKİRALIK.jpg", "4dans", "LİRİK", null, null, 1500, null },
-                    { "89d9e342-fb35-41c4-879e-93e7b939ce16", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8136), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAMAVİ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA MAVİ", "TRAKYA", null, 1500, null },
-                    { "8e84a34a-9e2e-4be2-adcb-3f5765c3becb", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8007), null, null, false, false, "/databaseimg/RONDYENİÇERİÇOCUKKİRALIK.jpg", "5rond", "YENİÇERİ", null, null, 0, 1500 },
-                    { "8f0f98e3-67db-4b53-9e06-48a452cf0b89", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8299), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT-N2", null, null, 1500, null },
-                    { "9093a00c-6d6a-425d-b726-928a169d59e1", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8118), null, false, true, false, "/databaseimg/HALKOYUN-SİLİFKE-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "SİLİFKE E", "AKDENİZ", "SİLİFKE", 1500, null },
-                    { "911dd2e3-e609-4fd0-a140-f397b501ecea", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7850), null, null, false, false, "/databaseimg/STİLİZEROMANKIRMIZIÇOCUKKİRALIK.jpg", "4dans", "ROMAN KIRMIZI", null, null, 1500, null },
-                    { "91a7d285-ac62-4d9e-a109-2c0ea9c621e3", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7933), null, null, false, false, "/databaseimg/RONDKIRMIZIBAŞLIKLIKIZÇOCUKKİRALIK.jpg", "5rond", "KIRMIZI BAŞLIKLI KIZ", null, null, 1500, null },
-                    { "92035258-f199-4ef1-a75e-7a04cf6ad49a", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8222), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKMOR-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK MOR", "EGE", "ZEYBEK", 1500, null },
-                    { "9375f9f4-3a84-4aaa-86ce-600c32ee89f3", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7915), null, null, false, false, "/databaseimg/RONDFAREÇOCUKKİRALIK.jpg", "5rond", "FARE", null, null, 1500, null },
-                    { "98f6a59a-c669-4c26-b848-b15b5f461a12", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8112), null, true, true, false, "/databaseimg/HALKOYUN-KAFKAS-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "KAFKAS K", "KAFKAS", null, 1500, null },
-                    { "9928273f-3b12-4cd6-81e1-427471d8128c", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7814), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-MORÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK MOR", "EGE", "ZEYBEK", 1500, null },
-                    { "998b43c5-33a3-42c1-9267-c59d525d9672", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8358), null, null, true, false, "/databaseimg/STİLİZE-ROMANRENKLİETEK-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN RENKLİ ETEK", null, "ROMAN", 1500, null },
-                    { "99e31708-681e-4f95-aa0d-1e6f46e31f08", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7864), null, null, false, false, "/databaseimg/STİLİZESALSAÇOCUKKİRALIK.jpg", "4dans", "SALSA", null, null, 1500, null },
-                    { "9a2d76f4-a849-4a44-a321-8f857418eac1", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7828), null, null, false, false, "/databaseimg/STİLİZEGREASEÇOCUKKİRALIK.jpg", "4dans", "GREASE", null, null, 1500, null },
-                    { "9c11ad84-16e8-4f10-8c0c-a51cb07e3e0d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7809), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK İŞLİ", "EGE", "ZEYBEK", 1500, null },
-                    { "9dfafd48-46f9-482a-b2f1-6aef9187cd9c", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8276), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİBORDO-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ BORDO", null, null, 1500, null },
-                    { "9ea6b5de-d100-4628-b68f-000455336339", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7818), null, null, false, false, "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg", "4dans", "ÇAÇA", null, null, 1500, null },
-                    { "9f15efc7-e132-483c-9981-fb6f6cd83749", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8362), null, null, true, false, "/databaseimg/STİLİZE-ROMANTURUNCU-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN TURUNCU", null, "ROMAN", 1500, null },
-                    { "9f5485f5-36f9-4df7-b0a2-3681d3f8a91f", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8307), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ PEMBE", null, null, 1500, null },
-                    { "a02ded9e-fe90-4c60-80e0-37eeb855204b", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8257), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMOR-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN MOR", null, null, 1500, null },
-                    { "a1742aa3-d2ef-4507-8232-2d5eac6b7b87", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8353), null, null, true, false, "/databaseimg/STİLİZE-ROMANPEMBE-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN PEMBE", null, "ROMAN", 1500, null },
-                    { "a2c4b911-8810-4036-bfdd-04591364fb5e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7839), null, null, false, false, "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg", "4dans", "İSPANYOL", null, null, 1500, null },
-                    { "a3cb1e3d-38c5-4587-a111-83040c4d72a4", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8204), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKAĞIR-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK AĞIR E", "EGE", "ZEYBEK", 1500, null },
-                    { "a4f0c053-2f4f-4120-92a0-6fb62b56f1be", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7636), null, null, false, false, "/databaseimg/HALKOYUNADIYAMANÇOCUKKİRALIK.jpg", "2halkoyun", "ADIYAMAN", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
-                    { "a6c41b39-f165-4961-9d27-afd7152ed274", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7783), null, null, false, false, "/databaseimg/HALKOYUNTRAKYA-PEMBEÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA PEMBE", "TRAKYA", null, 1500, null },
-                    { "a8184970-b0a3-4068-9fb2-5432aaa2ce85", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8085), null, false, true, false, "/databaseimg/HALKOYUN-GAZİANTEP-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GAZİANTEP E", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
-                    { "ab92b7af-a3b9-4119-a27c-6c3617be133b", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8384), null, true, true, false, "/databaseimg/STİLİZE-STİLİZEMAVİ-K-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE MAVİ K", null, null, 1500, null },
-                    { "ad207d6c-e47e-4924-9c7c-41c4f27ea067", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8060), null, true, true, false, "/databaseimg/HALKOYUN-BOLU-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BOLU K", "KARADENİZ", "BOLU", 1500, null },
-                    { "afbc718e-4206-49e0-b7dd-4f27e6a6a126", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8342), null, null, true, false, "/databaseimg/STİLİZE-ROMANFUŞYA-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN FUŞYA", null, "ROMAN", 1500, null },
-                    { "b0af6908-6e08-48ed-aeba-9843674c1124", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8322), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİYEŞİL-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ YEŞİL", null, null, 1500, null },
-                    { "b3f5b091-4d55-4970-811b-f6255634e3ed", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7983), null, null, false, false, "/databaseimg/RONDSEMAZENÇOCUKKİRALIK.jpg", "5rond", "SEMAZEN", null, null, 0, 1500 },
-                    { "b66b8405-6ad3-4642-a657-392791e86ef1", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7998), null, null, false, false, "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg", "5rond", "STİLİZE KIRMIZI", null, null, 0, 1500 },
-                    { "b7d11ff7-3824-4ae4-b6e2-c5570aa8be82", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8318), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİÜSKÜP-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ ÜSKÜP-N2", null, null, 1500, null },
-                    { "b7ef1275-dfe3-4acf-87f4-ec7aef02b12e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8183), null, true, true, false, "/databaseimg/HALKOYUN-ÜSKÜPBORDO-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ÜSKÜP K BORDO", "TRAKYA", "ÜSKÜP", 1500, null },
-                    { "b823f150-2ad9-45f4-900e-c7e84ddb1dc5", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8017), null, true, true, false, "/databaseimg/HALKOYUN-ADIYAMAN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ADIYAMAN K", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
-                    { "baa1a0c3-b3b1-4f81-b8e7-e6ba37917a92", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7878), null, null, false, false, "/databaseimg/STİLİZESTİLİZEMORÇOCUKKİRALIK.jpg", "4dans", "STİLİZE MOR", null, null, 1500, null },
-                    { "bdd11288-4599-427f-9f6a-febd2db5d210", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8123), null, true, true, false, "/databaseimg/HALKOYUN-SİLİFKE-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "SİLİFKE K", "AKDENİZ", "SİLİFKE", 1500, null },
-                    { "bed7d6f3-27c6-4820-b0fe-cc3b824e44a5", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7788), null, null, false, false, "/databaseimg/HALKOYUNTRAKYA-BEYAZÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA BEYAZ", "TRAKYA", null, 1500, null },
-                    { "bfce6bb2-f437-491a-b8b4-4fe4d06d0c83", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7893), null, null, false, false, "/databaseimg/STİLİZEÇİFTETELLİPEMBEÇOCUKKİRALIK.jpg", "4dans", "ÇİFTETELLİ PEMBE", null, null, 1500, null },
-                    { "c11c5ec6-dbd4-4c97-a470-1098e06007da", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7792), null, null, false, false, "/databaseimg/HALKOYUNVANÇOCUKKİRALIK.jpg", "2halkoyun", "VAN", "DOGU ANADOLU", "VAN", 1500, null },
-                    { "c4656dde-7da9-41af-8ee4-754a0e5027c0", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7714), null, true, false, false, "/databaseimg/HALKOYUNGAZİANTEP-KÇOCUKKİRALIK.jpg", "2halkoyun", "GAZİANTEP K", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
-                    { "c69b9e24-50eb-4f10-8649-97baf489a43d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8103), null, true, true, false, "/databaseimg/HALKOYUN-HAKKARİ-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "HAKKARİ K", "DOGU ANADOLU", "HAKKARİ", 1500, null },
-                    { "ca01c69b-0d97-4278-8c85-986a22112c9f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8153), null, false, true, false, "/databaseimg/HALKOYUN-TRABZON-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON E", "KARADENİZ", "TRABZON", 1500, null },
-                    { "ca28cf67-679e-4137-9006-07b9d06ff380", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7725), null, null, false, false, "/databaseimg/HALKOYUNHALAY-KIRMIZIÇOCUKKİRALIK.jpg", "2halkoyun", "HALAY KIRMIZI", null, "HALAY", 1500, null },
-                    { "ca2b25bd-fba6-4efc-b9cd-f7c935a47296", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8367), null, null, true, false, "/databaseimg/STİLİZE-ROMANYEŞİL-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN YEŞİL", null, "ROMAN", 1500, null },
-                    { "ca39c71a-d754-4a14-8f92-0ef593490d51", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8143), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAMORMONORAY-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA MOR MONORAY", "TRAKYA", null, 1500, null },
-                    { "cb05fab5-372d-41ac-8e39-acd5c9e25ccc", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8035), null, true, true, false, "/databaseimg/HALKOYUN-ARTVİN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ARTVİN K", "KARADENİZ", "ARTVİN", 1500, null },
-                    { "cc5d21fa-7cca-4269-9c0e-e18a4811880a", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8371), null, false, true, false, "/databaseimg/STİLİZE-STİLİZEKIRMIZI-E-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI E", null, null, 1500, null },
-                    { "ce19b7ac-1e0e-4808-8b06-37db569fb40e", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7884), null, null, false, false, "/databaseimg/STİLİZESTİLİZEPEMBEÇOCUKKİRALIK.jpg", "4dans", "STİLİZE PEMBE", null, null, 1500, null },
-                    { "d6a66c5d-ba4f-42e9-a93d-ef4eb8f0948f", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8193), null, true, true, false, "/databaseimg/HALKOYUN-VAN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "VAN K", "DOGU ANADOLU", "VAN", 1500, null },
-                    { "d6ace530-be1d-46f6-bd8e-e591a0df5429", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7759), null, false, false, false, "/databaseimg/HALKOYUNTEKE-EÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE E", "AKDENİZ", "TEKE", 1500, null },
-                    { "d8417820-c8c0-4d5c-bc1d-649ee3efc448", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8380), null, false, true, false, "/databaseimg/STİLİZE-STİLİZEMAVİ-E-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE MAVİ E", null, null, 1500, null },
-                    { "d87e7e49-c208-4e69-968a-a2055e704937", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8148), null, true, true, false, "/databaseimg/HALKOYUN-TRAKYAPEMBE-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA PEMBE K", "TRAKYA", null, 1500, null },
-                    { "dbd404ea-3ab9-42b9-91e9-83baba8639eb", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8089), null, true, true, false, "/databaseimg/HALKOYUN-GAZİANTEP-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GAZİANTEP K", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
-                    { "dc04663a-864f-43c4-b01e-9694bd03caee", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8169), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONMORYELEK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON MOR YELEK", "KARADENİZ", "TRABZON", 1500, null },
-                    { "dd5d6285-c1a9-450f-a4e1-a9ee0c43c796", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8280), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİGRİSİYAH-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ GRİ-SİYAH", null, null, 1500, null },
-                    { "de45b24d-6c7c-42c2-9d33-ad2491b766ba", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7797), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-BORDOÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK BORDO", "EGE", "ZEYBEK", 1500, null },
-                    { "de8865a5-76f9-4c31-8cf4-9ece2bebe986", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8329), null, null, true, false, "/databaseimg/STİLİZE-AŞUKMAŞUK-YETİŞKİNKİRALIK.jpg", "4dans", "AŞUK MAŞUK", null, null, 1500, null },
-                    { "dfc08350-9c1d-4817-8efa-c927ec5ef888", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7846), null, null, false, false, "/databaseimg/STİLİZEROMANFUŞYAÇOCUKKİRALIK.jpg", "4dans", "ROMAN FUŞYA", null, null, 1500, null },
-                    { "e1e8aae2-61d9-4120-a04b-9442da9e7f13", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7946), null, null, false, false, "/databaseimg/RONDMEZUNİYETÇOCUKKİRALIK.jpg", "5rond", "MEZUNİYET", null, null, 1500, null },
-                    { "e47b324a-6e22-434c-8f9e-4ed9aa2e94fe", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7744), null, null, false, false, "/databaseimg/HALKOYUNKAFKAS-KIRMIZIÇOCUKKİRALIK.jpg", "2halkoyun", "KAFKAS KIRMIZI", "KAFKAS", null, 1500, null },
-                    { "e86601c5-56d7-4505-ba03-9f1029962279", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7873), null, null, false, false, "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI", null, null, 1500, null },
-                    { "ebada7e6-7a82-4f07-9ea6-51dc3d560ebb", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8253), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N3-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI-N3", null, null, 1500, null },
-                    { "edbf2c08-9ec0-479d-a808-af6ce235ee0d", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7688), null, true, false, false, "/databaseimg/HALKOYUNBİTLİS-KÇOCUKKİRALIK.jpg", "2halkoyun", "BİTLİS K", "DOGU ANADOLU", "BİTLİS", 1500, null },
-                    { "f02e8a4c-340f-435a-bb07-5eca923ca3ab", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8023), null, false, true, false, "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ANKARA E", "İÇ ANADOLU", "ANKARA", 1500, null },
-                    { "f584ba6f-57a5-4ed4-b327-8d33f0607331", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8266), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANPEMBE-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN PEMBE", null, null, 1500, null },
-                    { "f5887a14-fb75-406b-b1e1-ddba12644407", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8094), null, false, true, false, "/databaseimg/HALKOYUN-GİRESUN-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GİRESUN E", "KARADENİZ", "GİRESUN", 1500, null },
-                    { "f7aeeed0-5412-4220-9cca-24030d6701f0", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7740), null, null, false, false, "/databaseimg/HALKOYUNKARADENİZÇOCUKKİRALIK.jpg", "2halkoyun", "KARADENİZ", "KARADENİZ", null, 1500, null },
-                    { "f8c602bb-3a6f-450f-a2e8-978e11c118fe", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8055), null, null, true, false, "/databaseimg/HALKOYUN-BİTLİSMAVİ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS MAVİ", "DOGU ANADOLU", "BİTLİS", 1500, null },
-                    { "fa45bf8a-3a56-43bd-ba6b-6d30418b3fa9", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8313), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ PEMBE-N2", null, null, 1500, null },
-                    { "fc19c689-fac5-475e-b647-68d7b70b9a30", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(7929), null, null, false, false, "/databaseimg/RONDKATİBİMÇOCUKKİRALIK.jpg", "5rond", "KATİBİM", null, null, 1500, null },
-                    { "fc3116b4-75f4-4766-abf4-06c7b59151dc", 0, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8237), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANBORDO-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN BORDO", null, null, 1500, null },
-                    { "ff8f5651-747a-4a63-aab4-77bc019ec0a3", 10, new DateTime(2024, 12, 16, 5, 27, 49, 319, DateTimeKind.Local).AddTicks(8042), null, true, true, false, "/databaseimg/HALKOYUN-BİLECİK-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİLECİK K", "MARMARA", "BİLECİK", 1500, null }
+                    { "043d246d-95bd-45d8-98f9-b8dbc776b425", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9860), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANBORDO-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN BORDO", null, null, 1500, null },
+                    { "097911f7-00b3-4dba-9589-c37552b6ef71", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9966), null, null, true, false, "/databaseimg/STİLİZE-ROMANKIRMIZI-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN KIRMIZI", null, "ROMAN", 1500, null },
+                    { "0b38a9b0-6a8b-49f9-9b91-4f1b219af5df", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9755), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAKIRMIZIKADİFE-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA KIRMIZI KADİFE", "TRAKYA", null, 1500, null },
+                    { "0be3718d-0105-4cd6-91eb-c20711e744b5", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9782), null, true, true, false, "/databaseimg/HALKOYUN-TRABZONİŞLİK-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON K İŞLİK", "KARADENİZ", "TRABZON", 1500, null },
+                    { "0e1926ce-ffa4-4a4e-9ced-271e271cbce3", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9408), null, null, false, false, "/databaseimg/HALKOYUNTRAKYAÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA", "TRAKYA", null, 1500, null },
+                    { "10e3dee7-2b07-4594-815f-d2fffbae1d9c", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9760), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAKREM-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA KREM", "TRAKYA", null, 1500, null },
+                    { "13b10f43-1e1b-4022-95fb-9d661683b833", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9310), null, null, false, false, "/databaseimg/HALKOYUNBİLECİKÇOCUKKİRALIK.jpg", "2halkoyun", "BİLECİK", "MARMARA", "BİLECİK", 1500, null },
+                    { "182c7858-16e0-4eb3-88ce-389791bdf4d7", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9806), null, true, true, false, "/databaseimg/HALKOYUN-ÜSKÜPBORDO-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ÜSKÜP K BORDO", "TRAKYA", "ÜSKÜP", 1500, null },
+                    { "194c25ca-ad8d-4923-9163-41375a9be4fa", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9470), null, null, false, false, "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg", "4dans", "İSPANYOL", null, null, 1500, null },
+                    { "196aa1d4-4553-4117-9c5b-97e1066b9fa0", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9326), null, true, false, false, "/databaseimg/HALKOYUNBİTLİS-KÇOCUKKİRALIK.jpg", "2halkoyun", "BİTLİS K", "DOGU ANADOLU", "BİTLİS", 1500, null },
+                    { "1a022a44-4924-488c-9b56-d715f641b086", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9691), null, false, true, false, "/databaseimg/HALKOYUN-BURDUR-E2-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BURDUR E2", "AKDENİZ", "BURDUR", 1500, null },
+                    { "1ac7a097-1822-4e5b-85da-9af37fe15d6d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9404), null, null, false, false, "/databaseimg/HALKOYUNTEKE-PEMBEÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE PEMBE", "AKDENİZ", "TEKE", 1500, null },
+                    { "1c947b89-cb4d-4d6e-a4c9-6f109b1b5579", 10, new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(4), null, true, true, false, "/databaseimg/STİLİZE-STİLİZEMAVİ-K-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE MAVİ K", null, null, 1500, null },
+                    { "1f57786c-d0ff-4290-9bb9-f13645350040", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9883), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMÜRDÜM-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN MÜRDÜM", null, null, 1500, null },
+                    { "22cdef43-5a12-4890-92eb-c03a084c9d6a", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9557), null, null, false, false, "/databaseimg/RONDKATİBİMÇOCUKKİRALIK.jpg", "5rond", "KATİBİM", null, null, 1500, null },
+                    { "2315d382-69fb-43db-a439-0a5c591e828e", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9474), null, null, false, false, "/databaseimg/STİLİZEROMANFUŞYAÇOCUKKİRALIK.jpg", "4dans", "ROMAN FUŞYA", null, null, 1500, null },
+                    { "24274ef7-7529-4855-ae8a-fb7da5ef21ac", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9509), null, null, false, false, "/databaseimg/STİLİZESTİLİZEPEMBEÇOCUKKİRALIK.jpg", "4dans", "STİLİZE PEMBE", null, null, 1500, null },
+                    { "26ab983b-0a24-45de-bc95-a37dd56a53cc", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9331), null, null, false, false, "/databaseimg/HALKOYUNBOLU-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "BOLU İŞLİ", "MARMARA", "BOLU", 1500, null },
+                    { "281f5953-904a-41a0-8252-40e84a33e7b0", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9866), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI", null, null, 1500, null },
+                    { "2a3570de-f05e-46ab-87ab-b0b93fe8cdff", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9435), null, false, false, false, "/databaseimg/HALKOYUNZEYBEK-EÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK E", "EGE", "ZEYBEK", 1500, null },
+                    { "2a8a7e65-49a3-4839-83dd-ac698a9265f4", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9773), null, true, true, false, "/databaseimg/HALKOYUN-TRAKYAPEMBE-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA PEMBE K", "TRAKYA", null, 1500, null },
+                    { "2b4687c6-3ffb-4bf5-a0fa-c4e9399f74d0", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9527), null, null, false, false, "/databaseimg/RONDASKERÇOCUKKİRALIK.jpg", "5rond", "ASKER", null, null, 1500, null },
+                    { "2badb1e4-fd7c-492f-a18a-f65000eee97c", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9398), null, null, false, false, "/databaseimg/HALKOYUNTEKE-YEŞİLÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE YEŞİL", "AKDENİZ", "TEKE", 1500, null },
+                    { "2d6333dd-3e73-4630-b074-9ab49b7c25e0", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9832), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKBORDO-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK BORDO", "EGE", "ZEYBEK", 1500, null },
+                    { "2dbc66f3-6a95-444f-8caa-849d0e519555", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9682), null, null, true, false, "/databaseimg/HALKOYUN-BİTLİSMAVİ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS MAVİ", "DOGU ANADOLU", "BİTLİS", 1500, null },
+                    { "2e484e1b-a51c-431d-bfbd-bf9113a11dd9", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9493), null, null, false, false, "/databaseimg/STİLİZESALSAÇOCUKKİRALIK.jpg", "4dans", "SALSA", null, null, 1500, null },
+                    { "2e7816a0-ca8f-485c-900c-13992437303c", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9995), null, true, true, false, "/databaseimg/STİLİZE-STİLİZEKIRMIZI-K-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI K", null, null, 1500, null },
+                    { "2f8a4c5f-f7b8-4b28-8fb0-0854b582a382", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9553), null, null, false, false, "/databaseimg/STİLİZEİSPANYOLÇOCUKKİRALIK.jpg", "5rond", "İSPANYOL", null, "ROMAN", 1500, null },
+                    { "31a1beab-c730-4957-a576-42baf211be1c", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9816), null, true, true, false, "/databaseimg/HALKOYUN-VAN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "VAN K", "DOGU ANADOLU", "VAN", 1500, null },
+                    { "31e2c058-c975-43aa-a4aa-c54c56960963", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9485), null, null, false, false, "/databaseimg/STİLİZEROMANKIR1ÇOCUKKİRALIK.jpg", "4dans", "ROMAN KIR (1)", null, null, 1500, null },
+                    { "32d6458d-f14a-430a-b0b0-ec057896210f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9768), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAMORMONORAY-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA MOR MONORAY", "TRAKYA", null, 1500, null },
+                    { "34095f77-594d-4ed7-9cf4-642f8db61bc4", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9305), null, null, false, false, "/databaseimg/HALKOYUNARTVİN-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "ARTVİN İŞLİ", "KARADENİZ", "ARTVİN", 1500, null },
+                    { "3544e4e1-2057-47d9-a6b9-4b033c948086", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9293), null, null, false, false, "/databaseimg/HALKOYUNANKARAÇOCUKKİRALIK.jpg", "2halkoyun", "ANKARA", "İÇ ANADOLU", "ANKARA", 1500, null },
+                    { "35cb77c4-de21-462f-808a-5c7f555befcd", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9275), null, null, false, false, "/databaseimg/HALKOYUNADIYAMANÇOCUKKİRALIK.jpg", "2halkoyun", "ADIYAMAN", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
+                    { "37fd69c4-c05d-4e02-8f60-3c911c277e83", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9711), null, false, true, false, "/databaseimg/HALKOYUN-GAZİANTEP-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GAZİANTEP E", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
+                    { "3866d847-1071-4cb4-95a0-4763425a035b", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9582), null, null, false, false, "/databaseimg/RONDÖRDEKÇOCUKKİRALIK.jpg", "5rond", "ÖRDEK", null, null, 0, 1500 },
+                    { "389300dc-1a50-43bf-94b5-410651a87b9b", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9811), null, null, true, false, "/databaseimg/HALKOYUN-VANBEYAZ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "VAN BEYAZ", "DOGU ANADOLU", "VAN", 1500, null },
+                    { "3b3c8e50-c1d5-4eef-b4b1-15f7adb80d55", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9705), null, true, true, false, "/databaseimg/HALKOYUN-DİYARBAKIR-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "DİYARBAKIR K", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
+                    { "3c129174-907e-4d54-8ab6-8fdb8e1e15b1", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9321), null, false, false, false, "/databaseimg/HALKOYUNBİTLİS-EÇOCUKKİRALIK.jpg", "2halkoyun", "BİTLİS E", "DOGU ANADOLU", "BİTLİS", 1500, null },
+                    { "3fed8b0a-ef7a-4bbb-a0d4-756f626eeb96", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9845), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKMOR-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK MOR", "EGE", "ZEYBEK", 1500, null },
+                    { "41191d3c-1d31-4601-8421-c894d02a5841", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9561), null, null, false, false, "/databaseimg/RONDKIRMIZIBAŞLIKLIKIZÇOCUKKİRALIK.jpg", "5rond", "KIRMIZI BAŞLIKLI KIZ", null, null, 1500, null },
+                    { "43d049e5-4d2f-4a7e-83a8-3c623f61e19b", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9942), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİÜSKÜP-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ ÜSKÜP-N2", null, null, 1500, null },
+                    { "4628ced0-96f1-405c-860c-b6aa3dbcc5b8", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9652), null, false, true, false, "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ANKARA E", "İÇ ANADOLU", "ANKARA", 1500, null },
+                    { "486a51e3-7c74-4cbb-b788-b37f56cba354", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9946), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİYEŞİL-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ YEŞİL", null, null, 1500, null },
+                    { "494b8e0b-5dab-4f2c-80bc-f890e97ddeb6", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9870), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N2-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI-N2", null, null, 1500, null },
+                    { "4c2477e4-f84b-4acc-b872-127ec91dbe65", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9716), null, true, true, false, "/databaseimg/HALKOYUN-GAZİANTEP-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GAZİANTEP K", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
+                    { "4d2295d7-1ff7-46cc-8960-3e69a5e79b16", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9788), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONMORİŞLİK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON MOR İŞLİK", "KARADENİZ", "TRABZON", 1500, null },
+                    { "4e022baa-00b3-46a4-ae45-32e7716784a9", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9380), null, null, false, false, "/databaseimg/HALKOYUNKAFKAS-KIRMIZIÇOCUKKİRALIK.jpg", "2halkoyun", "KAFKAS KIRMIZI", "KAFKAS", null, 1500, null },
+                    { "500a9162-aed6-4aa1-96f4-0012e40aa746", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9593), null, null, false, false, "/databaseimg/RONDPALYAÇOÇOCUKKİRALIK.jpg", "5rond", "PALYAÇO", null, null, 0, 1500 },
+                    { "515a7e44-379f-4234-837f-97b510edb4b0", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9777), null, false, true, false, "/databaseimg/HALKOYUN-TRABZON-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON E", "KARADENİZ", "TRABZON", 1500, null },
+                    { "55ec2f90-de83-4df6-813b-a85336d9fc95", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9547), null, null, false, false, "/databaseimg/RONDHACİVATKARAGÖZÇOCUKKİRALIK.jpg", "5rond", "HACİVAT KARAGÖZ", null, null, 1500, null },
+                    { "59bfac0b-c33a-4951-8970-0b7fd568ebe8", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9489), null, null, false, false, "/databaseimg/STİLİZEROMANMORÇOCUKKİRALIK.jpg", "4dans", "ROMAN MOR", null, null, 1500, null },
+                    { "5a95cbf6-0820-4f87-8527-54ff41c07d44", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9696), null, true, true, false, "/databaseimg/HALKOYUN-BURDUR-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BURDUR K", "AKDENİZ", "BURDUR", 1500, null },
+                    { "5bdb0833-ca9e-49a6-8990-1e3d91f4209e", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9661), null, true, true, false, "/databaseimg/HALKOYUN-ARTVİN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ARTVİN K", "KARADENİZ", "ARTVİN", 1500, null },
+                    { "5f8b9429-a955-4fbd-9240-e7dca4b29c45", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9738), null, true, true, false, "/databaseimg/HALKOYUN-KAFKAS-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "KAFKAS K", "KAFKAS", null, 1500, null },
+                    { "6139eeab-60c8-42b3-a628-b8a34ec02971", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9958), null, null, true, false, "/databaseimg/STİLİZE-LİRİK-YETİŞKİNKİRALIK.jpg", "4dans", "LİRİK", null, null, 1500, null },
+                    { "628eb608-0364-41e4-abee-73faffc728e2", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9918), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT-N2", null, null, 1500, null },
+                    { "63989f26-7305-4987-9a3f-9d4868cb5ceb", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9742), null, false, true, false, "/databaseimg/HALKOYUN-SİLİFKE-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "SİLİFKE E", "AKDENİZ", "SİLİFKE", 1500, null },
+                    { "64b0aa04-9498-426a-8022-ae8fc4a7fb14", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9608), null, null, false, false, "/databaseimg/RONDSEMAZENÇOCUKKİRALIK.jpg", "5rond", "SEMAZEN", null, null, 0, 1500 },
+                    { "64c246d3-4b44-43c6-b71e-e47381342570", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9686), null, true, true, false, "/databaseimg/HALKOYUN-BOLU-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BOLU K", "KARADENİZ", "BOLU", 1500, null },
+                    { "67701588-788c-4c98-b62d-c923355e74f5", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9936), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ PEMBE-N2", null, null, 1500, null },
+                    { "69444092-9650-4f4c-a59c-3c2aee10d1b7", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9827), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKAĞIR-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK AĞIR E", "EGE", "ZEYBEK", 1500, null },
+                    { "6a0110b8-7792-447a-a70a-bfafcea1bbbb", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9505), null, null, false, false, "/databaseimg/STİLİZESTİLİZEMORÇOCUKKİRALIK.jpg", "4dans", "STİLİZE MOR", null, null, 1500, null },
+                    { "6b09c8b0-b211-4ec1-89c2-f96a1e241697", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9393), null, false, false, false, "/databaseimg/HALKOYUNTEKE-EÇOCUKKİRALIK.jpg", "2halkoyun", "TEKE E", "AKDENİZ", "TEKE", 1500, null },
+                    { "6b135c1f-6d5e-4202-a366-3f267bc39df9", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9430), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-BORDOÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK BORDO", "EGE", "ZEYBEK", 1500, null },
+                    { "6c29954b-8aef-45aa-b742-b5ebfdd2d691", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9497), null, null, false, false, "/databaseimg/STİLİZESALSAEÇOCUKKİRALIK.jpg", "4dans", "SALSA E", null, null, 1500, null },
+                    { "6f46232d-a2a4-4f03-a350-5998233db9e5", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9579), null, null, false, false, "/databaseimg/RONDNOELBABAÇOCUKKİRALIK.jpg", "5rond", "NOEL BABA", null, null, 0, 1500 },
+                    { "70ca9c78-3399-48d9-a9e8-705bba952306", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9729), null, true, true, false, "/databaseimg/HALKOYUN-HAKKARİ-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "HAKKARİ K", "DOGU ANADOLU", "HAKKARİ", 1500, null },
+                    { "71fd6ee1-fe8a-4f46-93c4-07924cc818ee", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9643), null, false, true, false, "/databaseimg/HALKOYUN-ADIYAMAN-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ADIYAMAN E", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
+                    { "73ea72c0-f21e-405e-9491-7a54ecc41a08", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9446), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-MORÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK MOR", "EGE", "ZEYBEK", 1500, null },
+                    { "78097518-39af-4e5a-902f-08e496b44107", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9797), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONPEMBEYELEK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON PEMBE YELEK", "KARADENİZ", "TRABZON", 1500, null },
+                    { "784313a4-7a89-4191-bc4a-7186b6caa3cf", 10, new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local), null, false, true, false, "/databaseimg/STİLİZE-STİLİZEMAVİ-E-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE MAVİ E", null, null, 1500, null },
+                    { "7ba76db2-edbb-42ad-9b30-f3c35a7e8d94", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9700), null, false, true, false, "/databaseimg/HALKOYUN-DİYARBAKIR-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "DİYARBAKIR E", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
+                    { "7e0bdf70-bf00-422b-a9e4-2e5e33e6d44b", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9523), null, null, false, false, "/databaseimg/RONDARIÇOCUKKİRALIK.jpg", "5rond", "ARI", null, null, 1500, null },
+                    { "7eaba2f3-ba38-4d18-8f9c-181e1b4f2742", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9895), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİBORDO-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ BORDO", null, null, 1500, null },
+                    { "7efd46f7-eaf5-4146-85c3-8b486cd9e86f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9625), null, null, false, false, "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg", "5rond", "STİLİZE KIRMIZI", null, null, 0, 1500 },
+                    { "8038e8aa-f57a-4ae2-a077-87c8e429aefe", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9631), null, null, false, false, "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg", "5rond", "STİLİZE SARI", null, null, 0, 1500 },
+                    { "8052af07-172e-41f4-be08-a2d7bea36c6f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9336), null, null, false, false, "/databaseimg/HALKOYUNBOLU-SADEÇOCUKKİRALIK.jpg", "2halkoyun", "BOLU SADE", "MARMARA", "BOLU", 1500, null },
+                    { "82e1aff5-4a7c-4f17-858d-51255775b1e4", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9570), null, null, false, false, "/databaseimg/RONDMEZUNİYETÇOCUKKİRALIK.jpg", "5rond", "MEZUNİYET", null, null, 1500, null },
+                    { "8391d565-085b-47ab-9f00-452c965741e2", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9982), null, null, true, false, "/databaseimg/STİLİZE-ROMANTURUNCU-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN TURUNCU", null, "ROMAN", 1500, null },
+                    { "84d6948b-2ebd-45a4-9ab4-f96c1ef4e794", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9612), null, null, false, false, "/databaseimg/RONDŞİRİNLERÇOCUKKİRALIK.jpg", "5rond", "ŞİRİNLER", null, null, 0, 1500 },
+                    { "8502496f-2a0e-4468-b084-ec1fef6fcbb4", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9856), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKMUĞLA-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK MUĞLA", "EGE", "ZEYBEK", 1500, null },
+                    { "85f1e9ac-d10f-4075-83c6-d2567d9b9eff", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9421), null, null, false, false, "/databaseimg/HALKOYUNTRAKYA-BEYAZÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA BEYAZ", "TRAKYA", null, 1500, null },
+                    { "86536584-635e-4ae2-aed4-1439a4a98c1d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9962), null, null, true, false, "/databaseimg/STİLİZE-ROMANFUŞYA-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN FUŞYA", null, "ROMAN", 1500, null },
+                    { "86eec870-8510-47bf-b0a6-f331734f9a53", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9389), null, null, false, false, "/databaseimg/HALKOYUNSİLİFKEÇOCUKKİRALIK.jpg", "2halkoyun", "SİLİFKE", "MARMARA", "SİLİFKE", 1500, null },
+                    { "878e0d36-2e78-4a81-875a-fd5676c3d3d5", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9597), null, null, false, false, "/databaseimg/RONDPAMUKPRENSESÇOCUKKİRALIK.jpg", "5rond", "PAMUK PRENSES", null, null, 0, 1500 },
+                    { "87a3d2a2-dfd9-437a-ae71-d1db5d7b8f9b", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9912), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT", null, null, 1500, null },
+                    { "8cba63b9-86ac-4ebd-93bb-f5db69383221", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9720), null, false, true, false, "/databaseimg/HALKOYUN-GİRESUN-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GİRESUN E", "KARADENİZ", "GİRESUN", 1500, null },
+                    { "93dc3a2d-bf5d-41bc-acd6-2096b7a91c6f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9341), null, null, false, false, "/databaseimg/HALKOYUNDİYARBAKIRÇOCUKKİRALIK.jpg", "2halkoyun", "DİYARBAKIR", "GÜNEYDOGU ANADOLU", "DİYARBAKIR", 1500, null },
+                    { "94759472-bb72-4f9a-bbf9-a0653748dbde", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9821), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKAÇIK-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK AÇIK E", "EGE", "ZEYBEK", 1500, null },
+                    { "95dacc37-93e2-46f1-9fb1-b9dbdfe53413", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9441), null, null, false, false, "/databaseimg/HALKOYUNZEYBEK-İŞLİÇOCUKKİRALIK.jpg", "2halkoyun", "ZEYBEK İŞLİ", "EGE", "ZEYBEK", 1500, null },
+                    { "9c95f54c-0a80-41f2-b3b0-02f3b739e484", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9971), null, null, true, false, "/databaseimg/STİLİZE-ROMANPEMBE-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN PEMBE", null, "ROMAN", 1500, null },
+                    { "9c972eb1-991b-4cb2-a6fc-b2a4218063ad", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9764), null, null, true, false, "/databaseimg/HALKOYUN-TRAKYAMAVİ-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRAKYA MAVİ", "TRAKYA", null, 1500, null },
+                    { "9cd10786-95a8-4732-a69b-2377af94359f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9986), null, null, true, false, "/databaseimg/STİLİZE-ROMANYEŞİL-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN YEŞİL", null, "ROMAN", 1500, null },
+                    { "a6c2062d-7a64-43c4-a1f0-93893ad720e1", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9887), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANPEMBE-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN PEMBE", null, null, 1500, null },
+                    { "a7afd8a1-d116-4a27-ae92-562046a33180", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9990), null, false, true, false, "/databaseimg/STİLİZE-STİLİZEKIRMIZI-E-YETİŞKİNKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI E", null, null, 1500, null },
+                    { "a8d72f48-2084-40b9-b016-525aad9612be", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9733), null, false, true, false, "/databaseimg/HALKOYUN-KAFKAS-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "KAFKAS E", "KAFKAS", null, 1500, null },
+                    { "aa41a1bc-219e-4972-a2eb-e4932423eedd", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9457), null, null, false, false, "/databaseimg/STİLİZEFRAKÇOCUKKİRALIK.jpg", "4dans", "FRAK", null, null, 1500, null },
+                    { "aadb99d7-432b-4aa3-b1c7-4fbbdfa6ef47", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9425), null, null, false, false, "/databaseimg/HALKOYUNVANÇOCUKKİRALIK.jpg", "2halkoyun", "VAN", "DOGU ANADOLU", "VAN", 1500, null },
+                    { "ab95e998-8399-4f6a-aac4-8ddc5749d291", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9891), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANYEŞİL-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN YEŞİL", null, null, 1500, null },
+                    { "ad8c2f6e-0871-4924-9cdd-ac80ce4965d6", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9371), null, null, false, false, "/databaseimg/HALKOYUNHALAY-SİYAHÇOCUKKİRALIK.jpg", "2halkoyun", "HALAY SİYAH", null, "HALAY", 1500, null },
+                    { "adf7c54b-4f74-4f36-8bb5-61690a1e987c", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9840), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKKOYU-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK KOYU E", "EGE", "ZEYBEK", 1500, null },
+                    { "b029e603-3f28-4dfb-b23e-949283bd7883", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9515), null, null, false, false, "/databaseimg/STİLİZESTİLİZESARIÇOCUKKİRALIK.jpg", "4dans", "STİLİZE SARI", null, null, 1500, null },
+                    { "b1624497-8fc7-4995-b199-3c26f5539b63", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9977), null, null, true, false, "/databaseimg/STİLİZE-ROMANRENKLİETEK-YETİŞKİNKİRALIK.jpg", "4dans", "ROMAN RENKLİ ETEK", null, "ROMAN", 1500, null },
+                    { "b571a2e1-30ee-4e8f-a22c-b684a834a5f8", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9793), null, null, true, false, "/databaseimg/HALKOYUN-TRABZONMORYELEK-YETİŞKİNKİRALIK.jpg", "2halkoyun", "TRABZON MOR YELEK", "KARADENİZ", "TRABZON", 1500, null },
+                    { "b5953b8c-1e32-4ccd-be47-b2f9299b48ad", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9450), null, null, false, false, "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg", "4dans", "ÇAÇA", null, null, 1500, null },
+                    { "b5abee89-67c1-46ef-8498-6379add24f48", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9904), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ KIRMIZI", null, null, 1500, null },
+                    { "b990264f-8f6e-4783-b2f6-5f5bd9e2252f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9647), null, true, true, false, "/databaseimg/HALKOYUN-ADIYAMAN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ADIYAMAN K", "GÜNEYDOGU ANADOLU", "ADIYAMAN", 1500, null },
+                    { "ba745b46-4999-4725-b219-b0c4d0123bf7", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9356), null, true, false, false, "/databaseimg/HALKOYUNGAZİANTEP-KÇOCUKKİRALIK.jpg", "2halkoyun", "GAZİANTEP K", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
+                    { "badd91db-79b7-4af5-81d4-65d6dc5f11e6", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9836), null, false, true, false, "/databaseimg/HALKOYUN-ZEYBEKEŞKİYA-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK EŞKİYA E", "EGE", "ZEYBEK", 1500, null },
+                    { "bc116330-2a06-41a9-a8be-6bd589faebe6", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9676), null, true, true, false, "/databaseimg/HALKOYUN-BİTLİS-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS K", "DOGU ANADOLU", "BİTLİS", 1500, null },
+                    { "bc5ea138-f7bb-4a12-80b4-4bacc3c9bd45", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9385), null, null, false, false, "/databaseimg/HALKOYUNKAFKAS-MORÇOCUKKİRALIK.jpg", "2halkoyun", "KAFKAS MOR", "KAFKAS", null, 1500, null },
+                    { "c3cebbbe-1edd-41ce-a843-248ef147be41", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9751), null, true, true, false, "/databaseimg/HALKOYUN-SİLİFKE-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "SİLİFKE K", "AKDENİZ", "SİLİFKE", 1500, null },
+                    { "c476963d-15f5-4a05-b123-d760ec96939d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9566), null, null, false, false, "/databaseimg/RONDMEHTERÇOCUKKİRALIK.jpg", "5rond", "MEHTER", null, null, 1500, null },
+                    { "c506c855-6934-4feb-9648-d0c1da2759f3", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9908), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİKIRMIZI-N2-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ KIRMIZI-N2", null, null, 1500, null },
+                    { "c64ff40e-7a6d-4e97-8ba3-f5f564e105ac", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9346), null, null, false, false, "/databaseimg/HALKOYUNELAZIĞÇOCUKKİRALIK.jpg", "2halkoyun", "ELAZIĞ", "DOGU ANADOLU", "ELAZIĞ", 1500, null },
+                    { "c7e2051c-c91b-4e60-b91f-95611bd89fe4", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9635), null, null, false, false, "/databaseimg/RONDYENİÇERİÇOCUKKİRALIK.jpg", "5rond", "YENİÇERİ", null, null, 0, 1500 },
+                    { "cc003b66-1a33-4609-9422-369a26f8043a", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9536), null, null, false, false, "/databaseimg/RONDÇİÇEKÇOCUKKİRALIK.jpg", "5rond", "ÇİÇEK", null, null, 1500, null },
+                    { "ccb358cd-57ef-424c-9ee7-f571acf7049d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9672), null, null, true, false, "/databaseimg/HALKOYUN-BİTLİSBEYAZ-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİTLİS BEYAZ E", "DOGU ANADOLU", "BİTLİS", 1500, null },
+                    { "d01258fa-9299-49e3-841d-c45032ea4da6", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9540), null, null, false, false, "/databaseimg/RONDFAREÇOCUKKİRALIK.jpg", "5rond", "FARE", null, null, 1500, null },
+                    { "d21b2dfb-63dd-48dc-9239-232675caa114", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9366), null, null, false, false, "/databaseimg/HALKOYUNHALAY-KIRMIZIÇOCUKKİRALIK.jpg", "2halkoyun", "HALAY KIRMIZI", null, "HALAY", 1500, null },
+                    { "d233d505-5eb5-464f-8b40-9d0dab285ee3", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9466), null, null, false, false, "/databaseimg/STİLİZEHİNTÇOCUKKİRALIK.jpg", "4dans", "HİNT", null, null, 1500, null },
+                    { "d2d816c3-94c9-4d01-a14d-2ee50f2581dc", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9849), null, null, true, false, "/databaseimg/HALKOYUN-ZEYBEKPEMBE-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ZEYBEK PEMBE", "EGE", "ZEYBEK", 1500, null },
+                    { "d45adedd-f23e-4870-94f2-973a3dc4ade6", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9589), null, null, false, false, "/databaseimg/RONDPADİŞAHÇOCUKKİRALIK.jpg", "5rond", "PADİŞAH", null, null, 0, 1500 },
+                    { "ddf36716-6e3a-4852-8e78-3d0a0525c9aa", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9602), null, true, false, false, "/databaseimg/RONDSALSAKÇOCUKKİRALIK.jpg", "5rond", "SALSA K", null, null, 0, 1500 },
+                    { "e11c5ada-e1ad-4549-922e-101504953b6d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9480), null, null, false, false, "/databaseimg/STİLİZEROMANKIRMIZIÇOCUKKİRALIK.jpg", "4dans", "ROMAN KIRMIZI", null, null, 1500, null },
+                    { "e2a8a7f3-5d83-4d12-bea7-40d279c81b3f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9954), null, null, true, false, "/databaseimg/STİLİZE-ÇİFTETELLİBEYAZ-YETİŞKİNKİRALIK.jpg", "4dans", "ÇİFTETELLİ BEYAZ", null, "ÇİFTETELLİ", 1500, null },
+                    { "e375927c-1364-41c2-b0b6-942010a07fd5", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9375), null, null, false, false, "/databaseimg/HALKOYUNKARADENİZÇOCUKKİRALIK.jpg", "2halkoyun", "KARADENİZ", "KARADENİZ", null, 1500, null },
+                    { "e59ed879-c254-4f3c-bca9-bea1c1c7ff8e", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9922), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİLACİVERT-N3-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ LACİVERT-N3", null, null, 1500, null },
+                    { "e5a0487f-494f-4076-b21b-30830dee45b2", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9501), null, null, false, false, "/databaseimg/STİLİZESTİLİZEKIRMIZIÇOCUKKİRALIK.jpg", "4dans", "STİLİZE KIRMIZI", null, null, 1500, null },
+                    { "e77943ce-db4e-4b80-ad2c-f6f0341ff9e6", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9875), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANKIRMIZI-N3-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN KIRMIZI-N3", null, null, 1500, null },
+                    { "e7d08264-c708-483f-baec-f8a2222d5724", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9950), null, null, true, false, "/databaseimg/STİLİZE-AŞUKMAŞUK-YETİŞKİNKİRALIK.jpg", "4dans", "AŞUK MAŞUK", null, null, 1500, null },
+                    { "e8e9dffa-d4c1-467d-aaa6-1743962f78df", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9412), null, null, false, false, "/databaseimg/HALKOYUNÜSKÜPÇOCUKKİRALIK.jpg", "2halkoyun", "ÜSKÜP", "TRAKYA", "ÜSKÜP", 1500, null },
+                    { "eb3e1aad-3afa-4342-af9d-3dfeeebf7d29", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9656), null, false, true, false, "/databaseimg/HALKOYUN-ARTVİN-E2-YETİŞKİNKİRALIK.jpG", "2halkoyun", "ARTVİN E2", "KARADENİZ", "ARTVİN", 1500, null },
+                    { "eb7df20e-fe62-4ff3-873e-60846f0e927a", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9802), null, false, true, false, "/databaseimg/HALKOYUN-ÜSKÜP-E-YETİŞKİNKİRALIK.jpg", "2halkoyun", "ÜSKÜP E", "TRAKYA", "ÜSKÜP", 1500, null },
+                    { "ed64b962-17e7-4f16-b9ec-159c2ad3af8d", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9519), null, null, false, false, "/databaseimg/STİLİZEÇİFTETELLİPEMBEÇOCUKKİRALIK.jpg", "4dans", "ÇİFTETELLİ PEMBE", null, null, 1500, null },
+                    { "ee29dbe3-81a1-4237-8891-a35836c91b34", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9417), null, null, false, false, "/databaseimg/HALKOYUNTRAKYA-PEMBEÇOCUKKİRALIK.jpg", "2halkoyun", "TRAKYA PEMBE", "TRAKYA", null, 1500, null },
+                    { "efdd945f-9fd5-416e-81aa-c3888612a7e7", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9300), null, null, false, false, "/databaseimg/HALKOYUNARTVİNÇOCUKKİRALIK.jpg", "2halkoyun", "ARTVİN", "KARADENİZ", "ARTVİN", 1500, null },
+                    { "f1e13408-3692-46d3-909d-6f4b42a6b934", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9532), null, null, false, false, "/databaseimg/STİLİZEÇAÇAÇOCUKKİRALIK.jpg", "5rond", "ÇAÇA", null, null, 1500, null },
+                    { "f38c811d-97f0-4ee5-9b27-bc8ddbca4c27", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9665), null, true, true, false, "/databaseimg/HALKOYUN-BİLECİK-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "BİLECİK K", "MARMARA", "BİLECİK", 1500, null },
+                    { "f8818600-2a62-4264-943e-cdd6a84289a4", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9879), null, null, true, false, "/databaseimg/KINABİNDALLI-GELENEKSELKAFTANMOR-YETİŞKİNKİRALIK.jpg", "3kına", "GELENEKSEL KAFTAN MOR", null, null, 1500, null },
+                    { "f9960463-af32-46dd-bb14-847319764196", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9617), null, null, false, false, "/databaseimg/RONDTAVŞANÇOCUKKİRALIK.jpg", "5rond", "TAVŞAN", null, null, 0, 1500 },
+                    { "fb795ad3-95b4-4503-95f3-a5c64f00d47e", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9929), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİPEMBE-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ PEMBE", null, null, 1500, null },
+                    { "fc6d8b4f-9e9a-406b-aa3e-ec09e74f15ef", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9462), null, null, false, false, "/databaseimg/STİLİZEGREASEÇOCUKKİRALIK.jpg", "4dans", "GREASE", null, null, 1500, null },
+                    { "fc784dd0-57e5-47ec-97ff-e708d3614903", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9725), null, true, true, false, "/databaseimg/HALKOYUN-GİRESUN-K-YETİŞKİNKİRALIK.jpg", "2halkoyun", "GİRESUN K", "KARADENİZ", "GİRESUN", 1500, null },
+                    { "fd155aa6-02e2-46cb-a006-ff36235dea03", 0, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9900), null, null, true, false, "/databaseimg/KINABİNDALLI-KINAKIYAFETİGRİSİYAH-YETİŞKİNKİRALIK.jpg", "3kına", "KINA KIYAFETİ GRİ-SİYAH", null, null, 1500, null },
+                    { "fd846410-e423-4c2c-9303-3b2cf4de23a5", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9360), null, false, false, false, "/databaseimg/HALKOYUNGAZİANTEP-EÇOCUKKİRALIK.jpg", "2halkoyun", "GAZİANTEP E", "GÜNEYDOGU ANADOLU", "GAZİANTEP", 1500, null },
+                    { "fe1fa887-8335-4ae7-9c1b-30f35393d81f", 10, new DateTime(2024, 12, 16, 7, 13, 19, 296, DateTimeKind.Local).AddTicks(9574), null, null, false, false, "/databaseimg/RONDNASREDDİNHOCAÇOCUKKİRALIK.jpg", "5rond", "NASREDDİN HOCA", null, null, 1500, null }
                 });
 
             migrationBuilder.UpdateData(
@@ -862,35 +862,35 @@ namespace Mate.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: "ad",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(5439));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(6615));
 
             migrationBuilder.UpdateData(
                 table: "Roles",
                 keyColumn: "Id",
                 keyValue: "us",
                 column: "CreatedAt",
-                value: new DateTime(2024, 12, 16, 5, 27, 49, 320, DateTimeKind.Local).AddTicks(5457));
+                value: new DateTime(2024, 12, 16, 7, 13, 19, 297, DateTimeKind.Local).AddTicks(6631));
 
             migrationBuilder.InsertData(
                 table: "SiteCommInfos",
                 columns: new[] { "Id", "Address", "CreatedAt", "Email", "GSM1", "GSM2", "GSM3", "Phone", "SocialMedias", "Transportation", "WorkingHours" },
-                values: new object[] { "fffcf24e-86e4-4dfc-b146-5c3741b357f4", "İkitelli Organize Sanayi Bölgesi Giyim Sanatkarları İş ve Ticaret Merkezi (Deposite A.V.M.arkası) 4. Ada C Blok Kat:1 No:114\r\nBaşakşehir – İSTANBUL", new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı \r\n\r\n 0530 909 11 34 – Erdem", "İmalat \r\n\r\n 0532 321 64 97 – İsmail", "0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "(Kirazlı-Metrokent hattı) İkitelli Sanayi Durağı", "Hafta içi: 09:00 – 17:30\r\n\r\n  Cumartesi: 09:00 – 13:00" });
+                values: new object[] { "f4ff1cc9-2d5d-405f-857f-3401d949264d", "İkitelli Organize Sanayi Bölgesi Giyim Sanatkarları İş ve Ticaret Merkezi (Deposite A.V.M.arkası) 4. Ada C Blok Kat:1 No:114\r\nBaşakşehir – İSTANBUL", new DateTime(2024, 12, 16, 7, 13, 19, 298, DateTimeKind.Local).AddTicks(822), "matekostum@gmail.com", "Kiralama WhatsApp İletişim Hattı \r\n\r\n 0530 909 11 34 – Erdem", "İmalat \r\n\r\n 0532 321 64 97 – İsmail", "0532 267 23 86 – Ergun", "0212 549 77 34", "Facebook\r\nfacebook.com/mate.kostum\r\n\r\n\r\nInstagram\r\ninstagram.com/matekostum", "(Kirazlı-Metrokent hattı) İkitelli Sanayi Durağı", "Hafta içi: 09:00 – 17:30\r\n\r\n  Cumartesi: 09:00 – 13:00" });
 
             migrationBuilder.InsertData(
                 table: "Size",
                 columns: new[] { "Id", "CreatedAt", "SizeNumber" },
                 values: new object[,]
                 {
-                    { "128ba4a5-9538-4038-81ba-fa90a013d89c", new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2049), 14 },
-                    { "171bbe28-b170-4b73-901e-81c43747e9be", new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2040), 10 },
-                    { "278fd668-ce29-4178-bec5-4d746567fdc7", new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2045), 12 },
-                    { "ec0e5213-606b-4af2-8af6-62c25d2321a7", new DateTime(2024, 12, 16, 5, 27, 49, 321, DateTimeKind.Local).AddTicks(2023), 8 }
+                    { "10be48c2-ba71-434c-ac54-2d4366d6a805", new DateTime(2024, 12, 16, 7, 13, 19, 298, DateTimeKind.Local).AddTicks(2703), 14 },
+                    { "2d05f1d5-ca04-435c-9994-cc4049c73a35", new DateTime(2024, 12, 16, 7, 13, 19, 298, DateTimeKind.Local).AddTicks(2677), 8 },
+                    { "614d209d-fc5a-49eb-bd78-e1c2c6eb43b6", new DateTime(2024, 12, 16, 7, 13, 19, 298, DateTimeKind.Local).AddTicks(2698), 12 },
+                    { "f2bc7107-d7d1-4977-8a08-982332d6cfd5", new DateTime(2024, 12, 16, 7, 13, 19, 298, DateTimeKind.Local).AddTicks(2693), 10 }
                 });
 
             migrationBuilder.InsertData(
                 table: "UserInfos",
                 columns: new[] { "Id", "Address", "City", "District", "Email", "GSM", "Name", "Password", "SurName", "TcNo" },
-                values: new object[] { "e89dcd9e-aee6-4a28-a7e4-36072c0b6553", " uxi sokak. Lola Apt. Paksim Caddesi, No:11", "İstanbul", "Maltepe", "idilerdogan@sabanciuniv.edu", "05391111111", "İdil", "qweasd", "Erdoğan", "12212212211" });
+                values: new object[] { "a17ddc18-3198-4b77-8278-3e87cf5f37fc", " uxi sokak. Lola Apt. Paksim Caddesi, No:11", "İstanbul", "Maltepe", "idilerdogan@sabanciuniv.edu", "05391111111", "İdil", "qweasd", "Erdoğan", "12212212211" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_SiteCommInfos_GSM1",
@@ -1027,892 +1027,892 @@ namespace Mate.DAL.Migrations
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "129e985f-9081-433d-a85a-3c07a1144842");
+                keyValue: "03b2eb19-627e-4053-87e1-5cfa4ba21760");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "363916ff-9dc6-4f61-a9cb-081877374ca7");
+                keyValue: "1a17b882-dc61-46e1-a36f-180bf3d9c525");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "407d5920-e96b-497b-a92d-585880962e03");
+                keyValue: "263560f6-e9a2-4eb2-8b75-cb0102ba3130");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "53242edf-2f92-4c73-8266-953e5895cc36");
+                keyValue: "28100e4f-ba98-43cc-b7bf-46e2d1bbc4bf");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "5d5118d2-e82f-496e-b029-efee79e225e9");
+                keyValue: "28816814-8c49-4566-9de0-af156abc67c7");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "6bffb097-6383-41a8-a59f-d1d1191bc981");
+                keyValue: "2d7dcb31-19e9-4dfc-8af7-623122304598");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "715a475b-6f43-4111-bf59-4328b2146707");
+                keyValue: "3087c3de-b5d1-4b8a-b234-e25493fcf029");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "7c3ab568-68cb-43d1-8052-b57888156644");
+                keyValue: "43d49876-bf10-413b-b507-83a391cf4fea");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "80e2452d-d14d-48ff-a424-6b348635f4e7");
+                keyValue: "444c8681-1d2f-406d-9954-6e5a1ee52419");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "81732743-bdc1-4e12-a207-2e91d5fb3246");
+                keyValue: "4a26a61a-8bc6-4a46-8c60-79f0adb4204a");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "89a1aec2-3e39-402b-91ed-26b2208f671f");
+                keyValue: "58f06a1f-28b4-42f6-8041-b88b5eeeb6a7");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "8a9adb73-4197-458b-b96f-7af5a698a025");
+                keyValue: "64654e6a-c43d-43d1-82f3-6a586d837c11");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "945c1466-beb7-45a9-883f-40f512846cf4");
+                keyValue: "778ede5d-3393-4953-9f8f-74b66585c463");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "9501b478-5321-4528-a928-33df1459cc88");
+                keyValue: "8386c546-1fae-4b52-868f-0e39233f05ce");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "99746d95-d058-440d-8c31-0724cae3b206");
+                keyValue: "8c5a916a-73f8-4c10-ad73-a68953e96dce");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "aee24086-9487-472f-8709-4a7361d7d399");
+                keyValue: "be5c0453-f43c-4717-91c6-e75d42834c0e");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "b8259045-e6e2-4507-9f32-c7d02a784824");
+                keyValue: "c33ed70c-0abc-489b-acdf-ff8b5d21c860");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "b8bc0afa-9a42-41bf-872c-a4fcabbcd011");
+                keyValue: "c471f9ee-1b2e-4490-8685-0fc1e55cd051");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "bd896127-aadb-4fd5-a204-ce834a5f3eaa");
+                keyValue: "d4130f52-f778-4dfe-963a-7849ada223fe");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "cbc94b42-37fb-46e4-9f61-1f008b56f3c4");
+                keyValue: "ec6bfd04-7aef-450f-a1d4-6839afc39dbf");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "defe0065-3c97-44b8-b0bb-6d48b68a7935");
+                keyValue: "ec7610f9-6910-4563-be8d-6e286180bc6c");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "e3f8b262-dac8-4a3f-b808-d33ad41d4a5c");
+                keyValue: "f4dd8f84-f3e9-4fdf-9f3f-5f8fb440772e");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "f459104f-7738-47a2-9abe-7e66e58ae883");
+                keyValue: "f5aaba68-f634-4cec-960b-157a8cfb3df8");
 
             migrationBuilder.DeleteData(
                 table: "FotoGaleries",
                 keyColumn: "Id",
-                keyValue: "f5dc7a98-019a-46df-877d-4f049e725398");
+                keyValue: "f68d6952-3edb-4e59-83cb-e2ec8851dfcc");
 
             migrationBuilder.DeleteData(
                 table: "OrdersSituation",
                 keyColumn: "Id",
-                keyValue: "22f223d4-5bbb-4946-9bee-5cd2fd00dbeb");
+                keyValue: "08e1644b-2c6e-42c2-8841-9f5c5fbc22eb");
 
             migrationBuilder.DeleteData(
                 table: "OrdersSituation",
                 keyColumn: "Id",
-                keyValue: "932293c0-41a0-4201-9e0c-bbc8d6afe530");
+                keyValue: "27f27997-30ed-4eed-840d-723b79b9e6ed");
 
             migrationBuilder.DeleteData(
                 table: "OrdersSituation",
                 keyColumn: "Id",
-                keyValue: "b66b5d07-c3ee-4651-afd0-c635dc75d9f2");
+                keyValue: "55ce8a69-cf9b-4361-a7a6-d36f29dd786d");
 
             migrationBuilder.DeleteData(
                 table: "OrdersSituation",
                 keyColumn: "Id",
-                keyValue: "e49ae816-e3c4-47fe-a18c-2342346c63cd");
+                keyValue: "6c9933f0-b7ad-4c71-b093-8cdb0975d592");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "019629a9-11e2-4404-b9fd-19e7d358383f");
+                keyValue: "043d246d-95bd-45d8-98f9-b8dbc776b425");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "02c262ce-f3e9-4394-98bd-6963bb4e7777");
+                keyValue: "097911f7-00b3-4dba-9589-c37552b6ef71");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "03ea8738-2779-4b0c-844b-44e14be7ccf8");
+                keyValue: "0b38a9b0-6a8b-49f9-9b91-4f1b219af5df");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "059cbbfe-2cb3-4db5-ac2c-da6314146b61");
+                keyValue: "0be3718d-0105-4cd6-91eb-c20711e744b5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "0655e9b9-a3e0-498f-a8cf-45eacf1e31ab");
+                keyValue: "0e1926ce-ffa4-4a4e-9ced-271e271cbce3");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "08aca359-c739-4ccf-bf37-8d31108512fe");
+                keyValue: "10e3dee7-2b07-4594-815f-d2fffbae1d9c");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "098e4558-d30d-4ee1-8480-374b8229df8d");
+                keyValue: "13b10f43-1e1b-4022-95fb-9d661683b833");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "0f30161a-b6b2-46b9-93b9-b78604e2b6e7");
+                keyValue: "182c7858-16e0-4eb3-88ce-389791bdf4d7");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "1146e798-d98f-4b98-b6de-7d380c734a65");
+                keyValue: "194c25ca-ad8d-4923-9163-41375a9be4fa");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "135d3977-8c12-4506-a068-42f3cd64d1d7");
+                keyValue: "196aa1d4-4553-4117-9c5b-97e1066b9fa0");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "14d91eb7-6764-47ba-b851-174bfb484367");
+                keyValue: "1a022a44-4924-488c-9b56-d715f641b086");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "1584ca09-5e8e-4301-87ec-f6198ff7f86a");
+                keyValue: "1ac7a097-1822-4e5b-85da-9af37fe15d6d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "19fd95fd-92df-49fc-8cd9-30208fb20db0");
+                keyValue: "1c947b89-cb4d-4d6e-a4c9-6f109b1b5579");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "1e8f21c3-5904-4d0f-8dba-106182d83042");
+                keyValue: "1f57786c-d0ff-4290-9bb9-f13645350040");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "254e625e-75c7-4861-8754-dd2de4833d62");
+                keyValue: "22cdef43-5a12-4890-92eb-c03a084c9d6a");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "27a45823-2b9a-43a0-8c0e-78473520ec16");
+                keyValue: "2315d382-69fb-43db-a439-0a5c591e828e");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "27b844ba-981a-4ea1-8cac-eb776cd3388f");
+                keyValue: "24274ef7-7529-4855-ae8a-fb7da5ef21ac");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "2844aa02-e975-405f-8af7-8cd243329268");
+                keyValue: "26ab983b-0a24-45de-bc95-a37dd56a53cc");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "2864e6f1-8ab9-4766-8823-840f2c80002e");
+                keyValue: "281f5953-904a-41a0-8252-40e84a33e7b0");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "2a63a1f2-b22d-4b10-97c5-58a7e2083fd0");
+                keyValue: "2a3570de-f05e-46ab-87ab-b0b93fe8cdff");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "2d4a33f0-2a6b-4d51-85ff-c823f1f08e3c");
+                keyValue: "2a8a7e65-49a3-4839-83dd-ac698a9265f4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3064139d-7ed9-4eb0-bb81-cf48e05f426a");
+                keyValue: "2b4687c6-3ffb-4bf5-a0fa-c4e9399f74d0");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "31e4174f-24e8-46c2-8ba3-ad92ea0b877b");
+                keyValue: "2badb1e4-fd7c-492f-a18a-f65000eee97c");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "34ee0bc4-0b7e-4123-9821-c8ad6a8d2ea1");
+                keyValue: "2d6333dd-3e73-4630-b074-9ab49b7c25e0");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3663d5c1-c5d4-4a40-968d-e5ffe3988290");
+                keyValue: "2dbc66f3-6a95-444f-8caa-849d0e519555");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "380e47e1-adfa-4b7a-b7b9-43c7a5f8dad6");
+                keyValue: "2e484e1b-a51c-431d-bfbd-bf9113a11dd9");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "39723e98-c48f-4039-9345-9729d6090286");
+                keyValue: "2e7816a0-ca8f-485c-900c-13992437303c");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3b67b406-c04a-46fe-bc77-76d89b35d30e");
+                keyValue: "2f8a4c5f-f7b8-4b28-8fb0-0854b582a382");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3e950375-0882-48ba-ae38-166984706b37");
+                keyValue: "31a1beab-c730-4957-a576-42baf211be1c");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3fcf7b87-7f17-456c-b837-c903a5ece045");
+                keyValue: "31e2c058-c975-43aa-a4aa-c54c56960963");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "3ff5027d-79a0-49b0-9911-3ce157e1fa31");
+                keyValue: "32d6458d-f14a-430a-b0b0-ec057896210f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4166f194-9b1d-481d-8c88-eff469330fce");
+                keyValue: "34095f77-594d-4ed7-9cf4-642f8db61bc4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "47103496-0772-4a25-8a10-2b4493cda279");
+                keyValue: "3544e4e1-2057-47d9-a6b9-4b033c948086");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "47bf52f9-0056-488a-bba9-38c895a6996f");
+                keyValue: "35cb77c4-de21-462f-808a-5c7f555befcd");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "48a5bc29-cfc8-46cf-ad46-560da2ca27d4");
+                keyValue: "37fd69c4-c05d-4e02-8f60-3c911c277e83");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "499fcecc-c75f-4224-87bf-3c25280126e7");
+                keyValue: "3866d847-1071-4cb4-95a0-4763425a035b");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4aa6fdb1-a0dd-49c5-8325-1a15b54f4e0c");
+                keyValue: "389300dc-1a50-43bf-94b5-410651a87b9b");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4c7f89d3-ad14-4928-85e7-a9bfe080d460");
+                keyValue: "3b3c8e50-c1d5-4eef-b4b1-15f7adb80d55");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4c989a31-e7cc-4b6e-8910-ea3e7231522c");
+                keyValue: "3c129174-907e-4d54-8ab6-8fdb8e1e15b1");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4ca7704f-a679-416e-8173-7be4f31e1fc1");
+                keyValue: "3fed8b0a-ef7a-4bbb-a0d4-756f626eeb96");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4cec8196-2c9a-4c3c-a05e-9ba74cb1dcbe");
+                keyValue: "41191d3c-1d31-4601-8421-c894d02a5841");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4da4de7c-32e0-4e1f-b00f-ec8d8c8c3410");
+                keyValue: "43d049e5-4d2f-4a7e-83a8-3c623f61e19b");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4e78bc08-260a-4350-b934-e59d1e178ee6");
+                keyValue: "4628ced0-96f1-405c-860c-b6aa3dbcc5b8");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "4fc977c9-425c-4e7f-aee9-9740d3d78741");
+                keyValue: "486a51e3-7c74-4cbb-b788-b37f56cba354");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "50caa4e8-48e7-4ebf-a7e2-b9f788a2ca04");
+                keyValue: "494b8e0b-5dab-4f2c-80bc-f890e97ddeb6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "51d7860d-735f-4515-b2a7-8a716023846e");
+                keyValue: "4c2477e4-f84b-4acc-b872-127ec91dbe65");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "51f0b076-581d-41ec-9033-35ffbea7e81e");
+                keyValue: "4d2295d7-1ff7-46cc-8960-3e69a5e79b16");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "51f244e9-ca61-4026-abb2-f9a046a67ba6");
+                keyValue: "4e022baa-00b3-46a4-ae45-32e7716784a9");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "5493261a-c620-4c56-854a-c4454aace7ec");
+                keyValue: "500a9162-aed6-4aa1-96f4-0012e40aa746");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "598ab973-15c3-4c02-af95-2a65ae19b36e");
+                keyValue: "515a7e44-379f-4234-837f-97b510edb4b0");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "59c9121e-dc98-4e2b-bf6e-160695c74397");
+                keyValue: "55ec2f90-de83-4df6-813b-a85336d9fc95");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "5ad60e55-f2a6-4eec-b727-0955ed0812cb");
+                keyValue: "59bfac0b-c33a-4951-8970-0b7fd568ebe8");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "5c7528fb-4666-4b31-8abe-1c800723a3b5");
+                keyValue: "5a95cbf6-0820-4f87-8527-54ff41c07d44");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "60675bc1-c5e0-4451-9036-fdbd055271a6");
+                keyValue: "5bdb0833-ca9e-49a6-8990-1e3d91f4209e");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "60b9ee0e-2a58-4095-8313-c4e9bc5b1d76");
+                keyValue: "5f8b9429-a955-4fbd-9240-e7dca4b29c45");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "62e63b7f-ea1d-4652-91da-38c585ddd14f");
+                keyValue: "6139eeab-60c8-42b3-a628-b8a34ec02971");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "64ec3b5d-4c5d-49d8-8c76-3736d2fde4c2");
+                keyValue: "628eb608-0364-41e4-abee-73faffc728e2");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "66d4a483-1e54-4482-8ef2-f4ba5ae41e4c");
+                keyValue: "63989f26-7305-4987-9a3f-9d4868cb5ceb");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "6764d265-4b68-458a-85ec-689b56856efb");
+                keyValue: "64b0aa04-9498-426a-8022-ae8fc4a7fb14");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "685c90e8-e736-4e13-b628-d78091ddb38f");
+                keyValue: "64c246d3-4b44-43c6-b71e-e47381342570");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "6c54fb89-f037-4157-a3fb-1b4a218e522d");
+                keyValue: "67701588-788c-4c98-b62d-c923355e74f5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "6d6bfa67-3e4d-4eae-9731-1b282596bf6d");
+                keyValue: "69444092-9650-4f4c-a59c-3c2aee10d1b7");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "6d7f522a-a3b7-45bb-b6e5-6ca02de748d5");
+                keyValue: "6a0110b8-7792-447a-a70a-bfafcea1bbbb");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "7191b227-ab2c-462e-b1df-4302c87ac938");
+                keyValue: "6b09c8b0-b211-4ec1-89c2-f96a1e241697");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "738dd802-101b-429c-baab-1b24a67a1cae");
+                keyValue: "6b135c1f-6d5e-4202-a366-3f267bc39df9");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "75785616-c577-42da-b9d9-1fb0a7313612");
+                keyValue: "6c29954b-8aef-45aa-b742-b5ebfdd2d691");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "76a68a28-3065-4fb8-a0b1-0f1c2e956474");
+                keyValue: "6f46232d-a2a4-4f03-a350-5998233db9e5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "7928e19e-21cd-405a-b4d5-b479750e0170");
+                keyValue: "70ca9c78-3399-48d9-a9e8-705bba952306");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "7a6d8dc9-d210-426f-9661-a6a2ed268a68");
+                keyValue: "71fd6ee1-fe8a-4f46-93c4-07924cc818ee");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "7aa570bd-ba53-44cc-b6f5-03028eb2d22f");
+                keyValue: "73ea72c0-f21e-405e-9491-7a54ecc41a08");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "7b2e0513-7e0b-4f35-876d-0cb45781add5");
+                keyValue: "78097518-39af-4e5a-902f-08e496b44107");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "81c5ae5a-ff08-4652-a0c0-5c13d38f2cfd");
+                keyValue: "784313a4-7a89-4191-bc4a-7186b6caa3cf");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "8428f772-0e67-4f75-a326-059286a021db");
+                keyValue: "7ba76db2-edbb-42ad-9b30-f3c35a7e8d94");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "85acfe6e-9833-4abe-8592-07324724e480");
+                keyValue: "7e0bdf70-bf00-422b-a9e4-2e5e33e6d44b");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "88f1cd90-23b3-4301-b1b2-abb2f2dc1186");
+                keyValue: "7eaba2f3-ba38-4d18-8f9c-181e1b4f2742");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "89d8a5de-16f2-4d66-9bb8-ff8af359127e");
+                keyValue: "7efd46f7-eaf5-4146-85c3-8b486cd9e86f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "89d9e342-fb35-41c4-879e-93e7b939ce16");
+                keyValue: "8038e8aa-f57a-4ae2-a077-87c8e429aefe");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "8e84a34a-9e2e-4be2-adcb-3f5765c3becb");
+                keyValue: "8052af07-172e-41f4-be08-a2d7bea36c6f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "8f0f98e3-67db-4b53-9e06-48a452cf0b89");
+                keyValue: "82e1aff5-4a7c-4f17-858d-51255775b1e4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9093a00c-6d6a-425d-b726-928a169d59e1");
+                keyValue: "8391d565-085b-47ab-9f00-452c965741e2");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "911dd2e3-e609-4fd0-a140-f397b501ecea");
+                keyValue: "84d6948b-2ebd-45a4-9ab4-f96c1ef4e794");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "91a7d285-ac62-4d9e-a109-2c0ea9c621e3");
+                keyValue: "8502496f-2a0e-4468-b084-ec1fef6fcbb4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "92035258-f199-4ef1-a75e-7a04cf6ad49a");
+                keyValue: "85f1e9ac-d10f-4075-83c6-d2567d9b9eff");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9375f9f4-3a84-4aaa-86ce-600c32ee89f3");
+                keyValue: "86536584-635e-4ae2-aed4-1439a4a98c1d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "98f6a59a-c669-4c26-b848-b15b5f461a12");
+                keyValue: "86eec870-8510-47bf-b0a6-f331734f9a53");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9928273f-3b12-4cd6-81e1-427471d8128c");
+                keyValue: "878e0d36-2e78-4a81-875a-fd5676c3d3d5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "998b43c5-33a3-42c1-9267-c59d525d9672");
+                keyValue: "87a3d2a2-dfd9-437a-ae71-d1db5d7b8f9b");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "99e31708-681e-4f95-aa0d-1e6f46e31f08");
+                keyValue: "8cba63b9-86ac-4ebd-93bb-f5db69383221");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9a2d76f4-a849-4a44-a321-8f857418eac1");
+                keyValue: "93dc3a2d-bf5d-41bc-acd6-2096b7a91c6f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9c11ad84-16e8-4f10-8c0c-a51cb07e3e0d");
+                keyValue: "94759472-bb72-4f9a-bbf9-a0653748dbde");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9dfafd48-46f9-482a-b2f1-6aef9187cd9c");
+                keyValue: "95dacc37-93e2-46f1-9fb1-b9dbdfe53413");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9ea6b5de-d100-4628-b68f-000455336339");
+                keyValue: "9c95f54c-0a80-41f2-b3b0-02f3b739e484");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9f15efc7-e132-483c-9981-fb6f6cd83749");
+                keyValue: "9c972eb1-991b-4cb2-a6fc-b2a4218063ad");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "9f5485f5-36f9-4df7-b0a2-3681d3f8a91f");
+                keyValue: "9cd10786-95a8-4732-a69b-2377af94359f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a02ded9e-fe90-4c60-80e0-37eeb855204b");
+                keyValue: "a6c2062d-7a64-43c4-a1f0-93893ad720e1");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a1742aa3-d2ef-4507-8232-2d5eac6b7b87");
+                keyValue: "a7afd8a1-d116-4a27-ae92-562046a33180");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a2c4b911-8810-4036-bfdd-04591364fb5e");
+                keyValue: "a8d72f48-2084-40b9-b016-525aad9612be");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a3cb1e3d-38c5-4587-a111-83040c4d72a4");
+                keyValue: "aa41a1bc-219e-4972-a2eb-e4932423eedd");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a4f0c053-2f4f-4120-92a0-6fb62b56f1be");
+                keyValue: "aadb99d7-432b-4aa3-b1c7-4fbbdfa6ef47");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a6c41b39-f165-4961-9d27-afd7152ed274");
+                keyValue: "ab95e998-8399-4f6a-aac4-8ddc5749d291");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "a8184970-b0a3-4068-9fb2-5432aaa2ce85");
+                keyValue: "ad8c2f6e-0871-4924-9cdd-ac80ce4965d6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ab92b7af-a3b9-4119-a27c-6c3617be133b");
+                keyValue: "adf7c54b-4f74-4f36-8bb5-61690a1e987c");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ad207d6c-e47e-4924-9c7c-41c4f27ea067");
+                keyValue: "b029e603-3f28-4dfb-b23e-949283bd7883");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "afbc718e-4206-49e0-b7dd-4f27e6a6a126");
+                keyValue: "b1624497-8fc7-4995-b199-3c26f5539b63");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b0af6908-6e08-48ed-aeba-9843674c1124");
+                keyValue: "b571a2e1-30ee-4e8f-a22c-b684a834a5f8");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b3f5b091-4d55-4970-811b-f6255634e3ed");
+                keyValue: "b5953b8c-1e32-4ccd-be47-b2f9299b48ad");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b66b8405-6ad3-4642-a657-392791e86ef1");
+                keyValue: "b5abee89-67c1-46ef-8498-6379add24f48");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b7d11ff7-3824-4ae4-b6e2-c5570aa8be82");
+                keyValue: "b990264f-8f6e-4783-b2f6-5f5bd9e2252f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b7ef1275-dfe3-4acf-87f4-ec7aef02b12e");
+                keyValue: "ba745b46-4999-4725-b219-b0c4d0123bf7");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "b823f150-2ad9-45f4-900e-c7e84ddb1dc5");
+                keyValue: "badd91db-79b7-4af5-81d4-65d6dc5f11e6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "baa1a0c3-b3b1-4f81-b8e7-e6ba37917a92");
+                keyValue: "bc116330-2a06-41a9-a8be-6bd589faebe6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "bdd11288-4599-427f-9f6a-febd2db5d210");
+                keyValue: "bc5ea138-f7bb-4a12-80b4-4bacc3c9bd45");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "bed7d6f3-27c6-4820-b0fe-cc3b824e44a5");
+                keyValue: "c3cebbbe-1edd-41ce-a843-248ef147be41");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "bfce6bb2-f437-491a-b8b4-4fe4d06d0c83");
+                keyValue: "c476963d-15f5-4a05-b123-d760ec96939d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "c11c5ec6-dbd4-4c97-a470-1098e06007da");
+                keyValue: "c506c855-6934-4feb-9648-d0c1da2759f3");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "c4656dde-7da9-41af-8ee4-754a0e5027c0");
+                keyValue: "c64ff40e-7a6d-4e97-8ba3-f5f564e105ac");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "c69b9e24-50eb-4f10-8649-97baf489a43d");
+                keyValue: "c7e2051c-c91b-4e60-b91f-95611bd89fe4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ca01c69b-0d97-4278-8c85-986a22112c9f");
+                keyValue: "cc003b66-1a33-4609-9422-369a26f8043a");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ca28cf67-679e-4137-9006-07b9d06ff380");
+                keyValue: "ccb358cd-57ef-424c-9ee7-f571acf7049d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ca2b25bd-fba6-4efc-b9cd-f7c935a47296");
+                keyValue: "d01258fa-9299-49e3-841d-c45032ea4da6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ca39c71a-d754-4a14-8f92-0ef593490d51");
+                keyValue: "d21b2dfb-63dd-48dc-9239-232675caa114");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "cb05fab5-372d-41ac-8e39-acd5c9e25ccc");
+                keyValue: "d233d505-5eb5-464f-8b40-9d0dab285ee3");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "cc5d21fa-7cca-4269-9c0e-e18a4811880a");
+                keyValue: "d2d816c3-94c9-4d01-a14d-2ee50f2581dc");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ce19b7ac-1e0e-4808-8b06-37db569fb40e");
+                keyValue: "d45adedd-f23e-4870-94f2-973a3dc4ade6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "d6a66c5d-ba4f-42e9-a93d-ef4eb8f0948f");
+                keyValue: "ddf36716-6e3a-4852-8e78-3d0a0525c9aa");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "d6ace530-be1d-46f6-bd8e-e591a0df5429");
+                keyValue: "e11c5ada-e1ad-4549-922e-101504953b6d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "d8417820-c8c0-4d5c-bc1d-649ee3efc448");
+                keyValue: "e2a8a7f3-5d83-4d12-bea7-40d279c81b3f");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "d87e7e49-c208-4e69-968a-a2055e704937");
+                keyValue: "e375927c-1364-41c2-b0b6-942010a07fd5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "dbd404ea-3ab9-42b9-91e9-83baba8639eb");
+                keyValue: "e59ed879-c254-4f3c-bca9-bea1c1c7ff8e");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "dc04663a-864f-43c4-b01e-9694bd03caee");
+                keyValue: "e5a0487f-494f-4076-b21b-30830dee45b2");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "dd5d6285-c1a9-450f-a4e1-a9ee0c43c796");
+                keyValue: "e77943ce-db4e-4b80-ad2c-f6f0341ff9e6");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "de45b24d-6c7c-42c2-9d33-ad2491b766ba");
+                keyValue: "e7d08264-c708-483f-baec-f8a2222d5724");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "de8865a5-76f9-4c31-8cf4-9ece2bebe986");
+                keyValue: "e8e9dffa-d4c1-467d-aaa6-1743962f78df");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "dfc08350-9c1d-4817-8efa-c927ec5ef888");
+                keyValue: "eb3e1aad-3afa-4342-af9d-3dfeeebf7d29");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "e1e8aae2-61d9-4120-a04b-9442da9e7f13");
+                keyValue: "eb7df20e-fe62-4ff3-873e-60846f0e927a");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "e47b324a-6e22-434c-8f9e-4ed9aa2e94fe");
+                keyValue: "ed64b962-17e7-4f16-b9ec-159c2ad3af8d");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "e86601c5-56d7-4505-ba03-9f1029962279");
+                keyValue: "ee29dbe3-81a1-4237-8891-a35836c91b34");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ebada7e6-7a82-4f07-9ea6-51dc3d560ebb");
+                keyValue: "efdd945f-9fd5-416e-81aa-c3888612a7e7");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "edbf2c08-9ec0-479d-a808-af6ce235ee0d");
+                keyValue: "f1e13408-3692-46d3-909d-6f4b42a6b934");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "f02e8a4c-340f-435a-bb07-5eca923ca3ab");
+                keyValue: "f38c811d-97f0-4ee5-9b27-bc8ddbca4c27");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "f584ba6f-57a5-4ed4-b327-8d33f0607331");
+                keyValue: "f8818600-2a62-4264-943e-cdd6a84289a4");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "f5887a14-fb75-406b-b1e1-ddba12644407");
+                keyValue: "f9960463-af32-46dd-bb14-847319764196");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "f7aeeed0-5412-4220-9cca-24030d6701f0");
+                keyValue: "fb795ad3-95b4-4503-95f3-a5c64f00d47e");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "f8c602bb-3a6f-450f-a2e8-978e11c118fe");
+                keyValue: "fc6d8b4f-9e9a-406b-aa3e-ec09e74f15ef");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "fa45bf8a-3a56-43bd-ba6b-6d30418b3fa9");
+                keyValue: "fc784dd0-57e5-47ec-97ff-e708d3614903");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "fc19c689-fac5-475e-b647-68d7b70b9a30");
+                keyValue: "fd155aa6-02e2-46cb-a006-ff36235dea03");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "fc3116b4-75f4-4766-abf4-06c7b59151dc");
+                keyValue: "fd846410-e423-4c2c-9303-3b2cf4de23a5");
 
             migrationBuilder.DeleteData(
                 table: "Products",
                 keyColumn: "Id",
-                keyValue: "ff8f5651-747a-4a63-aab4-77bc019ec0a3");
+                keyValue: "fe1fa887-8335-4ae7-9c1b-30f35393d81f");
 
             migrationBuilder.DeleteData(
                 table: "SiteCommInfos",
                 keyColumn: "Id",
-                keyValue: "fffcf24e-86e4-4dfc-b146-5c3741b357f4");
+                keyValue: "f4ff1cc9-2d5d-405f-857f-3401d949264d");
 
             migrationBuilder.DeleteData(
                 table: "UserInfos",
                 keyColumn: "Id",
-                keyValue: "e89dcd9e-aee6-4a28-a7e4-36072c0b6553");
+                keyValue: "a17ddc18-3198-4b77-8278-3e87cf5f37fc");
 
             migrationBuilder.DropColumn(
                 name: "Address",
