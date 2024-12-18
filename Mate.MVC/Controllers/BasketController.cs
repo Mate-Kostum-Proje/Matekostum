@@ -5,143 +5,145 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Controllers
 {
-	public class BasketController(IBasketManager basketManager, IManager<Product> productRepository) : Controller
-	{
-		private readonly IBasketManager _basketManager = basketManager;
-		private readonly IManager<Product> _productRepository = productRepository;
+    public class BasketController(IBasketManager basketManager, IManager<Product> productRepository, IManager<ProductSize> productSizeRepository) : Controller
+    {
+        private readonly IBasketManager _basketManager = basketManager;
+        private readonly IManager<Product> _productRepository = productRepository;
+        private readonly IManager<ProductSize> _productSizeRepository = productSizeRepository;
+
+
+        // Sepeti görüntüleme
+        public IActionResult BasketInside()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+                var basketDetails = _basketManager.GetBasketDetails(userId);
+
+                // BasketDetail ile Product verilerini birleştiriyoruz
+                var viewModel = basketDetails.Select(p =>
+                {
+                    var product = _productRepository.GetById(p.ProductId);
+
+                    // Fiyatı belirlemek için durumu kontrol et
+                    int price = 0;
+                    if (product != null)
+                    {
+                        price = product.IsSale
+                        ? (product.UnitPriceForSale ?? 0)
+                        : (product.UnitPriceForRent);
+
+                    }
+
+                    return new BasketDetailPipeLine
+                    {
+                        ProductId = p.ProductId,
+                        ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
+                        Price = price, // Ürün fiyatı
+                        Amount = p.Amount, // Sepetteki miktar
+                        TotalPrice = price * p.Amount, // Toplam fiyat
+                        BasketDetailId = p.Id, // BasketDetail ID'si
+                        Size = p.ProductSize //Size 
+                    };
+                }).ToList();
+
+                return View(viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
 
 
 
-		// Sepeti görüntüleme
-		public IActionResult BasketInside()
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				string userId = User.Identity.Name; // Kullanıcı ID'sini alın
-				var basketDetails = _basketManager.GetBasketDetails(userId);
+        //public ActionResult BasketInsideVol2() //Bundan hiç emin değilim
+        //{
+        //	string userId = User.Identity.Name; // Kullanıcı ID'sini alın 
+        //	var basketDetails = _basketManager.GetBasketDetails(userId);
+        //	return View(basketDetails); // Sepet detaylarını View'e gönder
+        //}
 
-				// BasketDetail ile Product verilerini birleştiriyoruz
-				var viewModel = basketDetails.Select(p =>
-				{
-					var product = _productRepository.GetById(p.ProductId);
+        // Sepete ürün ekleme
+        [HttpGet]
+        public IActionResult AddToBasket()
+        {
+            ProductVM productVM = new ProductVM();
+            return View(productVM);
+        }
 
-					// Fiyatı belirlemek için durumu kontrol et
-					int price = 0;
-					if (product != null)
-					{
-						price = product.IsSale
-						? (product.UnitPriceForSale ?? 0)
-						: (product.UnitPriceForRent);
+        // Sepete ürün ekleme
 
-					}
+        [HttpPost]
+        public async Task<ActionResult> AddToBasket(ProductVM productVM, AddToBasketVM addToBasketVM, ProductSize productSize)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                try
+                {
 
-					return new BasketDetailPipeLine
-					{
-						ProductId = p.ProductId,
-						ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
-						Price = price, // Ürün fiyatı
-						Amount = p.Amount, // Sepetteki miktar
-						TotalPrice = price * p.Amount, // Toplam fiyat
-						BasketDetailId = p.Id, // BasketDetail ID'si
-						Size = p.ProductSize //Size 
-					};
-				}).ToList();
+                    string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+                    var basketDetail = new BasketDetail
 
-				return View(viewModel);
-			}
-			else
-			{
-				return RedirectToAction("Login", "Account");
-			}
-		}
+                    {
+                        ProductId = addToBasketVM.ProductId,
+                        Amount = addToBasketVM.Amount,
+                        ProductSize = addToBasketVM.SizeNumber,
+                    };
 
 
+                    _basketManager.AddToBasket(userId, basketDetail, productSize); // İş mantığını çağır
+                    TempData["Success"] = "Ürün sepete başarıyla eklendi.";
 
-		//public ActionResult BasketInsideVol2() //Bundan hiç emin değilim
-		//{
-		//	string userId = User.Identity.Name; // Kullanıcı ID'sini alın 
-		//	var basketDetails = _basketManager.GetBasketDetails(userId);
-		//	return View(basketDetails); // Sepet detaylarını View'e gönder
-		//}
-
-		// Sepete ürün ekleme
-		[HttpGet]
-		public IActionResult AddToBasket()
-		{
-			ProductVM productVM = new ProductVM();
-			return View(productVM);
-		}
-
-		// Sepete ürün ekleme
-
-		[HttpPost]
-		public async Task<ActionResult> AddToBasket(ProductVM productVM, AddToBasketVM addToBasketVM)
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				try
-				{
-
-					string userId = User.Identity.Name; // Kullanıcı ID'sini alın
-					var basketDetail = new BasketDetail
-					{
-						ProductId = addToBasketVM.ProductId,
-						Amount = addToBasketVM.Amount,
-						ProductSize = addToBasketVM.SizeNumber,
-					};
-
-					_basketManager.AddToBasket(userId, basketDetail); // İş mantığını çağır
-					TempData["Success"] = "Ürün sepete başarıyla eklendi.";
-
-				}
-				catch (InvalidOperationException ex)
-				{
-					TempData["Error"] = ex.Message;
-				}
-				return RedirectToAction("InsideBasket"); // İşlemden sonra sepete yönlendir
-			}
-			else
-			{
-				return RedirectToAction("Login", "Account");
-			}
-		}
+                }
+                catch (InvalidOperationException ex)
+                {
+                    TempData["Error"] = ex.Message;
+                }
+                return RedirectToAction("InsideBasket"); // İşlemden sonra sepete yönlendir
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
 
 
 
 
-		// Sepetten ürün çıkarma
-		public ActionResult RemoveFromBasket(string basketDetailId)
-		{
-			try
-			{
-				_basketManager.RemoveFromBasket(basketDetailId); // İş mantığını çağır
-				TempData["Success"] = "Ürün sepetten başarıyla çıkarıldı.";
-			}
-			catch (InvalidOperationException ex)
-			{
-				TempData["Error"] = ex.Message;
-			}
-			return RedirectToAction("BasketInside");
-		}
+        // Sepetten ürün çıkarma
+        public ActionResult RemoveFromBasket(string basketDetailId)
+        {
+            try
+            {
+                _basketManager.RemoveFromBasket(basketDetailId); // İş mantığını çağır
+                TempData["Success"] = "Ürün sepetten başarıyla çıkarıldı.";
+            }
+            catch (InvalidOperationException ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction("BasketInside");
+        }
 
-		// Sepeti temizleme
-		public ActionResult ClearBasket()
-		{
-			string userId = User.Identity.Name; // Kullanıcı ID'sini alın
-			_basketManager.ClearBasket(userId); // İş mantığını çağır
-			TempData["Success"] = "Sepet başarıyla temizlendi.";
-			return RedirectToAction("BasketInside");
-		}
-		public class BasketDetailPipeLine
-		{
-			public string BasketDetailId { get; set; } // Sepet Detay ID
-			public string ProductId { get; set; } // Ürün ID
-			public string ProductName { get; set; } // Ürün adı
-			public decimal Price { get; set; } // Ürün fiyatı
-			public int Amount { get; set; } // Miktar
-			public int Size { get; set; }
-			public decimal TotalPrice { get; set; } // Toplam fiyat
-		}
+        // Sepeti temizleme
+        public ActionResult ClearBasket()
+        {
+            string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+            _basketManager.ClearBasket(userId); // İş mantığını çağır
+            TempData["Success"] = "Sepet başarıyla temizlendi.";
+            return RedirectToAction("BasketInside");
+        }
+        public class BasketDetailPipeLine
+        {
+            public string BasketDetailId { get; set; } // Sepet Detay ID
+            public string ProductId { get; set; } // Ürün ID
+            public string ProductName { get; set; } // Ürün adı
+            public decimal Price { get; set; } // Ürün fiyatı
+            public int Amount { get; set; } // Miktar
+            public int Size { get; set; }
+            public decimal TotalPrice { get; set; } // Toplam fiyat
+        }
 
-	}
+    }
 }

@@ -1913,7 +1913,8 @@ section,
 }
 
 .add-to-cart {
-    background-color: #333;
+    background-color:#ffc451;
+
     color: #fff;
 }
 
@@ -1922,8 +1923,8 @@ section,
     }
 
 .buy-now {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: black;
+    color: white;
     border: 1px solid #ddd;
 }
 
@@ -1936,7 +1937,15 @@ section,
     font-size: 12px;
     color: #888;
     text-transform: uppercase;
+   font-style:italic;
     margin-top: 10px;
+}
+.product-category-area {
+    font-size: 16px;
+    color: black;
+    text-transform: uppercase;
+    margin-top: 10px;
+   
 }
 
 /* Ürün Baþlýðý */

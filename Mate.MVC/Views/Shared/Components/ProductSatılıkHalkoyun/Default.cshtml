@@ -1,6 +1,6 @@
 ﻿@model List<Product>
 
-@foreach (var item in Model.OrderByDescending(p => p.IsAdult == false))
+@foreach (var item in Model.OrderByDescending(p => p.ProductRegionId))
 {
     if (item.ProductCategoryId == "2halkoyun" && item.IsSale == true )
     {
@@ -13,6 +13,46 @@
 					<button asp-controller="Basket" , asp-action="AddToBasket" class="add-to-cart">Sepete Ekle</button>
 					<button asp-controller="" asp-action="" class="buy-now">Satın Al</button>
 				</div>
+
+				@if (item.ProductRegionId == "AKDENİZ")
+				{
+					<div class="product-category-area">AKDENİZ</div>
+				}
+				else if (item.ProductRegionId == "EGE")
+				{
+					<div class="product-category-area">EGE</div>
+				}
+				else if (item.ProductRegionId == "DOGU ANADOLU")
+				{
+					<div class="product-category-area">DOĞU ANADOLU</div>
+				}
+				else if (item.ProductRegionId == "GÜNEYDOGU ANADOLU")
+				{
+					<div class="product-category-area">GÜNEYDOĞU ANADOLU</div>
+				}
+				else if (item.ProductRegionId == "İÇ ANADOLU")
+				{
+					<div class="product-category-area">İÇ ANADOLU</div>
+				}
+				else if (item.ProductRegionId == "KAFKAS")
+				{
+					<div class="product-category-area">KAFKAS</div>
+				}
+				else if (item.ProductRegionId == "KARADENİZ")
+				{
+					<div class="product-category-area">KARADENİZ</div>
+				}
+				else if (item.ProductRegionId == "MARMARA")
+				{
+					<div class="product-category-area">MARMARA</div>
+				}
+				else if (item.ProductRegionId == "TRAKYA")
+				{
+					<div class="product-category-area">TRAKYA</div>
+				}
+
+
+
 				@if (item.IsAdult == false)
 				{
 					<div class="product-category">Çocuk</div>

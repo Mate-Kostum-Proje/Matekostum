@@ -10,7 +10,9 @@ namespace Mate.BL.Concrete
             IManager<OrderDetail> orderDetailRepository,
             IManager<Basket> basketRepository,
             IManager<BasketDetail> basketDetailRepository,
-            IManager<Product> productRepository) : Manager<Order>, IOrderManager
+            IManager<Product> productRepository,
+            IManager<ProductSize> productSizeRepository,
+            IManager<Size> sizeRepository) : Manager<Order>, IOrderManager
     {
 
         private readonly SqlDbContext _dbContext;
@@ -19,35 +21,40 @@ namespace Mate.BL.Concrete
         private readonly IManager<Basket> _basketRepository = basketRepository;
         private readonly IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
         private readonly IManager<Product> _productRepository = productRepository;
+        private readonly IManager<ProductSize> _productSizeRepository = productSizeRepository;
+        private readonly IManager<Size> _sizeRepository = sizeRepository;
 
-        public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails) //Aşağıda aslında buna bakıyorum ama ayrı bi metod olarak kalsın
+        public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes) //Aşağıda aslında buna bakıyorum ama ayrı bi metod olarak kalsın
         {
             foreach (var orderDetail in orderDetails)
             {
-                var product = _productRepository.GetById(orderDetail.ProductId);
-                if (product == null)
+                foreach (var productSize in productSizes)
                 {
-                    throw new InvalidOperationException($"Ürün bulunamadı: {product.ProductName}");
-                }
+                    var product = _productRepository.GetById(orderDetail.ProductId);
+                    if (product == null)
+                    {
+                        throw new InvalidOperationException($"Ürün bulunamadı: {product.ProductName}");
+                    }
 
-                // Sipariş miktarı stoktan fazla mı kontrol et
-                if (orderDetail.Amount > product.Amount)
-                {
-                    throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
+                    // Sipariş miktarı stoktan fazla mı kontrol et
+                    if ((orderDetail.Amount > productSize.SizeAmount))
+                    {
+                        throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
+                    }
                 }
             }
 
             return true;
         }
 
-        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails)
+        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes)
         {
             using (var transaction = _dbContext.Database.BeginTransaction())
             {
                 try
                 {
                     // Sipariş verilebilirlik kontrolü
-                    if (!CanPlaceOrder(userId, orderDetails))
+                    if (!CanPlaceOrder(userId, orderDetails, productSizes))
                     {
                         throw new InvalidOperationException("Stok yetersiz, sipariş verilemez.");
                     }
@@ -63,24 +70,27 @@ namespace Mate.BL.Concrete
                     // Sipariş detaylarını işleme al
                     foreach (var orderDetail in orderDetails)
                     {
-                        var product = _productRepository.GetById(orderDetail.ProductId);
-                        if (product == null)
+                        foreach (var productSize in productSizes)
                         {
-                            throw new InvalidOperationException($"Ürün bulunamadı: {orderDetail.ProductId}");
+                            var product = _productRepository.GetById(orderDetail.ProductId);
+                            if (product == null)
+                            {
+                                throw new InvalidOperationException($"Ürün bulunamadı: {orderDetail.ProductId}");
+                            }
+
+                            // Stok güncellemesi
+                            if (orderDetail.Amount > productSize.SizeAmount)
+                            {
+                                throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
+                            }
+
+                            productSize.SizeAmount -= orderDetail.Amount;
+                            _productRepository.Update(product);
+
+                            // Sipariş detayını siparişe ekle
+                            orderDetail.OrderId = order.Id;
+                            _orderDetailRepository.Create(orderDetail);
                         }
-
-                        // Stok güncellemesi
-                        if (orderDetail.Amount > product.Amount)
-                        {
-                            throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
-                        }
-
-                        product.Amount -= orderDetail.Amount;
-                        _productRepository.Update(product);
-
-                        // Sipariş detayını siparişe ekle
-                        orderDetail.OrderId = order.Id;
-                        _orderDetailRepository.Create(orderDetail);
                     }
 
                     // Kullanıcının sepetini bul

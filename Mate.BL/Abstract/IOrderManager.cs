@@ -2,10 +2,10 @@
 
 namespace Mate.BL.Abstract
 {
-	public interface IOrderManager : IManager<Order>
-	{
-		public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails);
-		public bool PlaceOrder(string userId, List<OrderDetail> orderDetails);
-		public void Update(Product product);
-	}
+    public interface IOrderManager : IManager<Order>
+    {
+        public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes);
+        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes);
+        public void Update(Product product);
+    }
 }
