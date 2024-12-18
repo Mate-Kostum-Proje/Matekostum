@@ -57,12 +57,12 @@ namespace Mate.MVC.Controllers
 
 
 
-		public ActionResult BasketInsideVol2() //Bundan hiç emin değilim
-		{
-			string userId = User.Identity.Name; // Kullanıcı ID'sini alın 
-			var basketDetails = _basketManager.GetBasketDetails(userId);
-			return View(basketDetails); // Sepet detaylarını View'e gönder
-		}
+		//public ActionResult BasketInsideVol2() //Bundan hiç emin değilim
+		//{
+		//	string userId = User.Identity.Name; // Kullanıcı ID'sini alın 
+		//	var basketDetails = _basketManager.GetBasketDetails(userId);
+		//	return View(basketDetails); // Sepet detaylarını View'e gönder
+		//}
 
 		// Sepete ürün ekleme
 		[HttpGet]
