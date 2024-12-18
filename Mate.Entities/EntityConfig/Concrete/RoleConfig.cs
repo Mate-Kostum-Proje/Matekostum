@@ -13,9 +13,9 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasIndex(p => p.RoleName).IsUnique();
             builder.Property(r => r.Id).ValueGeneratedNever();
 
-            builder.HasData(new Role() { Id = "ad", RoleName = "Admin", CreatedAt = DateTime.Now });
+            builder.HasData(new Role() { Id = Guid.NewGuid().ToString(), RoleName = "Admin", CreatedAt = DateTime.Now });
 
-            builder.HasData(new Role() { Id = "us", RoleName = "User", CreatedAt = DateTime.Now });
+            builder.HasData(new Role() { Id = Guid.NewGuid().ToString(), RoleName = "User", CreatedAt = DateTime.Now });
         }
     }
 

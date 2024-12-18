@@ -27,7 +27,7 @@ namespace Mate.Entities.EntityConfig.Concrete
 
             builder.HasData(new UserInfo()
             {
-
+                Id=Guid.NewGuid().ToString(),
                 Name = "İdil",
                 SurName = "Erdoğan",
                 TcNo = "12212212211",

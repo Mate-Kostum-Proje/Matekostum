@@ -13,7 +13,7 @@ namespace Mate.Entities.Concrete
         public string Address { get; set; }
         public string City { get; set; }
         public string District { get; set; }
-        public List<Role>? Roles { get; set; }
+        public List<UsersRoles>? Roles { get; set; } =   new List<UsersRoles>();
         public List<Order>? OrderList { get; set; }
         public List<Basket>? BasketList { get; set; }
     }

@@ -15,13 +15,13 @@ namespace Mate.ConsoleApp
             Manager<UserInfo> userManager = new Manager<UserInfo>();
             Manager<Role> roleManager = new Manager<Role>();
             //aliye admin hakki verme
-            var ali = userManager.GetAllInclude(p => p.Name == "idil", p => p.Roles).FirstOrDefault();
+            var idil = userManager.GetAllInclude(p => p.Name == "idil", p => p.Roles).FirstOrDefault();
 
             var admin = roleManager.Get(p => p.RoleName == "Admin");
-            ali.Roles.Clear();
-            ali.Roles.Add(admin);
-            userManager._dbContext.UserInfos.Update(ali);
-            userManager._dbContext.SaveChanges();
+            
+            idil.Roles.Add(admin);
+            userManager.Update(idil);
+            //userManager._dbContext.SaveChanges();
 
         }
         public static void AddRoleForUser2()
