@@ -1,4 +1,6 @@
-﻿@model Product
+﻿@using Mate.MVC.Models.VMs
+@model Product
+
 <link rel="stylesheet" href="~/assets/css/main.css">
 <br />
 <br />
@@ -36,31 +38,22 @@
 			<p>Kategori: Çocuk</p>
 			}
 		</p>
-		<form asp-action="AddToBasket" asp-controller="Basket" method="post">
-            <input type="hidden" asp-for="Id" />
 
-            <div class="size-selection-single-product">
-                <label asp-for="Sizes">Size:</label>
-                <select asp-for="Sizes" id="size-single-product" class="form-control">
-                    <option value="8">8</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
-                    <option value="14">14</option>
-                </select>
-            </div>
-            
-            <div class="quantity-single-product">
-                <button type="button" onclick="decreaseValue()">-</button>
-                <input asp-for="Amount" id="amountInput" type="number" min="1" max="20" value="1" readonly>
-                <button type="button" onclick="increaseValue()">+</button>
-            </div>
+		<partial name="_AddToBasket"
+				 model="new AddToBasketVM
+				 {
+				 ProductId=Model.Id,
+				 Amount=1,
+				 SizeNumber=0,
+				 SizeOptions=new List<Size>
+             {
+                 new Size { SizeNumber = 8 },
+                 new Size { SizeNumber = 10 },
+                 new Size { SizeNumber = 12 },
+                 new Size { SizeNumber = 14 }
+             }
+         }" />
 
-            <div class="actions-single-product">
-                <button type="submit" class="add-to-cart-single-product">Sepete Ekle</button>
-                <button type="submit" class="buy-now-single-product">Satın Al</button>
-
-			</div>
-		</form>
 	</div>
 </div>
 

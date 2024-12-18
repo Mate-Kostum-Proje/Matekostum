@@ -2029,7 +2029,7 @@ body-single-product {
     display: flex; /* Yatay düzen için flexbox */
     align-items: center; /* Dikey ortalama */
     gap: 10px; /* Elemanlar arasýnda boþluk */
-    width: 100px;
+    width: 230px;
 }
 
     /* Beden seçimi ve adet giriþ alaný */
@@ -2038,7 +2038,7 @@ body-single-product {
     padding: 5px; /* Ýçerik boþluðu */
     border: 1px solid #ccc; /* Gri kenarlýk */
     border-radius: 5px; /* Köþeleri yuvarlatýr */
-    width: 60px; /* Sabit geniþlik */
+    width: 300px; /* Sabit geniþlik */
 }
 
 /* Adet butonlarý */
