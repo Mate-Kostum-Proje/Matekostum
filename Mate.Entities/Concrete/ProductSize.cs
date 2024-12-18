@@ -8,7 +8,7 @@ namespace Mate.Entities.Concrete
         public string ProductId { get; set; }
         public Size Sizes { get; set; }
         public string SizeId { get; set; }
-        public string ProductName { get; set; }
+        public string ProductPhotoPath { get; set; }
         public int SizeNumber { get; set; }
         public int SizeAmount { get; set; }
     }

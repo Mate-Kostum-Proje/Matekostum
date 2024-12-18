@@ -20,7 +20,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(x => x.UnitPriceForRent).HasMaxLength(100000);
             builder.Property(x => x.IsSale).IsRequired();
             builder.Property(x => x.Gender).HasMaxLength(20);
-
+            builder.HasIndex(x => x.PhotoPath).IsUnique();
 
             builder.HasOne(p => p.ProductCategories).WithMany(p => p.Products).HasForeignKey(p => p.ProductCategoryId).IsRequired();
             builder.HasOne(p => p.ProductRegions).WithMany(p => p.Products).HasForeignKey(p => p.ProductRegionId);
@@ -127,7 +127,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new Product() { ProductName = "ADIYAMAN E", Gender = false, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "GÜNEYDOGU ANADOLU", ProductSubRegionId = "ADIYAMAN", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ADIYAMAN-E-YETİŞKİNKİRALIK.jpg" });
             builder.HasData(new Product() { ProductName = "ADIYAMAN K", Gender = true, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "GÜNEYDOGU ANADOLU", ProductSubRegionId = "ADIYAMAN", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ADIYAMAN-K-YETİŞKİNKİRALIK.jpg" });
             builder.HasData(new Product() { ProductName = "ANKARA E", Gender = false, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "İÇ ANADOLU", ProductSubRegionId = "ANKARA", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİNKİRALIK.jpg" });
-            builder.HasData(new Product() { ProductName = "ARTVİN E2", Gender = false, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "KARADENİZ", ProductSubRegionId = "ARTVİN", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ARTVİN-E2-YETİŞKİNKİRALIK.jpG" });
+            builder.HasData(new Product() { ProductName = "ARTVİN E2", Gender = false, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "KARADENİZ", ProductSubRegionId = "ARTVİN", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ARTVİN-E2-YETİŞKİNKİRALIK.jpg" });
             builder.HasData(new Product() { ProductName = "ARTVİN K", Gender = true, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "KARADENİZ", ProductSubRegionId = "ARTVİN", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-ARTVİN-K-YETİŞKİNKİRALIK.jpg" });
             builder.HasData(new Product() { ProductName = "BİLECİK K", Gender = true, IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "MARMARA", ProductSubRegionId = "BİLECİK", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-BİLECİK-K-YETİŞKİNKİRALIK.jpg" });
             builder.HasData(new Product() { ProductName = "BİTLİS BEYAZ E", IsAdult = true, IsSale = false, UnitPriceForRent = 1500, ProductCategoryId = "2halkoyun", ProductRegionId = "DOGU ANADOLU", ProductSubRegionId = "BİTLİS", CreatedAt = DateTime.Now, PhotoPath = "/databaseimg/HALKOYUN-BİTLİSBEYAZ-E-YETİŞKİNKİRALIK.jpg" });
