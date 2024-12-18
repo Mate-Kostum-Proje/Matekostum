@@ -20,7 +20,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.Property(x => x.UnitPriceForRent).HasMaxLength(100000);
             builder.Property(x => x.IsSale).IsRequired();
             builder.Property(x => x.Gender).HasMaxLength(20);
-            builder.HasIndex(x => x.PhotoPath).IsUnique();
+            //builder.HasIndex(x => x.PhotoPath).IsUnique();
 
             builder.HasOne(p => p.ProductCategories).WithMany(p => p.Products).HasForeignKey(p => p.ProductCategoryId).IsRequired();
             builder.HasOne(p => p.ProductRegions).WithMany(p => p.Products).HasForeignKey(p => p.ProductRegionId);

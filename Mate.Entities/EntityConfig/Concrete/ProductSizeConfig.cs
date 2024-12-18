@@ -20,6 +20,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasIndex(P => P.SizeAmount);
 
 
+            #region Data
             //1.HALK OYUNLARI ÇOCUK
 
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUNADIYAMANÇOCUKKİRALIK.jpg", SizeNumber = 8, SizeAmount = 4 });
@@ -1161,7 +1162,7 @@ namespace Mate.Entities.EntityConfig.Concrete
 
 
             //iç anadolu
-            
+
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİN-SATILIK.jpg", SizeNumber = 8, SizeAmount = 4 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİN-SATILIK.jpg", SizeNumber = 10, SizeAmount = 5 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ANKARA-E-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
@@ -1177,20 +1178,20 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K2-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K2-YETİŞKİN-SATILIK.jpg", SizeNumber = 14, SizeAmount = 7 });
 
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 8, SizeAmount = 4 }); // Fotoğraf yok ESKİŞEHİR K3
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 10, SizeAmount = 5 }); // Fotoğraf yok
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 12, SizeAmount = 6 }); // Fotoğraf yok
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 14, SizeAmount = 7 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/dsa", SizeNumber = 8, SizeAmount = 4 }); // Fotoğraf yok ESKİŞEHİR K3
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/dsa", SizeNumber = 10, SizeAmount = 5 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/dsa", SizeNumber = 12, SizeAmount = 6 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/dsa", SizeNumber = 14, SizeAmount = 7 }); // Fotoğraf yok
 
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K4-YETİŞKİN-SATILIK.jpg", SizeNumber = 8, SizeAmount = 4 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K4-YETİŞKİN-SATILIK.jpg", SizeNumber = 10, SizeAmount = 5 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K4-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-ESKİŞEHİR-K4-YETİŞKİN-SATILIK.jpg", SizeNumber = 14, SizeAmount = 7 });
 
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 8, SizeAmount = 4 }); // Fotoğraf yok SİVAS K
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 10, SizeAmount = 5 }); // Fotoğraf yok
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 12, SizeAmount = 6 }); // Fotoğraf yok
-            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/", SizeNumber = 14, SizeAmount = 7 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/asd", SizeNumber = 8, SizeAmount = 4 }); // Fotoğraf yok SİVAS K
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/asd", SizeNumber = 10, SizeAmount = 5 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/asd", SizeNumber = 12, SizeAmount = 6 }); // Fotoğraf yok
+            builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/asd", SizeNumber = 14, SizeAmount = 7 }); // Fotoğraf yok
 
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-TOKAT-K-YETİŞKİN-SATILIK.jpg", SizeNumber = 8, SizeAmount = 4 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-TOKAT-K-YETİŞKİN-SATILIK.jpg", SizeNumber = 10, SizeAmount = 5 });
@@ -1201,7 +1202,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-TOKAT-K2-YETİŞKİN-SATILIK.jpg", SizeNumber = 10, SizeAmount = 5 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-TOKAT-K2-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-TOKAT-K2-YETİŞKİN-SATILIK.jpg", SizeNumber = 14, SizeAmount = 7 });
-        
+
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-YOZGAT-YETİŞKİN-SATILIK.jpg", SizeNumber = 8, SizeAmount = 4 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-YOZGAT-YETİŞKİN-SATILIK.jpg", SizeNumber = 10, SizeAmount = 5 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-YOZGAT-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
@@ -1492,6 +1493,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-RENKLİSALTA-YETİŞKİN-SATILIK.jpg", SizeNumber = 12, SizeAmount = 6 });
             builder.HasData(new ProductSize { ProductPhotoPath = "/databaseimg/HALKOYUN-RENKLİSALTA-YETİŞKİN-SATILIK.jpg", SizeNumber = 14, SizeAmount = 7 });
 
+            #endregion
 
 
         }
