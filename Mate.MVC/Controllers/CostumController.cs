@@ -1,11 +1,13 @@
-﻿using Mate.BL.Abstract;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using Mate.BL.Abstract;
 using Mate.Entities.Concrete;
+using Mate.MVC.Models.VMs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Controllers
 {
-	public class CostumController(IManager<Product> productManager) : Controller
+	public class CostumController(IManager<Product> productManager, IManager<ProductSize> productSizeManager, INotyfService notyfService) : Controller
 	{
 		[Authorize]
 
@@ -21,13 +23,51 @@ namespace Mate.MVC.Controllers
 		[HttpGet]
 		public IActionResult CostumInfo(string id)
 		{
-			var product = productManager.GetById(id); // Ürünü veritabanından getirin
+
+			var product = productManager.GetById(id);
 			if (product == null)
 			{
 				return NotFound();
 			}
+			try
+			{
+				// Size bilgilerini çekiyoruz
 
-			return View(product); // Ürün detaylarını göstermek için bir View döndürün
+				//burası null geliyor
+				var sizeOptions = productSizeManager.GetAll()
+					.Where(ps => ps.ProductId == id)
+					.Select(ps => new Size
+					{
+						SizeNumber = ps.SizeNumber,
+						Id = ps.SizeId
+					})
+					.ToList() ?? new List<Size>();
+				if (sizeOptions == null || !sizeOptions.Any())
+				{
+					notyfService.Error("Beden seçenekleri bulunamadı.");
+					return View(new AddToBasketVM { SizeOptions = new List<Size>() });
+				}
+				else if (!sizeOptions.Any())
+				{
+					notyfService.Warning("Mevcut beden seçenekleri bulunamadı.");
+				}
+				else
+				{
+					var model = new AddToBasketVM
+					{
+						ProductId = id,
+						SizeOptions = sizeOptions
+					};
+				}
+				return View(product); // Ürün detaylarını göstermek için bir View döndürün
+			}
+			catch (Exception ex)
+			{
+				notyfService.Error("Bir hata oluştu: " + ex.Message);
+				return RedirectToAction("Error", "Home");
+			}
+
+
 		}
 		public IActionResult ProductKiralık()
 		{

@@ -42,7 +42,7 @@ namespace Mate.Entities.EntityConfig.Concrete
             builder.HasData(new ProductSize { ProductId = "f4ec3d57-0958-4cd2-8d1f-e3038eb75ae2", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
             builder.HasData(new ProductSize { ProductId = "f4ec3d57-0958-4cd2-8d1f-e3038eb75ae2", SizeNumber = 10, SizeAmount = 5, SizeId = "baf2e21c-f1c7-4801-a8a0-6e59a809ed7d" });
             builder.HasData(new ProductSize { ProductId = "f4ec3d57-0958-4cd2-8d1f-e3038eb75ae2", SizeNumber = 12, SizeAmount = 6, SizeId = "11ebdd3a-f75a-4d85-9916-220874cf8af9" });
-            builder.HasData(new ProductSize { ProductId = "f4ec3d57-0958-4cd2-8d1f-e3038eb75ae2x", SizeNumber = 14, SizeAmount = 7, SizeId = "152002fb-d980-4750-a70a-7b5d0bdac9e4" });
+            builder.HasData(new ProductSize { ProductId = "f4ec3d57-0958-4cd2-8d1f-e3038eb75ae2", SizeNumber = 14, SizeAmount = 7, SizeId = "152002fb-d980-4750-a70a-7b5d0bdac9e4" });
 
             builder.HasData(new ProductSize { ProductId = "6fa2bd76-8f79-42d6-ae51-2f7a95535f7d", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
             builder.HasData(new ProductSize { ProductId = "6fa2bd76-8f79-42d6-ae51-2f7a95535f7d", SizeNumber = 10, SizeAmount = 5, SizeId = "baf2e21c-f1c7-4801-a8a0-6e59a809ed7d" });
@@ -1278,7 +1278,7 @@ namespace Mate.Entities.EntityConfig.Concrete
 
             builder.HasData(new ProductSize { ProductId = "c87ce8ae-adb7-4007-8c0e-0090d0926e2e", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
             builder.HasData(new ProductSize { ProductId = "c87ce8ae-adb7-4007-8c0e-0090d0926e2e", SizeNumber = 10, SizeAmount = 5, SizeId = "baf2e21c-f1c7-4801-a8a0-6e59a809ed7d" });
-            builder.HasData(new ProductSize { ProductId = "c87ce8ae-adb7-4007-8c0e-0090d0926e2eg", SizeNumber = 12, SizeAmount = 6, SizeId = "11ebdd3a-f75a-4d85-9916-220874cf8af9" });
+            builder.HasData(new ProductSize { ProductId = "c87ce8ae-adb7-4007-8c0e-0090d0926e2e", SizeNumber = 12, SizeAmount = 6, SizeId = "11ebdd3a-f75a-4d85-9916-220874cf8af9" });
             builder.HasData(new ProductSize { ProductId = "c87ce8ae-adb7-4007-8c0e-0090d0926e2e", SizeNumber = 14, SizeAmount = 7, SizeId = "152002fb-d980-4750-a70a-7b5d0bdac9e4" });
 
             builder.HasData(new ProductSize { ProductId = "dc91cbb3-94e1-43fe-bf92-06077cf48d87", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
@@ -1453,7 +1453,7 @@ namespace Mate.Entities.EntityConfig.Concrete
 
             builder.HasData(new ProductSize { ProductId = "beacb4b7-e74c-45d8-b8df-60e1a2a50768", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
             builder.HasData(new ProductSize { ProductId = "beacb4b7-e74c-45d8-b8df-60e1a2a50768", SizeNumber = 10, SizeAmount = 5, SizeId = "baf2e21c-f1c7-4801-a8a0-6e59a809ed7d" });
-            builder.HasData(new ProductSize { ProductId = "beacb4b7-e74c-45d8-b8df-60e1a2a50768g", SizeNumber = 12, SizeAmount = 6, SizeId = "11ebdd3a-f75a-4d85-9916-220874cf8af9" });
+            builder.HasData(new ProductSize { ProductId = "beacb4b7-e74c-45d8-b8df-60e1a2a50768", SizeNumber = 12, SizeAmount = 6, SizeId = "11ebdd3a-f75a-4d85-9916-220874cf8af9" });
             builder.HasData(new ProductSize { ProductId = "beacb4b7-e74c-45d8-b8df-60e1a2a50768", SizeNumber = 14, SizeAmount = 7, SizeId = "152002fb-d980-4750-a70a-7b5d0bdac9e4" });
 
             builder.HasData(new ProductSize { ProductId = "86513d65-cf7e-49d6-bd16-94286e5d60c1", SizeNumber = 8, SizeAmount = 4, SizeId = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef" });
