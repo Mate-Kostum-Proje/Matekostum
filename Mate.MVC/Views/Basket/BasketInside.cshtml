@@ -1,6 +1,5 @@
-﻿@using static Mate.MVC.Controllers.BasketController
-
-@model List<BasketDetailPipeLine>
+﻿@using Mate.MVC.Models.VMs
+@model List<BasketDetailVM>
 <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
 <br />
 <br />
@@ -44,16 +43,14 @@
                 <tr>
                     <td>@item.ProductName</td>
                     <td>@item.Size</td>
-                    <td>@item.Price TL)</td>
+                    <td>@item.Price.ToString("C", new System.Globalization.CultureInfo("tr-TR"))</td>
                     <td>@item.Amount</td>
-                    <td>@item.TotalPrice TL</td>
-
+                    <td>@item.TotalPrice.ToString("C", new System.Globalization.CultureInfo("tr-TR"))</td>
                     <td>
-                        <a asp-action="RemoveFromBasket" asp-controller="Basket" class="btn btn-danger">Sil</a>
+                        <a asp-action="RemoveFromBasket" asp-controller="Basket" asp-route-basketDetailId="@item.BasketDetailId" class="btn btn-danger">Sil</a>
                     </td>
                 </tr>
             }
-            
         </tbody>
     </table>
     <a asp-action="ClearBasket" asp-controller="Basket" class="btn btn-danger">Sepeti Temizle</a>
@@ -67,3 +64,22 @@
     <br />
     <br />
 </section>
+@*
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.ProductName</td>
+        <td>@item.Size</td>
+        <td>@item.Price TL</td>
+        <td>@item.Amount</td>
+        <td>@item.TotalPrice TL</td>
+
+        <td>
+            <form asp-action="AddToBasket" asp-controller="Basket" method="post">
+                <input type="hidden" asp-for="BasketDetailId" />
+                <a asp-action="RemoveFromBasket" asp-controller="Basket" class="btn btn-danger">Sil</a>
+            </form>
+        </td>
+    </tr>
+}
+*@

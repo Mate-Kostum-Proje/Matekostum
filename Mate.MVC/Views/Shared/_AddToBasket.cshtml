@@ -4,16 +4,7 @@
 <form asp-action="AddToBasket" asp-controller="Basket" method="post">
 	<input type="hidden" asp-for="ProductId" />
 
-	<div class="size-selection-single-product">
-		<label for="size-single-product">Beden Seçin:</label>
-		<select asp-for="SizeNumber" asp-items="@(new SelectList(Model.SizeOptions, "SizeNumber", "SizeNumber"))" id="size-single-product" class="form-control">
-			<option value="">-- Beden Seçiniz --</option>
-
-
-
-		</select>
-	</div>
-
+	@await Component.InvokeAsync("SizeOptions", new { productId = Model.ProductId })
 	<div class="quantity-single-product">
 		<button type="button" onclick="decreaseValue()">-</button>
 		<input asp-for="Amount" id="amountInput" type="number" min="1" max="20" value="1" readonly>
@@ -21,6 +12,7 @@
 	</div>
 
 	<div class="actions-single-product">
+		
 		<button type="submit" class="add-to-cart-single-product">Sepete Ekle</button>
 		<button type="submit" class="buy-now-single-product">Satın Al</button>
 

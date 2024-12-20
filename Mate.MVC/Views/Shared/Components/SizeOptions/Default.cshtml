@@ -1,0 +1,23 @@
+﻿@model List<Size>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Beden seçeneği bulunamadı.</p>
+}
+else
+{
+    <div class="size-selection-single-product">
+        <label for="size-single-product">Beden Seçin</label>
+        <select id="SizeNumber" name="SizeNumber" class="form-control">
+
+            @foreach (var size in Model.OrderBy(p => p.SizeNumber))
+            {
+                <option value="@size.SizeNumber">@size.SizeNumber</option>
+            }
+
+
+        </select>
+    </div>
+
+    
+}

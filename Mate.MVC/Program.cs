@@ -80,6 +80,7 @@ namespace Mate.MVC
                 );
             });
 
+            app.UseMiddleware<LoggingMiddleware>();
 
             app.MapControllerRoute(
                 name: "default",
@@ -87,5 +88,29 @@ namespace Mate.MVC
 
             app.Run();
         }
+        public class LoggingMiddleware
+        {
+            private readonly RequestDelegate _next;
+
+            public LoggingMiddleware(RequestDelegate next)
+            {
+                _next = next;
+            }
+
+            public async Task InvokeAsync(HttpContext context)
+            {
+                // Form verilerini kontrol etmek
+                if (context.Request.Method == "POST" && context.Request.HasFormContentType)
+                {
+                    foreach (var key in context.Request.Form.Keys)
+                    {
+                        Console.WriteLine($"{key}: {context.Request.Form[key]}");
+                    }
+                }
+
+                await _next(context);
+            }
+        }
+
     }
 }

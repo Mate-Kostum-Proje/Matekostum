@@ -1,12 +1,14 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Mate.BL.Abstract;
 using Mate.Entities.Concrete;
+using Mate.MVC.Extensions;
 using Mate.MVC.Models.VMs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Controllers
 {
 	public class BasketController(IBasketManager basketManager
+								, IManager<UserInfo> userManager
 								, IManager<Product> productRepository
 								, IManager<ProductSize> productSizeRepository
 								, IManager<Size> sizeRepository
@@ -19,11 +21,13 @@ namespace Mate.MVC.Controllers
 
 
 		// Sepeti görüntüleme
+
+		[HttpGet]
 		public IActionResult BasketInside()
 		{
 			if (User.Identity.IsAuthenticated)
 			{
-				string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+				string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
 				var basketDetails = _basketManager.GetBasketDetails(userId);
 
 				// BasketDetail ile Product verilerini birleştiriyoruz
@@ -41,7 +45,7 @@ namespace Mate.MVC.Controllers
 
 					}
 
-					return new BasketDetailPipeLine
+					return new BasketDetailVM
 					{
 						ProductId = p.ProductId,
 						ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
@@ -74,8 +78,8 @@ namespace Mate.MVC.Controllers
 		[HttpGet]
 		public IActionResult AddToBasket()
 		{
-			ProductVM productVM = new ProductVM();
-			return View(productVM);
+			AddToBasketVM addToBasketVM = new AddToBasketVM();
+			return View(addToBasketVM);
 		}
 
 		// Sepete ürün ekleme
@@ -83,6 +87,7 @@ namespace Mate.MVC.Controllers
 		[HttpPost]
 		public async Task<ActionResult> AddToBasket(ProductVM productVM, AddToBasketVM addToBasketVM, ProductSize productSize)
 		{
+
 			if (User.Identity.IsAuthenticated)
 			{
 				try
@@ -95,9 +100,12 @@ namespace Mate.MVC.Controllers
 					if (productSize == null)
 					{
 						notyfService.Error("Seçilen beden mevcut değil.");
-						return RedirectToAction("CostumInfo", new { id = addToBasketVM.ProductId });
+						return RedirectToAction("CostumInfo", "Costum", new { id = addToBasketVM.ProductId });
 					}
-					string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+
+
+
+					string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
 					var basketDetail = new BasketDetail
 					{
 						ProductId = addToBasketVM.ProductId,
@@ -119,7 +127,7 @@ namespace Mate.MVC.Controllers
 				}
 
 				// İşlemden sonra sepete yönlendir
-				return RedirectToAction("InsideBasket");
+				return RedirectToAction("CostumInfo", "Costum", new { id = addToBasketVM.ProductId });
 			}
 			else
 			{
@@ -151,22 +159,13 @@ namespace Mate.MVC.Controllers
 		// Sepeti temizleme
 		public ActionResult ClearBasket()
 		{
-			string userId = User.Identity.Name; // Kullanıcı ID'sini alın
+			string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
 			_basketManager.ClearBasket(userId); // İş mantığını çağır
 			notyfService.Success("Sepet başarıyla temizlendi.");
 
 			return RedirectToAction("BasketInside");
 		}
-		public class BasketDetailPipeLine
-		{
-			public string BasketDetailId { get; set; } // Sepet Detay ID
-			public string ProductId { get; set; } // Ürün ID
-			public string ProductName { get; set; } // Ürün adı
-			public decimal Price { get; set; } // Ürün fiyatı
-			public int Amount { get; set; } // Miktar
-			public int Size { get; set; }
-			public decimal TotalPrice { get; set; } // Toplam fiyat
-		}
+
 
 	}
 }

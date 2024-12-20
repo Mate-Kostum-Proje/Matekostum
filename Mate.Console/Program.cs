@@ -7,9 +7,13 @@ namespace Mate.ConsoleApp
 	{
 		public static void Main(string[] args)
 		{
-			AddRoleForUser();
+
+
+
+			//AddRoleForUser();
 			//Console.WriteLine("Kullanıcı bulunamadı.");
 		}
+
 		public static void AddRoleForUser()
 		{
 			Manager<UserInfo> userManager = new Manager<UserInfo>();

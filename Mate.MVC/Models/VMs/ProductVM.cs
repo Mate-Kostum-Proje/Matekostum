@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Mate.Entities.Concrete;
+﻿using Mate.Entities.Concrete;
 
 namespace Mate.MVC.Models.VMs
 {
 	public class ProductVM
 	{
+		public string Id { get; set; }
 
 		public string ProductName { get; set; }
 		public string? Description { get; set; }
@@ -16,8 +16,8 @@ namespace Mate.MVC.Models.VMs
 		public int UnitPriceForRent { get; set; }
 		public bool IsSale { get; set; }
 
-		[DataType(DataType.Text)]
-		[MaxLength(100)]
+
+
 		public int Amount { get; set; }
 
 		public bool? Gender { get; set; }// kadın= true, erkek= false
