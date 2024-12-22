@@ -47,6 +47,7 @@ namespace Mate.DAL.GenericRepository.Concrete
             return _dbContext.Set<T>().Find(id);
 
         }
+
         public T? Get(Expression<Func<T, bool>> predicate)
         {
             return _dbContext.Set<T>().FirstOrDefault(predicate);

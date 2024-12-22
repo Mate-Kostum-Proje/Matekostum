@@ -1,5 +1,7 @@
 ﻿using Mate.BL.Abstract;
+using Mate.DAL.DbContexts;
 using Mate.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mate.BL.Concrete
 {
@@ -12,6 +14,7 @@ namespace Mate.BL.Concrete
         private readonly IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
         private readonly IManager<Product> _productRepository = productRepository;
         private IManager<ProductSize> _productSizeRepository = productSizeRepository;
+        private readonly SqlDbContext _dbContext;
 
 
 
@@ -50,6 +53,9 @@ namespace Mate.BL.Concrete
             {
                 // Ürün sepette yoksa yeni bir detay oluştur
                 basketDetail.BasketId = basket.Id;
+                basketDetail.IsSale = product.IsSale;
+                basketDetail.UnitPiceForRent = product.UnitPriceForRent;
+                basketDetail.UnitPriceForSale = product.UnitPriceForSale;
                 _basketDetailRepository.Create(basketDetail);
             }
             else
@@ -59,6 +65,38 @@ namespace Mate.BL.Concrete
                 _basketDetailRepository.Update(existingBasketDetail);
             }
         }
+
+        //Sepetteki Toplam Price'ı hesaplama
+        public decimal CalculateTotalPrice(string userId)
+        {
+            // Kullanıcının sepetini al
+
+            //var basket = _dbContext.Baskets.Include(b => b.BasketDetails).FirstOrDefault(b => b.UserId == userId);
+            //var basketDetail = _basketRepository.GetById(userId).BasketDetails.FirstOrDefault();
+            var basket = _basketRepository.GetAllInclude(p => p.UserId == userId)
+                             .Include(b => b.BasketDetails) // BasketDetails'ı Include ile yükleyin
+                             .FirstOrDefault();
+
+            if (basket == null || basket.BasketDetails == null || !basket.BasketDetails.Any())
+            {
+                return 0; // Sepet boş
+            }
+
+            // Sepet detaylarını döngü ile işleyerek toplam tutarı hesapla
+            decimal totalPrice = 0;
+
+            foreach (var detail in basket.BasketDetails)
+            {
+                decimal unitPrice = detail.IsSale
+                    ? detail.UnitPriceForSale ?? 0  // Satış fiyatını al
+                    : detail.UnitPiceForRent;      // Kiralama fiyatını al
+
+                totalPrice += unitPrice * detail.Amount; // Fiyat x Miktar
+            }
+
+            return totalPrice;
+        }
+
 
         // Sepetten ürün silme
         public void RemoveFromBasket(string basketDetailId)

@@ -10,22 +10,20 @@
 				<div class="product-image-wrapper">
 					<img src="@Url.Content(item.PhotoPath)" alt="">
 				</div>
-				<div class="button-group">
-					<button asp-controller="Basket" , asp-action="AddToBasket" class="add-to-cart">Sepete Ekle</button>
-					<button asp-controller="" asp-action="" class="buy-now">Kirala</button>
-				</div>
+				
 				@if (item.IsAdult == false)
 				{
-					<div class="product-category">Çocuk</div>
+					<div class="product-category-age">Çocuk</div>
 				}
 				else
 				{
-					<div class="product-category">Yetişkin</div>
+					<div class="product-category-age">Yetişkin</div>
 				}
 
 
 				<div class="product-title">@item.ProductName</div>
 				<div class="product-price">
+					<p>Kiralama Bedeli</p>
 					<span>@item.UnitPriceForRent TL</span>
 				</div>
 			</div>

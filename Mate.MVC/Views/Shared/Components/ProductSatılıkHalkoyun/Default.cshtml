@@ -9,10 +9,7 @@
 				<div class="product-image-wrapper">
 					<img src="@Url.Content(item.PhotoPath)" alt="">
 				</div>
-				<div class="button-group">
-					<button asp-controller="Basket" , asp-action="AddToBasket" class="add-to-cart">Sepete Ekle</button>
-					<button asp-controller="" asp-action="" class="buy-now">Satın Al</button>
-				</div>
+
 
 				@if (item.ProductRegionId == "AKDENİZ")
 				{
@@ -65,6 +62,7 @@
 
 				<div class="product-title">@item.ProductName</div>
 				<div class="product-price">
+					<p>Satın Alma Bedeli</p>
 					<span>@item.UnitPriceForSale TL</span>
 				</div>
 			</div>

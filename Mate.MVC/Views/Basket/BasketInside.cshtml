@@ -15,7 +15,7 @@
                 <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-12 order-2 order-lg-1 content text-center">
-                <h3>Kiralık Halk Oyunları Kıyafetleri – Yöresel Kıyafetler</h3>
+                <h3>Sepetiniz</h3>
 
             </div>
         </div>
@@ -23,7 +23,6 @@
 
     @*Sepet Info*@
 
-    <h2>Sepetiniz</h2>
 
     <table class="table">
         <thead>
@@ -53,7 +52,12 @@
             }
         </tbody>
     </table>
-    <a asp-action="ClearBasket" asp-controller="Basket" class="btn btn-danger">Sepeti Temizle</a>
+    <div class="actions-single-product">
+        <a asp-action="ClearBasket" asp-controller="Basket" class="add-to-cart-single-product">Sepeti Temizle</a>
+        <form asp-action="PlaceOrder" asp-controller="Order" method="post">
+            <button type="submit" class="buy-now-single-product">Sipariş Ver</button>
+        </form>
+    </div>
     <br />
     <br />
     <br />

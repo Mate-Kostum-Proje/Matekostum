@@ -1,0 +1,24 @@
+﻿@model Product
+
+<h2>Ürün Güncelle</h2>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label for="ProductName">Ürün Adı</label>
+        <input asp-for="ProductName" class="form-control" />
+    </div>
+    <div class="form-group">
+        @if (Model.IsSale == false)
+        {
+            <label for="UnitPriceForRent">Kiralama Fiyatı</label>
+            <input asp-for="UnitPriceForRent" class="form-control" />
+        }
+        else if (Model.IsSale==true)
+        {
+            <label for="UnitPrice">Satış Fiyatı</label>
+            <input asp-for="UnitPriceForSale" class="form-control" />
+        }
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+</form>
+ 

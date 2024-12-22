@@ -1944,8 +1944,15 @@ section,
     font-size: 16px;
     color: black;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 40px;
    
+}
+.product-category-age {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-top: 60px;
 }
 
 /* Ürün Baþlýðý */
@@ -2087,7 +2094,7 @@ body-single-product {
 
 /* Sepete ekle butonu */
 .add-to-cart-single-product {
-    flex: 1; /* Buton tüm boþ alaný kaplar */
+     
     padding: 10px; /* Ýçerik boþluðu */
     font-size: 16px; /* Yazý boyutu */
     border: none; /* Kenarlýk yok */
@@ -2099,7 +2106,7 @@ body-single-product {
 
 /* Hemen satýn al butonu */
 .buy-now-single-product {
-    flex: 1; /* Buton tüm boþ alaný kaplar */
+    
     padding: 10px; /* Ýçerik boþluðu */
     font-size: 16px; /* Yazý boyutu */
     border: none; /* Kenarlýk yok */

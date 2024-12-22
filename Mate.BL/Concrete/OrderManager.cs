@@ -24,114 +24,116 @@ namespace Mate.BL.Concrete
         private readonly IManager<ProductSize> _productSizeRepository = productSizeRepository;
         private readonly IManager<Size> _sizeRepository = sizeRepository;
 
-        public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes) //Aşağıda aslında buna bakıyorum ama ayrı bi metod olarak kalsın
+
+        private void ValidateOrder(List<OrderDetail> orderDetails, List<ProductSize> productSizes)
         {
             foreach (var orderDetail in orderDetails)
             {
-                foreach (var productSize in productSizes)
-                {
-                    var product = _productRepository.GetById(orderDetail.ProductId);
-                    if (product == null)
-                    {
-                        throw new InvalidOperationException($"Ürün bulunamadı: {product.ProductName}");
-                    }
+                var productSize = productSizes
+                    .FirstOrDefault(ps => ps.ProductId == orderDetail.ProductId && ps.Sizes.SizeNumber == orderDetail.ProductSize);
 
-                    // Sipariş miktarı stoktan fazla mı kontrol et
-                    if ((orderDetail.Amount > productSize.SizeAmount))
-                    {
-                        throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
-                    }
+                if (productSize == null)
+                {
+                    throw new InvalidOperationException($"Ürün bedeni bulunamadı: Ürün Adı={orderDetail.Products.ProductName}, Beden={orderDetail.ProductSize}");
+                }
+
+                if (orderDetail.Amount > productSize.SizeAmount)
+                {
+                    throw new InvalidOperationException($"Yetersiz stok: Ürün Adı={orderDetail.Products.ProductName}");
                 }
             }
-
-            return true;
         }
 
-        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes)
+        public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes)
         {
-            using (var transaction = _dbContext.Database.BeginTransaction())
+            try
             {
-                try
+                ValidateOrder(orderDetails, productSizes);
+                return true;
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
+        }
+
+
+        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes, List<Product> products, List<BasketDetail> basketDetails)
+        {
+
+
+
+            try
+            {
+                // Stok kontrolü
+                ValidateOrder(orderDetails, productSizes);
+
+                // Yeni bir sipariş oluştur
+                var order = new Order
                 {
-                    // Sipariş verilebilirlik kontrolü
-                    if (!CanPlaceOrder(userId, orderDetails, productSizes))
-                    {
-                        throw new InvalidOperationException("Stok yetersiz, sipariş verilemez.");
-                    }
+                    UserId = userId,
+                    CreatedAt = DateTime.Now,
 
-                    // Yeni bir sipariş oluştur
-                    var order = new Order
+                };
+                _orderRepository.Create(order);
+
+                // Sipariş detaylarını işleme al
+                foreach (var basketDetail in basketDetails)
+                {
+
+                    var product = _productRepository.GetById(basketDetail.ProductId);
+
+                    var productSize = productSizes
+                        .FirstOrDefault(ps => ps.ProductId == basketDetail.ProductId && ps.Sizes.SizeNumber == basketDetail.ProductSize);
+
+                    // ProductSize'ın miktarını güncelle
+                    productSize.SizeAmount -= basketDetail.Amount;
+                    _productSizeRepository.Update(productSize);
+
+                    // OrderDetail oluştur
+                    var orderDetail = new OrderDetail
                     {
-                        UserId = userId,
-                        CreatedAt = DateTime.Now,
+                        OrderId = order.Id,  // Siparişin ID'sini ata
+                        ProductId = basketDetail.ProductId,
+                        ProductSize = basketDetail.ProductSize,
+                        Amount = basketDetail.Amount,
+                        UnitPiceForRent = product.UnitPriceForRent, // Kiralama fiyatı
+                        UnitPriceForSale = product.UnitPriceForSale, // Satış fiyatı
+
                     };
-                    _orderRepository.Create(order);
 
-                    // Sipariş detaylarını işleme al
+                    // OrderDetail'ı veritabanına kaydet
+                    _orderDetailRepository.Create(orderDetail);
+                }
+
+
+                // Sepeti temizleme işlemi
+                var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
+                if (basket != null)
+                {
                     foreach (var orderDetail in orderDetails)
                     {
-                        foreach (var productSize in productSizes)
-                        {
-                            var product = _productRepository.GetById(orderDetail.ProductId);
-                            if (product == null)
-                            {
-                                throw new InvalidOperationException($"Ürün bulunamadı: {orderDetail.ProductId}");
-                            }
-
-                            // Stok güncellemesi
-                            if (orderDetail.Amount > productSize.SizeAmount)
-                            {
-                                throw new InvalidOperationException($"Yetersiz stok: {product.ProductName}");
-                            }
-
-                            productSize.SizeAmount -= orderDetail.Amount;
-                            _productRepository.Update(product);
-
-                            // Sipariş detayını siparişe ekle
-                            orderDetail.OrderId = order.Id;
-                            _orderDetailRepository.Create(orderDetail);
-                        }
-                    }
-
-                    // Kullanıcının sepetini bul
-                    var basket = _basketRepository.GetAll()
-                        .FirstOrDefault(p => p.UserId == userId);
-
-                    if (basket == null)
-                    {
-                        throw new InvalidOperationException("Sepet bulunamadı.");
-                    }
-
-                    // Sepetteki ürünleri kontrol et ve sipariş edilen ürünleri sil
-                    foreach (var orderDetail in orderDetails)
-                    {
-                        // Sepetteki ürünleri, sepetId ve productId ile eşleştir
                         var basketDetail = _basketDetailRepository.GetAll()
                             .FirstOrDefault(p => p.BasketId == basket.Id && p.ProductId == orderDetail.ProductId);
 
                         if (basketDetail != null)
                         {
-                            // Sipariş edilen ürün sepetteyse, sepetteki ürünü sil
                             _basketDetailRepository.Delete(basketDetail);
                         }
                     }
+                }
 
-                    // İşlemleri commit et
-                    transaction.Commit();
-                    return true;
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    transaction.Rollback();
-                    throw new InvalidOperationException("Stok başka bir işlem tarafından güncellendi.");
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    throw new InvalidOperationException("Sipariş sırasında bir hata oluştu.", ex);
-                }
+
+                return true;
             }
+            catch (Exception ex)
+            {
+
+                throw new InvalidOperationException("Sipariş sırasında bir hata oluştu.", ex);
+            }
+
         }
+
 
         public void Update(Product product)
         {
@@ -146,6 +148,16 @@ namespace Mate.BL.Concrete
                 throw new InvalidOperationException("Concurrency hatası: Ürün başka bir işlem tarafından güncellendi.", ex);
             }
         }
+        public List<Order> GetAllOrders()
+        {
+            return _orderRepository.GetAll().ToList();
+        }
 
+        public List<OrderDetail> GetOrderDetails(string orderId)
+        {
+            return _orderDetailRepository.GetAll()
+                .Where(od => od.OrderId == orderId)
+                .ToList();
+        }
     }
 }

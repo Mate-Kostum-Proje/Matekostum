@@ -1,0 +1,65 @@
+﻿@using Mate.MVC.Models.VMs
+@model PaymentVM
+
+<link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+<br />
+<br />
+<br />
+
+
+<section id="designcostum" class="designcostum section">
+
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <div class="col-lg-12 order-1 order-lg-1 text-center">
+                <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-12 order-2 order-lg-1 content text-center">
+                <h3>Ödeme Ekranı</h3>
+
+            </div>
+        </div>
+    </div>
+
+
+<form asp-action="Payment" method="post">
+    <div class="form-group">
+        <label for="CardHolderName">Kart Sahibi Adı</label>
+        <input type="text" id="CardHolderName" name="CardHolderName" class="form-control" placeholder="Kart üzerindeki isim" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CardNumber">Kart Numarası</label>
+        <input type="text" id="CardNumber" name="CardNumber" class="form-control" placeholder="1234 5678 9012 3456" required maxlength="16" minlength="16" />
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="ExpirationDate">Son Kullanma Tarihi</label>
+            <input type="text" id="ExpirationDate" name="ExpirationDate" class="form-control" placeholder="MM/YY" required />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="CVV">CVV</label>
+            <input type="text" id="CVV" name="CVV" class="form-control" placeholder="123" required maxlength="3" minlength="3" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Ödenecek Tutar</label>
+        <input type="text" id="Amount" name="Amount" class="form-control" value="@Model.Amount TL" readonly />
+    </div>
+
+        <button type="submit" class="buy-now-single-product">Ödemeyi Tamamla</button>
+</form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</section>
