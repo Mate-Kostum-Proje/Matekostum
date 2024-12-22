@@ -48,5 +48,10 @@
 			<a class="btn-getstarted" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
 		 }
 		<div><a class="button" asp-controller="Basket" asp-action="BasketInside"><i class="bi bi-cart"></i></a></div>
+		@if (User.Identity.IsAuthenticated)
+        {
+			<div><a class="button" asp-controller="Order" asp-action="OrderDetails"><i class="bi bi-person-circle"></i></a></div>
+		}
+
 	</div>
 </header>
