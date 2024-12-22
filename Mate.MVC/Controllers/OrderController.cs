@@ -111,12 +111,14 @@ namespace Mate.MVC.Controllers
         // Sipariş Detayları
         [HttpGet]
         [Authorize]
-
         public IActionResult OrderDetails()
         {
             string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
             var orderDetails = _orderManager.GetOrderDetails(userId);
-            string ordersituation = _orderManager.GetAllInclude(p => p.UserId == userId).Where(p => p.OrderSituations.Situation);
+            string orderId = orderDetails.FirstOrDefault().OrderId.ToString();
+            //string orderSituation = _orderManager.GetAll(p => p.Id == orderId).FirstOrDefault().OrderSituations.Situation;
+            string orderSituation = _orderManager.GetAllInclude(o => o.Id == orderId, o => o.OrderSituations).FirstOrDefault().OrderSituations.Situation;
+
 
             // BasketDetail ile Product verilerini birleştiriyoruz
             var viewModel = orderDetails.Select(p =>
@@ -144,7 +146,7 @@ namespace Mate.MVC.Controllers
                     OrderDetailId = p.Id, // BasketDetail ID'si
                     Size = p.ProductSize, //Size 
                     IsSale = product.IsSale,
-                    OrderSituation = ordersituation.
+                    OrderSituation = orderSituation
 
 
                 };
