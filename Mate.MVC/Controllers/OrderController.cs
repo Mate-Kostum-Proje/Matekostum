@@ -9,12 +9,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mate.MVC.Controllers
 {
-    public class OrderController(IOrderManager orderManager, IBasketManager basketManager, IManager<UserInfo> userManager, INotyfService notyfService) : Controller
+    public class OrderController(IOrderManager orderManager, IBasketManager basketManager, IManager<UserInfo> userManager, IManager<Product> productManager, IManager<OrderSituation> orderSituationManager, INotyfService notyfService) : Controller
     {
+        private readonly IManager<Product> _productRepository = productManager;
         private readonly IOrderManager _orderManager = orderManager;
         private readonly IManager<UserInfo> _userManager = userManager;
-        private readonly INotyfService _notyfService = notyfService;
         private readonly IBasketManager _basketManager = basketManager;
+        private readonly IManager<OrderSituation> _orderSituationManager = orderSituationManager;
+
         private readonly DbContext _dbContext;
         // Sipariş Oluştur
         [HttpPost]
@@ -32,13 +34,13 @@ namespace Mate.MVC.Controllers
                 }
                 else
                 {
-                    _notyfService.Error("Sipariş oluşturulamadı. Yetersiz stok.");
+                    notyfService.Error("Sipariş oluşturulamadı. Yetersiz stok.");
                     return RedirectToAction("BasketInside", "Basket");
                 }
             }
             catch (InvalidOperationException ex)
             {
-                _notyfService.Error(ex.Message);
+                notyfService.Error(ex.Message);
                 return RedirectToAction("BasketInside", "Basket");
             }
         }
@@ -65,7 +67,7 @@ namespace Mate.MVC.Controllers
         {
             if (paymentVM == null || orderDetails == null || productSizes == null)
             {
-                _notyfService.Error("Veriler eksik veya geçersiz.");
+                notyfService.Error("Veriler eksik veya geçersiz.");
                 return RedirectToAction("BasketInside", "Basket");
             }
             string userId = User.Identity.GetId();
@@ -75,7 +77,7 @@ namespace Mate.MVC.Controllers
                 string.IsNullOrWhiteSpace(paymentVM.CVV) ||
                 string.IsNullOrWhiteSpace(paymentVM.ExpirationDate))
             {
-                _notyfService.Error("Ödeme bilgileri eksik.");
+                notyfService.Error("Ödeme bilgileri eksik.");
                 return RedirectToAction("Payment", "Basket");
             }
 
@@ -84,23 +86,23 @@ namespace Mate.MVC.Controllers
                 {
 
                     // Sipariş oluştur ve stokları güncelle
-                    if (_orderManager.PlaceOrder(userId, orderDetails, productSizes, products, basketDetails))
+                    if (_orderManager.PlaceOrder(userId, orderDetails, productSizes, products))
                     {
 
-                        _notyfService.Success("Ödemeniz başarıyla alındı ve sipariş oluşturuldu.");
+                        notyfService.Success("Ödemeniz başarıyla alındı ve sipariş oluşturuldu.");
                         return RedirectToAction("OrderDetails", "Order");
                     }
                     else
                     {
 
-                        _notyfService.Error("Sipariş sırasında bir hata oluştu.");
+                        notyfService.Error("Sipariş sırasında bir hata oluştu.");
                         return RedirectToAction("BasketInside", "Basket");
                     }
                 }
                 catch (InvalidOperationException ex)
                 {
 
-                    _notyfService.Error(ex.Message);
+                    notyfService.Error(ex.Message);
                     return RedirectToAction("BasketInside", "Basket");
                 }
             }
@@ -109,15 +111,46 @@ namespace Mate.MVC.Controllers
         // Sipariş Detayları
         [HttpGet]
         [Authorize]
-        public IActionResult OrderDetails(string orderId)
-        {
-            var orderDetails = _orderManager.GetOrderDetails(orderId);
-            if (orderDetails == null)
-            {
-                return NotFound();
-            }
 
-            return View(orderDetails);
+        public IActionResult OrderDetails()
+        {
+            string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
+            var orderDetails = _orderManager.GetOrderDetails(userId);
+            string ordersituation = _orderManager.GetAllInclude(p => p.UserId == userId).Where(p => p.OrderSituations.Situation);
+
+            // BasketDetail ile Product verilerini birleştiriyoruz
+            var viewModel = orderDetails.Select(p =>
+            {
+                var product = _productRepository.GetById(p.ProductId);
+
+                // Fiyatı belirlemek için durumu kontrol et
+                int price = 0;
+                if (product != null)
+                {
+                    price = product.IsSale
+                    ? (product.UnitPriceForSale ?? 0)
+                    : (product.UnitPriceForRent);
+
+                }
+
+                return new OrderDetailsVM
+                {
+                    OrderId = orderId,
+                    ProductId = p.ProductId,
+                    ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
+                    Price = price, // Ürün fiyatı
+                    Amount = p.Amount, // Sepetteki miktar
+                    TotalPrice = price * p.Amount, // Toplam fiyat
+                    OrderDetailId = p.Id, // BasketDetail ID'si
+                    Size = p.ProductSize, //Size 
+                    IsSale = product.IsSale,
+                    OrderSituation = ordersituation.
+
+
+                };
+            }).ToList();
+
+            return View(viewModel);
         }
 
         // Siparişler Listesi (Admin için)
@@ -137,12 +170,12 @@ namespace Mate.MVC.Controllers
             try
             {
                 _orderManager.Update(product);
-                _notyfService.Success("Ürün başarıyla güncellendi.");
+                notyfService.Success("Ürün başarıyla güncellendi.");
                 return RedirectToAction("ProductList", "Product");
             }
             catch (InvalidOperationException ex)
             {
-                _notyfService.Error(ex.Message);
+                notyfService.Error(ex.Message);
                 return RedirectToAction("ProductList", "Product");
             }
         }

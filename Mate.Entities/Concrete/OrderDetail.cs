@@ -9,7 +9,7 @@ namespace Mate.Entities.Concrete
         public Product Products { get; set; }
         public string ProductId { get; set; }
         public int? UnitPriceForSale { get; set; }
-        public int UnitPiceForRent { get; set; }
+        public int? UnitPiceForRent { get; set; }
         public int ProductSize { get; set; }
         public int Amount { get; set; }
 

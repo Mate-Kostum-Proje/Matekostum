@@ -10,8 +10,8 @@ namespace Mate.BL.Concrete
             IManager<Product> productRepository,
             IManager<ProductSize> productSizeRepository) : Manager<Basket>, IBasketManager
     {
-        private readonly IManager<Basket> _basketRepository = basketRepository;
-        private readonly IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
+        private IManager<Basket> _basketRepository = basketRepository;
+        private IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
         private readonly IManager<Product> _productRepository = productRepository;
         private IManager<ProductSize> _productSizeRepository = productSizeRepository;
         private readonly SqlDbContext _dbContext;

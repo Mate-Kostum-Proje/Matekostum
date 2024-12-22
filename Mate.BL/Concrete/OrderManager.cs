@@ -12,12 +12,16 @@ namespace Mate.BL.Concrete
             IManager<BasketDetail> basketDetailRepository,
             IManager<Product> productRepository,
             IManager<ProductSize> productSizeRepository,
-            IManager<Size> sizeRepository) : Manager<Order>, IOrderManager
+            IManager<Size> sizeRepository,
+            IManager<OrderSituation> orderSituationRepository,
+            SqlDbContext sqlDbContext) : Manager<Order>, IOrderManager
     {
 
-        private readonly SqlDbContext _dbContext;
+        private new readonly SqlDbContext _dbContext = sqlDbContext;
         private readonly IManager<Order> _orderRepository = orderRepository;
         private readonly IManager<OrderDetail> _orderDetailRepository = orderDetailRepository;
+        private readonly IManager<OrderSituation> _orderSituationRepository = orderSituationRepository;
+
         private readonly IManager<Basket> _basketRepository = basketRepository;
         private readonly IManager<BasketDetail> _basketDetailRepository = basketDetailRepository;
         private readonly IManager<Product> _productRepository = productRepository;
@@ -44,6 +48,7 @@ namespace Mate.BL.Concrete
             }
         }
 
+
         public bool CanPlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes)
         {
             try
@@ -58,78 +63,88 @@ namespace Mate.BL.Concrete
         }
 
 
-        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes, List<Product> products, List<BasketDetail> basketDetails)
+        public bool PlaceOrder(string userId, List<OrderDetail> orderDetails, List<ProductSize> productSizes, List<Product> products)
         {
 
+            //var basketDetails = basketRepository.GetAllInclude(p => p.UserId == userId).FirstOrDefault().BasketDetails;
 
-
-            try
+            using (var transaction = _dbContext.Database.BeginTransaction())
             {
-                // Stok kontrolü
-                ValidateOrder(orderDetails, productSizes);
-
-                // Yeni bir sipariş oluştur
-                var order = new Order
+                var basketDetails = basketDetailRepository.GetAllInclude(p => p.Baskets.UserId == userId);
+                try
                 {
-                    UserId = userId,
-                    CreatedAt = DateTime.Now,
+                    // Stok kontrolü
+                    ValidateOrder(orderDetails, productSizes);
+                    var situationName = orderSituationRepository.GetAll().Where(p => p.Situation == "Siparişiniz Alındı").FirstOrDefault();
 
-                };
-                _orderRepository.Create(order);
-
-                // Sipariş detaylarını işleme al
-                foreach (var basketDetail in basketDetails)
-                {
-
-                    var product = _productRepository.GetById(basketDetail.ProductId);
-
-                    var productSize = productSizes
-                        .FirstOrDefault(ps => ps.ProductId == basketDetail.ProductId && ps.Sizes.SizeNumber == basketDetail.ProductSize);
-
-                    // ProductSize'ın miktarını güncelle
-                    productSize.SizeAmount -= basketDetail.Amount;
-                    _productSizeRepository.Update(productSize);
-
-                    // OrderDetail oluştur
-                    var orderDetail = new OrderDetail
+                    // Yeni bir sipariş oluştur
+                    var order = new Order
                     {
-                        OrderId = order.Id,  // Siparişin ID'sini ata
-                        ProductId = basketDetail.ProductId,
-                        ProductSize = basketDetail.ProductSize,
-                        Amount = basketDetail.Amount,
-                        UnitPiceForRent = product.UnitPriceForRent, // Kiralama fiyatı
-                        UnitPriceForSale = product.UnitPriceForSale, // Satış fiyatı
-
+                        UserId = userId,
+                        CreatedAt = DateTime.Now,
+                        SituationId = situationName.Id
                     };
+                    _orderRepository.Create(order);
 
-                    // OrderDetail'ı veritabanına kaydet
-                    _orderDetailRepository.Create(orderDetail);
-                }
-
-
-                // Sepeti temizleme işlemi
-                var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
-                if (basket != null)
-                {
-                    foreach (var orderDetail in orderDetails)
+                    // Sipariş detaylarını işleme al
+                    foreach (var basketDetail in basketDetails)
                     {
-                        var basketDetail = _basketDetailRepository.GetAll()
-                            .FirstOrDefault(p => p.BasketId == basket.Id && p.ProductId == orderDetail.ProductId);
 
-                        if (basketDetail != null)
+                        var product = _productRepository.GetById(basketDetail.ProductId);
+                        var productSize = productSizeRepository.Get(p => p.ProductId == p.Products.Id && p.Sizes.SizeNumber == basketDetail.ProductSize);
+                        //var productSize = productSizes.FirstOrDefault(p => p.ProductId == basketDetail.ProductId && p.Sizes.SizeNumber == basketDetail.ProductSize);
+                        //var productSize = productSizes.FirstOrDefault(ps => ps.ProductId == basketDetail.ProductId && ps.Sizes.SizeNumber == basketDetail.ProductSize);
+
+                        // ProductSize'ın miktarını güncelle
+                        productSize.SizeAmount -= basketDetail.Amount;
+                        _productSizeRepository.Update(productSize);
+
+                        // OrderDetail oluştur
+                        var orderDetail = new OrderDetail
                         {
-                            _basketDetailRepository.Delete(basketDetail);
-                        }
+                            OrderId = order.Id,  // Siparişin ID'sini ata
+                            ProductId = basketDetail.ProductId,
+                            ProductSize = basketDetail.ProductSize,
+                            Amount = basketDetail.Amount,
+                            UnitPiceForRent = product.UnitPriceForRent, // Kiralama fiyatı
+                            UnitPriceForSale = product.UnitPriceForSale, // Satış fiyatı
+                            CreatedAt = DateTime.Now
+
+                        };
+
+
+                        // OrderDetail'ı veritabanına kaydet
+                        _orderDetailRepository.Create(orderDetail);
+
+                        _basketDetailRepository.Delete(basketDetail);
+
+
                     }
+
+
+                    // Sepeti temizleme işlemi
+                    //var basket = _basketRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
+                    //if (basket != null)
+                    //{
+                    //    foreach (var orderDetail in orderDetails)
+                    //    {
+                    //        var basketDetail = _basketDetailRepository.GetAll()
+                    //            .FirstOrDefault(p => p.BasketId == basket.Id && p.ProductId == orderDetail.ProductId);
+
+                    //        if (basketDetail != null)
+                    //        {
+                    //            _basketDetailRepository.Delete(basketDetail);
+                    //        }
+                    //    }
+                    //}
+                    transaction.Commit();
+                    return true;
                 }
-
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-
-                throw new InvalidOperationException("Sipariş sırasında bir hata oluştu.", ex);
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw new InvalidOperationException("Sipariş sırasında bir hata oluştu.", ex);
+                }
             }
 
         }
@@ -153,11 +168,14 @@ namespace Mate.BL.Concrete
             return _orderRepository.GetAll().ToList();
         }
 
-        public List<OrderDetail> GetOrderDetails(string orderId)
+        public List<OrderDetail> GetOrderDetails(string userId)
         {
-            return _orderDetailRepository.GetAll()
-                .Where(od => od.OrderId == orderId)
-                .ToList();
+            var order = _orderRepository.GetAll().FirstOrDefault(p => p.UserId == userId);
+
+            if (order == null)
+                return new List<OrderDetail>();
+
+            return _orderDetailRepository.GetAll().Where(p => p.OrderId == order.Id).ToList();
         }
     }
 }

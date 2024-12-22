@@ -1,4 +1,5 @@
-﻿@model List<OrderDetail>
+﻿@using Mate.MVC.Models.VMs
+@model List<OrderDetailsVM>
 <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
 <br />
 <br />
@@ -19,6 +20,9 @@
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
 
     @*Order Info*@
 
@@ -31,29 +35,31 @@
             <th>Detay</th>
             <th>Tutar</th>
             <th>Toplam Tutar</th>
+            <th>Sipariş Durumu</th>
             
 
         </tr>
     </thead>
     <tbody>
-        @foreach (var order in Model)
+        @foreach (var item in Model)
         {
             <tr>
-                <td>@order.Id</td>
-                <td>@order.CreatedAt</td>
-                <td>@order.Products.ProductName (@order.Amount)</td>
-                <td>@order.Products.ProductCategories.Name @order.ProductSize</td>
-                    @if (order.Products.IsSale == true)
+                    <td>@item.OrderId</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ProductName (@item.Amount)</td>
+                    <td>@item.Size Beden</td>
+                    @if(item.IsSale==true)
                     {
-                        <td>@order.Products.UnitPriceForSale TL</td>
-                        <td></td>
+                        <td>Satın Alma @item.Price TL</td>
                     }
-                    else if (order.Products.IsSale==false)
+                    else if(item.IsSale==false)
                     {
-                        <td>@order.Products.UnitPriceForRent TL</td>
-                        <td></td>
+                        <td>Kiralama @item.Price TL</td>
+                    }
 
-                    }
+                    <td>@item.TotalPrice TL</td>
+                    <td>@item.OrderSituation</td>
+                   
                 
                 
 
