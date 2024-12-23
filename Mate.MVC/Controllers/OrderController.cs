@@ -23,10 +23,16 @@ namespace Mate.MVC.Controllers
         [Authorize]
         public IActionResult PlaceOrder(List<OrderDetail> orderDetails, List<ProductSize> productSizes)
         {
-            string userId = User.Identity.GetId(); // Kullanıcının ID'sini alın
-
+            string userId = User.Identity.GetId(); // Kullanıcının ID'sini alma =>Extension yazıldı
+            var userBasket = basketManager.GetBasketDetails(userId);
             try
             {
+                // Sepetin boş olup olmadığını kontrol etme
+                if (userBasket == null || !userBasket.Any())
+                {
+                    notyfService.Error("Sepetiniz boş, sipariş verilecek ürün bulunamadı.");
+                    return RedirectToAction("BasketInside", "Basket");
+                }
                 // Stok kontrolü ve sipariş oluşturma
                 if (_orderManager.CanPlaceOrder(userId, orderDetails, productSizes))
                 {
@@ -43,9 +49,17 @@ namespace Mate.MVC.Controllers
                 notyfService.Error(ex.Message);
                 return RedirectToAction("BasketInside", "Basket");
             }
+            catch (Exception ex)
+            {
+                // Beklenmedik bir hata oluşursa genel bir hata mesajı gösterme
+                notyfService.Error("Sipariş sırasında beklenmedik bir hata oluştu. Lütfen tekrar deneyin.");
+                // Hatanın loglanması (opsiyonel)
+                // _logger.LogError(ex, "PlaceOrder işleminde hata oluştu.");
+                return RedirectToAction("BasketInside", "Basket");
+            }
         }
 
-        // Sipariş Ödeme
+
         [HttpGet]
         [Authorize]
         public IActionResult Payment()
@@ -115,6 +129,12 @@ namespace Mate.MVC.Controllers
         {
             string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
             var orderDetails = _orderManager.GetOrderDetails(userId);
+            if (orderDetails == null || !orderDetails.Any())
+            {
+                // Kullanıcıyı bir hata sayfasına yönlendirebilir, boş bir model dönebilir
+                notyfService.Information("Henüz bir siparişiniz bulunmamaktadır.");
+                return View(new List<OrderDetailsVM>());
+            }
             string orderId = orderDetails.FirstOrDefault().OrderId.ToString();
             //string orderSituation = _orderManager.GetAll(p => p.Id == orderId).FirstOrDefault().OrderSituations.Situation;
             string orderSituation = _orderManager.GetAllInclude(o => o.Id == orderId, o => o.OrderSituations).FirstOrDefault().OrderSituations.Situation;
@@ -146,7 +166,9 @@ namespace Mate.MVC.Controllers
                     OrderDetailId = p.Id, // BasketDetail ID'si
                     Size = p.ProductSize, //Size 
                     IsSale = product.IsSale,
-                    OrderSituation = orderSituation
+                    OrderSituation = orderSituation,
+                    CreatedDate = p.CreatedAt
+
 
 
                 };

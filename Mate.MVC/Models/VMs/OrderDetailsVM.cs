@@ -12,6 +12,6 @@
         public bool IsSale { get; set; }
         public string OrderSituation { get; set; }
         public decimal TotalPrice { get; set; } // Toplam fiyat
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime? CreatedDate { get; set; }
     }
 }

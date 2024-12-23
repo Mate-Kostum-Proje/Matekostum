@@ -71,6 +71,7 @@ namespace Mate.BL.Concrete
             using (var transaction = _dbContext.Database.BeginTransaction())
             {
                 var basketDetails = basketDetailRepository.GetAllInclude(p => p.Baskets.UserId == userId);
+
                 try
                 {
                     // Stok kontrolü
@@ -175,7 +176,7 @@ namespace Mate.BL.Concrete
             if (order == null)
                 return new List<OrderDetail>();
 
-            return _orderDetailRepository.GetAll().Where(p => p.OrderId == order.Id).ToList();
+            return _orderDetailRepository.GetAllInclude(p => p.OrderId == order.Id).ToList();
         }
     }
 }

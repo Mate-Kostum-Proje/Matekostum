@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mate.MVC.Controllers
 {
     [Authorize]
-    public class AccountController(IManager<Role> roleManager, INotyfService notyfService, IManager<UserInfo> userManager, IMapper mapper, SqlDbContext sqlDbContext) : Controller
+    public class AccountController(IManager<Role> roleManager, INotyfService notyfService, IManager<UserInfo> userManager, IMapper mapper, SqlDbContext sqlDbContext, IManager<UsersRoles> usersRolesManager) : Controller
     {
         public IActionResult Index()
         {
@@ -47,9 +47,12 @@ namespace Mate.MVC.Controllers
 
             // Cookie uzerinde tutulacak bilgileri tanimliyoruz. Yani Kimlik karti uzerindeki bilgiler gibi dusunebilirsiniz.
             string roles = "";
-            foreach (var item in user.Roles)
+            foreach (var ur in user.Roles)
             {
-                roles += item.RoleName + " ";
+                if (ur.Role != null)
+                {
+                    roles += ur.Role.RoleName + " ";
+                }
             }
             var claims = new List<Claim>
             {
@@ -129,7 +132,9 @@ namespace Mate.MVC.Controllers
             //myUser.CreateDate=DateTime.Now;
             //myUser.Password=insertVM.Password;
             #endregion
-            var myUser = mapper.Map<UserInfo>(insertVM);
+            var myUser = new UserInfo();
+
+            myUser = mapper.Map<UserInfo>(insertVM);
 
             var user = userManager.Get(p => p.Email == myUser.Email);
             if (user != null)
@@ -147,25 +152,26 @@ namespace Mate.MVC.Controllers
             #region Kullanıcıya Default olarak User rolü eklenir
             // Rolü Veritabanından Çekme
 
-            var role = roleManager.GetAllInclude(p => p.RoleName == "User", p => p.Users).FirstOrDefault();
+            //var role = roleManager.Get(p => p.RoleName == "User"); // user role db'den cekilir
+            //myUser.Roles = new List<UsersRoles>();
+            //userManager.Update(myUser);
 
-            role.Users.Add(myUser);
-            roleManager.Update(role);
+            var userrole = roleManager.GetAllInclude(p => p.RoleName == "User", p => p.Users).FirstOrDefault();
+            //var userrole = roleManager.Get(p => p.RoleName == "User");
+            ////userrole.Users.Add(myUser);
+            sqlDbContext.Attach(userrole);
+            myUser.Roles.Add(new UsersRoles
+            {
+                RoleId = userrole.Id // Sadece var olan RoleId kullanılıyor
+            });
 
-
+            //myUser.Roles.Add(new UsersRoles { Role = userrole });
+            sqlDbContext.UserInfos.Add(myUser);
+            sqlDbContext.SaveChanges();
 
             notyfService.Success("İşlem başarılı.");
 
             #endregion
-
-
-
-
-
-
-
-
-            // userManager.Create(insertVM);
 
             return RedirectToAction("UserRegisterSuccess", "Account");
 

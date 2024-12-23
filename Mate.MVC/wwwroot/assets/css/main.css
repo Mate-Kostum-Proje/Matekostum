@@ -2091,10 +2091,13 @@ body-single-product {
     display: flex; /* Butonlarý yatay düzenler */
     gap: 10px; /* Butonlar arasýnda boþluk */
 }
+.giris-sayfasý-bosluk {
+    display: flex; /* Butonlarý yatay düzenler */
+    gap: 300px;
 
+}
 /* Sepete ekle butonu */
 .add-to-cart-single-product {
-     
     padding: 10px; /* Ýçerik boþluðu */
     font-size: 16px; /* Yazý boyutu */
     border: none; /* Kenarlýk yok */
