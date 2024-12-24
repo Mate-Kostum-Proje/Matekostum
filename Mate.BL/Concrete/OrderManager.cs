@@ -76,14 +76,14 @@ namespace Mate.BL.Concrete
                 {
                     // Stok kontrolü
                     ValidateOrder(orderDetails, productSizes);
-                    var situationName = orderSituationRepository.GetAll().Where(p => p.Situation == "Siparişiniz Alındı").FirstOrDefault();
+
 
                     // Yeni bir sipariş oluştur
                     var order = new Order
                     {
                         UserId = userId,
                         CreatedAt = DateTime.Now,
-                        SituationId = situationName.Id
+
                     };
                     _orderRepository.Create(order);
 
@@ -92,24 +92,39 @@ namespace Mate.BL.Concrete
                     {
 
                         var product = _productRepository.GetById(basketDetail.ProductId);
-                        var productSize = productSizeRepository.Get(p => p.ProductId == p.Products.Id && p.Sizes.SizeNumber == basketDetail.ProductSize);
+                        var productSize = productSizeRepository.Get(p => p.ProductId == product.Id && p.Sizes.SizeNumber == basketDetail.ProductSize);
                         //var productSize = productSizes.FirstOrDefault(p => p.ProductId == basketDetail.ProductId && p.Sizes.SizeNumber == basketDetail.ProductSize);
                         //var productSize = productSizes.FirstOrDefault(ps => ps.ProductId == basketDetail.ProductId && ps.Sizes.SizeNumber == basketDetail.ProductSize);
 
                         // ProductSize'ın miktarını güncelle
                         productSize.SizeAmount -= basketDetail.Amount;
-                        _productSizeRepository.Update(productSize);
+                        productSizeRepository.Update(productSize);
 
+                        int price = 0;
+
+                        if (product != null)
+                        {
+                            price = product.IsSale
+                            ? (product.UnitPriceForSale ?? 0)
+                            : (product.UnitPriceForRent);
+
+                        };
                         // OrderDetail oluştur
+                        var situationName = orderSituationRepository.GetAll().Where(p => p.Situation == "Siparişiniz Alındı").FirstOrDefault();
                         var orderDetail = new OrderDetail
                         {
                             OrderId = order.Id,  // Siparişin ID'sini ata
                             ProductId = basketDetail.ProductId,
+                            ProductName = product.ProductName,
                             ProductSize = basketDetail.ProductSize,
                             Amount = basketDetail.Amount,
                             UnitPiceForRent = product.UnitPriceForRent, // Kiralama fiyatı
                             UnitPriceForSale = product.UnitPriceForSale, // Satış fiyatı
-                            CreatedAt = DateTime.Now
+                            CreatedAt = DateTime.Now,
+                            TotalPrice = price * basketDetail.Amount,
+                            IsSale = product.IsSale,
+                            SituationId = situationName.Id,
+                            SituationName = situationName.Situation,
 
                         };
 
@@ -178,5 +193,7 @@ namespace Mate.BL.Concrete
 
             return _orderDetailRepository.GetAllInclude(p => p.OrderId == order.Id).ToList();
         }
+
+
     }
 }

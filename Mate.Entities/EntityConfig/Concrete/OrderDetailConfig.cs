@@ -11,11 +11,19 @@ namespace Mate.Entities.EntityConfig.Concrete
             base.Configure(builder);
             builder.HasOne(p => p.Orders).WithMany(p => p.OrderDetails).HasForeignKey(p => p.OrderId).IsRequired();
             builder.HasOne(p => p.Products).WithMany(p => p.OrderDetails).HasForeignKey(p => p.ProductId).IsRequired();
+            builder.HasOne(p => p.OrderSituations).WithMany(p => p.OrderDetails).HasForeignKey(p => p.SituationId);
             //builder.Property(p => p.Amount).HasConversion(p => p.CompareTo(Product)))  //TODO 
             builder.Property(x => x.UnitPriceForSale).HasMaxLength(100000);
             builder.Property(x => x.UnitPiceForRent).HasMaxLength(100000);
             builder.Property(x => x.ProductSize).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Amount).IsRequired().HasMaxLength(500);
+            builder.Property(x => x.TotalPrice).IsRequired().HasMaxLength(500);
+            builder.Property(x => x.ProductName).IsRequired().HasMaxLength(500);
+            builder.Property(x => x.SituationName).IsRequired().HasMaxLength(500);
+
+            builder.Property(x => x.IsSale).IsRequired();
+
+
 
 
         }

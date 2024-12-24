@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<OrderDetail>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.OrderId</td>
+        <td>@item.CreatedAt</td>
+        <td>@item.ProductName (@item.Amount)</td>
+        <td>@item.ProductSize Beden</td>
+         @if (item.IsSale == true)
+        {
+            <td>Satın Alma @item.UnitPriceForSale TL</td>
+        }
+        else if (item.IsSale == false)
+        {
+            <td>Kiralama @item.UnitPiceForRent TL</td>
+        } 
+        
+        <td>@item.TotalPrice TL</td>
+        <td>@item.SituationName</td>
+    </tr>
 }

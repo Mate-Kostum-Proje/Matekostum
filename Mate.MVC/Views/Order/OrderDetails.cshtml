@@ -1,5 +1,4 @@
-﻿@using Mate.MVC.Models.VMs
-@model List<OrderDetailsVM>
+﻿@using Mate.MVC.Extensions
 <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
 <br />
 <br />
@@ -15,7 +14,7 @@
                 <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-12 order-2 order-lg-1 content text-center">
-                <h3>Siparişler</h3>
+                <h3>Siparişleriniz</h3>
 
             </div>
         </div>
@@ -41,26 +40,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                    <td>@item.OrderId</td>
-                    <td>@item.CreatedDate</td>
-                    <td>@item.ProductName (@item.Amount)</td>
-                    <td>@item.Size Beden</td>
-                    @if(item.IsSale==true)
-                    {
-                        <td>Satın Alma @item.Price TL</td>
-                    }
-                    else if(item.IsSale==false)
-                    {
-                        <td>Kiralama @item.Price TL</td>
-                    }
+        <tr>
+            @await Component.InvokeAsync("OrderDetails", new { userId = User.Identity.GetId()})
 
-                    <td>@item.TotalPrice TL</td>
-                    <td>@item.OrderSituation</td>
-            </tr>
-        }
+        </tr>
     </tbody>
 </table>
     <br />

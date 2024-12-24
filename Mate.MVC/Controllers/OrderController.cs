@@ -125,56 +125,61 @@ namespace Mate.MVC.Controllers
         // Sipariş Detayları
         [HttpGet]
         [Authorize]
-        public IActionResult OrderDetails()
+        public async Task<IActionResult> OrderDetails()
         {
             string userId = User.Identity.GetId(); // Kullanıcı ID'sini alın
             var orderDetails = _orderManager.GetOrderDetails(userId);
+
+
             if (orderDetails == null || !orderDetails.Any())
             {
                 // Kullanıcıyı bir hata sayfasına yönlendirebilir, boş bir model dönebilir
                 notyfService.Information("Henüz bir siparişiniz bulunmamaktadır.");
-                return View(new List<OrderDetailsVM>());
+                return View();
             }
-            string orderId = orderDetails.FirstOrDefault().OrderId.ToString();
-            //string orderSituation = _orderManager.GetAll(p => p.Id == orderId).FirstOrDefault().OrderSituations.Situation;
-            string orderSituation = _orderManager.GetAllInclude(o => o.Id == orderId, o => o.OrderSituations).FirstOrDefault().OrderSituations.Situation;
+            #region Gereksiz kalan kısım
+            //string orderId = orderDetails.FirstOrDefault().OrderId.ToString();
+            ////string orderId = orderDetails.FirstOrDefault().OrderId.ToString();
+            ////string orderSituation = _orderManager.GetAll(p => p.Id == orderId).FirstOrDefault().OrderSituations.Situation;
+            //string orderSituation = _orderManager.GetAllInclude(o => o.Id == orderId, o => o.OrderSituations).FirstOrDefault().OrderSituations.Situation;
 
 
-            // BasketDetail ile Product verilerini birleştiriyoruz
-            var viewModel = orderDetails.Select(p =>
-            {
-                var product = _productRepository.GetById(p.ProductId);
+            //// BasketDetail ile Product verilerini birleştiriyoruz
+            //var viewModel = orderDetails.Select(p =>
+            //{
+            //    var product = _productRepository.GetById(p.ProductId);
 
-                // Fiyatı belirlemek için durumu kontrol et
-                int price = 0;
-                if (product != null)
-                {
-                    price = product.IsSale
-                    ? (product.UnitPriceForSale ?? 0)
-                    : (product.UnitPriceForRent);
+            //    // Fiyatı belirlemek için durumu kontrol et
+            //    int price = 0;
+            //    if (product != null)
+            //    {
+            //        price = product.IsSale
+            //        ? (product.UnitPriceForSale ?? 0)
+            //        : (product.UnitPriceForRent);
 
-                }
+            //    }
 
-                return new OrderDetailsVM
-                {
-                    OrderId = orderId,
-                    ProductId = p.ProductId,
-                    ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
-                    Price = price, // Ürün fiyatı
-                    Amount = p.Amount, // Sepetteki miktar
-                    TotalPrice = price * p.Amount, // Toplam fiyat
-                    OrderDetailId = p.Id, // BasketDetail ID'si
-                    Size = p.ProductSize, //Size 
-                    IsSale = product.IsSale,
-                    OrderSituation = orderSituation,
-                    CreatedDate = p.CreatedAt
+            //    return new OrderDetailsVM
+            //    {
+            //        OrderId = orderId,
+            //        ProductId = p.ProductId,
+            //        ProductName = product?.ProductName, // Ürün adı (Product tablosundan alınır)
+            //        Price = price, // Ürün fiyatı
+            //        Amount = p.Amount, // Sepetteki miktar
+            //        TotalPrice = price * p.Amount, // Toplam fiyat
+            //        OrderDetailId = p.Id, // BasketDetail ID'si
+            //        Size = p.ProductSize, //Size 
+            //        IsSale = product.IsSale,
+            //        OrderSituation = orderSituation,
+            //        CreatedDate = p.CreatedAt
 
 
 
-                };
-            }).ToList();
+            //    };
+            //}).ToList(); 
+            #endregion
 
-            return View(viewModel);
+            return View();
         }
 
         // Siparişler Listesi (Admin için)

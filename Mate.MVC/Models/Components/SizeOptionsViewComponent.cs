@@ -4,30 +4,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mate.MVC.Models.Components
 {
-	public class SizeOptionsViewComponent : ViewComponent
-	{
-		private readonly IManager<ProductSize> productSizeManager;
+    public class SizeOptionsViewComponent : ViewComponent
+    {
+        private readonly IManager<ProductSize> productSizeManager;
 
 
-		public SizeOptionsViewComponent(IManager<ProductSize> productSizeManager)
-		{
-			this.productSizeManager = productSizeManager;
-		}
+        public SizeOptionsViewComponent(IManager<ProductSize> productSizeManager)
+        {
+            this.productSizeManager = productSizeManager;
+        }
 
-		public async Task<IViewComponentResult> InvokeAsync(string productId)
-		{
-			var sizeOptions = productSizeManager.GetAll()
-				.Where(ps => ps.ProductId == productId)
-				.Select(ps => new Size
-				{
-					SizeNumber = ps.SizeNumber,
-					Id = ps.SizeId
-				})
-				.ToList();
+        public async Task<IViewComponentResult> InvokeAsync(string productId)
+        {
+            var sizeOptions = productSizeManager.GetAll()
+                .Where(ps => ps.ProductId == productId)
+                .Select(ps => new Size
+                {
+                    SizeNumber = ps.SizeNumber,
+                    Id = ps.SizeId
+                })
+                .ToList();
 
-			return View(sizeOptions);
-		}
-	}
+            return View(sizeOptions);
+        }
+    }
 
 }
 //public class SizeOptionsViewComponent : ViewComponent
