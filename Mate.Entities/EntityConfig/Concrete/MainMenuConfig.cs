@@ -21,7 +21,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                 MenuName = "Home",
                 ControllerName = "Home",
                 ActionName = "Index",
-                ClassName = "far fa-circle nav-icon",
+                ClassName = "bi bi-caret-right-fill",
                 CreatedAt = DateTime.Now,
                 CssName = "",
                 RoleId = 1
@@ -33,7 +33,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                  MenuName = "About",
                  ControllerName = "Home",
                  ActionName = "",
-                 ClassName = "far fa-circle nav-icon",
+                 ClassName = "bi bi-caret-right-fill",
                  CreatedAt = DateTime.Now,
                  CssName = "",
                  RoleId = 1
@@ -45,7 +45,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                  MenuName = "ProductRent",
                  ControllerName = "Home",
                  ActionName = "ProductRent",
-                 ClassName = "far fa-circle nav-icon",
+                 ClassName = "bi bi-caret-right-fill",
                  CreatedAt = DateTime.Now,
                  CssName = "",
                  RoleId = 1
@@ -58,7 +58,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                  ControllerName = "Home",
                  ActionName = "ProductSale",
                  //AreaName = "Admin",
-                 ClassName = "far fa-circle nav-icon",
+                 ClassName = "bi bi-caret-right-fill",
                  CreatedAt = DateTime.Now,
                  CssName = "",
                  RoleId = 1
@@ -70,7 +70,7 @@ namespace Mate.Entities.EntityConfig.Concrete
                  MenuName = "Galery",
                  ControllerName = "Home",
                  ActionName = "Galery",
-                 ClassName = "far fa-circle nav-icon",
+                 ClassName = "bi bi-caret-right-fill",
                  CreatedAt = DateTime.Now,
                  CssName = "",
                  RoleId = 1
@@ -78,11 +78,11 @@ namespace Mate.Entities.EntityConfig.Concrete
              },
              new MainMenu
              {
-                 Id = "Comm",
-                 MenuName = "Comm",
+                 Id = "Communication",
+                 MenuName = "Communication",
                  ControllerName = "Home",
-                 ActionName = "Comm",
-                 ClassName = "far fa-circle nav-icon",
+                 ActionName = "Communication",
+                 ClassName = "bi bi-caret-right-fill",
                  CreatedAt = DateTime.Now,
                  CssName = "",
                  RoleId = 1

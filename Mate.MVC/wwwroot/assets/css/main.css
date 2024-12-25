@@ -841,7 +841,12 @@ section,
     position: absolute;
     right: 500px;
 }
-
+.bi bi-person-circle {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(100%) saturate(300%) hue-rotate(360deg); /* Sarý ton verir */
+}
+.bi bi-cart {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(100%) saturate(300%) hue-rotate(360deg); /* Sarý ton verir */
+}
 
 
   .hero:before {

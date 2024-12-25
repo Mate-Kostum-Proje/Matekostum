@@ -1,0 +1,83 @@
+﻿@using System.Security.Claims
+@using System.Drawing
+
+
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <br/>
+        <br />
+
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-lg-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+
+            <img class="img-fluid " src="~/assets/img/mate_yeni_logo.png" alt="..." />
+        </a>
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="info">
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <a asp-action="GetUser" asp-controller="User" asp-area="Admin" class="d-block">@User.Identity.Name</a>
+                }
+            </div>
+        </div>
+
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-diagram-3"></i>
+                        <p>
+                            Site Bilgileri
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        @await Component.InvokeAsync("AdminMenu")
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="User" asp-action="Index" asp-area="Admin" class="nav-link">
+                        <i class="bi bi-people-fill"></i>
+                        <p>
+                            Kullanıcılar
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link">
+                        <i class="bi bi-cart-check"></i>
+                        <p>
+                            Siparişler
+                            
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link">
+                        <i class="bi bi-box-seam-fill"></i>
+                        <p>
+                            Ürün Bilgileri
+                            
+                        </p>
+                    </a>
+                </li>
+            </ul>
+                <!--  -->
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

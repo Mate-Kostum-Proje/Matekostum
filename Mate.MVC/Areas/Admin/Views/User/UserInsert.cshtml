@@ -1,0 +1,204 @@
+﻿@using Mate.MVC.Areas.Admin.Models_VMs
+
+@model UserInsertAdminVM
+
+<link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+<br />
+<br />
+<br />
+
+
+<section id="designcostum" class="designcostum section">
+
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <div class="col-lg-12 order-1 order-lg-1 text-center">
+                <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-12 order-2 order-lg-1 content text-center">
+                <h3>Kayıt Ekranı</h3>
+                <br />
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <p> Lütfen Bilgilerinizi Eksiksiz Giriniz</p>
+        </div>
+        <div class="card-body">
+            <form asp-action="UserInsert" method="post">
+                <div class="row">
+
+
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=Name>Adınız</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Name" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=SurName>Soyadınız</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="SurName" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="SurName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=Email>E-mailiniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Email" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=TcNo>TC Kimlik Numaranız</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="TcNo" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="TcNo" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=Address>Adresiniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Address" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=City>Şehriniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="City" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=District>İlçeniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="District" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="District" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=GSM>Cep Telefon Numaranız</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="GSM" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="GSM" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=Password>Şifrenizi Belirleyiniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Password" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            <label asp-for=RePassword>Şifrenizi Tekrar Giriniz</label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="RePassword" class="form-control-sm">
+                        </div>
+                        <div class="col-4">
+                            <span asp-validation-for="RePassword" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Roles>Roller</label>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-group">
+
+
+                            @for (int i = 0; i < Model.Roles.Count; i++)
+                            {
+                                <li class="list-group-item">
+
+
+                                    <input type="checkbox" asp-for="@Model.Roles[i].IsChecked">
+                                    <label asp-for="@Model.Roles[i]">@Model.Roles[i].LabelName</label>
+                                    <input type="hidden" asp-for="@Model.Roles[i].Id" />
+                                    <input type="hidden" asp-for="@Model.Roles[i].LabelName" />
+
+                                </li>
+                            }
+                        </ul>
+
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Roles" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="reset" class="buy-now-single-product ">Temizle</button>
+                    <button type="submit" class="add-to-cart-single-product ">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts
+    {
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</section>

@@ -52,6 +52,10 @@
         {
 			<div><a class="button" asp-controller="Order" asp-action="OrderDetails"><i class="bi bi-person-circle"></i></a></div>
 		}
+		@if (User.IsInRole("Admin"))
+		{
+			<div><a class="button" asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="bi bi-pc-display-horizontal"></i></a></div>
+		}
 
 	</div>
 </header>
