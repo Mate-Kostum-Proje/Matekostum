@@ -1,0 +1,97 @@
+﻿@model List<Product>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+<br />
+<br />
+<br />
+
+
+<section id="designcostum" class="designcostum section">
+
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <div class="col-lg-12 order-1 order-lg-1 text-center">
+                <img src="~/assets/img/Mate-Kostum-tasarım-main.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-12 order-2 order-lg-1 content text-center">
+                <h3>Ürünler</h3>
+
+            </div>
+        </div>
+    </div>
+
+    @*Tables*@
+    <a asp-action="ProductInsert" asp-controller="Product" asp-area="Admin" class="buy-now-single-product">Yeni Ürün</a>
+    <br />
+    <br />
+    <br />
+
+    <table class="table table-active">
+        <tr>
+            <td>Fotoğraf</td>
+            <td>Ürün Adı</td>
+            <td>Yaş Grubu</td>
+            <td>Satılık Fiyatı</td>
+            <td>Kiralık Fiyatı</td>
+            <td>Satılık Bilgisi</td>
+            <td>Cinsiyet Bilgisi</td>
+            <td>Kategorisi</td>
+            <td>Bölge Adı</td>
+            <td>Yöre Adı</td>
+            <td>Beden Bilgisi</td>
+            <td>Beden Sayısı</td>
+            <td>İşlem</td>
+        </tr>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.PhotoPath</td>
+                <td>@product.ProductName</td>
+                <td>@product.IsAdult</td>
+                <td>@product.UnitPriceForSale</td>
+                <td>@product.UnitPriceForRent</td>
+                <td>@product.IsSale</td>
+                <td>@product.Gender</td>
+                <td>@product.ProductCategoryId</td>
+                <td>@product.ProductRegionId</td>
+                <td>@product.ProductSubRegionId</td>
+                <td>@product.ProductSizes</td>
+                <td>@product.ProductSizes</td>@*ProductSizeAmount*@
+
+                <td>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="Admin" asp-action="ProductEdit" asp-controller="Product" asp-route-userId="@product.Id"><i class="bi bi-pencil-square">    Değiştir</i></a></li>
+                            <li><a class="dropdown-item" asp-area="Admin" asp-action="ProductDelete" asp-controller="Product" asp-route-userId="@product.Id"><i class="bi bi-archive">    Sil</i></a></li>
+
+                        </ul>
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</section>

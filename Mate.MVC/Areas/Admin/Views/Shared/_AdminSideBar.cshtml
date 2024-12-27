@@ -12,7 +12,7 @@
         <br/>
         <br />
 
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-lg-0">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-lg-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
 
@@ -37,7 +37,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="#" class="nav-link">
                         <i class="bi bi-diagram-3"></i>
                         <p>
                             Site Bilgileri
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a asp-controller="OrderAdmin" asp-action="Index" asp-area="Admin" class="nav-link">
                         <i class="bi bi-cart-check"></i>
                         <p>
                             Siparişler
@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a asp-controller="Product" asp-action="Index" asp-area="Admin" class="nav-link">
                         <i class="bi bi-box-seam-fill"></i>
                         <p>
                             Ürün Bilgileri
