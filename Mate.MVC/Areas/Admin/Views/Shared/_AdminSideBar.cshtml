@@ -36,7 +36,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item">
+@*                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="bi bi-diagram-3"></i>
                         <p>
@@ -47,7 +47,7 @@
                     <ul class="nav nav-treeview" style="display: none;">
                         @await Component.InvokeAsync("AdminMenu")
                     </ul>
-                </li>
+                </li> *@
                 <li class="nav-item">
                     <a asp-controller="User" asp-action="Index" asp-area="Admin" class="nav-link">
                         <i class="bi bi-people-fill"></i>
@@ -65,7 +65,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+@*                 <li class="nav-item">
                     <a asp-controller="Product" asp-action="Index" asp-area="Admin" class="nav-link">
                         <i class="bi bi-box-seam-fill"></i>
                         <p>
@@ -73,6 +73,36 @@
                             
                         </p>
                     </a>
+                </li> *@
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-diagram-3"></i>
+                        <p>
+                            Ürün Bilgileri
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a asp-controller="Product" asp-action="KiralıkHalkOyunIndex" asp-area="Admin" >Kiralık Halk Oyunları Ürünleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Product" asp-action="KiralıkBindallıIndex" asp-area="Admin">Kiralık Bindallı ve Kına Ürünleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Product" asp-action="KiralıkDansIndex" asp-area="Admin">Kiralık Stilize Dans Ürünleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Product" asp-action="KiralıkRondIndex" asp-area="Admin">Kiralık Rond Tören Ürünleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Product" asp-action="SatılıkHalkOyunIndex" asp-area="Admin">Satılık Halk Oyunları Ürünleri</a>
+                        </li>
+
+
+
+
+                    </ul>
                 </li>
             </ul>
                 <!--  -->

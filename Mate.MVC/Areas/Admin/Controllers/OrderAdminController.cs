@@ -2,7 +2,7 @@
 
 namespace Mate.MVC.Areas.Admin.Controllers
 {
-    public class OrderAdminContoller : Controller
+    public class OrderAdminController : Controller
     {
         public IActionResult Index()
         {

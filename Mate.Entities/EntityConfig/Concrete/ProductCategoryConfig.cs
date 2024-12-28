@@ -14,7 +14,7 @@ namespace Mate.Entities.EntityConfig.Concrete
 
 
 
-            builder.HasData(new ProductCategory() { Id = "1boş", Name = " ", CreatedAt = DateTime.Now });
+            //builder.HasData(new ProductCategory() { Id = "1boş", Name = " ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductCategory() { Id = "2halkoyun", Name = "HALK OYUNLARI KIYAFETLERİ", CreatedAt = DateTime.Now });
             builder.HasData(new ProductCategory() { Id = "3kına", Name = "BİNDALLI VE KINA", CreatedAt = DateTime.Now });
             builder.HasData(new ProductCategory() { Id = "4dans", Name = "STİLİZE DANS", CreatedAt = DateTime.Now });

@@ -9,7 +9,7 @@ namespace Mate.Entities.EntityConfig.Concrete
         public override void Configure(EntityTypeBuilder<Size> builder)
         {
             base.Configure(builder);
-            builder.Property(p => p.SizeNumber).HasMaxLength(14).IsRequired();
+            builder.Property(p => p.SizeNumber).HasMaxLength(20).IsRequired();
 
             builder.HasData(new Size() { Id = "b9f3161c-2cf9-4a45-a6f9-13d4b32538ef", SizeNumber = 8, CreatedAt = DateTime.Now });
             builder.HasData(new Size() { Id = "baf2e21c-f1c7-4801-a8a0-6e59a809ed7d", SizeNumber = 10, CreatedAt = DateTime.Now });
