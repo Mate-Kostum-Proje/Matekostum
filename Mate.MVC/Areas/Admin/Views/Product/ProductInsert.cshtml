@@ -47,21 +47,22 @@
         </div>
         <div class="form-group">
             <label for="SelectedCategoryId">Kategori*</label>
-            <select asp-for="ProductCategoryId" asp-items="Model.CategorySelectList" class="form-control">
+            <select asp-for="SelectedCategoryId" asp-items="Model.CategorySelectList" class="form-control">
                 <option value="">Kategori Seçiniz</option>
             </select>
+
 
         </div>
 
         <div class="form-group">
             <label for="SelectedRegionId">Bölge</label>
-            <select asp-for="ProductRegionId" asp-items="Model.RegionSelectList" class="form-control">
+            <select asp-for="SelectedRegionId" asp-items="Model.RegionSelectList" class="form-control">
                 <option value="">Bölge Seçiniz</option>
             </select>
         </div>
         <div class="form-group">
             <label for="SelectedSubRegionId">Yöre</label>
-            <select asp-for="ProductSubRegionId" asp-items="Model.SubRegionSelectList" class="form-control">
+            <select asp-for="SelectedSubRegionId" asp-items="Model.SubRegionSelectList" class="form-control">
                 <option value="">Yöre Seçiniz</option>
             </select>
         </div>
@@ -96,15 +97,49 @@
 
 
 
-    <div class="form-group">
-        <label for="SizesWithAmounts">Beden ve Miktar</label>
-        <div id="SizesWithAmounts">
-            <div class="input-group mb-2">
-                <input type="number" name="SizesWithAmounts[0].SizeNumber" placeholder="Beden Numarası" class="form-control" />
-                <input type="number" name="SizesWithAmounts[0].SizeAmount" placeholder="Miktar" class="form-control" />
+        <div class="form-group">
+            <label for="SelectedSizes">Beden ve Miktar</label>
+            <div id="SizesContainer">
+                @for (int i = 0; i < Model.SelectedSizes.Count; i++)
+                {
+                    <div class="input-group mb-2">
+                        <!-- Dropdown: SizeId (string) -->
+                        <select asp-for="SelectedSizes[@i].SizeId" class="form-control" asp-items="Model.SizeOptions">
+                            <option value="">Beden Seçiniz</option>
+                        </select>
+                        <!-- Input: SizeAmount -->
+                        <input asp-for="SelectedSizes[@i].SizeAmount" class="form-control" placeholder="Miktar" />
+                        <!-- Hidden Input: SizeNumber (Optional, otomatik atanabilir) -->
+                        <input asp-for="SelectedSizes[@i].SizeNumber" type="hidden" />
+                    </div>
+                }
             </div>
+
+            <button type="button" id="addSize" class="buy-now-single-product">Beden Ekle</button>
         </div>
-    </div>
+
+        @*burası dışarıdan alınma*@
+        <script>
+            document.getElementById('addSize').addEventListener('click', function () {
+                var container = document.getElementById('SizesContainer');
+                var index = container.querySelectorAll('.input-group').length;
+
+                var template = `
+                    <div class="input-group mb-2">
+                        <select name="SelectedSizes[${index}].SizeId" class="form-control">
+                            <option value="">Beden Seçiniz</option>
+            @foreach (var item in Model.SizeOptions)
+            {
+                                    <option value="@item.Value">@item.Text</option>
+            }
+                        </select>
+                        <input name="SelectedSizes[${index}].SizeAmount" class="form-control" placeholder="Miktar" />
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', template);
+            });
+        </script>
+
         <div class="row">
             <div class="col-2">
                 <label asp-for=Picture>Fotoğraf*</label>

@@ -5,6 +5,7 @@ using Mate.Entities.Concrete;
 using Mate.MVC.Areas.Admin.Models_VMs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -78,13 +79,22 @@ namespace Mate.MVC.Areas.Admin.Controllers
             var categories = productCategoryManager.GetAll();
             var regions = productRegionManager.GetAll();
             var subRegions = productSubRegionManager.GetAll();
+            var sizes = sizeManager.GetAll();
+
+            var sizeOptions = sizes.Select(s => new SelectListItem
+            {
+                Value = s.Id,
+                Text = s.SizeNumber.ToString() // Örneğin "38", "40"
+            }).ToList();
 
             // ViewModel oluştur ve veri aktar
             var viewModel = new ProductInsertAdminVM
             {
                 Categories = categories,
                 Regions = regions,
-                SubRegions = subRegions
+                SubRegions = subRegions,
+                SizeOptions = sizeOptions,
+                SelectedSizes = new List<SelectedSizeVM> { new SelectedSizeVM() }
             };
 
 
@@ -95,17 +105,22 @@ namespace Mate.MVC.Areas.Admin.Controllers
         public async Task<IActionResult> ProductInsert(ProductInsertAdminVM productInsertAdminVM)
         {
 
-            // Model doğrulama
+
             if (!ModelState.IsValid)
             {
-
                 productInsertAdminVM.Categories = productCategoryManager.GetAll();
                 productInsertAdminVM.Regions = productRegionManager.GetAll();
                 productInsertAdminVM.SubRegions = productSubRegionManager.GetAll();
-
+                productInsertAdminVM.SizeOptions = sizeManager.GetAll().Select(s => new SelectListItem
+                {
+                    Value = s.Id,
+                    Text = s.SizeNumber.ToString()
+                }).ToList();
 
                 return View(productInsertAdminVM);
             }
+
+
             #region Fotograf Kaydetme
             string uploads = "";
             string userImagePath = "";
@@ -128,7 +143,7 @@ namespace Mate.MVC.Areas.Admin.Controllers
             }
             #endregion
 
-            // Yeni ürün oluştur
+
             var product = new Product
             {
                 ProductName = productInsertAdminVM.ProductName,
@@ -139,36 +154,38 @@ namespace Mate.MVC.Areas.Admin.Controllers
                 IsSale = productInsertAdminVM.IsSale,
                 Gender = productInsertAdminVM.Gender,
                 PhotoPath = userImagePath,
-                ProductCategoryId = productInsertAdminVM.ProductCategoryId,
-                ProductRegionId = productInsertAdminVM.ProductRegionId,
-                ProductSubRegionId = productInsertAdminVM.ProductSubRegionId,
+                ProductCategoryId = productInsertAdminVM.SelectedCategoryId,
+                ProductRegionId = productInsertAdminVM.SelectedRegionId,
+                ProductSubRegionId = productInsertAdminVM.SelectedSubRegionId,
 
 
             };
 
-            // Ürünü kaydet
+
             productManager.Create(product);
 
             // Bedeni ve stok miktarını kaydet
-            if (productInsertAdminVM.SizesWithAmounts != null && productInsertAdminVM.SizesWithAmounts.Any())
+            if (productInsertAdminVM.SelectedSizes != null && productInsertAdminVM.SelectedSizes.Any())
             {
-                foreach (var sizeWithAmount in productInsertAdminVM.SizesWithAmounts)
+                foreach (var selectedSize in productInsertAdminVM.SelectedSizes)
                 {
+                    // SizeNumber'ı SizeId üzerinden al
+                    var size = sizeManager.GetById(selectedSize.SizeId);
                     var productSize = new ProductSize
                     {
                         ProductId = product.Id,
-                        SizeId = sizeWithAmount.SizeId,
-                        SizeNumber = sizeWithAmount.SizeNumber,
-                        SizeAmount = sizeWithAmount.SizeAmount
+                        SizeId = selectedSize.SizeId, // SizeId string olarak kullanılıyor
+                        SizeNumber = size != null ? size.SizeNumber : 0, // SizeNumber atanıyor
+                        SizeAmount = selectedSize.SizeAmount
                     };
-
                     productSizeManager.Create(productSize);
                 }
             }
 
+
             // Başarı mesajı ve yönlendirme
             notyfService.Success("Ürün başarıyla eklendi.");
-            return RedirectToAction("KiralıkBindallıIndex");
+            return RedirectToAction("Index", "Home");
         }
         [Authorize]
         public IActionResult KiralıkDansIndex()
@@ -303,12 +320,12 @@ namespace Mate.MVC.Areas.Admin.Controllers
         public IActionResult SatılıkHalkOyunIndex()
         {
             var products = productManager.GetAllInclude()
-        .Include(p => p.ProductSizes) // ProductSizes ilişkisinin yüklenmesini sağlıyor
-        .Include(p => p.ProductCategories) // İlişkili kategori verilerini yüklemek için
-        .Include(p => p.ProductRegions) // İlişkili bölge verilerini yüklemek için
-        .Include(p => p.ProductSubRegions) // İlişkili alt bölge verilerini yüklemek için
-        .Where(p => p.ProductCategoryId == "2halkoyun" && p.IsSale == true)
-        .ToList();
+         .Include(p => p.ProductSizes) // ProductSizes ilişkisinin yüklenmesini sağlıyor
+         .Include(p => p.ProductCategories) // İlişkili kategori verilerini yüklemek için
+         .Include(p => p.ProductRegions) // İlişkili bölge verilerini yüklemek için
+         .Include(p => p.ProductSubRegions) // İlişkili alt bölge verilerini yüklemek için
+         .Where(p => p.ProductCategoryId == "2halkoyun" && p.IsSale == true)
+         .ToList();
 
             var viewModel = products.Select(product =>
             {
@@ -353,20 +370,20 @@ namespace Mate.MVC.Areas.Admin.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            var productInsertAdminVM = new ProductInsertAdminVM();
-            productInsertAdminVM.Id = Id;
-            productInsertAdminVM.ProductName = product.ProductName;
-            productInsertAdminVM.Description = product.Description;
-            productInsertAdminVM.IsAdult = product.IsAdult;
-            productInsertAdminVM.UnitPriceForSale = product.UnitPriceForSale;
-            productInsertAdminVM.UnitPriceForRent = product.UnitPriceForRent;
-            productInsertAdminVM.IsSale = product.IsSale;
-            productInsertAdminVM.Gender = product.Gender;
-            //userImagePath = product.PhotoPath;
-            productInsertAdminVM.ProductCategoryId = product.ProductCategoryId;
-            productInsertAdminVM.ProductRegionId = product.ProductRegionId;
-            productInsertAdminVM.ProductSubRegionId = product.ProductSubRegionId;
-
+            var productEditAdminVM = new ProductEditAdminVM();
+            productEditAdminVM.Id = Id;
+            productEditAdminVM.ProductName = product.ProductName;
+            productEditAdminVM.Description = product.Description;
+            productEditAdminVM.IsAdult = product.IsAdult;
+            productEditAdminVM.UnitPriceForSale = product.UnitPriceForSale;
+            productEditAdminVM.UnitPriceForRent = product.UnitPriceForRent;
+            productEditAdminVM.IsSale = product.IsSale;
+            productEditAdminVM.Gender = product.Gender;
+            //userImagePath = product.PhotoPath; //get de bu olmayacak
+            productEditAdminVM.ProductCategoryId = product.ProductCategoryId;
+            productEditAdminVM.ProductRegionId = product.ProductRegionId;
+            productEditAdminVM.ProductSubRegionId = product.ProductSubRegionId;
+            productEditAdminVM.PhotoPath = product.PhotoPath;
 
 
             return View();
@@ -384,8 +401,8 @@ namespace Mate.MVC.Areas.Admin.Controllers
         {
             try
             {
-                //Kullanıcıyı bul
-                var product = productManager.GetAllInclude(p => p.Id == productId).FirstOrDefault();
+                //Ürünü bul
+                var product = productManager.GetAll(p => p.Id == productId).FirstOrDefault();
 
                 if (product == null)
                 {
@@ -393,7 +410,7 @@ namespace Mate.MVC.Areas.Admin.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
-                // Kullanıcıyı sil
+                // Ürünü sil
                 productManager.Delete(product);
                 notyfService.Success("Ürün başarıyla silindi.");
             }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Mate.MVC.Areas.Admin.Models_VMs
 {
-    public class ProductInsertAdminVM
+    public class ProductEditAdminVM
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
@@ -78,5 +78,6 @@ namespace Mate.MVC.Areas.Admin.Models_VMs
 
         [Required(ErrorMessage = "Fotoğraf Eklemek Zorunludur")]
         public IFormFile Picture { get; set; }
+        public string PhotoPath { get; set; }
     }
 }
