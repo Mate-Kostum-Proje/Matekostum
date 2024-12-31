@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ticari.WebMVC.Areas.Admin.Controllers
 {
-    [Authorize]
+
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
 
     public class HomeController : Controller
     {

@@ -11,7 +11,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Mate.MVC.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
 
     public class UserController(IManager<UserInfo> userManager

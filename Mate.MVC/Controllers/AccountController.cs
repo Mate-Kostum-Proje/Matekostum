@@ -48,22 +48,25 @@ namespace Mate.MVC.Controllers
 
             // Cookie uzerinde tutulacak bilgileri tanimliyoruz. Yani Kimlik karti uzerindeki bilgiler gibi dusunebilirsiniz.
             string roles = "";
-            foreach (var ur in user.Roles)
-            {
-                if (ur.Role != null)
-                {
-                    roles += ur.Role.RoleName + " ";
-                }
-            }
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, loginVM.Email),
-                new Claim(ClaimTypes.Role,roles),
+
                 new Claim(ClaimTypes.SerialNumber,user.Id)
 
-
-
             };
+
+            foreach (var ur in user.Roles)
+            {
+                var rolesId = ur.RoleId;
+                var role2 = roleManager.GetById(rolesId);
+
+                roles += role2.RoleName + " ";
+                claims.Add(new Claim(ClaimTypes.Role, roles.Trim())); // Her rol ayrı bir claim olarak ekleniyor
+
+            }
+
             var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var authenticationProperty = new AuthenticationProperties()
             {

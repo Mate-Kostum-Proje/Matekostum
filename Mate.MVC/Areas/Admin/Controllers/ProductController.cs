@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mate.MVC.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
 
     public class ProductController(IManager<Product> productManager
@@ -439,19 +439,19 @@ namespace Mate.MVC.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                productEditAdminVM.Categories = productCategoryManager.GetAll();
-                productEditAdminVM.Regions = productRegionManager.GetAll();
-                productEditAdminVM.SubRegions = productSubRegionManager.GetAll();
-                ViewData["Sizes"] = sizeManager.GetAll().Select(s => new SelectListItem
-                {
-                    Value = s.Id,
-                    Text = s.SizeNumber.ToString()
-                }).ToList();
+
 
                 notyfService.Error("Lütfen gerekli alanları doldurun.");
                 return View(productEditAdminVM);
             }
-
+            productEditAdminVM.Categories = productCategoryManager.GetAll();
+            productEditAdminVM.Regions = productRegionManager.GetAll();
+            productEditAdminVM.SubRegions = productSubRegionManager.GetAll();
+            ViewData["Sizes"] = sizeManager.GetAll().Select(s => new SelectListItem
+            {
+                Value = s.Id,
+                Text = s.SizeNumber.ToString()
+            }).ToList();
             var product = productManager.GetById(productEditAdminVM.Id);
             if (product == null)
             {

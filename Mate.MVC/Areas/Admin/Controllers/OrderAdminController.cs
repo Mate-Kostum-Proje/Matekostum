@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Mate.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class OrderAdminController(IManager<OrderDetail> orderDetailManager
                                     , IManager<OrderSituation> orderSituationManager
                                     , IManager<UserInfo> userManager

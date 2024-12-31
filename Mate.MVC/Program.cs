@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Mate.BL.Abstract;
@@ -57,11 +58,11 @@ namespace Mate.MVC
             });
             #endregion
 
-            //builder.Services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("AdminPolicy", policy =>
-            //        policy.RequireClaim(ClaimTypes.Role, "Admin"));
-            //});
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminPolicy", policy =>
+                    policy.RequireClaim(ClaimTypes.Role, "Admin"));
+            });
 
 
             builder.Services.AddMateProje();
