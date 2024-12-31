@@ -110,6 +110,7 @@ namespace Mate.BL.Concrete
 
                         };
                         // OrderDetail oluştur
+
                         var situationName = orderSituationRepository.GetAll().Where(p => p.Situation == "Siparişiniz Alındı").FirstOrDefault();
                         var orderDetail = new OrderDetail
                         {

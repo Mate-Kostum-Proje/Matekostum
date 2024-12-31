@@ -1,5 +1,6 @@
 ﻿using Mate.Entities.Concrete;
 using Mate.Entities.EntityConfig.Abstract;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Mate.Entities.EntityConfig.Concrete
@@ -11,8 +12,8 @@ namespace Mate.Entities.EntityConfig.Concrete
             base.Configure(builder);
             builder.HasKey(ps => new { ps.ProductId, ps.SizeId });
 
-            builder.HasOne(p => p.Sizes).WithMany(p => p.ProductSizes).HasForeignKey(p => p.SizeId).IsRequired();
-            builder.HasOne(p => p.Products).WithMany(p => p.ProductSizes).HasForeignKey(p => p.ProductId).IsRequired();
+            builder.HasOne(p => p.Sizes).WithMany(p => p.ProductSizes).HasForeignKey(p => p.SizeId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(p => p.Products).WithMany(p => p.ProductSizes).HasForeignKey(p => p.ProductId).IsRequired().OnDelete(DeleteBehavior.Cascade);
 
 
 

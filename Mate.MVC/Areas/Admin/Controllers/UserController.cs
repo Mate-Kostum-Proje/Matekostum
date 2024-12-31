@@ -11,8 +11,9 @@ using Microsoft.Data.SqlClient;
 
 namespace Mate.MVC.Areas.Admin.Controllers
 {
-    [Area("Admin")]
     [Authorize]
+    [Area("Admin")]
+
     public class UserController(IManager<UserInfo> userManager
                                 , INotyfService notyfService
                                 , IMapper mapper

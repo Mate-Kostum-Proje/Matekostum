@@ -1,4 +1,5 @@
-﻿@using Mate.MVC.Areas.Admin.Models_VMs
+﻿﻿@using Mate.MVC.Areas.Admin.Models_VMs
+@using Newtonsoft.Json
 @model ProductInsertAdminVM
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,11 +27,11 @@
     </div>
 
     @*Tables*@
-   
+
     <br />
     <br />
 
-<h2>Yeni Ürün Ekle</h2>
+    <h2>Yeni Ürün Ekle</h2>
 
     <form asp-action="ProductInsert" enctype="multipart/form-data" method="post">
         <input asp-for="Id" type="hidden" />
@@ -100,60 +101,71 @@
         <div class="form-group">
             <label for="SelectedSizes">Beden ve Miktar</label>
             <div id="SizesContainer">
-                @for (int i = 0; i < Model.SelectedSizes.Count; i++)
+                @for (var i = 0; i < Model.SelectedSizes.Count; i++)
                 {
-                    <div class="input-group mb-2">
-                        <!-- Dropdown: SizeId (string) -->
-                        <select asp-for="SelectedSizes[@i].SizeId" class="form-control" asp-items="Model.SizeOptions">
-                            <option value="">Beden Seçiniz</option>
-                        </select>
-                        <!-- Input: SizeAmount -->
-                        <input asp-for="SelectedSizes[@i].SizeAmount" class="form-control" placeholder="Miktar" />
-                        <!-- Hidden Input: SizeNumber (Optional, otomatik atanabilir) -->
-                        <input asp-for="SelectedSizes[@i].SizeNumber" type="hidden" />
-                    </div>
+            <div class="input-group mb-2">
+                <!-- SizeId Dropdown -->
+                <select name="SelectedSizes[@i].SizeId" class="form-control">
+                    <option value="">Beden Seçiniz</option>
+                            @foreach (var size in ViewData["Sizes"] as List<SelectListItem>)
+                            {
+                            <option value="@size.Value">@size.Text</option>
+                            }
+                </select>
+
+                <!-- SizeAmount Input -->
+                <input name="SelectedSizes[@i].SizeAmount" class="form-control" placeholder="Miktar" />
+            </div>
                 }
+
             </div>
 
             <button type="button" id="addSize" class="buy-now-single-product">Beden Ekle</button>
         </div>
 
         @*burası dışarıdan alınma*@
-        <script>
-            document.getElementById('addSize').addEventListener('click', function () {
-                var container = document.getElementById('SizesContainer');
-                var index = container.querySelectorAll('.input-group').length;
+      <script>
+    document.getElementById('addSize').addEventListener('click', function () {
+        var container = document.getElementById('SizesContainer');
+        var index = container.querySelectorAll('.input-group').length;
 
-                var template = `
-                    <div class="input-group mb-2">
-                        <select name="SelectedSizes[${index}].SizeId" class="form-control">
-                            <option value="">Beden Seçiniz</option>
-            @foreach (var item in Model.SizeOptions)
-            {
-                                    <option value="@item.Value">@item.Text</option>
-            }
-                        </select>
-                        <input name="SelectedSizes[${index}].SizeAmount" class="form-control" placeholder="Miktar" />
-                    </div>
-                `;
-                container.insertAdjacentHTML('beforeend', template);
-            });
-        </script>
+        // Select list için dinamik seçenekleri ViewData'dan alıyoruz
+        const sizes = @Html.Raw(JsonConvert.SerializeObject(ViewData["Sizes"]));
 
-        <div class="row">
-            <div class="col-2">
-                <label asp-for=Picture>Fotoğraf*</label>
+        console.log(sizes); // Konsolda kontrol edin
+
+        let sizeOptions = '<option value="">Beden Seçiniz</option>';
+        sizes.forEach(size => {
+            sizeOptions += `<option value="${size.Value}">${size.Text}</option>`;
+        });
+
+        // Yeni input grubunu oluşturuyoruz
+        var template = `
+            <div class="input-group mb-2">
+                <select name="SelectedSizes[${index}].SizeId" class="form-control">
+                    ${sizeOptions}
+                </select>
+                <input name="SelectedSizes[${index}].SizeAmount" class="form-control" placeholder="Miktar" />
             </div>
-            <div class="col-6">
-                <input asp-for=Picture type="file" accept="image/png, image/jpeg" />
-            </div>
-            <div class="col-4">
-                <span asp-validation-for="Picture" class="text-danger"></span>
-            </div>
+        `;
+
+        container.insertAdjacentHTML('beforeend', template);
+    });
+</script>
+
+
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="Picture">Fotoğraf*</label>
+            <input asp-for="Picture" type="file" accept="image/png, image/jpeg" class="form-control" />
         </div>
 
         <button type="submit" class="buy-now-single-product">Kaydet</button>
-</form>
+    </form>
 
     <br />
     <br />
@@ -165,4 +177,5 @@
     <br />
     <br />
 </section>
+
 

@@ -37,7 +37,9 @@ namespace Mate.Entities.EntityConfig.Concrete
                 City = "İstanbul",
                 District = "Maltepe",
                 Password = "qweasd"
+
             });
+
 
         }
     }

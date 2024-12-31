@@ -2123,6 +2123,15 @@ body-single-product {
     background-color: #fbb034; /* Turuncu arka plan */
     color: #fff; /* Beyaz yazý rengi */
 }
+.buy-now-single-product-2 {
+    padding: 10px; /* Ýçerik boþluðu */
+    font-size: 16px; /* Yazý boyutu */
+    border: none; /* Kenarlýk yok */
+    border-radius: 5px; /* Köþeleri yuvarlar */
+    cursor: pointer; /* Ýþaretçi imleç */
+    filter: brightness(0) saturate(100%) invert(70%) sepia(100%) saturate(300%) hue-rotate(360deg); /* Sarý ton verir */
+    color: #fff; /* Beyaz yazý rengi */
+}
 
 
 

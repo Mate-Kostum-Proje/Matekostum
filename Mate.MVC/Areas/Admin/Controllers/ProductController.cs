@@ -11,8 +11,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mate.MVC.Areas.Admin.Controllers
 {
-    [Area("Admin")]
     [Authorize]
+    [Area("Admin")]
+
     public class ProductController(IManager<Product> productManager
                             , IManager<ProductCategory> productCategoryManager
                             , IManager<ProductRegion> productRegionManager
@@ -23,6 +24,7 @@ namespace Mate.MVC.Areas.Admin.Controllers
                             , IMapper mapper
                             , IHostEnvironment hostEnvironment) : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             var products = productManager.GetAll().ToList();
@@ -79,21 +81,22 @@ namespace Mate.MVC.Areas.Admin.Controllers
             var categories = productCategoryManager.GetAll();
             var regions = productRegionManager.GetAll();
             var subRegions = productSubRegionManager.GetAll();
-            var sizes = sizeManager.GetAll();
+            var size2 = sizeManager.GetAll();
 
-            var sizeOptions = sizes.Select(s => new SelectListItem
+            var sizes = size2.Select(s => new SelectListItem
             {
                 Value = s.Id,
                 Text = s.SizeNumber.ToString() // Örneğin "38", "40"
             }).ToList();
 
+            ViewData["Sizes"] = sizes;
             // ViewModel oluştur ve veri aktar
             var viewModel = new ProductInsertAdminVM
             {
                 Categories = categories,
                 Regions = regions,
                 SubRegions = subRegions,
-                SizeOptions = sizeOptions,
+
                 SelectedSizes = new List<SelectedSizeVM> { new SelectedSizeVM() }
             };
 
@@ -108,10 +111,7 @@ namespace Mate.MVC.Areas.Admin.Controllers
 
             if (!ModelState.IsValid)
             {
-                productInsertAdminVM.Categories = productCategoryManager.GetAll();
-                productInsertAdminVM.Regions = productRegionManager.GetAll();
-                productInsertAdminVM.SubRegions = productSubRegionManager.GetAll();
-                productInsertAdminVM.SizeOptions = sizeManager.GetAll().Select(s => new SelectListItem
+                ViewData["Sizes"] = sizeManager.GetAll().Select(s => new SelectListItem
                 {
                     Value = s.Id,
                     Text = s.SizeNumber.ToString()
@@ -119,29 +119,10 @@ namespace Mate.MVC.Areas.Admin.Controllers
 
                 return View(productInsertAdminVM);
             }
+            productInsertAdminVM.Categories = productCategoryManager.GetAll();
+            productInsertAdminVM.Regions = productRegionManager.GetAll();
+            productInsertAdminVM.SubRegions = productSubRegionManager.GetAll();
 
-
-            #region Fotograf Kaydetme
-            string uploads = "";
-            string userImagePath = "";
-            if (productInsertAdminVM.Picture != null
-                && (productInsertAdminVM.Picture.ContentType.Contains("image/jpeg") || productInsertAdminVM.Picture.ContentType.Contains("image/png")))
-            {
-                //Dosya ismin alma 
-                var fileName = Path.GetFileName(productInsertAdminVM.Picture.FileName);
-                //Dosya Extension bulma
-                var extension = Path.GetExtension(fileName);
-                //Birlestirme işlemi 
-                var newFileName = string.Concat(Guid.NewGuid().ToString(), extension);
-                userImagePath = $@"/databaseimg/{newFileName}";
-                uploads = Path.Combine(hostEnvironment.ContentRootPath, $@"wwwroot/databaseimg/{newFileName}");
-                string filePath = Path.Combine(uploads, newFileName);
-                using (var fileStream = new System.IO.FileStream(uploads, FileMode.Create))
-                {
-                    await fileStream.CopyToAsync(fileStream);
-                }
-            }
-            #endregion
 
 
             var product = new Product
@@ -153,7 +134,6 @@ namespace Mate.MVC.Areas.Admin.Controllers
                 UnitPriceForRent = productInsertAdminVM.UnitPriceForRent,
                 IsSale = productInsertAdminVM.IsSale,
                 Gender = productInsertAdminVM.Gender,
-                PhotoPath = userImagePath,
                 ProductCategoryId = productInsertAdminVM.SelectedCategoryId,
                 ProductRegionId = productInsertAdminVM.SelectedRegionId,
                 ProductSubRegionId = productInsertAdminVM.SelectedSubRegionId,
@@ -161,26 +141,56 @@ namespace Mate.MVC.Areas.Admin.Controllers
 
             };
 
+            #region Fotograf Kaydetme
+            if (productInsertAdminVM.Picture != null && productInsertAdminVM.Picture.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/databaseimg");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var uniqueFileName = $"{Guid.NewGuid()}_{productInsertAdminVM.Picture.FileName}";
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await productInsertAdminVM.Picture.CopyToAsync(fileStream);
+                }
+
+                product.PhotoPath = $"/databaseimg/{uniqueFileName}";
+            }
+            #endregion
+
 
             productManager.Create(product);
 
+            string createdProductId = product.Id;
+
             // Bedeni ve stok miktarını kaydet
-            if (productInsertAdminVM.SelectedSizes != null && productInsertAdminVM.SelectedSizes.Any())
+            var allSizes = sizeManager.GetAll(); // Tüm bedenleri al
+
+            foreach (var selectedSize in productInsertAdminVM.SelectedSizes)
             {
-                foreach (var selectedSize in productInsertAdminVM.SelectedSizes)
+                if (!string.IsNullOrEmpty(selectedSize.SizeId) && selectedSize.SizeAmount > 0)
                 {
-                    // SizeNumber'ı SizeId üzerinden al
-                    var size = sizeManager.GetById(selectedSize.SizeId);
+                    // SizeId'ye göre SizeNumber'ı alın
+                    var size = sizeManager.GetById(selectedSize.SizeId); // `sizeManager.GetById` uygun metodu çağırın
+                    var sizeNumber = size != null ? size.SizeNumber : 0; // Eğer size bulunamazsa 0 yap
+
                     var productSize = new ProductSize
                     {
                         ProductId = product.Id,
-                        SizeId = selectedSize.SizeId, // SizeId string olarak kullanılıyor
-                        SizeNumber = size != null ? size.SizeNumber : 0, // SizeNumber atanıyor
-                        SizeAmount = selectedSize.SizeAmount
+                        SizeId = selectedSize.SizeId,
+                        SizeAmount = selectedSize.SizeAmount,
+                        SizeNumber = sizeNumber // SizeNumber'ı atıyoruz
                     };
+
                     productSizeManager.Create(productSize);
                 }
             }
+
+
 
 
             // Başarı mesajı ve yönlendirme
@@ -363,38 +373,178 @@ namespace Mate.MVC.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult ProductEdit(string Id)
         {
-            var product = productManager.GetAllInclude(p => p.Id == Id).FirstOrDefault();
+            var product = productManager.GetAllInclude(p => p.Id == Id).Include(p => p.ProductSizes).FirstOrDefault();
             if (product == null)
             {
                 notyfService.Error("Ürün bulunamadı.");
                 return RedirectToAction("Index", "Home");
             }
 
-            var productEditAdminVM = new ProductEditAdminVM();
-            productEditAdminVM.Id = Id;
-            productEditAdminVM.ProductName = product.ProductName;
-            productEditAdminVM.Description = product.Description;
-            productEditAdminVM.IsAdult = product.IsAdult;
-            productEditAdminVM.UnitPriceForSale = product.UnitPriceForSale;
-            productEditAdminVM.UnitPriceForRent = product.UnitPriceForRent;
-            productEditAdminVM.IsSale = product.IsSale;
-            productEditAdminVM.Gender = product.Gender;
-            //userImagePath = product.PhotoPath; //get de bu olmayacak
-            productEditAdminVM.ProductCategoryId = product.ProductCategoryId;
-            productEditAdminVM.ProductRegionId = product.ProductRegionId;
-            productEditAdminVM.ProductSubRegionId = product.ProductSubRegionId;
-            productEditAdminVM.PhotoPath = product.PhotoPath;
+            var categories = productCategoryManager.GetAll();
+            var regions = productRegionManager.GetAll();
+            var subRegions = productSubRegionManager.GetAll();
+            var size2 = sizeManager.GetAll();
 
 
-            return View();
+
+            var allSizes = sizeManager.GetAll();
+
+            var selectedSizes = product.ProductSizes.Select(ps => new SelectedSizeVM
+            {
+                SizeId = ps.SizeId,
+                SizeNumber = allSizes.FirstOrDefault(s => s.Id == ps.SizeId)?.SizeNumber ?? 0,
+                SizeAmount = ps.SizeAmount
+            }).ToList();
+
+
+
+            var productEditAdminVM = new ProductEditAdminVM
+            {
+                Id = product.Id,
+                ProductName = product.ProductName,
+                Description = product.Description,
+                IsAdult = product.IsAdult,
+                UnitPriceForSale = product.UnitPriceForSale,
+                UnitPriceForRent = product.UnitPriceForRent,
+                IsSale = product.IsSale,
+                Gender = product.Gender,
+                ProductCategoryId = product.ProductCategoryId,
+                ProductRegionId = product.ProductRegionId,
+                ProductSubRegionId = product.ProductSubRegionId,
+                SelectedCategoryId = product.ProductCategoryId,
+                SelectedRegionId = product.ProductRegionId,
+                SelectedSubRegionId = product.ProductSubRegionId,
+                PhotoPath = product.PhotoPath,
+                Categories = categories,
+                Regions = regions,
+                SubRegions = subRegions,
+                SelectedSizes = selectedSizes,
+                AllSizes = allSizes
+            };
+
+            ViewData["Sizes"] = productEditAdminVM.AllSizes.Select(size => new
+            {
+                Value = size.Id,
+                Text = size.SizeNumber
+            }).ToList();
+
+            return View(productEditAdminVM);
         }
+
+
         [Authorize]
-        [HttpGet]
-        public IActionResult ProductEdit(ProductInsertAdminVM productInsertAdminVM)
-        {
+        [HttpPost]
 
-            return View();
+        public async Task<IActionResult> ProductEdit(ProductEditAdminVM productEditAdminVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                productEditAdminVM.Categories = productCategoryManager.GetAll();
+                productEditAdminVM.Regions = productRegionManager.GetAll();
+                productEditAdminVM.SubRegions = productSubRegionManager.GetAll();
+                ViewData["Sizes"] = sizeManager.GetAll().Select(s => new SelectListItem
+                {
+                    Value = s.Id,
+                    Text = s.SizeNumber.ToString()
+                }).ToList();
+
+                notyfService.Error("Lütfen gerekli alanları doldurun.");
+                return View(productEditAdminVM);
+            }
+
+            var product = productManager.GetById(productEditAdminVM.Id);
+            if (product == null)
+            {
+                notyfService.Error("Ürün bulunamadı.");
+                return RedirectToAction("Index", "Home");
+            }
+
+            product.ProductName = productEditAdminVM.ProductName;
+            product.Description = productEditAdminVM.Description;
+            product.IsAdult = productEditAdminVM.IsAdult;
+            product.UnitPriceForSale = productEditAdminVM.UnitPriceForSale;
+            product.UnitPriceForRent = productEditAdminVM.UnitPriceForRent;
+            product.IsSale = productEditAdminVM.IsSale;
+            product.Gender = productEditAdminVM.Gender;
+            product.ProductCategoryId = productEditAdminVM.ProductCategoryId;
+            product.ProductRegionId = productEditAdminVM.ProductRegionId;
+            product.ProductSubRegionId = productEditAdminVM.ProductSubRegionId;
+
+
+
+            #region Foto Koyma
+            if (productEditAdminVM.Picture != null && productEditAdminVM.Picture.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/databaseimg");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var uniqueFileName = $"{Guid.NewGuid()}_{productEditAdminVM.Picture.FileName}";
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await productEditAdminVM.Picture.CopyToAsync(fileStream);
+                }
+
+                // Eski fotoğrafı silmek
+                if (!string.IsNullOrEmpty(product.PhotoPath))
+                {
+                    var oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", product.PhotoPath);
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                        product.PhotoPath = $"/databaseimg/{uniqueFileName}";
+                    }
+                    else
+                    {
+                        product.PhotoPath = oldFilePath;
+                    }
+                }
+
+                // Yeni fotoğrafın yolunu kaydet
+
+            }
+            #endregion
+
+
+            foreach (var selectedSize in productEditAdminVM.SelectedSizes)
+            {
+                if (!string.IsNullOrEmpty(selectedSize.SizeId) && selectedSize.SizeAmount > 0)
+                {
+                    var existingProductSize = productSizeManager.GetAll()
+                        .FirstOrDefault(ps => ps.ProductId == product.Id && ps.SizeId == selectedSize.SizeId);
+
+                    if (existingProductSize != null)
+                    {
+                        // Güncelle
+                        existingProductSize.SizeAmount = selectedSize.SizeAmount;
+                        productSizeManager.Update(existingProductSize);
+                    }
+                    else
+                    {
+                        // Yeni kayıt ekle
+                        var newProductSize = new ProductSize
+                        {
+                            ProductId = product.Id,
+                            SizeId = selectedSize.SizeId,
+                            SizeAmount = selectedSize.SizeAmount,
+                            SizeNumber = sizeManager.GetById(selectedSize.SizeId)?.SizeNumber ?? 0
+                        };
+                        productSizeManager.Create(newProductSize);
+                    }
+                }
+            }
+
+
+            productManager.Update(product);
+            notyfService.Success("Ürün başarıyla güncellendi.");
+            return RedirectToAction("Index", "Home");
         }
+
+
         [Authorize]
         [HttpGet]
         public IActionResult ProductDelete(string productId)

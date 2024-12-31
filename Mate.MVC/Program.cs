@@ -17,7 +17,7 @@ namespace Mate.MVC
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(); ;
 
             //DbContext Registiration
             var conn = builder.Configuration.GetConnectionString("MateData");
@@ -57,6 +57,13 @@ namespace Mate.MVC
             });
             #endregion
 
+            //builder.Services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("AdminPolicy", policy =>
+            //        policy.RequireClaim(ClaimTypes.Role, "Admin"));
+            //});
+
+
             builder.Services.AddMateProje();
 
             var app = builder.Build();
@@ -69,7 +76,7 @@ namespace Mate.MVC
             app.UseStaticFiles();
             app.UseNotyf();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

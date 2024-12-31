@@ -4,6 +4,7 @@ using AutoMapper;
 using Mate.BL.Abstract;
 using Mate.DAL.DbContexts;
 using Mate.Entities.Concrete;
+using Mate.MVC.Extensions;
 using Mate.MVC.Models.VMs;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -60,7 +61,7 @@ namespace Mate.MVC.Controllers
                 new Claim(ClaimTypes.Role,roles),
                 new Claim(ClaimTypes.SerialNumber,user.Id)
 
-                //new Claim(ClaimTypes.UserData,user.PhotoPath)
+
 
             };
             var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -183,5 +184,127 @@ namespace Mate.MVC.Controllers
 
             return View();
         }
+        [HttpGet]
+        [Authorize]
+        public IActionResult EditUser(string userId)
+        {
+            // Kullanıcı bilgilerini al
+
+
+            userId = User.Identity.GetId();
+            var user = userManager.GetById(userId);
+
+            if (user == null)
+            {
+                notyfService.Error("Kullanıcı bulunamadı.");
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Kullanıcı bilgilerini VM'ye eşle
+            var userEditVM = new UserEditUserVM();
+
+            #region Welcome to Amele Yöntemi
+
+            userEditVM.Id = userId;
+            userEditVM.Name = user.Name;
+            userEditVM.SurName = user.SurName;
+            userEditVM.Email = user.Email;
+            userEditVM.TcNo = user.TcNo;
+            userEditVM.GSM = user.GSM;
+            userEditVM.City = user.City;
+            userEditVM.District = user.District;
+            userEditVM.Address = user.Address;
+            #endregion
+
+
+            // Rolleri yükle ve seçili olanları işaretle
+
+
+            return View(userEditVM);
+        }
+
+        [HttpPost]
+        [Authorize]
+
+        public IActionResult EditUser(UserEditUserVM editVM)
+        {
+            string userId = User.Identity.GetId();
+
+
+            var user = userManager.GetById(userId);
+
+
+            if (user == null)
+            {
+                notyfService.Error("Kullanıcı bulunamadı.");
+                return RedirectToAction("Index");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                notyfService.Error("Lütfen hataları düzeltin.");
+                return View(editVM);
+            }
+
+            try
+            {
+                var userEditVM = new UserEditUserVM();
+                // Kullanıcı bilgilerini güncelle
+                userId = editVM.Id;
+                user.Name = editVM.Name;
+                user.SurName = editVM.SurName;
+                user.Email = editVM.Email;
+                user.TcNo = editVM.TcNo;
+                user.GSM = editVM.GSM;
+                user.City = editVM.City;
+                user.District = editVM.District;
+                user.Address = editVM.Address;
+
+
+                userManager.Update(user);
+                notyfService.Success("Profiliniz başarıyla güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                notyfService.Error("Hata oluştu: " + ex.Message);
+                return View(editVM);
+            }
+
+            return View(editVM);
+
+        }
+
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            try
+            {
+                //Kullanıcıyı bul
+                userId = User.Identity.GetId();
+
+                var user = userManager.GetById(userId);
+
+                if (user == null)
+                {
+                    notyfService.Error("Profiliniz bulunamadı.");
+                    return RedirectToAction("Index", "Home");
+                }
+
+                // Kullanıcıyı sil
+                userManager.Delete(user);
+                notyfService.Success("Kullanıcı başarıyla silindi.");
+                await HttpContext.SignOutAsync();
+
+            }
+            catch (Exception ex)
+            {
+                notyfService.Error("Hata oluştu: " + ex.Message);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
